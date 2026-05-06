@@ -52,8 +52,17 @@ Deno.serve(async (req) => {
     }
     if (items.length === 0) return new Response(JSON.stringify({ error: "No videos in playlist" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" }});
 
-    // fetch durations in batches of 50
-    const ids = items.map(i => i.contentDetails.videoId);
+    // Extract video IDs from snippet.resourceId.videoId (per YouTube API spec)
+    const validItems = items.filter(it => {
+      const vid = it?.snippet?.resourceId?.videoId;
+      const title = it?.snippet?.title ?? "";
+      if (!vid) { console.log("Skipping item, missing videoId:", title); return false; }
+      if (/^(Private|Deleted) video$/i.test(title)) return false;
+      return true;
+    });
+    if (validItems.length === 0) return new Response(JSON.stringify({ error: "No playable videos in playlist" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" }});
+
+    const ids = validItems.map(i => i.snippet.resourceId.videoId);
     const durations = new Map<string, number>();
     for (let i = 0; i < ids.length; i += 50) {
       const batch = ids.slice(i, i + 50).join(",");
@@ -69,12 +78,17 @@ Deno.serve(async (req) => {
     }).select().single();
     if (cErr) return new Response(JSON.stringify({ error: cErr.message }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" }});
 
-    const rows = items.filter(it => !it.snippet.title.match(/^(Private|Deleted) video$/i)).map((it, idx) => ({
-      course_id: course.id, position: idx + 1, title: it.snippet.title,
-      youtube_video_id: it.contentDetails.videoId,
-      duration_seconds: durations.get(it.contentDetails.videoId) ?? 0,
-      thumbnail_url: it.snippet.thumbnails?.medium?.url ?? null,
-    }));
+    const rows = validItems.map((it, idx) => {
+      const videoId = it.snippet.resourceId.videoId;
+      return {
+        course_id: course.id,
+        position: idx + 1,
+        title: it.snippet.title,
+        youtube_video_id: videoId,
+        duration_seconds: durations.get(videoId) ?? 0,
+        thumbnail_url: it.snippet.thumbnails?.high?.url ?? it.snippet.thumbnails?.medium?.url ?? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+      };
+    });
     const { error: mErr } = await supabase.from("modules").insert(rows);
     if (mErr) return new Response(JSON.stringify({ error: mErr.message }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" }});
 

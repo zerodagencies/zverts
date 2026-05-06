@@ -14,6 +14,8 @@ import { ThemeProvider } from "./components/zerod/ThemeProvider";
 import Courses from "./pages/Courses.tsx";
 import CourseDetail from "./pages/CourseDetail.tsx";
 import Profile from "./pages/Profile.tsx";
+import Settings from "./pages/Settings.tsx";
+import ResetPassword from "./pages/ResetPassword.tsx";
 import Quiz from "./pages/Quiz.tsx";
 import Leaderboard from "./pages/Leaderboard.tsx";
 import Admin from "./pages/Admin.tsx";
@@ -41,6 +43,8 @@ const App = () => (
               <Route path="/learn/:id" element={<ModulePlayer />} />
               <Route path="/quiz/:id" element={<Quiz />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/certificate/:courseId" element={<Certificate />} />

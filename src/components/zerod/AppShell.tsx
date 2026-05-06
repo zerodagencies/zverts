@@ -56,7 +56,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
             <ThemeToggle />
             {user ? (
               <>
-                <Button variant="ghost" size="icon" aria-label="Profile" onClick={() => navigate("/profile")}>
+                <Button variant="ghost" size="icon" aria-label="Settings" onClick={() => navigate("/settings")}>
                   <UserIcon className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="sm" onClick={async () => { await signOut(); navigate("/"); }}>

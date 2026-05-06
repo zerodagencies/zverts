@@ -73,7 +73,14 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
       <footer className="border-t border-border/60 py-8">
         <div className="container text-xs text-muted-foreground font-mono flex items-center justify-between">
           <span>© ZeroD Academy</span>
-          <span>{t("footer.credit")}</span>
+          <a
+            href="https://tauhidrana.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+          >
+            {t("footer.credit")}
+          </a>
         </div>
       </footer>
     </div>

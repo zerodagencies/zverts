@@ -2,7 +2,19 @@ import { Link, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/zerod/AppShell";
-import { ArrowRight, Lock, Activity, Award, ShieldCheck, Youtube, Gem, Flame, Users, BookOpen, Brain, Globe, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight,
+  Youtube,
+  Layers,
+  LineChart,
+  Lock,
+  Brain,
+  Gem,
+  CalendarCheck,
+  BarChart3,
+  Flame,
+  Trophy,
+} from "lucide-react";
 
 const Index = () => {
   const { user, loading } = useAuth();
@@ -11,149 +23,221 @@ const Index = () => {
 
   return (
     <AppShell>
-      {/* Hero */}
+      {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0 bg-grid opacity-40" />
-        <div className="container relative py-24 md:py-36">
-          <div className="max-w-3xl animate-fade-up">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-3 py-1 text-xs font-mono uppercase tracking-widest text-muted-foreground mb-8">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" />
-              Free · Gamified · Sequential · Verified
+        {/* subtle background */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute left-1/2 top-[-20%] h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
+          <div className="absolute right-[-10%] top-[20%] h-[400px] w-[400px] rounded-full bg-primary/5 blur-[120px]" />
+        </div>
+
+        <div className="container py-20 md:py-32">
+          <div className="grid items-center gap-16 lg:grid-cols-12">
+            {/* Left */}
+            <div className="lg:col-span-6 animate-fade-in">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 backdrop-blur px-3 py-1 text-xs text-muted-foreground">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                Built for disciplined learners
+              </div>
+              <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
+                Turn any YouTube playlist into a{" "}
+                <span className="text-primary">structured course</span>.
+              </h1>
+              <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
+                Create disciplined learning paths from YouTube playlists with
+                modules, tracking, streaks, gems, and progress analytics.
+              </p>
+
+              <div className="mt-9 flex flex-wrap items-center gap-3">
+                <Link to="/auth">
+                  <Button
+                    size="lg"
+                    className="rounded-full bg-primary text-primary-foreground hover:opacity-90 px-6"
+                  >
+                    Create Course
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link to="/explore">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full border-border/70 bg-transparent px-6"
+                  >
+                    Explore Courses
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-xs text-muted-foreground">
+                {["Playlist-based learning", "Progress tracking", "Gamified system"].map(
+                  (s) => (
+                    <div key={s} className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-primary" />
+                      {s}
+                    </div>
+                  ),
+                )}
+              </div>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight text-balance">
-              Turn any YouTube playlist into a <span className="italic text-primary">real course</span>.
-            </h1>
-            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl text-balance">
-              Paste a playlist link. ZeroD Academy converts it into a structured, locked course with watch tracking, gems, XP, streaks, quizzes and a verifiable certificate. <span className="text-foreground font-medium">No skipping. No shortcuts.</span> Just earned progress.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link to="/auth">
-                <Button size="lg" className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow font-semibold">
-                  Start free <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <a href="#how" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono">
-                How it works ↓
-              </a>
-            </div>
-            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
-              {[
-                { k: "∞", v: "Playlists" },
-                { k: "90%", v: "Watch to pass" },
-                { k: "+50", v: "XP / module" },
-                { k: "0$", v: "Forever free" },
-              ].map((s) => (
-                <div key={s.v}>
-                  <div className="font-display text-3xl text-primary">{s.k}</div>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-1">{s.v}</div>
-                </div>
-              ))}
+
+            {/* Right — dashboard mockup */}
+            <div className="lg:col-span-6 animate-fade-in">
+              <DashboardMockup />
             </div>
           </div>
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="how" className="container py-24">
-        <div className="max-w-2xl mb-12">
-          <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3">How it works</div>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight text-balance">From playlist to certificate in 4 steps.</h2>
+      {/* HOW IT WORKS */}
+      <section className="container py-24 md:py-32">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="text-xs uppercase tracking-[0.2em] text-primary">
+            How it works
+          </div>
+          <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-tight">
+            Three steps to a real course.
+          </h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div className="mt-16 grid gap-5 md:grid-cols-3">
           {[
-            { n: "01", icon: Youtube, title: "Paste a playlist", body: "Drop any public YouTube playlist URL. We auto-import every video as a module." },
-            { n: "02", icon: Lock, title: "Unlock sequentially", body: "Module 02 only opens after Module 01. Server-validated — no client tricks." },
-            { n: "03", icon: Brain, title: "Watch + quiz", body: "Watch 90% of the video and pass the 10-question MCQ to lock in completion." },
-            { n: "04", icon: Award, title: "Earn certificate", body: "Finish every module to download a branded, verifiable PDF certificate." },
+            {
+              n: "01",
+              icon: Youtube,
+              title: "Paste YouTube Playlist",
+              body: "Drop any public playlist URL. We import every video automatically.",
+            },
+            {
+              n: "02",
+              icon: Layers,
+              title: "Auto Generate Modules",
+              body: "Each video becomes a sequential module — locked until the previous is done.",
+            },
+            {
+              n: "03",
+              icon: LineChart,
+              title: "Learn With Tracking",
+              body: "Watch time, quizzes, gems, XP and streaks — all measured server-side.",
+            },
           ].map((p) => (
-            <div key={p.title} className="rounded-xl border border-border bg-gradient-card p-6 shadow-card hover:border-primary/30 transition-colors">
+            <div
+              key={p.title}
+              className="group rounded-2xl border border-border/60 bg-card/30 p-8 transition-all duration-300 hover:border-primary/40 hover:bg-card/50"
+            >
               <div className="flex items-center justify-between">
-                <p.icon className="h-5 w-5 text-primary" />
-                <span className="font-mono text-xs text-muted-foreground">{p.n}</span>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-background/60">
+                  <p.icon className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-xs text-muted-foreground/70">{p.n}</span>
               </div>
-              <h3 className="font-display text-xl mt-4">{p.title}</h3>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{p.body}</p>
+              <h3 className="mt-6 font-display text-xl font-semibold">
+                {p.title}
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {p.body}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Features */}
-      <section className="container py-24 border-t border-border/60">
-        <div className="max-w-2xl mb-12">
-          <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3">Built for finishers</div>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight text-balance">Every feature pushes you to <span className="italic text-primary">complete</span>.</h2>
+      {/* FEATURES */}
+      <section className="container py-24 md:py-32 border-t border-border/40">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="text-xs uppercase tracking-[0.2em] text-primary">
+            Features
+          </div>
+          <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-tight">
+            Everything you need to finish.
+          </h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {[
-            { icon: Activity, title: "Real watch tracking", body: "Watch time is recorded server-side every 5 seconds. 90% auto-completes." },
-            { icon: Gem, title: "Gems & XP", body: "+2 gems & +50 XP per module. +1 gem & +30 XP for every quiz you pass." },
-            { icon: Flame, title: "Daily streak", body: "Check in every day to grow your streak. Miss a day and it resets to 1." },
-            { icon: Users, title: "Public leaderboard", body: "Climb the global ranks by XP and gems. Compete with friends." },
-            { icon: ShieldCheck, title: "Honest progress", body: "All unlocks, gems and certificates are validated server-side. No cheating." },
-            { icon: Globe, title: "English & Bangla", body: "Full UI translation with one click. Learn in the language you think in." },
-            { icon: BookOpen, title: "Notes per timestamp", body: "Take notes anchored to the exact second of the video for easy review." },
-            { icon: CheckCircle2, title: "Distraction-free player", body: "Clean embedded player. No platform ads. No popups. Just the lesson." },
-          ].map((p) => (
-            <div key={p.title} className="rounded-xl border border-border bg-gradient-card p-6 shadow-card hover:border-primary/30 transition-colors">
-              <p.icon className="h-5 w-5 text-primary" />
-              <h3 className="font-display text-xl mt-4">{p.title}</h3>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{p.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
-      {/* For who */}
-      <section className="container py-24 border-t border-border/60">
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/40 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { title: "Self-learners", body: "Stop bookmarking 40-hour playlists you'll never finish. Get forced structure." },
-            { title: "Bootcamp creators", body: "Curate a playlist, share the public course link, watch your students complete it." },
-            { title: "Teams & study groups", body: "Track who's actually watched the onboarding videos. Leaderboard included." },
-          ].map((c) => (
-            <div key={c.title} className="rounded-xl border border-border bg-card/30 p-8">
-              <h3 className="font-display text-2xl">{c.title}</h3>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{c.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="container py-24 border-t border-border/60">
-        <div className="max-w-2xl mb-12">
-          <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3">FAQ</div>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight">Quick answers.</h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
-          {[
-            { q: "Is it really free?", a: "Yes. ZeroD Academy is 100% free. No paywalls, no premium tier." },
-            { q: "Do I need a YouTube API key?", a: "No. The platform handles the import for you — just paste a playlist link." },
-            { q: "Can I share my course?", a: "Yes. Toggle a course public and share its link with anyone." },
-            { q: "Will I see ads?", a: "The platform UI is fully ad-free. Embedded YouTube videos may still show YouTube's own ads." },
+            { icon: Lock, title: "Sequential Modules", body: "Each lesson unlocks only after the previous is completed." },
+            { icon: BarChart3, title: "Smart Tracking", body: "Real watch time recorded server-side every few seconds." },
+            { icon: Brain, title: "MCQ System", body: "Pass a quiz at the end of every module to lock progress." },
+            { icon: Gem, title: "Gems & XP", body: "Earn rewards for every completed module and quiz." },
+            { icon: CalendarCheck, title: "Attendance", body: "Build a daily streak by showing up to learn." },
+            { icon: LineChart, title: "Analytics Dashboard", body: "Visualize your progress, streaks and completion rate." },
           ].map((f) => (
-            <div key={f.q} className="rounded-xl border border-border bg-gradient-card p-6">
-              <div className="font-display text-lg">{f.q}</div>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{f.a}</p>
+            <div
+              key={f.title}
+              className="bg-background p-8 transition-colors hover:bg-card/40"
+            >
+              <f.icon className="h-5 w-5 text-primary" />
+              <h3 className="mt-5 font-display text-lg font-semibold">
+                {f.title}
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {f.body}
+              </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* DASHBOARD PREVIEW */}
+      <section className="container py-24 md:py-32 border-t border-border/40">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          <div>
+            <div className="text-xs uppercase tracking-[0.2em] text-primary">
+              Your learning, measured
+            </div>
+            <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-tight">
+              A dashboard that respects your time.
+            </h2>
+            <p className="mt-6 text-muted-foreground leading-relaxed max-w-md">
+              Track streaks, XP, completion rate and weekly watch time in one
+              calm, focused view. No noise — just signal.
+            </p>
+            <div className="mt-8 grid grid-cols-3 gap-4 max-w-md">
+              {[
+                { k: "12", v: "Day streak" },
+                { k: "1.4k", v: "XP earned" },
+                { k: "78%", v: "Completion" },
+              ].map((s) => (
+                <div
+                  key={s.v}
+                  className="rounded-xl border border-border/60 bg-card/30 p-4"
+                >
+                  <div className="font-display text-2xl text-primary">
+                    {s.k}
+                  </div>
+                  <div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">
+                    {s.v}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="animate-fade-in">
+            <AnalyticsMockup />
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="container pb-32">
-        <div className="rounded-2xl border border-border bg-gradient-card p-10 md:p-16 shadow-elevated text-center">
-          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight text-balance">
-            Ready to actually finish a course?
+      <section className="container py-24 md:py-32">
+        <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card/30 px-8 py-20 md:py-28 text-center">
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
+          </div>
+          <h2 className="mx-auto max-w-2xl font-display text-3xl md:text-5xl font-semibold tracking-tight">
+            Build Your Personal Learning System
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-md mx-auto">
-            Sign in. Paste a playlist. Start Module 01. Earn the rest.
+          <p className="mx-auto mt-5 max-w-md text-muted-foreground">
+            One link. One structured path. Real progress you can prove.
           </p>
-          <Link to="/auth" className="inline-block mt-8">
-            <Button size="lg" className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow font-semibold">
-              Create your first course <ArrowRight className="ml-2 h-4 w-4" />
+          <Link to="/auth" className="mt-10 inline-block">
+            <Button
+              size="lg"
+              className="rounded-full bg-primary text-primary-foreground hover:opacity-90 px-7"
+            >
+              Start Creating Courses
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>
@@ -161,5 +245,159 @@ const Index = () => {
     </AppShell>
   );
 };
+
+/* ---------- mockups ---------- */
+
+function DashboardMockup() {
+  return (
+    <div className="relative">
+      <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-primary/10 blur-3xl" />
+      <div className="rounded-2xl border border-border/70 bg-card/60 backdrop-blur p-5 shadow-2xl">
+        {/* window chrome */}
+        <div className="flex items-center justify-between border-b border-border/50 pb-3">
+          <div className="flex gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/30" />
+            <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/30" />
+            <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/30" />
+          </div>
+          <div className="text-[10px] text-muted-foreground">
+            zerod.academy / dashboard
+          </div>
+          <div className="w-8" />
+        </div>
+
+        <div className="mt-5 grid grid-cols-3 gap-3">
+          {[
+            { icon: Flame, k: "12", v: "Streak", color: "text-orange-400" },
+            { icon: Gem, k: "248", v: "Gems", color: "text-primary" },
+            { icon: Trophy, k: "1.4k", v: "XP", color: "text-yellow-400" },
+          ].map((s) => (
+            <div
+              key={s.v}
+              className="rounded-xl border border-border/50 bg-background/50 p-3"
+            >
+              <s.icon className={`h-4 w-4 ${s.color}`} />
+              <div className="mt-2 font-display text-xl">{s.k}</div>
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                {s.v}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* progress ring + list */}
+        <div className="mt-4 grid grid-cols-5 gap-3">
+          <div className="col-span-2 rounded-xl border border-border/50 bg-background/50 p-4 flex flex-col items-center justify-center">
+            <ProgressRing value={78} />
+            <div className="mt-3 text-xs text-muted-foreground">Course progress</div>
+          </div>
+          <div className="col-span-3 rounded-xl border border-border/50 bg-background/50 p-4 space-y-3">
+            {[
+              { t: "React Fundamentals", p: 100 },
+              { t: "Advanced Hooks", p: 64 },
+              { t: "State Management", p: 32 },
+            ].map((m) => (
+              <div key={m.t}>
+                <div className="flex justify-between text-[11px] mb-1.5">
+                  <span className="truncate">{m.t}</span>
+                  <span className="text-muted-foreground">{m.p}%</span>
+                </div>
+                <div className="h-1.5 w-full rounded-full bg-border/50 overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-primary"
+                    style={{ width: `${m.p}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AnalyticsMockup() {
+  const bars = [40, 65, 50, 80, 45, 90, 70];
+  return (
+    <div className="relative">
+      <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-primary/10 blur-3xl" />
+      <div className="rounded-2xl border border-border/70 bg-card/60 backdrop-blur p-6 shadow-2xl">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="text-xs text-muted-foreground">This week</div>
+            <div className="mt-1 font-display text-2xl">8h 24m watched</div>
+          </div>
+          <div className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs text-primary">
+            +18%
+          </div>
+        </div>
+
+        <div className="mt-8 flex h-40 items-end gap-3">
+          {bars.map((h, i) => (
+            <div key={i} className="flex flex-1 flex-col items-center gap-2">
+              <div
+                className="w-full rounded-md bg-gradient-to-t from-primary/60 to-primary"
+                style={{ height: `${h}%` }}
+              />
+              <span className="text-[10px] text-muted-foreground">
+                {["M", "T", "W", "T", "F", "S", "S"][i]}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 grid grid-cols-3 gap-3 border-t border-border/50 pt-5">
+          {[
+            { k: "24", v: "Modules" },
+            { k: "6", v: "Quizzes" },
+            { k: "3", v: "Certificates" },
+          ].map((s) => (
+            <div key={s.v}>
+              <div className="font-display text-lg">{s.k}</div>
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                {s.v}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ProgressRing({ value }: { value: number }) {
+  const r = 32;
+  const c = 2 * Math.PI * r;
+  const offset = c - (value / 100) * c;
+  return (
+    <div className="relative h-20 w-20">
+      <svg className="h-20 w-20 -rotate-90" viewBox="0 0 80 80">
+        <circle
+          cx="40"
+          cy="40"
+          r={r}
+          strokeWidth="6"
+          className="stroke-border/60"
+          fill="none"
+        />
+        <circle
+          cx="40"
+          cy="40"
+          r={r}
+          strokeWidth="6"
+          className="stroke-primary"
+          strokeLinecap="round"
+          strokeDasharray={c}
+          strokeDashoffset={offset}
+          fill="none"
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center font-display text-lg">
+        {value}%
+      </div>
+    </div>
+  );
+}
 
 export default Index;

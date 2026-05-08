@@ -261,7 +261,7 @@ function DashboardMockup() {
             <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/30" />
           </div>
           <div className="text-[10px] text-muted-foreground">
-            zerod.academy / dashboard
+            zvert.app / dashboard
           </div>
           <div className="w-8" />
         </div>

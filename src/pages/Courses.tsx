@@ -8,6 +8,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { Globe, Lock, Loader2, Plus, Trash2 } from "lucide-react";
+import { PlaylistPreview } from "@/components/zerod/PlaylistPreview";
+import { Eye } from "lucide-react";
 
 interface Course { id: string; title: string; description: string | null; thumbnail_url: string | null; is_public: boolean; is_system: boolean; user_id: string | null; }
 
@@ -17,6 +19,9 @@ const Courses = () => {
   const navigate = useNavigate();
   const [url, setUrl] = useState("");
   const [importing, setImporting] = useState(false);
+  const [previewing, setPreviewing] = useState(false);
+  const [preview, setPreview] = useState<any>(null);
+  const [previewOpen, setPreviewOpen] = useState(false);
   const [mine, setMine] = useState<Course[]>([]);
   const [system, setSystem] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
@@ -33,6 +38,14 @@ const Courses = () => {
   if (authLoading) return null;
   if (!user) return <Navigate to="/auth" replace />;
 
+  const previewPlaylist = async () => {
+    if (!url.trim()) return;
+    setPreviewing(true);
+    const { data, error } = await supabase.functions.invoke("preview-youtube-playlist", { body: { url: url.trim() } });
+    setPreviewing(false);
+    if (error || (data as any)?.error) { toast.error((data as any)?.error ?? error?.message ?? "Preview failed"); return; }
+    setPreview(data); setPreviewOpen(true);
+  };
   const importPlaylist = async () => {
     if (!url.trim()) return;
     setImporting(true);
@@ -40,7 +53,7 @@ const Courses = () => {
     setImporting(false);
     if (error) { toast.error(error.message); return; }
     toast.success("Course created!");
-    setUrl("");
+    setUrl(""); setPreviewOpen(false); setPreview(null);
     if (data?.course_id) navigate(`/courses/${data.course_id}`);
     else load();
   };
@@ -92,10 +105,11 @@ const Courses = () => {
           <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-3">{t("courses.createNew")}</div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Input placeholder={t("courses.playlistPlaceholder")} value={url} onChange={(e) => setUrl(e.target.value)} className="flex-1" />
-            <Button onClick={importPlaylist} disabled={importing || !url.trim()} className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow">
-              {importing ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Importing</> : <><Plus className="h-4 w-4 mr-2" />{t("courses.import")}</>}
+            <Button onClick={previewPlaylist} disabled={previewing || !url.trim()} className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow">
+              {previewing ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Loading</> : <><Eye className="h-4 w-4 mr-2" />Preview</>}
             </Button>
           </div>
+          <p className="mt-3 text-xs text-muted-foreground font-mono">Preview the playlist before creating your course.</p>
         </div>
 
         {loading ? (
@@ -122,6 +136,14 @@ const Courses = () => {
             </div>
           </>
         )}
+
+        <PlaylistPreview
+          open={previewOpen}
+          onClose={() => setPreviewOpen(false)}
+          preview={preview}
+          onConfirm={importPlaylist}
+          importing={importing}
+        />
       </section>
     </AppShell>
   );

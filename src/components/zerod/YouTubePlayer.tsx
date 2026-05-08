@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 
 declare global {
   interface Window { YT: any; onYouTubeIframeAPIReady?: () => void; }
@@ -9,6 +9,11 @@ interface Props {
   onProgress: (currentSeconds: number) => void;
   onEnded?: () => void;
 }
+
+export type YouTubePlayerHandle = {
+  getCurrentTime: () => number;
+  seekTo: (seconds: number) => void;
+};
 
 let ytApiPromise: Promise<void> | null = null;
 const loadYT = () => {
@@ -23,10 +28,15 @@ const loadYT = () => {
   return ytApiPromise;
 };
 
-export const YouTubePlayer = ({ videoId, onProgress, onEnded }: Props) => {
+export const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(({ videoId, onProgress, onEnded }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<any>(null);
   const intervalRef = useRef<number | null>(null);
+
+  useImperativeHandle(ref, () => ({
+    getCurrentTime: () => playerRef.current?.getCurrentTime?.() ?? 0,
+    seekTo: (s: number) => { try { playerRef.current?.seekTo?.(s, true); playerRef.current?.playVideo?.(); } catch {} },
+  }), []);
 
   useEffect(() => {
     let cancelled = false;
@@ -76,4 +86,5 @@ export const YouTubePlayer = ({ videoId, onProgress, onEnded }: Props) => {
       <div ref={containerRef} className="w-full h-full" />
     </div>
   );
-};
+});
+YouTubePlayer.displayName = "YouTubePlayer";

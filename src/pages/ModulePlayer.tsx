@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams, Navigate, Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/zerod/AppShell";
-import { YouTubePlayer } from "@/components/zerod/YouTubePlayer";
+import { YouTubePlayer, type YouTubePlayerHandle } from "@/components/zerod/YouTubePlayer";
+import { AITutorPanel } from "@/components/zerod/AITutorPanel";
+import { NotesPanel } from "@/components/zerod/NotesPanel";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -21,6 +23,7 @@ const ModulePlayer = () => {
   const [nextId, setNextId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const lastSentRef = useRef(0);
+  const playerRef = useRef<YouTubePlayerHandle>(null);
 
   useEffect(() => {
     if (!user || !id) return;
@@ -92,7 +95,7 @@ const ModulePlayer = () => {
               <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mt-2 text-balance">{mod.title}</h1>
             </div>
 
-            <YouTubePlayer videoId={mod.youtube_video_id} onProgress={(s) => sendProgress(s)} />
+            <YouTubePlayer ref={playerRef} videoId={mod.youtube_video_id} onProgress={(s) => sendProgress(s)} />
 
             {/* Progress + actions */}
             <div className="mt-6 rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
@@ -127,6 +130,21 @@ const ModulePlayer = () => {
                 Tracked server-side every 5s. Auto-completes at 90%. Manual completion is also recorded.
               </p>
             </div>
+
+            <div className="mt-6 grid lg:grid-cols-2 gap-6">
+              <NotesPanel
+                moduleId={mod.id}
+                getCurrentTime={() => playerRef.current?.getCurrentTime() ?? 0}
+                onSeek={(s) => playerRef.current?.seekTo(s)}
+              />
+              <div className="rounded-2xl border border-border bg-gradient-card p-5 shadow-card flex flex-col items-center justify-center text-center min-h-[200px]">
+                <div className="font-display text-lg mb-1">Need help understanding?</div>
+                <p className="text-sm text-muted-foreground mb-4 max-w-xs">Open the AI Tutor to explain concepts, summarize, or quiz yourself in English or Bangla.</p>
+                <p className="text-xs font-mono text-muted-foreground">Tap "Ask AI" bottom-right →</p>
+              </div>
+            </div>
+
+            <AITutorPanel moduleId={mod.id} />
           </>
         )}
       </section>

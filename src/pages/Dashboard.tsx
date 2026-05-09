@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
 import { AppShell } from "@/components/zerod/AppShell";
@@ -14,7 +14,8 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Clock, CheckSquare, Flame, Calendar, ArrowRight } from "lucide-react";
 
-interface ModuleRow { id: string; position: number; title: string; duration_seconds: number; }
+interface CourseRow { id: string; title: string; }
+interface ModuleRow { id: string; course_id: string; position: number; title: string; duration_seconds: number; }
 interface ProgressRow { module_id: string; watch_time_seconds: number; percent_watched: number; completed: boolean; updated_at: string; completed_at: string | null; }
 
 const fmtTime = (s: number) => {
@@ -24,6 +25,7 @@ const fmtTime = (s: number) => {
 
 const Dashboard = () => {
   const { user, loading: authLoading } = useAuth();
+  const [courses, setCourses] = useState<CourseRow[]>([]);
   const [modules, setModules] = useState<ModuleRow[]>([]);
   const [progress, setProgress] = useState<ProgressRow[]>([]);
   const [loading, setLoading] = useState(true);
@@ -31,10 +33,22 @@ const Dashboard = () => {
   useEffect(() => {
     if (!user) return;
     (async () => {
+      const { data: ownCourses } = await supabase
+        .from("courses")
+        .select("id,title")
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false });
+
+      const courseIds = (ownCourses ?? []).map((course) => course.id);
+
       const [{ data: mods }, { data: prog }] = await Promise.all([
-        supabase.from("modules").select("id,position,title,duration_seconds").order("position"),
+        courseIds.length
+          ? supabase.from("modules").select("id,course_id,position,title,duration_seconds").in("course_id", courseIds).order("position")
+          : Promise.resolve({ data: [] as ModuleRow[] } as { data: ModuleRow[] }),
         supabase.from("module_progress").select("module_id,watch_time_seconds,percent_watched,completed,updated_at,completed_at").eq("user_id", user.id),
       ]);
+
+      setCourses(ownCourses ?? []);
       setModules(mods ?? []);
       setProgress(prog ?? []);
       setLoading(false);
@@ -49,19 +63,28 @@ const Dashboard = () => {
   const overallPct = modules.length ? (completedCount / modules.length) * 100 : 0;
   const totalWatch = progress.reduce((sum, p) => sum + p.watch_time_seconds, 0);
 
-  // Determine module states (sequential)
-  const modCards = modules.map((m, idx) => {
-    const p = progByMod.get(m.id);
-    const prev = idx === 0 ? null : modules[idx - 1];
-    const prevDone = !prev || progByMod.get(prev.id)?.completed;
-    let state: "locked" | "available" | "in_progress" | "completed" = "locked";
-    if (p?.completed) state = "completed";
-    else if (prevDone && p && p.percent_watched > 0) state = "in_progress";
-    else if (prevDone) state = "available";
-    return { ...m, state, percent: p?.percent_watched ?? 0 };
-  });
+  const courseSections = useMemo(() => {
+    return courses.map((course) => {
+      const courseModules = modules
+        .filter((module) => module.course_id === course.id)
+        .sort((a, b) => a.position - b.position);
 
-  const nextModule = modCards.find(m => m.state === "available" || m.state === "in_progress");
+      const cards = courseModules.map((module, idx) => {
+        const p = progByMod.get(module.id);
+        const prev = idx === 0 ? null : courseModules[idx - 1];
+        const prevDone = !prev || progByMod.get(prev.id)?.completed;
+        let state: "locked" | "available" | "in_progress" | "completed" = "locked";
+        if (p?.completed) state = "completed";
+        else if (prevDone && p && p.percent_watched > 0) state = "in_progress";
+        else if (prevDone) state = "available";
+        return { ...module, state, percent: p?.percent_watched ?? 0 };
+      });
+
+      return { course, cards };
+    });
+  }, [courses, modules, progByMod]);
+
+  const nextModule = courseSections.flatMap((section) => section.cards).find((m) => m.state === "available" || m.state === "in_progress");
 
   // Weekly activity (last 7 days)
   const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -147,14 +170,35 @@ const Dashboard = () => {
             {/* Modules grid */}
             <div className="mb-6">
               <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">/ curriculum</div>
-              <h2 className="font-display text-3xl mt-1">Modules</h2>
+              <h2 className="font-display text-3xl mt-1">Your courses and modules</h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {modCards.map(m => (
-                <ModuleCard key={m.id} id={m.id} position={m.position} title={m.title}
-                  durationSeconds={m.duration_seconds} state={m.state} percent={m.percent} />
-              ))}
-            </div>
+            {courseSections.length === 0 ? (
+              <div className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card text-sm text-muted-foreground">
+                You have no courses yet. Import a playlist to see your private modules here.
+              </div>
+            ) : (
+              <div className="space-y-8">
+                {courseSections.map(({ course, cards }) => (
+                  <div key={course.id} className="space-y-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <div className="font-display text-2xl">{course.title}</div>
+                        <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Private course space</div>
+                      </div>
+                      <Link to={`/courses/${course.id}`}>
+                        <Button variant="outline" size="sm">Open course</Button>
+                      </Link>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {cards.map((m) => (
+                        <ModuleCard key={m.id} id={m.id} position={m.position} title={m.title}
+                          durationSeconds={m.duration_seconds} state={m.state} percent={m.percent} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </>
         )}
       </section>

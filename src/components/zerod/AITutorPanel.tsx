@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Sparkles, Send, Loader2, X, Languages, FileText, ListChecks, Bot } from "lucide-react";
+import { Sparkles, Send, Loader2, X, Languages, FileText, ListChecks, Bot, WandSparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ReactMarkdown from "react-markdown";
 import { supabase } from "@/integrations/supabase/client";
@@ -95,10 +95,10 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
           "bg-gradient-lime hover:scale-105 transition-transform",
           open && "hidden"
         )}
-        aria-label="Open AI Tutor"
+        aria-label="Open Vert AI"
       >
         <Sparkles className="h-4 w-4" />
-        Ask AI
+        Chat with Vert
       </button>
 
       {/* Panel */}
@@ -115,7 +115,7 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
             <div className="flex items-center gap-2">
               <div className="h-8 w-8 rounded-full bg-gradient-lime flex items-center justify-center"><Bot className="h-4 w-4 text-primary-foreground" /></div>
               <div>
-                <div className="font-display text-sm font-semibold">AI Study Tutor</div>
+                <div className="font-display text-sm font-semibold">Vert AI Tutor</div>
                 <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">{lang === "bn" ? "বাংলা" : "english"}</div>
               </div>
             </div>
@@ -137,8 +137,8 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
                   <Sparkles className="h-7 w-7 text-primary" />
                 </div>
                 <div>
-                  <div className="font-display text-base">Ask me anything about this lesson</div>
-                  <div className="text-xs text-muted-foreground mt-1">Explain concepts, summarize, quiz yourself</div>
+                  <div className="font-display text-base">Ask Vert anything about this lesson</div>
+                  <div className="text-xs text-muted-foreground mt-1">Explanations, summaries, quizzes, and course-aware answers</div>
                 </div>
                 <div className="flex flex-col gap-2 px-4">
                   <Button size="sm" variant="outline" onClick={() => quick("summary")} className="justify-start">
@@ -146,6 +146,9 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
                   </Button>
                   <Button size="sm" variant="outline" onClick={() => quick("mcq")} className="justify-start">
                     <ListChecks className="h-3.5 w-3.5 mr-2" /> Quiz me with 5 MCQs
+                  </Button>
+                  <Button size="sm" variant="outline" onClick={() => send({ text: "Explain this lesson in a clean structured format with key ideas, examples, and what to focus on next.", mode: "chat" })} className="justify-start">
+                    <WandSparkles className="h-3.5 w-3.5 mr-2" /> Explain in real format
                   </Button>
                 </div>
               </div>
@@ -180,7 +183,7 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
-                placeholder="Ask about this lesson…"
+                placeholder="Ask Vert about this lesson or this course…"
                 className="resize-none min-h-[44px] max-h-32"
                 rows={1}
               />

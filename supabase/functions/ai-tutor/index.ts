@@ -21,19 +21,30 @@ Deno.serve(async (req) => {
     if (!module_id || !Array.isArray(messages)) return json({ error: "module_id and messages required" }, 400);
 
     const { data: mod } = await supabase.from("modules")
-      .select("title, position, course_id, youtube_video_id, courses!inner(title)")
+      .select("title, position, course_id, youtube_video_id, courses!inner(id,title,user_id)")
       .eq("id", module_id).maybeSingle();
     if (!mod) return json({ error: "Module not found" }, 404);
 
-    const courseTitle = (mod as any).courses?.title ?? "course";
+    const course = (mod as any).courses;
+    if (!course || course.user_id !== user.id) {
+      return json({ error: "Unauthorized" }, 403);
+    }
+
+    const courseTitle = course?.title ?? "course";
     const langLine = language === "bn"
       ? "Reply in clear, simple Bangla (bengali). Use English technical terms when needed."
       : "Reply in clear, simple English.";
 
-    let system = `You are ZverT AI Tutor — a focused study assistant for the lesson "${mod.title}" (module ${mod.position} of "${courseTitle}").
+    let system = `You are Vert — ZverT's focused study assistant for the lesson "${mod.title}" (module ${mod.position} of "${courseTitle}").
 ${langLine}
-Be concise, friendly, structured. Use markdown bullet points and short paragraphs. Use code blocks for code.
-Stay on topic for THIS lesson; if asked something unrelated, gently redirect.`;
+Be concise, accurate, and well structured.
+Always answer in a real study format using this order when relevant:
+1. Short direct answer
+2. Key points
+3. Simple example or explanation
+4. What to study next
+Use markdown headings, bullets, and short paragraphs. Use code blocks for code.
+Only answer about THIS module or its parent course; if asked something unrelated, gently redirect.`;
 
     if (mode === "summary") {
       system += `\nTask: Produce a 5-7 bullet point summary of the key concepts likely covered in this lesson based on the title.`;

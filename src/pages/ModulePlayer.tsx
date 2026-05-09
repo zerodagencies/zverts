@@ -10,7 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { ArrowLeft, ArrowRight, CheckCircle2, Lock } from "lucide-react";
 
-interface Mod { id: string; position: number; title: string; duration_seconds: number; youtube_video_id: string; }
+interface Mod { id: string; course_id: string; position: number; title: string; duration_seconds: number; youtube_video_id: string; courses?: { title: string } | null; }
 
 const ModulePlayer = () => {
   const { id } = useParams();
@@ -21,6 +21,7 @@ const ModulePlayer = () => {
   const [percent, setPercent] = useState(0);
   const [completed, setCompleted] = useState(false);
   const [nextId, setNextId] = useState<string | null>(null);
+  const [rewardFlash, setRewardFlash] = useState(false);
   const [loading, setLoading] = useState(true);
   const lastSentRef = useRef(0);
   const playerRef = useRef<YouTubePlayerHandle>(null);
@@ -28,10 +29,14 @@ const ModulePlayer = () => {
   useEffect(() => {
     if (!user || !id) return;
     (async () => {
-      const { data: m } = await supabase.from("modules").select("*").eq("id", id).maybeSingle();
+      const { data: m } = await supabase.from("modules").select("id,course_id,position,title,duration_seconds,youtube_video_id,courses(title)").eq("id", id).maybeSingle();
       if (!m) { setLoading(false); return; }
+
+      const { data: ownCourse } = await supabase.from("courses").select("id").eq("id", m.course_id).eq("user_id", user.id).maybeSingle();
+      if (!ownCourse) { setLoading(false); return; }
+
       setMod(m);
-      const { data: nextMod } = await supabase.from("modules").select("id").eq("position", m.position + 1).maybeSingle();
+      const { data: nextMod } = await supabase.from("modules").select("id").eq("course_id", m.course_id).eq("position", m.position + 1).maybeSingle();
       setNextId(nextMod?.id ?? null);
 
       const { data: unlock } = await supabase.rpc("is_module_unlocked", { _user_id: user.id, _module_id: m.id });
@@ -62,6 +67,8 @@ const ModulePlayer = () => {
       setPercent(Number(row.percent_watched));
       if (row.completed && !completed) {
         setCompleted(true);
+          setRewardFlash(true);
+          setTimeout(() => setRewardFlash(false), 3200);
         toast.success("Module complete! 🎉", { description: "The next module is now unlocked." });
       }
     }
@@ -80,7 +87,7 @@ const ModulePlayer = () => {
         {loading ? (
           <div className="text-muted-foreground font-mono text-sm">Loading…</div>
         ) : !mod ? (
-          <div className="text-muted-foreground">Module not found.</div>
+          <div className="text-muted-foreground">Module not found or you do not have access.</div>
         ) : !unlocked ? (
           <div className="rounded-2xl border border-border bg-gradient-card p-12 text-center shadow-elevated">
             <Lock className="h-10 w-10 text-muted-foreground mx-auto mb-4" />
@@ -93,6 +100,7 @@ const ModulePlayer = () => {
             <div className="mb-6">
               <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">MODULE / {String(mod.position).padStart(2,"0")}</div>
               <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mt-2 text-balance">{mod.title}</h1>
+              <p className="mt-2 text-sm text-muted-foreground">Course: {mod.courses?.title ?? "Your course"}</p>
             </div>
 
             <YouTubePlayer ref={playerRef} videoId={mod.youtube_video_id} onProgress={(s) => sendProgress(s)} />
@@ -131,6 +139,23 @@ const ModulePlayer = () => {
               </p>
             </div>
 
+            <div className={`mt-6 rounded-2xl border p-5 shadow-card transition-all duration-500 ${rewardFlash ? "border-primary bg-primary/10 shadow-glow" : "border-border bg-gradient-card"}`}>
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">/ module reward</div>
+                  <h2 className="font-display text-2xl mt-1">Character charge earned</h2>
+                  <p className="mt-2 text-sm text-muted-foreground">Finish each module to charge your ZverT character with <span className="text-primary font-medium">+50 XP</span> and <span className="text-primary font-medium">+2 Gems</span>.</p>
+                </div>
+                <div className="min-w-[180px] rounded-2xl border border-border/60 bg-background/60 px-5 py-4 text-center">
+                  <div className="text-xs font-mono uppercase tracking-[0.25em] text-muted-foreground">Charge state</div>
+                  <div className={`mt-2 font-display text-3xl transition-colors ${completed ? "text-primary" : "text-muted-foreground"}`}>{completed ? "100%" : `${Math.round(Math.min(percent, 100))}%`}</div>
+                  <div className="mt-2 h-2 rounded-full bg-muted overflow-hidden">
+                    <div className="h-full bg-gradient-lime transition-all duration-700" style={{ width: `${completed ? 100 : Math.min(percent, 100)}%` }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-6 grid lg:grid-cols-2 gap-6">
               <NotesPanel
                 moduleId={mod.id}
@@ -139,8 +164,8 @@ const ModulePlayer = () => {
               />
               <div className="rounded-2xl border border-border bg-gradient-card p-5 shadow-card flex flex-col items-center justify-center text-center min-h-[200px]">
                 <div className="font-display text-lg mb-1">Need help understanding?</div>
-                <p className="text-sm text-muted-foreground mb-4 max-w-xs">Open the AI Tutor to explain concepts, summarize, or quiz yourself in English or Bangla.</p>
-                <p className="text-xs font-mono text-muted-foreground">Tap "Ask AI" bottom-right →</p>
+                <p className="text-sm text-muted-foreground mb-4 max-w-xs">Open Vert to explain concepts, summarize this lesson, answer questions about this course, or quiz you in English or Bangla.</p>
+                <p className="text-xs font-mono text-muted-foreground">Tap "Chat with Vert" bottom-right →</p>
               </div>
             </div>
 

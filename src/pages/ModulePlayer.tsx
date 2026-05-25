@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams, Navigate, Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/zerod/AppShell";
 import { YouTubePlayer, type YouTubePlayerHandle } from "@/components/zerod/YouTubePlayer";
-import { AITutorPanel } from "@/components/zerod/AITutorPanel";
 import { NotesPanel } from "@/components/zerod/NotesPanel";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { ArrowLeft, ArrowRight, CheckCircle2, Lock } from "lucide-react";
+
+const AITutorPanel = lazy(() => import("@/components/zerod/AITutorPanel").then(m => ({ default: m.AITutorPanel })));
 
 interface Mod { id: string; course_id: string; position: number; title: string; duration_seconds: number; youtube_video_id: string; courses?: { title: string } | null; }
 
@@ -169,7 +170,7 @@ const ModulePlayer = () => {
               </div>
             </div>
 
-            <AITutorPanel moduleId={mod.id} />
+            <Suspense fallback={null}><AITutorPanel moduleId={mod.id} /></Suspense>
           </>
         )}
       </section>

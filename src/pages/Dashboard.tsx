@@ -143,7 +143,11 @@ const Dashboard = () => {
           )}
         </div>
 
-        {loading ? (
+        {error ? (
+          <div className="rounded-2xl border border-destructive/40 bg-destructive/10 text-destructive p-6 text-sm font-mono">
+            Couldn't load your dashboard: {error}
+          </div>
+        ) : loading ? (
           <div className="text-muted-foreground font-mono text-sm">Loading your progress…</div>
         ) : (
           <>

@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Sparkles, Send, Loader2, X, Languages, FileText, ListChecks, Bot, WandSparkles,
-  Minus, Maximize2, Minimize2, Menu, Copy, ThumbsUp, ThumbsDown, MoreHorizontal, Download,
+  Minus, Maximize2, Minimize2, Menu, Copy, ThumbsUp, ThumbsDown, MoreHorizontal, Download, Lock,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
+import { useEntitlements } from "@/hooks/useEntitlements";
+import { useNavigate } from "react-router-dom";
 import { MessageContent } from "./ai/MessageContent";
 import { ModelSelector } from "./ai/ModelSelector";
 import { ChatHistorySidebar } from "./ai/ChatHistorySidebar";
@@ -23,6 +25,8 @@ import {
 
 export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
   const { user } = useAuth();
+  const { ai_enabled } = useEntitlements();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [maximized, setMaximized] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
@@ -169,16 +173,22 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
     <>
       {/* Floating trigger */}
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          if (!ai_enabled) {
+            toast("AI is locked", { description: "Buy any pack to unlock Vert AI for lifetime.", action: { label: "Upgrade", onClick: () => navigate("/buy") } });
+            return;
+          }
+          setOpen(true);
+        }}
         className={cn(
-          "fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full px-5 py-3 font-medium text-primary-foreground shadow-glow",
-          "bg-gradient-lime hover:scale-105 transition-transform",
+          "fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full px-5 py-3 font-medium shadow-glow transition-transform",
+          ai_enabled ? "bg-gradient-lime text-primary-foreground hover:scale-105" : "bg-muted text-muted-foreground hover:scale-105",
           open && "hidden"
         )}
-        aria-label="Open Vert AI"
+        aria-label={ai_enabled ? "Open Vert AI" : "Vert AI locked — upgrade to unlock"}
       >
-        <Sparkles className="h-4 w-4" />
-        Chat with Vert
+        {ai_enabled ? <Sparkles className="h-4 w-4" /> : <Lock className="h-4 w-4" />}
+        {ai_enabled ? "Chat with Vert" : "Vert AI · Locked"}
       </button>
 
       {/* Panel */}

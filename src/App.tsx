@@ -44,6 +44,7 @@ const Admin = lazyWithRetry(() => import("./pages/Admin.tsx"));
 const Certificate = lazyWithRetry(() => import("./pages/Certificate.tsx"));
 const Explore = lazyWithRetry(() => import("./pages/Explore.tsx"));
 const NotFound = lazyWithRetry(() => import("./pages/NotFound.tsx"));
+const Info = lazyWithRetry(() => import("./pages/Info.tsx"));
 
 const queryClient = new QueryClient({
   defaultOptions: {

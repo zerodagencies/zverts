@@ -95,6 +95,12 @@ const App = () => (
                 <Route path="/reset-password" element={<ResetPassword />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/admin" element={<Admin />} />
+                <Route path="/admin/payments" element={<AdminPayments />} />
+                <Route path="/admin/users" element={<AdminUsers />} />
+                <Route path="/admin/management" element={<AdminManagement />} />
+                <Route path="/buy" element={<BuyPackage />} />
+                <Route path="/payment/:packageId" element={<Payment />} />
+                <Route path="/payments" element={<PaymentHistory />} />
                 <Route path="/certificate/:courseId" element={<Certificate />} />
                 <Route path="/info/:slug" element={<Info />} />
                 <Route path="*" element={<NotFound />} />

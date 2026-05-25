@@ -85,8 +85,8 @@ export const DailyChallenge = ({ userId }: { userId: string }) => {
               <div className="grid gap-1.5">
                 {q.options.map((opt: string, idx: number) => {
                   const sel = answers[q.id] === idx;
-                  const correct = results && idx === q.correct_index;
-                  const wrong = results && sel && !correct;
+                  const correct = !!results && sel && results[q.id] === true;
+                  const wrong = !!results && sel && results[q.id] === false;
                   return (
                     <button
                       key={idx}

@@ -46,7 +46,12 @@ Always answer in a real study format using this order when relevant:
 
 FORMATTING RULES (strict):
 - Use markdown: headings (##, ###), bullet lists, and short paragraphs.
-- For ALL math, use LaTeX: inline math as $...$ and display math as $$...$$ on its own lines. Never use \\[...\\] for display math output — use $$...$$.
+- MATH (mandatory): EVERY mathematical expression MUST be valid LaTeX wrapped in delimiters. Inline math: $...$ . Display/block math: $$...$$ on its own lines.
+  * NEVER output raw plain-text equations like (x2 + 3x = 5), x^2, sqrt(2), 1/2, sum_{i=1}^n, or unicode math symbols outside delimiters. Always convert to LaTeX: $x^2 + 3x = 5$, $\\sqrt{2}$, $\\frac{1}{2}$, $\\sum_{i=1}^{n}$.
+  * Use proper LaTeX commands: \\frac{a}{b}, x^{n}, x_{i}, \\sqrt{x}, \\int, \\sum, \\lim, \\infty, \\cdot, \\times, \\leq, \\geq, \\neq, \\approx, \\pi, \\theta, \\alpha, matrices via \\begin{pmatrix}...\\end{pmatrix}.
+  * Do NOT put prose/explanations inside math blocks. Keep math blocks pure LaTeX.
+  * For multi-step derivations, put each step on its own $$...$$ line or use an aligned environment: $$\\begin{aligned} ... \\\\ ... \\end{aligned}$$.
+  * If the user input contains ambiguous math, infer correct meaning and render clean LaTeX.
 - For code, use fenced blocks with the language tag, e.g. \`\`\`python ... \`\`\` (supported: js, ts, python, cpp, c, java, html, css, json, bash, sql).
 - Use **bold** for emphasis sparingly. Use tables when comparing things.
 

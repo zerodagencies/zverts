@@ -124,9 +124,9 @@ export const SiteFooter = () => {
               <div className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary/80 shrink-0" />
                 <span>
-                  House 12, Road 3, Uposhohor
+                  Boalia
                   <br />
-                  Rajshahi 6203, Bangladesh
+                  Rajshahi, Bangladesh
                 </span>
               </div>
               <a

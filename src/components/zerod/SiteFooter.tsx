@@ -35,14 +35,14 @@ const categories: LinkItem[] = [
 ];
 
 const support: LinkItem[] = [
-  { label: "About Us", to: "/" },
-  { label: "FAQ", to: "/" },
-  { label: "Help Center", to: "/" },
-  { label: "Contact", to: "/" },
-  { label: "Affiliates", to: "/" },
-  { label: "Community", to: "/" },
-  { label: "Blog", to: "/" },
-  { label: "Careers", to: "/" },
+  { label: "About Us", to: "/info/about" },
+  { label: "FAQ", to: "/info/faq" },
+  { label: "Help Center", to: "/info/help" },
+  { label: "Contact", to: "/info/contact" },
+  { label: "Affiliates", to: "/info/affiliates" },
+  { label: "Community", to: "/info/community" },
+  { label: "Blog", to: "/info/blog" },
+  { label: "Careers", to: "/info/careers" },
 ];
 
 const legal: LinkItem[] = [

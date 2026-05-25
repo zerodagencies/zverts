@@ -44,6 +44,7 @@ const Admin = lazyWithRetry(() => import("./pages/Admin.tsx"));
 const Certificate = lazyWithRetry(() => import("./pages/Certificate.tsx"));
 const Explore = lazyWithRetry(() => import("./pages/Explore.tsx"));
 const NotFound = lazyWithRetry(() => import("./pages/NotFound.tsx"));
+const Info = lazyWithRetry(() => import("./pages/Info.tsx"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -87,6 +88,7 @@ const App = () => (
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/certificate/:courseId" element={<Certificate />} />
+                <Route path="/info/:slug" element={<Info />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import zvertLogo from "@/assets/zvert-logo.png";
 import { SiteFooter } from "./SiteFooter";
 import { NotificationCenter } from "./NotificationCenter";
+import { useAdminPaymentAlerts } from "@/hooks/useAdminPaymentAlerts";
 
 export const AppShell = ({ children }: { children: ReactNode }) => {
   const { user, signOut } = useAuth();
@@ -24,6 +25,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
     supabase.rpc("has_role", { _user_id: user.id, _role: "admin" }).then(({ data }) => setIsAdmin(!!data));
   }, [user]);
   useEffect(() => { setMobileOpen(false); }, [location.pathname]);
+  useAdminPaymentAlerts(isAdmin);
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };

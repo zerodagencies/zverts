@@ -30,7 +30,7 @@ const features: LinkItem[] = [
 const categories: LinkItem[] = [
   { label: "Dashboard", to: "/dashboard", icon: Atom },
   { label: "Courses", to: "/courses", icon: FlaskConical },
-  { label: "Explore", to: "/explore", icon: Palette },
+  
   { label: "Leaderboard", to: "/leaderboard", icon: Trophy },
 ];
 

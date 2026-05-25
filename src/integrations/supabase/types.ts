@@ -419,6 +419,134 @@ export type Database = {
           },
         ]
       }
+      notification_events: {
+        Row: {
+          created_at: string
+          event_type: string
+          id: string
+          notification_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          event_type: string
+          id?: string
+          notification_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          event_type?: string
+          id?: string
+          notification_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notification_events_notification_id_fkey"
+            columns: ["notification_id"]
+            isOneToOne: false
+            referencedRelation: "notifications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      notification_preferences: {
+        Row: {
+          ai_suggestions: boolean
+          comeback: boolean
+          gamification: boolean
+          max_per_day: number
+          mute_all: boolean
+          quiet_hours_end: number
+          quiet_hours_start: number
+          study_reminders: boolean
+          system_alerts: boolean
+          timezone_offset_minutes: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          ai_suggestions?: boolean
+          comeback?: boolean
+          gamification?: boolean
+          max_per_day?: number
+          mute_all?: boolean
+          quiet_hours_end?: number
+          quiet_hours_start?: number
+          study_reminders?: boolean
+          system_alerts?: boolean
+          timezone_offset_minutes?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          ai_suggestions?: boolean
+          comeback?: boolean
+          gamification?: boolean
+          max_per_day?: number
+          mute_all?: boolean
+          quiet_hours_end?: number
+          quiet_hours_start?: number
+          study_reminders?: boolean
+          system_alerts?: boolean
+          timezone_offset_minutes?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          body: string
+          category: Database["public"]["Enums"]["notification_category"]
+          created_at: string
+          dedupe_key: string | null
+          deep_link: string | null
+          dismissed_at: string | null
+          id: string
+          payload: Json
+          priority: Database["public"]["Enums"]["notification_priority"]
+          read_at: string | null
+          scheduled_for: string | null
+          sent_at: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          body: string
+          category: Database["public"]["Enums"]["notification_category"]
+          created_at?: string
+          dedupe_key?: string | null
+          deep_link?: string | null
+          dismissed_at?: string | null
+          id?: string
+          payload?: Json
+          priority?: Database["public"]["Enums"]["notification_priority"]
+          read_at?: string | null
+          scheduled_for?: string | null
+          sent_at?: string
+          title: string
+          user_id: string
+        }
+        Update: {
+          body?: string
+          category?: Database["public"]["Enums"]["notification_category"]
+          created_at?: string
+          dedupe_key?: string | null
+          deep_link?: string | null
+          dismissed_at?: string | null
+          id?: string
+          payload?: Json
+          priority?: Database["public"]["Enums"]["notification_priority"]
+          read_at?: string | null
+          scheduled_for?: string | null
+          sent_at?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -485,6 +613,48 @@ export type Database = {
         }
         Relationships: []
       }
+      user_behavior: {
+        Row: {
+          avg_session_minutes: number | null
+          favorite_subject: string | null
+          last_lesson_at: string | null
+          last_quiz_at: string | null
+          most_active_hour: number | null
+          pattern: string | null
+          streak_risk: boolean | null
+          total_study_minutes: number | null
+          updated_at: string
+          user_id: string
+          weak_topic: string | null
+        }
+        Insert: {
+          avg_session_minutes?: number | null
+          favorite_subject?: string | null
+          last_lesson_at?: string | null
+          last_quiz_at?: string | null
+          most_active_hour?: number | null
+          pattern?: string | null
+          streak_risk?: boolean | null
+          total_study_minutes?: number | null
+          updated_at?: string
+          user_id: string
+          weak_topic?: string | null
+        }
+        Update: {
+          avg_session_minutes?: number | null
+          favorite_subject?: string | null
+          last_lesson_at?: string | null
+          last_quiz_at?: string | null
+          most_active_hour?: number | null
+          pattern?: string | null
+          streak_risk?: boolean | null
+          total_study_minutes?: number | null
+          updated_at?: string
+          user_id?: string
+          weak_topic?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -520,6 +690,21 @@ export type Database = {
         Returns: undefined
       }
       check_achievements: { Args: never; Returns: Json }
+      dismiss_notification: { Args: { _id: string }; Returns: undefined }
+      dispatch_notification: {
+        Args: {
+          _body: string
+          _category: Database["public"]["Enums"]["notification_category"]
+          _cooldown_hours?: number
+          _dedupe_key?: string
+          _deep_link?: string
+          _payload?: Json
+          _priority?: Database["public"]["Enums"]["notification_priority"]
+          _title: string
+          _user_id: string
+        }
+        Returns: string
+      }
       get_mcq_questions: {
         Args: { _limit?: number; _module_ids: string[] }
         Returns: {
@@ -580,7 +765,13 @@ export type Database = {
           total_xp: number
         }[]
       }
+      log_notification_event: {
+        Args: { _id: string; _type: string }
+        Returns: undefined
+      }
+      mark_all_notifications_read: { Args: never; Returns: undefined }
       mark_attendance: { Args: never; Returns: Json }
+      mark_notification_read: { Args: { _id: string }; Returns: undefined }
       reset_my_progress: { Args: never; Returns: undefined }
       submit_daily_challenge: {
         Args: { _module_id: string; _score: number; _total: number }
@@ -590,6 +781,7 @@ export type Database = {
         Args: { _answers: Json; _module_id: string }
         Returns: Json
       }
+      unread_notification_count: { Args: never; Returns: number }
       update_module_progress: {
         Args: {
           _force_complete?: boolean
@@ -627,6 +819,35 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "student"
+      notification_category:
+        | "lesson_completed"
+        | "module_unlocked"
+        | "course_completed"
+        | "playlist_ready"
+        | "xp_gain"
+        | "level_up"
+        | "streak_milestone"
+        | "streak_risk"
+        | "badge_unlocked"
+        | "ai_summary"
+        | "ai_quiz"
+        | "ai_recommendation"
+        | "weak_topic"
+        | "system_success"
+        | "system_failure"
+        | "payment"
+        | "subscription"
+        | "comeback_1d"
+        | "comeback_3d"
+        | "comeback_7d"
+        | "comeback_14d"
+        | "morning_push"
+        | "afternoon_push"
+        | "evening_push"
+        | "night_push"
+        | "unfinished_lesson"
+        | "quiz_reminder"
+      notification_priority: "critical" | "high" | "normal" | "low"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -755,6 +976,36 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "student"],
+      notification_category: [
+        "lesson_completed",
+        "module_unlocked",
+        "course_completed",
+        "playlist_ready",
+        "xp_gain",
+        "level_up",
+        "streak_milestone",
+        "streak_risk",
+        "badge_unlocked",
+        "ai_summary",
+        "ai_quiz",
+        "ai_recommendation",
+        "weak_topic",
+        "system_success",
+        "system_failure",
+        "payment",
+        "subscription",
+        "comeback_1d",
+        "comeback_3d",
+        "comeback_7d",
+        "comeback_14d",
+        "morning_push",
+        "afternoon_push",
+        "evening_push",
+        "night_push",
+        "unfinished_lesson",
+        "quiz_reminder",
+      ],
+      notification_priority: ["critical", "high", "normal", "low"],
     },
   },
 } as const

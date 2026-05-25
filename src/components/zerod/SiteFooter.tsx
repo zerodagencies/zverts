@@ -211,14 +211,6 @@ export const SiteFooter = () => {
 
         <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <span>© {year} ZverT. All rights reserved.</span>
-          <a
-            href="https://tauhidrana.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary transition-colors underline-offset-4 hover:underline font-mono"
-          >
-            Crafted with care
-          </a>
         </div>
       </div>
     </footer>

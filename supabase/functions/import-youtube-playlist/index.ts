@@ -101,6 +101,7 @@ Deno.serve(async (req) => {
     const { data: course, error: cErr } = await supabase.from("courses").insert({
       user_id: user.id, title: playlistTitle, description: playlistDesc, thumbnail_url: playlistThumb,
       source_playlist_id: playlistId, source_playlist_url: url, is_public: false, is_system: false,
+      author_name: authorName, author_channel_id: authorChannelId, author_channel_url: authorChannelUrl,
     }).select().single();
     if (cErr) {
       console.error("Course insert error:", cErr);

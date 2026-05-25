@@ -41,14 +41,10 @@ function rank(rows: Row[]): Ranked[] {
       return (a.name ?? "").localeCompare(b.name ?? "");
     });
 
-  let lastXp = Number.POSITIVE_INFINITY;
-  let lastRank = 0;
+  // Ordinal ranking — every row gets a unique position (1, 2, 3, …).
+  // Ties on XP are broken by gems → streak → name in the sort above.
   for (let i = 0; i < normalized.length; i++) {
-    if (normalized[i].xp !== lastXp) {
-      lastRank += 1;
-      lastXp = normalized[i].xp;
-    }
-    normalized[i].rank = lastRank;
+    normalized[i].rank = i + 1;
   }
   return normalized;
 }

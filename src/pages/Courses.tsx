@@ -81,13 +81,10 @@ const Courses = () => {
       </Link>
       <div className="flex items-center justify-between mt-4 pt-3 border-t border-border/60">
         <span className="inline-flex items-center gap-1.5 text-xs font-mono text-muted-foreground">
-          {c.is_public ? <><Globe className="h-3 w-3" />{t("courses.public")}</> : <><Lock className="h-3 w-3" />{t("courses.private")}</>}
+          <Lock className="h-3 w-3" />{t("courses.private")}
         </span>
         {owned && (
           <div className="flex gap-1">
-            <Button size="sm" variant="ghost" className="h-7 text-xs" onClick={() => togglePublic(c)}>
-              {c.is_public ? t("courses.makePrivate") : t("courses.makePublic")}
-            </Button>
             <Button size="sm" variant="ghost" className="h-7 w-7 p-0 text-destructive" onClick={() => remove(c)}>
               <Trash2 className="h-3.5 w-3.5" />
             </Button>

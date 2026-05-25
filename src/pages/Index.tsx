@@ -58,15 +58,6 @@ const Index = () => {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link to="/explore">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="rounded-full border-border/70 bg-transparent px-6"
-                  >
-                    Explore Courses
-                  </Button>
-                </Link>
               </div>
 
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-xs text-muted-foreground">

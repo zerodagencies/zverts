@@ -99,6 +99,9 @@ export type Database = {
       }
       courses: {
         Row: {
+          author_channel_id: string | null
+          author_channel_url: string | null
+          author_name: string | null
           created_at: string
           description: string | null
           id: string
@@ -112,6 +115,9 @@ export type Database = {
           user_id: string | null
         }
         Insert: {
+          author_channel_id?: string | null
+          author_channel_url?: string | null
+          author_name?: string | null
           created_at?: string
           description?: string | null
           id?: string
@@ -125,6 +131,9 @@ export type Database = {
           user_id?: string | null
         }
         Update: {
+          author_channel_id?: string | null
+          author_channel_url?: string | null
+          author_name?: string | null
           created_at?: string
           description?: string | null
           id?: string

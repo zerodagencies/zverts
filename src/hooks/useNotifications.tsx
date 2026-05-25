@@ -47,8 +47,12 @@ export function useNotifications(limit = 30) {
       return;
     }
     void load();
-    const channel = supabase
-      .channel(`notif:${user.id}`)
+
+    // Unique channel name per mount avoids "callbacks after subscribe()" when
+    // React StrictMode double-invokes effects or a channel name gets reused.
+    const channelName = `notif:${user.id}:${Math.random().toString(36).slice(2)}`;
+    const channel = supabase.channel(channelName);
+    channel
       .on(
         "postgres_changes",
         { event: "INSERT", schema: "public", table: "notifications", filter: `user_id=eq.${user.id}` },
@@ -56,11 +60,9 @@ export function useNotifications(limit = 30) {
           const n = payload.new as Notification;
           setItems((cur) => [n, ...cur].slice(0, limit));
           setUnread((c) => c + 1);
-          // Foreground toast (browser-native vibe with sonner)
           if (n.priority !== "low") {
             toast(n.title, { description: n.body });
           }
-          // Best-effort native browser notification when allowed
           if (typeof window !== "undefined" && "Notification" in window && Notification.permission === "granted") {
             try { new Notification(n.title, { body: n.body, icon: "/favicon.ico" }); } catch {}
           }
@@ -76,7 +78,10 @@ export function useNotifications(limit = 30) {
         }
       )
       .subscribe();
-    return () => { supabase.removeChannel(channel); };
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [user, limit, load]);
 
   const markRead = useCallback(async (id: string) => {

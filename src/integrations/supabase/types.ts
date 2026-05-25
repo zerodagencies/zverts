@@ -784,6 +784,15 @@ export type Database = {
         Args: { _delta: number; _reason: string; _target: string }
         Returns: undefined
       }
+      admin_broadcast_notification: {
+        Args: {
+          _body: string
+          _deep_link?: string
+          _priority?: string
+          _title: string
+        }
+        Returns: Json
+      }
       admin_list_users: {
         Args: { _limit?: number; _search?: string }
         Returns: {

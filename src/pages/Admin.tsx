@@ -4,7 +4,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/app/AppShell";
 import { supabase } from "@/integrations/supabase/client";
 import { useTranslation } from "react-i18next";
-import { CreditCard, Users as UsersIcon, ShieldCheck } from "lucide-react";
+import { CreditCard, Users as UsersIcon, ShieldCheck, Megaphone } from "lucide-react";
 
 const Admin = () => {
   const { user, loading } = useAuth();
@@ -71,6 +71,13 @@ const Admin = () => {
               <div className="font-display text-lg">Users</div>
             </div>
             <p className="text-xs text-muted-foreground font-mono mt-2">Credits, AI, lock/unlock</p>
+          </Link>
+          <Link to="/admin/broadcast" className="group rounded-2xl border border-border bg-gradient-card p-5 shadow-card hover:border-primary/60 transition-colors">
+            <div className="flex items-center gap-3">
+              <Megaphone className="h-5 w-5 text-primary" />
+              <div className="font-display text-lg">Broadcast</div>
+            </div>
+            <p className="text-xs text-muted-foreground font-mono mt-2">Notify all users instantly</p>
           </Link>
           {isSuper && (
             <Link to="/admin/management" className="group rounded-2xl border border-border bg-gradient-card p-5 shadow-card hover:border-primary/60 transition-colors">

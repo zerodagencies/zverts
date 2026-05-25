@@ -24,19 +24,14 @@ import zvertLogo from "@/assets/zvert-logo.png";
 type LinkItem = { label: string; to: string; icon?: React.ComponentType<{ className?: string }> };
 
 const features: LinkItem[] = [
-  { label: "Mock Exam", to: "/explore", icon: FileText },
-  { label: "Question Bank", to: "/explore", icon: Database },
-  { label: "Live Streams", to: "/explore", icon: Radio },
-  { label: "AI Practice", to: "/dashboard", icon: Sparkles },
-  { label: "Leaderboard", to: "/leaderboard", icon: Trophy },
+  { label: "ZverT AI", to: "/dashboard", icon: Sparkles },
 ];
 
 const categories: LinkItem[] = [
-  { label: "SSC Science", to: "/courses", icon: Atom },
-  { label: "HSC Science", to: "/courses", icon: FlaskConical },
-  { label: "HSC Arts", to: "/courses", icon: Palette },
-  { label: "HSC Commerce", to: "/courses", icon: Briefcase },
-  { label: "BCS / Job Prep", to: "/courses", icon: GraduationCap },
+  { label: "Dashboard", to: "/dashboard", icon: Atom },
+  { label: "Courses", to: "/courses", icon: FlaskConical },
+  { label: "Explore", to: "/explore", icon: Palette },
+  { label: "Leaderboard", to: "/leaderboard", icon: Trophy },
 ];
 
 const support: LinkItem[] = [
@@ -45,6 +40,9 @@ const support: LinkItem[] = [
   { label: "Help Center", to: "/" },
   { label: "Contact", to: "/" },
   { label: "Affiliates", to: "/" },
+  { label: "Community", to: "/" },
+  { label: "Blog", to: "/" },
+  { label: "Careers", to: "/" },
 ];
 
 const legal: LinkItem[] = [

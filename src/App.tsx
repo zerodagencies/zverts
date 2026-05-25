@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "./hooks/useAuth";
 import { ThemeProvider } from "./components/app/ThemeProvider";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 // Lazy import with auto-reload on stale chunk errors (after deploys / vite restarts)
 const lazyWithRetry = <T extends { default: ComponentType<any> }>(
@@ -71,7 +72,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <AuthProvider>
-            <Suspense fallback={<RouteFallback />}>
+            <ErrorBoundary>
+              <Suspense fallback={<RouteFallback />}>
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/auth" element={<Auth />} />
@@ -91,7 +93,8 @@ const App = () => (
                 <Route path="/info/:slug" element={<Info />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
-            </Suspense>
+              </Suspense>
+            </ErrorBoundary>
           </AuthProvider>
         </BrowserRouter>
       </TooltipProvider>

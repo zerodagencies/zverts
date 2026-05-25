@@ -158,7 +158,21 @@ const CourseDetail = () => {
             {allDone && <Button size="sm" className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow" onClick={() => navigate(`/certificate/${course.id}`)}><Award className="h-4 w-4 mr-2" />{t("cert.title")}</Button>}
           </div>
         </div>
-        <p className="text-sm text-muted-foreground font-mono mb-8">{completedCount} / {modules.length} {t("dashboard.completed").toLowerCase()}</p>
+        <p className="text-sm text-muted-foreground font-mono mb-3">{completedCount} / {modules.length} {t("dashboard.completed").toLowerCase()}</p>
+
+        {course.author_name && (
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-gradient-card px-4 py-2 text-sm shadow-card">
+            <span className="text-muted-foreground font-mono text-xs uppercase tracking-widest">Author</span>
+            {course.author_channel_url ? (
+              <a href={course.author_channel_url} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors">
+                {course.author_name}
+              </a>
+            ) : (
+              <span className="font-medium">{course.author_name}</span>
+            )}
+            <span className="text-xs text-muted-foreground">· YouTube</span>
+          </div>
+        )}
 
         {modules.length === 0 ? (
           <div className="text-muted-foreground py-12 text-center font-mono text-sm">{t("courses.noModules")}</div>

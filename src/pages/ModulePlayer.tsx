@@ -33,8 +33,9 @@ const ModulePlayer = () => {
       const { data: m } = await supabase.from("modules").select("id,course_id,position,title,duration_seconds,youtube_video_id,courses(title)").eq("id", id).maybeSingle();
       if (!m) { setLoading(false); return; }
 
-      const { data: ownCourse } = await supabase.from("courses").select("id").eq("id", m.course_id).eq("user_id", user.id).maybeSingle();
-      if (!ownCourse) { setLoading(false); return; }
+      // RLS already enforces visibility (owned, public, system, or admin).
+      const { data: visibleCourse } = await supabase.from("courses").select("id").eq("id", m.course_id).maybeSingle();
+      if (!visibleCourse) { setLoading(false); return; }
 
       setMod(m);
       const { data: nextMod } = await supabase.from("modules").select("id").eq("course_id", m.course_id).eq("position", m.position + 1).maybeSingle();

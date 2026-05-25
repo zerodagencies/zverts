@@ -10,18 +10,21 @@ const BADGES: Record<string, { name: string; desc: string; icon: any; color: str
     icon: BookOpen,
     color: "from-emerald-500 to-emerald-600",
   },
+
   modules_10: {
     name: "Getting Serious",
     desc: "10 modules completed",
     icon: Target,
     color: "from-cyan-500 to-blue-600",
   },
+
   modules_50: {
     name: "Knowledge Seeker",
     desc: "50 modules completed",
     icon: Brain,
     color: "from-violet-500 to-purple-600",
   },
+
   first_course: {
     name: "Course Conqueror",
     desc: "Finished a full course",

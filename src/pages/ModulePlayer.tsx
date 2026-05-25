@@ -170,7 +170,7 @@ const ModulePlayer = () => {
               </div>
             </div>
 
-            <AITutorPanel moduleId={mod.id} />
+            <Suspense fallback={null}><AITutorPanel moduleId={mod.id} /></Suspense>
           </>
         )}
       </section>

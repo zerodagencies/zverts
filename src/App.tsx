@@ -88,6 +88,7 @@ const App = () => (
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/certificate/:courseId" element={<Certificate />} />
+                <Route path="/info/:slug" element={<Info />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

@@ -33,7 +33,6 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
   const navItems = [
     { to: "/dashboard", icon: LayoutDashboard, label: t("nav.dashboard") },
     { to: "/courses", icon: BookOpen, label: t("nav.courses") },
-    { to: "/explore", icon: Compass, label: t("nav.explore") },
     { to: "/leaderboard", icon: Trophy, label: t("nav.leaderboard") },
     ...(isAdmin ? [{ to: "/admin", icon: Shield, label: t("nav.admin") }] : []),
   ];

@@ -511,6 +511,20 @@ export type Database = {
         Returns: undefined
       }
       check_achievements: { Args: never; Returns: Json }
+      get_mcq_questions: {
+        Args: { _limit?: number; _module_ids: string[] }
+        Returns: {
+          module_id: string
+          options: Json
+          q_id: string
+          q_position: number
+          question: string
+        }[]
+      }
+      grade_and_submit_daily_challenge: {
+        Args: { _answers: Json }
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -522,6 +536,7 @@ export type Database = {
         Args: { _module_id: string; _user_id: string }
         Returns: boolean
       }
+      is_profile_public: { Args: { _uid: string }; Returns: boolean }
       issue_certificate: {
         Args: { _course_id: string }
         Returns: {
@@ -539,6 +554,22 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      list_public_profiles: {
+        Args: { _limit?: number }
+        Returns: {
+          avatar_url: string
+          certificate_name: string
+          created_at: string
+          current_streak: number
+          id: string
+          last_active: string
+          longest_streak: number
+          name: string
+          profile_public: boolean
+          total_gems: number
+          total_xp: number
+        }[]
       }
       mark_attendance: { Args: never; Returns: Json }
       reset_my_progress: { Args: never; Returns: undefined }
@@ -574,6 +605,15 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      verify_certificate: {
+        Args: { _code: string }
+        Returns: {
+          certificate_code: string
+          course_title: string
+          issued_at: string
+          issued_to_name: string
+        }[]
       }
     }
     Enums: {

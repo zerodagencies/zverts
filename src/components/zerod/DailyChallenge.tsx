@@ -5,7 +5,7 @@ import { Sparkles, Loader2, Check, X as XIcon, Trophy } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
-interface MCQ { id: string; question: string; options: string[]; correct_index: number; module_id: string; }
+interface MCQ { id: string; question: string; options: string[]; module_id: string; }
 
 export const DailyChallenge = ({ userId }: { userId: string }) => {
   const [loading, setLoading] = useState(true);
@@ -26,16 +26,17 @@ export const DailyChallenge = ({ userId }: { userId: string }) => {
       }
       const { data: completed } = await supabase.from("module_progress").select("module_id").eq("user_id", userId).eq("completed", true);
       const moduleIds = (completed ?? []).map((c: any) => c.module_id);
-      let q: any[] = [];
-      if (moduleIds.length > 0) {
-        const { data } = await supabase.from("mcq_questions").select("*").in("module_id", moduleIds).limit(20);
-        q = data ?? [];
-      }
-      if (q.length === 0) {
-        const { data } = await supabase.from("mcq_questions").select("*").limit(20);
-        q = data ?? [];
-      }
-      const shuffled = q.sort(() => Math.random() - 0.5).slice(0, 3).map((m: any) => ({ ...m, options: Array.isArray(m.options) ? m.options : JSON.parse(m.options) }));
+      const { data } = await (supabase.rpc as any)("get_mcq_questions", {
+        _module_ids: moduleIds.length ? moduleIds : null,
+        _limit: 20,
+      });
+      const q = (data ?? []).map((m: any) => ({
+        id: m.q_id,
+        module_id: m.module_id,
+        question: m.question,
+        options: Array.isArray(m.options) ? m.options : JSON.parse(m.options),
+      }));
+      const shuffled = q.sort(() => Math.random() - 0.5).slice(0, 3);
       setQuestions(shuffled);
       setLoading(false);
     })();
@@ -44,20 +45,13 @@ export const DailyChallenge = ({ userId }: { userId: string }) => {
   const submit = async () => {
     if (Object.keys(answers).length !== questions.length) { toast.error("Answer all questions"); return; }
     setSubmitting(true);
-    let score = 0;
-    const res: Record<string, boolean> = {};
-    questions.forEach(q => {
-      const ok = answers[q.id] === q.correct_index;
-      res[q.id] = ok;
-      if (ok) score++;
-    });
-    setResults(res);
-    const { data, error } = await supabase.rpc("submit_daily_challenge", {
-      _module_id: questions[0]?.module_id, _score: score, _total: questions.length,
-    });
+    const payload: Record<string, number> = {};
+    questions.forEach(q => { payload[q.id] = answers[q.id]; });
+    const { data, error } = await (supabase.rpc as any)("grade_and_submit_daily_challenge", { _answers: payload });
     setSubmitting(false);
     if (error) { toast.error(error.message); return; }
     const r = data as any;
+    setResults(r.correct ?? {});
     setDone({ score: r.score, total: r.total, passed: r.passed });
     if (r.passed) toast.success("Daily challenge passed! +75 XP, +2 gems 🎉");
     else toast.message("Try again tomorrow!");
@@ -91,8 +85,8 @@ export const DailyChallenge = ({ userId }: { userId: string }) => {
               <div className="grid gap-1.5">
                 {q.options.map((opt: string, idx: number) => {
                   const sel = answers[q.id] === idx;
-                  const correct = results && idx === q.correct_index;
-                  const wrong = results && sel && !correct;
+                  const correct = !!results && sel && results[q.id] === true;
+                  const wrong = !!results && sel && results[q.id] === false;
                   return (
                     <button
                       key={idx}

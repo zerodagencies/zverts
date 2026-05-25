@@ -8,7 +8,7 @@ const Leaderboard = () => {
   const { t } = useTranslation();
   const [rows, setRows] = useState<any[]>([]);
   useEffect(() => {
-    supabase.from("profiles").select("id,name,avatar_url,total_xp,total_gems,current_streak").order("total_xp", { ascending: false }).limit(50).then(({ data }) => setRows(data ?? []));
+    (supabase.rpc as any)("list_public_profiles", { _limit: 50 }).then(({ data }: any) => setRows(data ?? []));
   }, []);
   return (
     <AppShell>

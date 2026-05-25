@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Navigate, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
-import { AppShell } from "@/components/zerod/AppShell";
+import { AppShell } from "@/components/app/AppShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { Globe, Lock, Loader2, Plus, Trash2 } from "lucide-react";
-import { PlaylistPreview } from "@/components/zerod/PlaylistPreview";
+import { PlaylistPreview } from "@/components/app/PlaylistPreview";
 import { Eye } from "lucide-react";
 
 interface Course { id: string; title: string; description: string | null; thumbnail_url: string | null; is_public: boolean; is_system: boolean; user_id: string | null; }

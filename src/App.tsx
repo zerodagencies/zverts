@@ -5,7 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "./hooks/useAuth";
-import { ThemeProvider } from "./components/zerod/ThemeProvider";
+import { ThemeProvider } from "./components/app/ThemeProvider";
 
 // Lazy import with auto-reload on stale chunk errors (after deploys / vite restarts)
 const lazyWithRetry = <T extends { default: ComponentType<any> }>(

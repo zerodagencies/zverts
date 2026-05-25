@@ -12,6 +12,7 @@ import zvertLogo from "@/assets/zvert-logo.png";
 import { SiteFooter } from "./SiteFooter";
 import { NotificationCenter } from "./NotificationCenter";
 import { useAdminPaymentAlerts } from "@/hooks/useAdminPaymentAlerts";
+import { useBrowserNotifications } from "@/hooks/useBrowserNotifications";
 
 export const AppShell = ({ children }: { children: ReactNode }) => {
   const { user, signOut } = useAuth();
@@ -26,6 +27,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
   }, [user]);
   useEffect(() => { setMobileOpen(false); }, [location.pathname]);
   useAdminPaymentAlerts(isAdmin);
+  useBrowserNotifications();
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };

@@ -10,6 +10,7 @@ import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import zvertLogo from "@/assets/zvert-logo.png";
 import { SiteFooter } from "./SiteFooter";
+import { NotificationCenter } from "./NotificationCenter";
 
 export const AppShell = ({ children }: { children: ReactNode }) => {
   const { user, signOut } = useAuth();
@@ -62,6 +63,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
               <ThemeToggle />
               {user ? (
                 <>
+                  <NotificationCenter />
                   <Button variant="ghost" size="icon" aria-label="Settings" onClick={() => navigate("/settings")}>
                     <UserIcon className="h-4 w-4" />
                   </Button>
@@ -73,6 +75,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
                 <Button variant="default" size="sm" onClick={() => navigate("/auth")}>{t("nav.signin")}</Button>
               )}
             </div>
+            {user && <div className="md:hidden"><NotificationCenter /></div>}
             <Button variant="ghost" size="icon" className="md:hidden" aria-label="Menu" onClick={() => setMobileOpen(v => !v)}>
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>

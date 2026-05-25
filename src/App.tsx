@@ -6,8 +6,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "./hooks/useAuth";
 import { ThemeProvider } from "./components/zerod/ThemeProvider";
-import Index from "./pages/Index.tsx";
-import Auth from "./pages/Auth.tsx";
 
 // Lazy import with auto-reload on stale chunk errors (after deploys / vite restarts)
 const lazyWithRetry = <T extends { default: React.ComponentType<any> }>(

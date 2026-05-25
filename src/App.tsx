@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, type ComponentType } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -8,7 +8,7 @@ import { AuthProvider } from "./hooks/useAuth";
 import { ThemeProvider } from "./components/zerod/ThemeProvider";
 
 // Lazy import with auto-reload on stale chunk errors (after deploys / vite restarts)
-const lazyWithRetry = <T extends { default: React.ComponentType<any> }>(
+const lazyWithRetry = <T extends { default: ComponentType<any> }>(
   factory: () => Promise<T>,
 ) =>
   lazy(async () => {

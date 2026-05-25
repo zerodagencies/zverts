@@ -29,30 +29,45 @@ const Dashboard = () => {
   const [modules, setModules] = useState<ModuleRow[]>([]);
   const [progress, setProgress] = useState<ProgressRow[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!user) return;
+    let cancelled = false;
     (async () => {
-      const { data: ownCourses } = await supabase
-        .from("courses")
-        .select("id,title")
-        .eq("user_id", user.id)
-        .order("created_at", { ascending: false });
+      setLoading(true);
+      setError(null);
+      try {
+        const { data: ownCourses, error: cErr } = await supabase
+          .from("courses")
+          .select("id,title")
+          .eq("user_id", user.id)
+          .order("created_at", { ascending: false });
+        if (cErr) throw cErr;
 
-      const courseIds = (ownCourses ?? []).map((course) => course.id);
+        const courseIds = (ownCourses ?? []).map((course) => course.id);
 
-      const [{ data: mods }, { data: prog }] = await Promise.all([
-        courseIds.length
-          ? supabase.from("modules").select("id,course_id,position,title,duration_seconds").in("course_id", courseIds).order("position")
-          : Promise.resolve({ data: [] as ModuleRow[] } as { data: ModuleRow[] }),
-        supabase.from("module_progress").select("module_id,watch_time_seconds,percent_watched,completed,updated_at,completed_at").eq("user_id", user.id),
-      ]);
+        const [{ data: mods, error: mErr }, { data: prog, error: pErr }] = await Promise.all([
+          courseIds.length
+            ? supabase.from("modules").select("id,course_id,position,title,duration_seconds").in("course_id", courseIds).order("position")
+            : Promise.resolve({ data: [] as ModuleRow[], error: null } as { data: ModuleRow[]; error: null }),
+          supabase.from("module_progress").select("module_id,watch_time_seconds,percent_watched,completed,updated_at,completed_at").eq("user_id", user.id),
+        ]);
+        if (mErr) throw mErr;
+        if (pErr) throw pErr;
 
-      setCourses(ownCourses ?? []);
-      setModules(mods ?? []);
-      setProgress(prog ?? []);
-      setLoading(false);
+        if (cancelled) return;
+        setCourses(ownCourses ?? []);
+        setModules(mods ?? []);
+        setProgress(prog ?? []);
+      } catch (e: any) {
+        console.error("[Dashboard] load failed", e);
+        if (!cancelled) setError(e?.message ?? "Failed to load dashboard");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
     })();
+    return () => { cancelled = true; };
   }, [user]);
 
   const visibleModuleIds = new Set(modules.map((module) => module.id));

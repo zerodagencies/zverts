@@ -5,6 +5,7 @@ import { AppShell } from "@/components/app/AppShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { MERCHANT_NUMBERS, METHOD_LABELS, PACKAGES, PackageKey } from "@/lib/payment-config";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -22,6 +23,7 @@ const Payment = () => {
   const [method, setMethod] = useState<Method>("bkash");
   const [sender, setSender] = useState("");
   const [trx, setTrx] = useState("");
+  const [agreed, setAgreed] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -37,6 +39,7 @@ const Payment = () => {
   const submit = async () => {
     if (!sender.trim() || !trx.trim()) { toast.error("Fill all fields"); return; }
     if (!/^\d{8,20}$/.test(sender.replace(/\s/g, ""))) { toast.error("Invalid sender number"); return; }
+    if (!agreed) { toast.error("Please agree to the Refund Policy to continue"); return; }
     setSubmitting(true);
     const { error } = await supabase.rpc("submit_payment" as any, {
       _package: pkgKey, _method: method, _sender_number: sender, _trx_id: trx,
@@ -113,10 +116,28 @@ const Payment = () => {
             <Label htmlFor="trx">Transaction ID</Label>
             <Input id="trx" placeholder="e.g. 8N7Y6XKL21" value={trx} onChange={(e) => setTrx(e.target.value)} className="mt-1.5 font-mono" />
           </div>
-          <Button onClick={submit} disabled={submitting} className="w-full bg-gradient-lime text-primary-foreground shadow-glow">
+          <div className="flex items-start gap-2.5 rounded-lg border border-border bg-muted/30 p-3">
+            <Checkbox
+              id="agree-refund"
+              checked={agreed}
+              onCheckedChange={(v) => setAgreed(v === true)}
+              className="mt-0.5"
+            />
+            <Label htmlFor="agree-refund" className="text-xs leading-relaxed font-normal cursor-pointer">
+              I agree to the{" "}
+              <Link to="/refund-policy" target="_blank" className="text-primary hover:underline font-medium">
+                ZverT Refund Policy
+              </Link>
+              . By making payment, I confirm I have read and accepted its terms.
+            </Label>
+          </div>
+          <Button onClick={submit} disabled={submitting || !agreed} className="w-full bg-gradient-lime text-primary-foreground shadow-glow disabled:opacity-50">
             {submitting ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Submitting…</> : "Submit payment"}
           </Button>
-          <p className="text-xs text-muted-foreground text-center font-mono">Admins typically approve within a few hours.</p>
+          <p className="text-xs text-muted-foreground text-center font-mono">
+            Admins typically approve within a few hours. ·{" "}
+            <Link to="/refund-policy" className="hover:text-primary underline">Refund Policy</Link>
+          </p>
         </div>
       </section>
     </AppShell>

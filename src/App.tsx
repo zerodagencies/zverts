@@ -53,6 +53,7 @@ const AdminBroadcast = lazyWithRetry(() => import("./pages/admin/Broadcast.tsx")
 
 const NotFound = lazyWithRetry(() => import("./pages/NotFound.tsx"));
 const Info = lazyWithRetry(() => import("./pages/Info.tsx"));
+const RefundPolicy = lazyWithRetry(() => import("./pages/RefundPolicy.tsx"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -105,6 +106,7 @@ const App = () => (
                 <Route path="/payments" element={<PaymentHistory />} />
                 <Route path="/certificate/:courseId" element={<Certificate />} />
                 <Route path="/info/:slug" element={<Info />} />
+                <Route path="/refund-policy" element={<RefundPolicy />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
               </Suspense>

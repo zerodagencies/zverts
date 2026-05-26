@@ -57,8 +57,12 @@ const BuyPackage = () => {
           })}
         </div>
 
-        <div className="mt-10 text-center text-xs text-muted-foreground font-mono">
-          Need help? Payment is reviewed manually within a few hours.
+        <div className="mt-10 text-center text-xs text-muted-foreground font-mono space-y-1">
+          <div>Need help? Payment is reviewed manually within a few hours.</div>
+          <div>
+            By making payment, you agree to the{" "}
+            <Link to="/refund-policy" className="text-primary hover:underline">ZverT Refund Policy</Link>.
+          </div>
         </div>
       </section>
     </AppShell>

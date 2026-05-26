@@ -48,7 +48,7 @@ const support: LinkItem[] = [
 const legal: LinkItem[] = [
   { label: "Terms & Conditions", to: "/" },
   { label: "Privacy Policy", to: "/" },
-  { label: "Refund Policy", to: "/" },
+  { label: "Refund Policy", to: "/refund-policy" },
 ];
 
 const socials = [

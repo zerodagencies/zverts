@@ -9,11 +9,22 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
   const json = (b: unknown, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   try {
+    // Require authenticated user
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader) return json({ error: "Unauthorized" }, 401);
+    const userClient = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_ANON_KEY")!,
+      { global: { headers: { Authorization: authHeader } } },
+    );
+    const { data: { user } } = await userClient.auth.getUser();
+    if (!user) return json({ error: "Unauthorized" }, 401);
+
     const { course_id } = await req.json();
     if (!course_id) return json({ error: "course_id required" }, 400);
 
-    const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
-    const { data: course } = await supabase.from("courses")
+    // RLS-scoped read: user can only resolve courses they can already see
+    const { data: course } = await userClient.from("courses")
       .select("id, source_playlist_id, author_name, author_channel_id, author_channel_url")
       .eq("id", course_id).maybeSingle();
     if (!course) return json({ error: "Course not found" }, 404);

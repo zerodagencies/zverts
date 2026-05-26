@@ -177,19 +177,20 @@ const Dashboard = () => {
                   <h2 className="font-display text-2xl mt-1">Minutes watched · last 7 days</h2>
                 </div>
               </div>
-              <WeeklyActivityChart data={weekly} />
+              <Suspense fallback={<div className="h-[180px]" />}><WeeklyActivityChart data={weekly} /></Suspense>
             </div>
 
             {/* Daily challenge + Analytics */}
             <div className="grid lg:grid-cols-2 gap-6 mb-6">
-              <DailyChallenge userId={user.id} />
-              <AnalyticsPanel userId={user.id} />
+              <Suspense fallback={null}><DailyChallenge userId={user.id} /></Suspense>
+              <Suspense fallback={null}><AnalyticsPanel userId={user.id} /></Suspense>
             </div>
 
             {/* Badges */}
             <div className="mb-10">
-              <BadgesGrid userId={user.id} />
+              <Suspense fallback={null}><BadgesGrid userId={user.id} /></Suspense>
             </div>
+
 
             {/* Modules grid */}
             <div className="mb-6">

@@ -35,7 +35,7 @@ const Admin = () => {
         ]);
         setUsers(u ?? []); setLogs(l ?? []); setIsSuper(!!s);
         loadPending();
-        const ch = supabase.channel("admin-overview-payments")
+        const ch = supabase.channel("admin:overview-payments")
           .on("postgres_changes", { event: "*", schema: "public", table: "payments" }, () => loadPending())
           .subscribe();
         return () => { supabase.removeChannel(ch); };

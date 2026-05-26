@@ -289,6 +289,10 @@ const Settings = () => {
                 <Switch checked={p.profile_public} onCheckedChange={(v) => update({ profile_public: v })} />
               </div>
               <p className="text-xs text-muted-foreground border-t border-border pt-5">Per-course public/private visibility lives under <span className="font-medium text-foreground">My courses</span>.</p>
+              <div className="border-t border-border pt-5 flex flex-wrap items-center gap-3 text-xs">
+                <span className="text-muted-foreground font-mono uppercase tracking-widest">Legal</span>
+                <Link to="/refund-policy" className="text-primary hover:underline font-medium">Refund Policy →</Link>
+              </div>
               <Button onClick={saveProfile} disabled={busy} className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow">{t("common.save")}</Button>
             </div>
           </TabsContent>

@@ -180,7 +180,7 @@ export const ChatPanel = ({ userId, source, onUsageUpdate, externalPrompt, onExt
       setBusy(false);
       abortRef.current = null;
     }
-  }, [input, messages, busy, source, lang, mode, model, onUsageUpdate]);
+  }, [input, messages, busy, source, lang, mode, model, onUsageUpdate, attachments]);
 
   // Allow external (transcript click) prompts
   useEffect(() => {

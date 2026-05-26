@@ -5,6 +5,7 @@ import { AppShell } from "@/components/app/AppShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { MERCHANT_NUMBERS, METHOD_LABELS, PACKAGES, PackageKey } from "@/lib/payment-config";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";

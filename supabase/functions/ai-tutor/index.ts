@@ -58,18 +58,19 @@ Deno.serve(async (req) => {
       language = "en",
       mode = "chat",
       model = "smart",
-      daily_limit = 10,
     } = body;
     if (!Array.isArray(messages) || messages.length === 0)
       return json({ error: "messages required" }, 400);
 
-    // Enforce daily free-preview cap (paid users always pass)
-    const { data: usage, error: uErr } = await userClient.rpc("consume_ai_message", { _daily_limit: daily_limit });
+    // Server-controlled daily free-preview cap (paid users always pass).
+    // NEVER trust a client-supplied limit.
+    const DAILY_LIMIT = 10;
+    const { data: usage, error: uErr } = await userClient.rpc("consume_ai_message", { _daily_limit: DAILY_LIMIT });
     if (uErr) return json({ error: uErr.message }, 400);
     if (usage && (usage as any).ok === false) {
       return json({
         error: "limit_reached",
-        message: `You've used your ${daily_limit} free AI messages today. Upgrade for unlimited.`,
+        message: `You've used your ${DAILY_LIMIT} free AI messages today. Upgrade for unlimited.`,
         usage,
       }, 429);
     }

@@ -52,7 +52,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="container flex h-16 items-center justify-between gap-2">
           <Link to={user ? "/dashboard" : "/"} className="flex items-center gap-2 shrink-0">
-            <img src={zvertsLogo} alt="ZverTs" className="h-9 w-auto drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]" />
+            <img src={zvertsLogo} alt="ZverTs" width={36} height={36} loading="eager" decoding="async" className="h-9 w-9 drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]" />
             <span className="font-display text-xl font-bold tracking-[0.15em] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
               ZverTs
             </span>

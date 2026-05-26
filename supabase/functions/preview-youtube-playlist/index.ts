@@ -19,6 +19,18 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
   const json = (b: unknown, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   try {
+    // Require authenticated user — prevents anonymous abuse of YouTube API quota
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader) return json({ error: "Unauthorized" }, 401);
+    const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.45.0");
+    const sb = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_ANON_KEY")!,
+      { global: { headers: { Authorization: authHeader } } },
+    );
+    const { data: { user } } = await sb.auth.getUser();
+    if (!user) return json({ error: "Unauthorized" }, 401);
+
     const { url } = await req.json();
     const id = extractPlaylistId(url);
     if (!id) return json({ error: "Invalid playlist URL" }, 400);

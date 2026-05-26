@@ -38,7 +38,7 @@ const Courses = lazyWithRetry(() => import("./pages/Courses.tsx"));
 const CourseDetail = lazyWithRetry(() => import("./pages/CourseDetail.tsx"));
 const Profile = lazyWithRetry(() => import("./pages/Profile.tsx"));
 const Settings = lazyWithRetry(() => import("./pages/Settings.tsx"));
-const ResetPassword = lazyWithRetry(() => import("./pages/ResetPassword.tsx"));
+
 const Quiz = lazyWithRetry(() => import("./pages/Quiz.tsx"));
 const Leaderboard = lazyWithRetry(() => import("./pages/Leaderboard.tsx"));
 const Admin = lazyWithRetry(() => import("./pages/Admin.tsx"));

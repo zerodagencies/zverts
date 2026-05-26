@@ -1,19 +1,21 @@
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { LogOut, LayoutDashboard, BookOpen, User as UserIcon, Trophy, Shield, Compass, Menu, X, Sparkles, Bot } from "lucide-react";
-import { ReactNode, useEffect, useState } from "react";
+import { LogOut, LayoutDashboard, BookOpen, User as UserIcon, Trophy, Shield, Menu, X, Sparkles, Bot } from "lucide-react";
+import { ReactNode, Suspense, lazy, useEffect, useState } from "react";
 import { ThemeToggle, LanguageToggle } from "./ThemeToggle";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/integrations/supabase/client";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import zvertsLogo from "@/assets/zverts-logo.png";
-import { SiteFooter } from "./SiteFooter";
-import { NotificationCenter } from "./NotificationCenter";
 import { useAdminPaymentAlerts } from "@/hooks/useAdminPaymentAlerts";
 import { useBrowserNotifications } from "@/hooks/useBrowserNotifications";
-import { InstallPrompt } from "./InstallPrompt";
+
+const SiteFooter = lazy(() => import("./SiteFooter").then(m => ({ default: m.SiteFooter })));
+const NotificationCenter = lazy(() => import("./NotificationCenter").then(m => ({ default: m.NotificationCenter })));
+const InstallPrompt = lazy(() => import("./InstallPrompt").then(m => ({ default: m.InstallPrompt })));
+
 
 
 export const AppShell = ({ children }: { children: ReactNode }) => {
@@ -50,7 +52,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="container flex h-16 items-center justify-between gap-2">
           <Link to={user ? "/dashboard" : "/"} className="flex items-center gap-2 shrink-0">
-            <img src={zvertsLogo} alt="ZverTs" className="h-9 w-auto drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]" />
+            <img src={zvertsLogo} alt="ZverTs" width={36} height={36} loading="eager" decoding="async" className="h-9 w-9 drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]" />
             <span className="font-display text-xl font-bold tracking-[0.15em] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
               ZverTs
             </span>
@@ -70,7 +72,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
               <ThemeToggle />
               {user ? (
                 <>
-                  <NotificationCenter />
+                  <Suspense fallback={null}><NotificationCenter /></Suspense>
                   <Button variant="ghost" size="icon" aria-label="Settings" onClick={() => navigate("/settings")}>
                     <UserIcon className="h-4 w-4" />
                   </Button>
@@ -82,7 +84,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
                 <Button variant="default" size="sm" onClick={() => navigate("/auth")}>{t("nav.signin")}</Button>
               )}
             </div>
-            {user && <div className="md:hidden"><NotificationCenter /></div>}
+            {user && <div className="md:hidden"><Suspense fallback={null}><NotificationCenter /></Suspense></div>}
             <Button variant="ghost" size="icon" className="md:hidden" aria-label="Menu" onClick={() => setMobileOpen(v => !v)}>
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -129,9 +131,10 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
         )}
       </header>
       <main className="flex-1">{children}</main>
-      <SiteFooter />
-      <InstallPrompt />
+      <Suspense fallback={null}><SiteFooter /></Suspense>
+      <Suspense fallback={null}><InstallPrompt /></Suspense>
     </div>
+
 
   );
 };

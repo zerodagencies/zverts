@@ -35,6 +35,19 @@ export const ChatPanel = ({ userId, source, onUsageUpdate, externalPrompt, onExt
   const scrollRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isPaid, setIsPaid] = useState(false);
+  const attachments = useAttachments(userId, isPaid);
+
+  // Load paid status (controls upload gate)
+  useEffect(() => {
+    let cancelled = false;
+    supabase.from("profiles").select("is_paid_user").eq("id", userId).maybeSingle().then(({ data }) => {
+      if (!cancelled) setIsPaid(!!data?.is_paid_user);
+    });
+    return () => { cancelled = true; };
+  }, [userId]);
+
 
   // Load thread for active source
   useEffect(() => {

@@ -45,11 +45,8 @@ const SupportContacts = () => {
   useEffect(() => {
     if (!isAdmin) return;
     load();
-    const ch = supabase
-      .channel("admin:support-contacts")
-      .on("postgres_changes", { event: "*", schema: "public", table: "support_contacts" }, () => load())
-      .subscribe();
-    return () => { supabase.removeChannel(ch); };
+    const interval = setInterval(load, 15000);
+    return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAdmin]);
 

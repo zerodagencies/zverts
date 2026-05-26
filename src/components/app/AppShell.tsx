@@ -66,7 +66,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
   return (
     <div className={cn("min-h-screen flex flex-col", theme !== "dark" && "bg-[radial-gradient(ellipse_at_top,_hsl(75_70%_50%_/_0.06),_transparent_60%)]")}>
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-        <div className="container flex h-16 items-center justify-between gap-2">
+        <div className="container flex h-20 items-center justify-between gap-2">
           <Link to={user ? "/dashboard" : "/"} className="flex items-center gap-2 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md">
             <img src={zvertsLogo} alt="ZverTs" className="h-12 md:h-14 w-auto object-contain" loading="eager" decoding="async" />
           </Link>

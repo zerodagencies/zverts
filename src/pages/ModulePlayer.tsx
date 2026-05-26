@@ -5,6 +5,7 @@ import { AppShell } from "@/components/app/AppShell";
 import { YouTubePlayer, type YouTubePlayerHandle } from "@/components/app/YouTubePlayer";
 import { NotesPanel } from "@/components/app/NotesPanel";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { ArrowLeft, ArrowRight, CheckCircle2, Lock } from "lucide-react";

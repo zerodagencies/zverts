@@ -121,3 +121,21 @@
   .text-balance { text-wrap: balance; }
   .glow-lime { box-shadow: var(--shadow-glow); }
 }
+
+/* Mobile safety: prevent horizontal scroll & honor safe areas (notches, gesture bars) */
+@layer base {
+  html, body, #root { max-width: 100%; overflow-x: hidden; }
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  /* Respect iOS standalone display */
+  @media (display-mode: standalone) {
+    body { overscroll-behavior-y: none; }
+  }
+  /* Tap targets */
+  @media (max-width: 640px) {
+    button, [role="button"], a.btn, .btn { min-height: 40px; }
+    table { font-size: 0.875rem; }
+  }
+}

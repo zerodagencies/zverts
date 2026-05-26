@@ -23,6 +23,7 @@ const Payment = () => {
   const [method, setMethod] = useState<Method>("bkash");
   const [sender, setSender] = useState("");
   const [trx, setTrx] = useState("");
+  const [agreed, setAgreed] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -38,6 +39,7 @@ const Payment = () => {
   const submit = async () => {
     if (!sender.trim() || !trx.trim()) { toast.error("Fill all fields"); return; }
     if (!/^\d{8,20}$/.test(sender.replace(/\s/g, ""))) { toast.error("Invalid sender number"); return; }
+    if (!agreed) { toast.error("Please agree to the Refund Policy to continue"); return; }
     setSubmitting(true);
     const { error } = await supabase.rpc("submit_payment" as any, {
       _package: pkgKey, _method: method, _sender_number: sender, _trx_id: trx,

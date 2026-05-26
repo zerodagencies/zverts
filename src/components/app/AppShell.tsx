@@ -13,6 +13,8 @@ import { SiteFooter } from "./SiteFooter";
 import { NotificationCenter } from "./NotificationCenter";
 import { useAdminPaymentAlerts } from "@/hooks/useAdminPaymentAlerts";
 import { useBrowserNotifications } from "@/hooks/useBrowserNotifications";
+import { InstallPrompt } from "./InstallPrompt";
+
 
 export const AppShell = ({ children }: { children: ReactNode }) => {
   const { user, signOut } = useAuth();
@@ -127,6 +129,8 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
       </header>
       <main className="flex-1">{children}</main>
       <SiteFooter />
+      <InstallPrompt />
     </div>
+
   );
 };

@@ -72,6 +72,13 @@ const Admin = () => {
             </div>
             <p className="text-xs text-muted-foreground font-mono mt-2">Credits, AI, lock/unlock</p>
           </Link>
+          <Link to="/admin/support-contacts" className="group rounded-2xl border border-border bg-gradient-card p-5 shadow-card hover:border-primary/60 transition-colors">
+            <div className="flex items-center gap-3">
+              <Phone className="h-5 w-5 text-primary" />
+              <div className="font-display text-lg">Support Contacts</div>
+            </div>
+            <p className="text-xs text-muted-foreground font-mono mt-2">Phone numbers from student popup</p>
+          </Link>
           <Link to="/admin/broadcast" className="group rounded-2xl border border-border bg-gradient-card p-5 shadow-card hover:border-primary/60 transition-colors">
             <div className="flex items-center gap-3">
               <Megaphone className="h-5 w-5 text-primary" />

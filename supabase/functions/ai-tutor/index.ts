@@ -58,9 +58,12 @@ Deno.serve(async (req) => {
       language = "en",
       mode = "chat",
       model = "smart",
+      attachments = [],
     } = body;
     if (!Array.isArray(messages) || messages.length === 0)
       return json({ error: "messages required" }, 400);
+    if (!Array.isArray(attachments) || attachments.length > 5)
+      return json({ error: "Up to 5 attachments allowed" }, 400);
 
     // Server-controlled daily free-preview cap (paid users always pass).
     // NEVER trust a client-supplied limit.
@@ -73,6 +76,63 @@ Deno.serve(async (req) => {
         message: `You've used your ${DAILY_LIMIT} free AI messages today. Upgrade for unlimited.`,
         usage,
       }, 429);
+    }
+
+    // Gate attachments to paid users (defence in depth — storage RLS also enforces this)
+    let isPaid = false;
+    if (attachments.length > 0) {
+      const { data: prof } = await userClient.from("profiles").select("is_paid_user").eq("id", user.id).maybeSingle();
+      isPaid = !!prof?.is_paid_user;
+      if (!isPaid) return json({ error: "File uploads are for paid users only." }, 403);
+    }
+
+    // Download attachments via service role and prepare for the model.
+    // - Images: passed as image_url data URLs (multimodal).
+    // - PDFs: extracted to text with unpdf and prepended to system context.
+    const imageParts: Array<{ type: "image_url"; image_url: { url: string } }> = [];
+    let pdfContext = "";
+    if (attachments.length > 0) {
+      const admin = createClient(url, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+      for (const att of attachments as Array<{ path: string; mime: string; name?: string }>) {
+        if (!att?.path || typeof att.path !== "string") continue;
+        // Enforce path namespace: must start with "<user_id>/"
+        if (!att.path.startsWith(user.id + "/")) {
+          return json({ error: "Invalid attachment path" }, 400);
+        }
+        const { data: blob, error: dErr } = await admin.storage.from("ai-uploads").download(att.path);
+        if (dErr || !blob) {
+          console.error("download failed", att.path, dErr);
+          return json({ error: `Could not read attachment: ${att.name ?? att.path}` }, 400);
+        }
+        const buf = new Uint8Array(await blob.arrayBuffer());
+        if (buf.byteLength > 10 * 1024 * 1024) {
+          return json({ error: "Attachment exceeds 10MB" }, 400);
+        }
+        const mime = att.mime || blob.type || "application/octet-stream";
+        if (mime === "application/pdf") {
+          try {
+            const { extractText, getDocumentProxy } = await import("https://esm.sh/unpdf@0.12.1");
+            const doc = await getDocumentProxy(buf);
+            const { text } = await extractText(doc, { mergePages: true });
+            const cleaned = (Array.isArray(text) ? text.join("\n") : text).trim();
+            const snippet = cleaned.length > 14000 ? cleaned.slice(0, 14000) + "\n…[truncated]" : cleaned;
+            pdfContext += `\n\nATTACHED PDF — "${att.name ?? "document.pdf"}":\n${snippet}`;
+          } catch (e) {
+            console.error("pdf parse failed", e);
+            pdfContext += `\n\n(Attached PDF "${att.name ?? "document.pdf"}" could not be parsed.)`;
+          }
+        } else if (mime.startsWith("image/")) {
+          // Chunked base64 to avoid argument-limit on apply()
+          let bin = "";
+          const CHUNK = 8192;
+          for (let i = 0; i < buf.length; i += CHUNK) {
+            bin += String.fromCharCode.apply(null, Array.from(buf.subarray(i, Math.min(i + CHUNK, buf.length))));
+          }
+          imageParts.push({ type: "image_url", image_url: { url: `data:${mime};base64,${btoa(bin)}` } });
+        } else {
+          return json({ error: `Unsupported file type: ${mime}` }, 400);
+        }
+      }
     }
 
     // Load source context (module + transcript) — RLS-scoped

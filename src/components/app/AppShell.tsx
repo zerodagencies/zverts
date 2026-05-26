@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { supabase } from "@/integrations/supabase/client";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import zvertsLogo from "@/assets/zverts-logo.png";
 
 import { useAdminPaymentAlerts } from "@/hooks/useAdminPaymentAlerts";
 import { useBrowserNotifications } from "@/hooks/useBrowserNotifications";

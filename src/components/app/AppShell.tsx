@@ -148,6 +148,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
       <main className="flex-1">{children}</main>
       <Suspense fallback={null}><SiteFooter /></Suspense>
       <Suspense fallback={null}><InstallPrompt /></Suspense>
+      {user && <Suspense fallback={null}><SupportContactPopup /></Suspense>}
     </div>
 
 

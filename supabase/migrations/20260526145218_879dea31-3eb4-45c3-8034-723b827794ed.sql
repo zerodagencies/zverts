@@ -1,0 +1,2 @@
+REVOKE UPDATE ON public.profiles FROM authenticated, anon;
+GRANT UPDATE (name, avatar_url, certificate_name, preferred_language, daily_goal_minutes, profile_public, study_reminders_enabled, notify_email, notify_inactivity, notify_completion) ON public.profiles TO authenticated;

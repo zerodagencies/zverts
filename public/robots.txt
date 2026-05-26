@@ -1,14 +1,15 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /settings
+Disallow: /payment
+Disallow: /payments
+Disallow: /buy
+Disallow: /reset-password
+Disallow: /certificate/
+
+Sitemap: https://zverts.lovable.app/sitemap.xml

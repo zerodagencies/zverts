@@ -1,0 +1,18 @@
+# ZverT
+
+> An AI-powered, disciplined learning platform with sequential modules, strict watch-time tracking, quizzes, and verified certificates.
+
+ZverT helps learners master web development and other topics through video lessons, AI summaries, gamified progress, and proof-of-completion certificates.
+
+## Pages
+
+- [Home](/): Overview of the ZverT learning platform.
+- [Courses](/courses): Browse public courses and learning tracks.
+- [Leaderboard](/leaderboard): Top learners by XP and streaks.
+- [About](/info/about): Mission and vision of ZverT.
+- [FAQ](/info/faq): Frequently asked questions about ZverT.
+- [Help Center](/info/help): Self-service support topics.
+- [Contact](/info/contact): How to reach the ZverT team.
+- [Affiliates](/info/affiliates): Affiliate program details.
+- [Community](/info/community): Join the ZverT learner community.
+- [Refund Policy](/refund-policy): Refund terms and conditions.

@@ -33,9 +33,23 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
   useAdminPaymentAlerts(isAdmin);
   useBrowserNotifications();
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    // Only lock the mobile menu drawer scroll; never persist the lock.
+    if (mobileOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => { document.body.style.overflow = prev || ""; };
+    }
   }, [mobileOpen]);
+  // Safety net: if any modal/menu unmount left the body locked
+  // (common in PWA standalone when a sheet closes mid-route-change),
+  // restore scrolling on every route change.
+  useEffect(() => {
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.documentElement.style.overflow = "";
+    document.body.removeAttribute("data-scroll-locked");
+  }, [location.pathname]);
+
   const { theme } = useTheme();
 
   const navItems = [

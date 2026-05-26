@@ -29,7 +29,7 @@ const Settings = () => {
   const { t, i18n } = useTranslation();
   const [p, setP] = useState<Profile | null>(null);
   const [busy, setBusy] = useState(false);
-  const [pwd, setPwd] = useState("");
+  
   const [emailInput, setEmailInput] = useState("");
   const [completedCount, setCompletedCount] = useState(0);
   const [courses, setCourses] = useState<{ id: string; title: string; is_public: boolean }[]>([]);
@@ -86,20 +86,6 @@ const Settings = () => {
     else toast.success("Verification email sent to your new address.");
   };
 
-  const changePassword = async () => {
-    if (pwd.length < 8) return toast.error("Password must be at least 8 characters");
-    const { error } = await supabase.auth.updateUser({ password: pwd });
-    if (error) toast.error(error.message);
-    else { toast.success("Password updated"); setPwd(""); }
-  };
-
-  const forgotPassword = async () => {
-    const { error } = await supabase.auth.resetPasswordForEmail(user.email!, {
-      redirectTo: `${window.location.origin}/reset-password`,
-    });
-    if (error) toast.error(error.message);
-    else toast.success("Reset link sent to your email");
-  };
 
   const signOutAll = async () => {
     const { error } = await supabase.auth.signOut({ scope: "global" });
@@ -186,20 +172,12 @@ const Settings = () => {
           <TabsContent value="security">
             <div className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card space-y-6">
               <div>
-                <Label>Change password</Label>
-                <div className="flex gap-2 mt-1.5">
-                  <Input type="password" placeholder="New password (min 8 chars)" value={pwd} onChange={e => setPwd(e.target.value)} />
-                  <Button onClick={changePassword}>Update</Button>
-                </div>
+                <div className="font-medium">Signed in with Google</div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Your account is managed by Google. To change your password or recovery options, visit your Google account settings.
+                </p>
               </div>
-              <div className="border-t border-border pt-6 flex items-center justify-between">
-                <div>
-                  <div className="font-medium">Forgot password</div>
-                  <p className="text-sm text-muted-foreground">Send a reset link to {user.email}.</p>
-                </div>
-                <Button variant="outline" onClick={forgotPassword}>Send link</Button>
-              </div>
-              <div className="border-t border-border pt-6 flex items-center justify-between">
+              <div className="border-t border-border pt-6 flex items-center justify-between gap-4 flex-wrap">
                 <div>
                   <div className="font-medium">Sign out everywhere</div>
                   <p className="text-sm text-muted-foreground">Ends every active session on every device.</p>

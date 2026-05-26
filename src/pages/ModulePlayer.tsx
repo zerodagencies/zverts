@@ -88,7 +88,18 @@ const ModulePlayer = () => {
         </Link>
 
         {loading ? (
-          <div className="text-muted-foreground font-mono text-sm">Loading…</div>
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <Skeleton className="h-3 w-32" />
+              <Skeleton className="h-10 w-3/4" />
+              <Skeleton className="h-4 w-1/2" />
+            </div>
+            <Skeleton className="aspect-video w-full rounded-2xl" />
+            <div className="grid sm:grid-cols-3 gap-3">
+              {Array.from({ length: 3 }).map((_, i) => <Skeleton key={i} className="h-20 rounded-xl" />)}
+            </div>
+            <Skeleton className="h-48 rounded-2xl" />
+          </div>
         ) : !mod ? (
           <div className="text-muted-foreground">Module not found or you do not have access.</div>
         ) : !unlocked ? (

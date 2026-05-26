@@ -35,7 +35,7 @@ export function useBrowserNotifications() {
   useEffect(() => {
     if (!user) return;
     const ch = supabase
-      .channel(`notif-popup:${user.id}`)
+      .channel(`user:${user.id}:notif-popup`)
       .on(
         "postgres_changes",
         { event: "INSERT", schema: "public", table: "notifications", filter: `user_id=eq.${user.id}` },

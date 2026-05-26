@@ -49,7 +49,7 @@ export const useEntitlements = (): Entitlements => {
   // Realtime refresh on profile change
   useEffect(() => {
     if (!user) return;
-    const ch = supabase.channel(`ent:${user.id}:${Math.random().toString(36).slice(2)}`)
+    const ch = supabase.channel(`user:${user.id}:ent:${Math.random().toString(36).slice(2)}`)
       .on("postgres_changes", { event: "UPDATE", schema: "public", table: "profiles", filter: `id=eq.${user.id}` }, () => load())
       .subscribe();
     return () => { supabase.removeChannel(ch); };

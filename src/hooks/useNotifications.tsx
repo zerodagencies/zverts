@@ -50,7 +50,7 @@ export function useNotifications(limit = 30) {
 
     // Unique channel name per mount avoids "callbacks after subscribe()" when
     // React StrictMode double-invokes effects or a channel name gets reused.
-    const channelName = `notif:${user.id}:${Math.random().toString(36).slice(2)}`;
+    const channelName = `user:${user.id}:notif:${Math.random().toString(36).slice(2)}`;
     const channel = supabase.channel(channelName);
     channel
       .on(

@@ -137,15 +137,15 @@ const RefundPolicy = () => (
         </Section>
 
         <Section icon={Mail} title="7. Contact Support">
-          <p>For payment or refund-related issues, contact:</p>
-          <ul className="space-y-1.5">
+          <p>For payment or refund-related issues, contact us at:</p>
+          <OfficialEmail variant="card" label="Official Support" />
+          <ul className="space-y-1.5 pt-2">
             <Bullet>
-              ZverTs Support via our{" "}
+              Or visit our{" "}
               <Link to="/info/contact" className="text-primary hover:underline">
                 contact page
               </Link>
             </Bullet>
-            <Bullet>Official Telegram / Email support channels</Bullet>
           </ul>
           <p className="text-xs font-mono pt-3 border-t border-border">
             By using ZverTs and making payments, you agree to this refund policy.

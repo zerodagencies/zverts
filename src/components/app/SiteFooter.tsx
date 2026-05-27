@@ -20,6 +20,7 @@ import {
   Play,
 } from "lucide-react";
 import zvertsLogo from "@/assets/zverts-logo.png";
+import { OfficialEmail } from "@/components/OfficialEmail";
 
 type LinkItem = { label: string; to: string; icon?: React.ComponentType<{ className?: string }> };
 

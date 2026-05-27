@@ -129,13 +129,7 @@ export const SiteFooter = () => {
                   Rajshahi, Bangladesh
                 </span>
               </div>
-              <a
-                href="mailto:hello@zverts.app"
-                className="flex items-center gap-2.5 hover:text-primary transition-colors"
-              >
-                <Mail className="h-4 w-4 text-primary/80" />
-                hello@zverts.app
-              </a>
+              <OfficialEmail className="text-sm" />
             </div>
             <div className="mt-5 flex items-center gap-2">
               {socials.map(({ Icon, href, label }) => (

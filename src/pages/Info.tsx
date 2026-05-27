@@ -354,6 +354,19 @@ const Info = () => {
           ))}
         </article>
 
+        {["contact", "support", "help", "about"].includes(page.slug) && (
+          <section className="mt-10">
+            <h3 className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4">
+              Official Email
+            </h3>
+            <OfficialEmail variant="card" label="Reach the ZverTs team" />
+            <p className="mt-3 text-xs text-muted-foreground">
+              For support, business inquiries, partnerships, premium issues, and refund requests.
+            </p>
+          </section>
+        )}
+
+
         <section className="mt-14">
           <h3 className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4">
             Explore more

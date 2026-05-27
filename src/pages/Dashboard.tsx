@@ -34,44 +34,55 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const load = async (uid: string, opts: { silent?: boolean } = {}) => {
+    if (!opts.silent) setLoading(true);
+    setError(null);
+    try {
+      const { data: ownCourses, error: cErr } = await supabase
+        .from("courses")
+        .select("id,title")
+        .eq("user_id", uid)
+        .order("created_at", { ascending: false });
+      if (cErr) throw cErr;
+
+      const courseIds = (ownCourses ?? []).map((course) => course.id);
+
+      const [{ data: mods, error: mErr }, { data: prog, error: pErr }] = await Promise.all([
+        courseIds.length
+          ? supabase.from("modules").select("id,course_id,position,title,duration_seconds").in("course_id", courseIds).order("position")
+          : Promise.resolve({ data: [] as ModuleRow[], error: null } as { data: ModuleRow[]; error: null }),
+        supabase.from("module_progress").select("module_id,watch_time_seconds,percent_watched,completed,updated_at,completed_at").eq("user_id", uid),
+      ]);
+      if (mErr) throw mErr;
+      if (pErr) throw pErr;
+
+      setCourses(ownCourses ?? []);
+      setModules(mods ?? []);
+      setProgress(prog ?? []);
+    } catch (e: any) {
+      console.error("[Dashboard] load failed", e);
+      setError(e?.message ?? "Failed to load dashboard");
+    } finally {
+      if (!opts.silent) setLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (!user) return;
-    let cancelled = false;
-    (async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const { data: ownCourses, error: cErr } = await supabase
-          .from("courses")
-          .select("id,title")
-          .eq("user_id", user.id)
-          .order("created_at", { ascending: false });
-        if (cErr) throw cErr;
-
-        const courseIds = (ownCourses ?? []).map((course) => course.id);
-
-        const [{ data: mods, error: mErr }, { data: prog, error: pErr }] = await Promise.all([
-          courseIds.length
-            ? supabase.from("modules").select("id,course_id,position,title,duration_seconds").in("course_id", courseIds).order("position")
-            : Promise.resolve({ data: [] as ModuleRow[], error: null } as { data: ModuleRow[]; error: null }),
-          supabase.from("module_progress").select("module_id,watch_time_seconds,percent_watched,completed,updated_at,completed_at").eq("user_id", user.id),
-        ]);
-        if (mErr) throw mErr;
-        if (pErr) throw pErr;
-
-        if (cancelled) return;
-        setCourses(ownCourses ?? []);
-        setModules(mods ?? []);
-        setProgress(prog ?? []);
-      } catch (e: any) {
-        console.error("[Dashboard] load failed", e);
-        if (!cancelled) setError(e?.message ?? "Failed to load dashboard");
-      } finally {
-        if (!cancelled) setLoading(false);
-      }
-    })();
-    return () => { cancelled = true; };
-  }, [user]);
+    void load(user.id);
+    // Realtime: refresh dashboard when this user's progress or profile changes
+    const channel = supabase
+      .channel(`dashboard:${user.id}`)
+      .on("postgres_changes",
+        { event: "*", schema: "public", table: "module_progress", filter: `user_id=eq.${user.id}` },
+        () => { void load(user.id, { silent: true }); })
+      .on("postgres_changes",
+        { event: "UPDATE", schema: "public", table: "profiles", filter: `id=eq.${user.id}` },
+        () => { void load(user.id, { silent: true }); })
+      .subscribe();
+    return () => { void supabase.removeChannel(channel); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id]);
 
   const visibleModuleIds = new Set(modules.map((module) => module.id));
   const visibleProgress = progress.filter((entry) => visibleModuleIds.has(entry.module_id));

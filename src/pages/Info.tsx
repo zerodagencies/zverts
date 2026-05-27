@@ -1,6 +1,7 @@
 import { useParams, Navigate, Link } from "react-router-dom";
 import { AppShell } from "@/components/app/AppShell";
 import { SEO } from "@/components/SEO";
+import { OfficialEmail } from "@/components/OfficialEmail";
 import {
   LifeBuoy,
   Info as InfoIcon,

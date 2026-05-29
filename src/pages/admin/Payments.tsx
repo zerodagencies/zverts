@@ -42,6 +42,17 @@ const AdminPaymentsInner = () => {
 
   useEffect(() => { load(); }, [load]);
 
+  // Realtime: new submissions, approvals, rejections all refresh the list
+  useEffect(() => {
+    const ch = supabase
+      .channel("admin:payments-feed")
+      .on("postgres_changes", { event: "*", schema: "public", table: "payments" }, () => {
+        load();
+      })
+      .subscribe();
+    return () => { supabase.removeChannel(ch); };
+  }, [load]);
+
   const approve = async (id: string) => {
     setActing(id);
     const { error } = await supabase.rpc("approve_payment" as any, { _payment_id: id });

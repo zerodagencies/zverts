@@ -44,8 +44,8 @@ const Admin = () => {
         loadPending();
         const ch = supabase
           .channel("admin:overview-payments")
-          .on("postgres_changes", { event: "*", schema: "public", table: "payments" }, () => loadPending())
           .subscribe();
+          .on("postgres_changes", { event: "*", schema: "public", table: "payments" }, () => loadPending())
         return () => {
           supabase.removeChannel(ch);
         };

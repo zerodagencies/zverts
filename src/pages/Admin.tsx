@@ -16,10 +16,13 @@ const Admin = () => {
   const [pendingCount, setPendingCount] = useState(0);
 
   const loadPending = async () => {
-    const count = await supabase.from("payments").select("*");
+    const { count } = await supabase
+      .from("payments")
+      .select("*", { count: "exact", head: true })
+      .eq("status", "pending");
 
     console.log("Payment Count: ", count);
-    // setPendingCount(count ?? 0);
+    setPendingCount(count ?? 0);
   };
 
   useEffect(() => {

@@ -20,7 +20,6 @@ const Admin = () => {
       .from("payments")
       .select("*", { count: "exact", head: true })
       .eq("status", "pending");
-    
 
     console.log("Payment Count: ", count);
     setPendingCount(count ?? 0);
@@ -45,8 +44,8 @@ const Admin = () => {
         loadPending();
         const ch = supabase
           .channel("admin:overview-payments")
-          .subscribe();
           .on("postgres_changes", { event: "*", schema: "public", table: "payments" }, () => loadPending())
+          .subscribe();
         return () => {
           supabase.removeChannel(ch);
         };

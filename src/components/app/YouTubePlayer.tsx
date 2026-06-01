@@ -44,7 +44,17 @@ export const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(({ videoId, 
       if (cancelled || !containerRef.current) return;
       playerRef.current = new window.YT.Player(containerRef.current, {
         videoId,
-        playerVars: { rel: 0, modestbranding: 1, playsinline: 1 },
+        playerVars: {
+          rel: 0,               // no related-videos from other channels
+          modestbranding: 1,    // minimal YouTube branding
+          playsinline: 1,
+          iv_load_policy: 3,    // hide video annotations
+          cc_load_policy: 0,
+          fs: 1,
+          disablekb: 1,         // disable YouTube keyboard shortcuts
+          origin: window.location.origin,
+          enablejsapi: 1,
+        },
         events: {
           onStateChange: (e: any) => {
             // 1 = playing, 2 = paused, 0 = ended

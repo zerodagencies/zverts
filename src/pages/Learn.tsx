@@ -17,19 +17,29 @@ const Learn = () => {
   const [prog, setProg] = useState<ProgressRow[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const load = async (uid: string, silent = false) => {
+    if (!silent) setLoading(true);
+    const { data: ownCourses } = await supabase.from("courses").select("id,title").eq("user_id", uid).order("created_at", { ascending: false });
+    const courseIds = (ownCourses ?? []).map((course) => course.id);
+    const [{ data: m }, { data: p }] = await Promise.all([
+      courseIds.length
+        ? supabase.from("modules").select("id,course_id,position,title,duration_seconds").in("course_id", courseIds).order("position")
+        : Promise.resolve({ data: [] as ModuleRow[] } as { data: ModuleRow[] }),
+      supabase.from("module_progress").select("module_id,percent_watched,completed").eq("user_id", uid),
+    ]);
+    setCourses(ownCourses ?? []); setMods(m ?? []); setProg(p ?? []); setLoading(false);
+  };
+
   useEffect(() => {
     if (!user) return;
-    (async () => {
-      const { data: ownCourses } = await supabase.from("courses").select("id,title").eq("user_id", user.id).order("created_at", { ascending: false });
-      const courseIds = (ownCourses ?? []).map((course) => course.id);
-      const [{ data: m }, { data: p }] = await Promise.all([
-        courseIds.length
-          ? supabase.from("modules").select("id,course_id,position,title,duration_seconds").in("course_id", courseIds).order("position")
-          : Promise.resolve({ data: [] as ModuleRow[] } as { data: ModuleRow[] }),
-        supabase.from("module_progress").select("module_id,percent_watched,completed").eq("user_id", user.id),
-      ]);
-      setCourses(ownCourses ?? []); setMods(m ?? []); setProg(p ?? []); setLoading(false);
-    })();
+    void load(user.id);
+    const channel = supabase
+      .channel(`learn:${user.id}`)
+      .on("postgres_changes",
+        { event: "*", schema: "public", table: "module_progress", filter: `user_id=eq.${user.id}` },
+        () => { void load(user.id, true); })
+      .subscribe();
+    return () => { void supabase.removeChannel(channel); };
   }, [user]);
 
   if (authLoading) return null;

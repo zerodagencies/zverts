@@ -117,7 +117,32 @@ const ModulePlayer = () => {
               <p className="mt-2 text-sm text-muted-foreground">Course: {mod.courses?.title ?? "Your course"}</p>
             </div>
 
-            <YouTubePlayer ref={playerRef} videoId={mod.youtube_video_id} onProgress={(s) => sendProgress(s)} />
+            <div className="relative">
+              <YouTubePlayer
+                ref={playerRef}
+                videoId={mod.youtube_video_id}
+                onProgress={(s) => sendProgress(s)}
+                onEnded={() => sendProgress(lastSentRef.current, true)}
+              />
+              {/* Focus-mode end overlay: hides YouTube's related/end-screen suggestions */}
+              {completed && (
+                <div className="pointer-events-none absolute inset-0 flex items-end justify-center p-6">
+                  <div className="pointer-events-auto rounded-2xl border border-primary/40 bg-background/95 backdrop-blur px-6 py-4 shadow-glow flex flex-wrap items-center gap-3">
+                    <div className="text-sm">
+                      <div className="font-mono text-xs uppercase tracking-widest text-primary">/ lesson complete</div>
+                      <div className="font-display text-lg">Stay in focus — keep learning on ZverTs</div>
+                    </div>
+                    {nextId ? (
+                      <Button onClick={() => navigate(`/learn/${nextId}`)} className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow">
+                        Next lesson <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    ) : (
+                      <Button variant="outline" onClick={() => navigate("/learn")}>Back to course</Button>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Progress + actions */}
             <div className="mt-6 rounded-2xl border border-border bg-gradient-card p-6 shadow-card">

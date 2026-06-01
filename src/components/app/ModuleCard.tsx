@@ -18,7 +18,6 @@ const fmt = (s: number) => {
 };
 
 export const ModuleCard = ({ position, title, durationSeconds, state, percent = 0, id }: Props) => {
-  console.log(title, state);
   const locked = state === "locked";
   const completed = state === "completed";
 

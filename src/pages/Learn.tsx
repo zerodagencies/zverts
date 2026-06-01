@@ -62,6 +62,7 @@ const Learn = () => {
   useEffect(() => {
     if (!user) return;
     void load(user.id);
+    console.log(userid, user.id);
     const channel = supabase
       .channel(`learn:${user.id}`)
       .on(

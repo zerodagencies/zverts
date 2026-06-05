@@ -35,13 +35,14 @@ Deno.serve(async (req) => {
       });
     }
 
-    const status = action === "confirm" ? "approved" : "rejected";
     const label = action === "confirm" ? "APPROVED" : "REJECTED";
     const token = Deno.env.get("TELEGRAM_BOT_TOKEN")!;
 
     const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 
-    const { error } = await admin.from("payments").update({ status }).eq("id", paymentId);
+    const { error } = action === "confirm"
+      ? await admin.rpc("svc_approve_payment", { _payment_id: paymentId })
+      : await admin.rpc("svc_reject_payment", { _payment_id: paymentId, _note: "Rejected via Telegram" });
 
     if (error) {
       await answerCallback(token, callbackQuery.id, `❌ ${error.message}`);

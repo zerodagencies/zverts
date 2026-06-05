@@ -1098,6 +1098,14 @@ export type Database = {
         }
         Returns: string
       }
+      svc_approve_payment: {
+        Args: { _actor_label?: string; _payment_id: string }
+        Returns: Json
+      }
+      svc_reject_payment: {
+        Args: { _actor_label?: string; _note?: string; _payment_id: string }
+        Returns: Json
+      }
       unread_notification_count: { Args: never; Returns: number }
       update_module_progress: {
         Args: {

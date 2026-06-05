@@ -2,11 +2,13 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
 };
 
 Deno.serve(async (req) => {
-  if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+  if (req.method === "OPTIONS")
+    return new Response("ok", { headers: corsHeaders });
 
   try {
     const body = await req.json();
@@ -38,11 +40,22 @@ Deno.serve(async (req) => {
     const label = action === "confirm" ? "APPROVED" : "REJECTED";
     const token = Deno.env.get("TELEGRAM_BOT_TOKEN")!;
 
-    const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+    const admin = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+    );
 
-    const { error } = action === "confirm"
-      ? await admin.rpc("svc_approve_payment", { _payment_id: paymentId })
-      : await admin.rpc("svc_reject_payment", { _payment_id: paymentId, _note: "Rejected via Telegram" });
+    const { error } =
+      action === "confirm"
+        ? await admin.rpc("svc_approve_payment", {
+            _payment_id: paymentId,
+            _actor_label: "telegram",
+          })
+        : await admin.rpc("svc_reject_payment", {
+            _payment_id: paymentId,
+            _actor_label: "telegram",
+            _note: "Rejected via Telegram",
+          });
 
     if (error) {
       await answerCallback(token, callbackQuery.id, `❌ ${error.message}`);
@@ -77,7 +90,11 @@ Deno.serve(async (req) => {
   }
 });
 
-async function answerCallback(token: string, callbackQueryId: string, text: string) {
+async function answerCallback(
+  token: string,
+  callbackQueryId: string,
+  text: string,
+) {
   await fetch(`https://api.telegram.org/bot${token}/answerCallbackQuery`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

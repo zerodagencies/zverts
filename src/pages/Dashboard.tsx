@@ -6,6 +6,7 @@ import { CircularProgress } from "@/components/app/CircularProgress";
 import { ModuleCard } from "@/components/app/ModuleCard";
 import { StatCard } from "@/components/app/StatCard";
 import { ContinueWatching } from "@/components/app/ContinueWatching";
+import { TodayMissionCard } from "@/components/app/TodayMissionCard";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { supabase } from "@/integrations/supabase/client";

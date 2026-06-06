@@ -178,6 +178,9 @@ const Dashboard = () => {
           </div>
         ) : (
           <>
+            {/* Today's Mission (replaces global leaderboard mindset) */}
+            <TodayMissionCard userId={user.id} />
+
             {/* Continue watching */}
             <ContinueWatching userId={user.id} />
 

@@ -40,7 +40,7 @@ const Profile = lazyWithRetry(() => import("./pages/Profile.tsx"));
 const Settings = lazyWithRetry(() => import("./pages/Settings.tsx"));
 
 const Quiz = lazyWithRetry(() => import("./pages/Quiz.tsx"));
-const Leaderboard = lazyWithRetry(() => import("./pages/Leaderboard.tsx"));
+const Growth = lazyWithRetry(() => import("./pages/Growth.tsx"));
 const Admin = lazyWithRetry(() => import("./pages/Admin.tsx"));
 const Certificate = lazyWithRetry(() => import("./pages/Certificate.tsx"));
 const BuyPackage = lazyWithRetry(() => import("./pages/BuyPackage.tsx"));

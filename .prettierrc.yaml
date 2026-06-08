@@ -1,0 +1,32 @@
+# .prettierrc.yaml
+$schema: https://json.schemastore.org/prettierrc
+printWidth: 100
+tabWidth: 4
+useTabs: false
+semi: true
+singleQuote: false
+quoteProps: as-needed
+jsxSingleQuote: false
+trailingComma: all
+bracketSpacing: true
+bracketSameLine: false
+arrowParens: always
+endOfLine: lf
+embeddedLanguageFormatting: auto
+singleAttributePerLine: false
+plugins:
+    - prettier-plugin-packagejson
+overrides:
+    - files: ["*.md", "*.mdx"]
+      options:
+          proseWrap: always
+          printWidth: 80
+    - files: ["*.json", "*.jsonc", "*.json5"]
+      options:
+          trailingComma: none
+    - files: ["*.yml", "*.yaml"]
+      options:
+          singleQuote: false
+    - files: ["*.css", "*.scss", "*.less"]
+      options:
+          singleQuote: false

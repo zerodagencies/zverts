@@ -103,7 +103,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
             className={cn(
                 "min-h-screen flex flex-col",
                 theme !== "dark" &&
-                    "bg-[radial-gradient(ellipse_at_top,_hsl(75_70%_50%_/_0.06),_transparent_60%)]",
+                    "bg-[radial-gradient(ellipse_at_top,_hsl(245_78%_56%_/_0.06),_transparent_60%)]",
             )}
         >
             {/* ── Header ─────────────────────────────────────────────────────── */}

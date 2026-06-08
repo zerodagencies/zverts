@@ -2,94 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ZeroD Academy — dark editorial design system. All colors HSL. */
+/* ZverTs — Student-first design system. All colors HSL. */
 
 @layer base {
     :root {
-        /* Light mode — warm parchment */
-        --background: 40 30% 97%;
-        --foreground: 222 40% 10%;
+        /* ── Light mode ─────────────────────────────────────────────── */
+        --background: 0 0% 98%;
+        --foreground: 240 14% 10%;
+
         --card: 0 0% 100%;
-        --card-foreground: 222 40% 10%;
+        --card-foreground: 240 14% 10%;
+
         --popover: 0 0% 100%;
-        --popover-foreground: 222 40% 10%;
-        --primary: 75 70% 40%;
+        --popover-foreground: 240 14% 10%;
+
+        /* Indigo-violet primary */
+        --primary: 245 78% 56%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 40 20% 92%;
-        --secondary-foreground: 222 40% 12%;
-        --muted: 40 20% 94%;
-        --muted-foreground: 222 12% 40%;
-        --accent: 28 85% 55%;
+
+        --secondary: 240 6% 93%;
+        --secondary-foreground: 240 14% 15%;
+
+        --muted: 240 6% 95%;
+        --muted-foreground: 240 5% 46%;
+
+        /* Amber accent — streaks, gems, highlights */
+        --accent: 36 92% 50%;
         --accent-foreground: 0 0% 100%;
-        --destructive: 0 75% 50%;
+
+        --destructive: 0 74% 50%;
         --destructive-foreground: 0 0% 100%;
-        --border: 40 15% 88%;
-        --input: 40 15% 90%;
-        --ring: 75 70% 40%;
+
+        --border: 240 6% 88%;
+        --input: 240 6% 91%;
+        --ring: 245 78% 56%;
 
         --radius: 0.75rem;
 
+        /* Gradients */
         --gradient-hero:
-            radial-gradient(ellipse at top, hsl(75 80% 50% / 0.15), transparent 60%),
-            radial-gradient(ellipse at bottom right, hsl(28 80% 60% / 0.12), transparent 60%),
-            linear-gradient(180deg, hsl(40 30% 98%), hsl(40 25% 95%));
-        --gradient-lime: linear-gradient(135deg, hsl(75 95% 60%), hsl(95 85% 55%));
-        --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 25% 97%));
+            radial-gradient(ellipse at top, hsl(245 80% 60% / 0.10), transparent 55%),
+            radial-gradient(ellipse at bottom right, hsl(270 70% 60% / 0.08), transparent 55%),
+            linear-gradient(180deg, hsl(0 0% 99%), hsl(240 6% 97%));
 
-        --shadow-glow: 0 0 60px -10px hsl(75 70% 40% / 0.35);
+        /* Renamed from "lime" to violet — same variable kept for component compatibility */
+        --gradient-lime: linear-gradient(135deg, hsl(245 90% 62%), hsl(268 80% 60%));
+        --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(240 6% 98.5%));
+
+        --shadow-glow: 0 0 50px -8px hsl(245 78% 56% / 0.32);
         --shadow-card:
-            0 1px 0 hsl(0 0% 100% / 0.6) inset, 0 12px 32px -16px hsl(222 40% 30% / 0.18);
-        --shadow-elevated: 0 24px 48px -20px hsl(222 40% 30% / 0.22);
+            0 1px 0 hsl(0 0% 100% / 0.8) inset,
+            0 8px 24px -12px hsl(240 20% 20% / 0.12);
+        --shadow-elevated: 0 20px 40px -16px hsl(240 20% 20% / 0.18);
 
         --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
-        --sidebar-background: 40 25% 96%;
-        --sidebar-foreground: 222 30% 20%;
-        --sidebar-primary: 75 70% 40%;
+        --sidebar-background: 240 6% 96%;
+        --sidebar-foreground: 240 14% 20%;
+        --sidebar-primary: 245 78% 56%;
         --sidebar-primary-foreground: 0 0% 100%;
-        --sidebar-accent: 40 20% 92%;
-        --sidebar-accent-foreground: 222 40% 12%;
-        --sidebar-border: 40 15% 88%;
-        --sidebar-ring: 75 70% 40%;
+        --sidebar-accent: 240 6% 92%;
+        --sidebar-accent-foreground: 240 14% 15%;
+        --sidebar-border: 240 6% 88%;
+        --sidebar-ring: 245 78% 56%;
     }
 
     .dark {
-        --background: 222 30% 6%;
-        --foreground: 40 25% 92%;
-        --card: 222 28% 9%;
-        --card-foreground: 40 25% 92%;
-        --popover: 222 30% 7%;
-        --popover-foreground: 40 25% 92%;
-        --primary: 75 95% 60%;
-        --primary-foreground: 222 40% 8%;
-        --secondary: 222 22% 14%;
-        --secondary-foreground: 40 20% 88%;
-        --muted: 222 18% 13%;
-        --muted-foreground: 40 10% 60%;
-        --accent: 28 90% 62%;
-        --accent-foreground: 222 40% 8%;
-        --destructive: 0 75% 58%;
+        /* ── Dark mode — deep charcoal, not harsh navy ──────────────── */
+        --background: 240 10% 8%;
+        --foreground: 240 8% 92%;
+
+        --card: 240 10% 12%;
+        --card-foreground: 240 8% 92%;
+
+        --popover: 240 10% 10%;
+        --popover-foreground: 240 8% 92%;
+
+        --primary: 246 88% 70%;
+        --primary-foreground: 240 10% 8%;
+
+        --secondary: 240 8% 16%;
+        --secondary-foreground: 240 8% 88%;
+
+        --muted: 240 8% 14%;
+        --muted-foreground: 240 5% 58%;
+
+        --accent: 36 92% 60%;
+        --accent-foreground: 240 10% 8%;
+
+        --destructive: 0 72% 58%;
         --destructive-foreground: 0 0% 100%;
-        --border: 222 20% 16%;
-        --input: 222 20% 14%;
-        --ring: 75 95% 60%;
+
+        --border: 240 8% 18%;
+        --input: 240 8% 16%;
+        --ring: 246 88% 70%;
+
         --gradient-hero:
-            radial-gradient(ellipse at top, hsl(75 80% 30% / 0.18), transparent 60%),
-            radial-gradient(ellipse at bottom right, hsl(28 80% 40% / 0.12), transparent 60%),
-            linear-gradient(180deg, hsl(222 35% 5%), hsl(222 30% 7%));
-        --gradient-card: linear-gradient(180deg, hsl(222 28% 10%), hsl(222 28% 8%));
-        --shadow-glow: 0 0 60px -10px hsl(75 95% 60% / 0.35);
+            radial-gradient(ellipse at top, hsl(245 75% 35% / 0.22), transparent 55%),
+            radial-gradient(ellipse at bottom right, hsl(268 60% 28% / 0.14), transparent 55%),
+            linear-gradient(180deg, hsl(240 12% 7%), hsl(240 10% 9%));
+
+        --gradient-lime: linear-gradient(135deg, hsl(246 90% 70%), hsl(268 82% 66%));
+        --gradient-card: linear-gradient(180deg, hsl(240 10% 13%), hsl(240 10% 11%));
+
+        --shadow-glow: 0 0 50px -8px hsl(246 88% 70% / 0.38);
         --shadow-card:
-            0 1px 0 hsl(40 25% 92% / 0.04) inset, 0 24px 48px -24px hsl(222 50% 0% / 0.6);
-        --shadow-elevated: 0 32px 64px -24px hsl(222 60% 0% / 0.7);
-        --sidebar-background: 222 30% 7%;
-        --sidebar-foreground: 40 20% 80%;
-        --sidebar-primary: 75 95% 60%;
-        --sidebar-primary-foreground: 222 40% 8%;
-        --sidebar-accent: 222 22% 12%;
-        --sidebar-accent-foreground: 40 25% 92%;
-        --sidebar-border: 222 20% 14%;
-        --sidebar-ring: 75 95% 60%;
+            0 1px 0 hsl(240 8% 92% / 0.04) inset,
+            0 20px 40px -20px hsl(240 20% 2% / 0.55);
+        --shadow-elevated: 0 28px 56px -20px hsl(240 20% 2% / 0.65);
+
+        --sidebar-background: 240 10% 9%;
+        --sidebar-foreground: 240 8% 82%;
+        --sidebar-primary: 246 88% 70%;
+        --sidebar-primary-foreground: 240 10% 8%;
+        --sidebar-accent: 240 8% 14%;
+        --sidebar-accent-foreground: 240 8% 92%;
+        --sidebar-border: 240 8% 16%;
+        --sidebar-ring: 246 88% 70%;
     }
 }
 
@@ -122,8 +151,8 @@
 @layer utilities {
     .bg-grid {
         background-image:
-            linear-gradient(hsl(var(--foreground) / 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+            linear-gradient(hsl(var(--foreground) / 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--foreground) / 0.04) 1px, transparent 1px);
         background-size: 48px 48px;
     }
     .text-balance {
@@ -132,13 +161,19 @@
     .glow-lime {
         box-shadow: var(--shadow-glow);
     }
+    /* Card lift on hover - reusable */
+    .hover-lift {
+        @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-elevated;
+    }
 }
 
-/* Mobile / PWA safety: keep page scrolling simple and predictable.
-   Only the document (html) is the scroll container. Body is left at
-   `overflow: visible` (the browser default) so we never create nested
-   scroll containers that can trap touch gestures in Android Chrome
-   standalone (installed PWA) mode. */
+/* ── Light mode surface tints ─────────────────────────────────────────────── */
+/* Subtle tinted surfaces for cards in light mode to add depth */
+:root .surface-tinted {
+    background: linear-gradient(180deg, hsl(245 60% 99%), hsl(240 6% 97%));
+}
+
+/* ── Mobile / PWA safety ──────────────────────────────────────────────────── */
 @layer base {
     html {
         overflow-x: hidden;
@@ -152,7 +187,6 @@
         padding-left: env(safe-area-inset-left);
         padding-right: env(safe-area-inset-right);
     }
-    /* Tap targets */
     @media (max-width: 640px) {
         button,
         [role="button"],
@@ -166,8 +200,6 @@
     }
 }
 
-/* Map `h-screen` / `min-h-screen` to dynamic viewport so installed
-   PWA full-height pages don't break behind the Android URL/gesture bar. */
 @supports (height: 100dvh) {
     .h-screen {
         height: 100dvh;

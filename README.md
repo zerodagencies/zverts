@@ -1,7 +1,12 @@
 # ZverTs
-ZverTs is a gamified learning platform that turns YouTube playlists into structured, sequential courses. Users can import playlists, progress through locked modules, track learning analytics, earn XP/gems, unlock achievements, and chat with an in-lesson AI tutor.
+
+ZverTs is a gamified learning platform that turns YouTube playlists into
+structured, sequential courses. Users can import playlists, progress through
+locked modules, track learning analytics, earn XP/gems, unlock achievements, and
+chat with an in-lesson AI tutor.
 
 ## Core features
+
 - Playlist import flow (preview + create course from YouTube playlist URL)
 - Sequential module unlocking and server-validated progress tracking
 - Embedded YouTube lesson player with watch-progress sync
@@ -16,6 +21,7 @@ ZverTs is a gamified learning platform that turns YouTube playlists into structu
 - English/Bangla localization
 
 ## Tech stack
+
 - Frontend: React 18 + TypeScript + Vite
 - UI: Tailwind CSS + shadcn/ui + Radix primitives
 - Data/Auth/Backend: Supabase (Postgres, Auth, RLS, RPCs, Edge Functions)
@@ -24,6 +30,7 @@ ZverTs is a gamified learning platform that turns YouTube playlists into structu
 - Testing: Vitest + Testing Library
 
 ## Project structure
+
 ```text
 src/
   components/
@@ -39,6 +46,7 @@ supabase/
 ```
 
 ## Routes
+
 - `/` Landing page
 - `/auth` Sign in / sign up
 - `/dashboard` Personal learning dashboard
@@ -56,9 +64,12 @@ supabase/
 - `/reset-password` Password reset completion
 
 ## Environment configuration
-The app expects environment variables for Supabase on the frontend and additional secrets for Edge Functions.
+
+The app expects environment variables for Supabase on the frontend and
+additional secrets for Edge Functions.
 
 ### Frontend (`.env`)
+
 Create a `.env` file with:
 
 ```bash
@@ -67,6 +78,7 @@ VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
 ```
 
 ### Supabase Edge Function secrets
+
 Set these in your Supabase project for function runtime:
 
 - `SUPABASE_URL`
@@ -75,21 +87,23 @@ Set these in your Supabase project for function runtime:
 - `LOVABLE_API_KEY` (for AI tutor function)
 
 ## Getting started
+
 1. Install dependencies:
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 2. Configure environment variables (see above).
 3. Start development server:
-   ```bash
-   npm run dev
-   ```
+    ```bash
+    npm run dev
+    ```
 4. Build production bundle:
-   ```bash
-   npm run build
-   ```
+    ```bash
+    npm run build
+    ```
 
 ## Available scripts
+
 - `npm run dev` — start Vite dev server
 - `npm run build` — production build
 - `npm run build:dev` — build in development mode
@@ -99,20 +113,27 @@ Set these in your Supabase project for function runtime:
 - `npm run test:watch` — run tests in watch mode
 
 ## Supabase backend notes
+
 Migrations in `supabase/migrations` define:
+
 - Core entities (`profiles`, `courses`, `modules`, `module_progress`)
 - Gamification (`achievements`, `daily_challenges`, XP/gems/streak logic)
 - Learning features (`notes`, `mcq_*`, `certificates`, `attendance`)
 - Security model (RLS policies + role checks)
-- RPCs for key workflows (module unlock/progress, certificates, achievements, reset, etc.)
+- RPCs for key workflows (module unlock/progress, certificates, achievements,
+  reset, etc.)
 
 Edge Functions in `supabase/functions`:
+
 - `preview-youtube-playlist`
 - `import-youtube-playlist`
 - `ai-tutor`
 - `delete-account`
 
 ## Current implementation status
+
 - Most core learning flows are implemented and wired to Supabase.
-- `/quiz/:id` is currently a placeholder view even though MCQ infrastructure exists in the backend.
-- Original starter README was empty; this file documents the current codebase behavior.
+- `/quiz/:id` is currently a placeholder view even though MCQ infrastructure
+  exists in the backend.
+- Original starter README was empty; this file documents the current codebase
+  behavior.

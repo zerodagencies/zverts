@@ -1,1 +1,1082 @@
-{"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/components.json":{"size":414,"mtime_ns":1779724348929729887,"hash":"33115dbd2e5d52136fe6e6d69d58556aade0f7fd5a6f330ba0dbeb929cf9adca"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/eslint.config.js":{"size":765,"mtime_ns":1779724348929832096,"hash":"ca97ff8a04dc9afb318e28746cfe826182fae06e515a723848df4d85ac355c41"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/package.json":{"size":3519,"mtime_ns":1780087477672064830,"hash":"28df68721d8d47cbfdc8d00966c0fc255500e84b559140a49830c87146f4a96a"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/postcss.config.js":{"size":81,"mtime_ns":1779724348931227102,"hash":"b69e4bf4b24cb6bac64261987a5b45a89b0076468a4a3ac55cb3676e659c5ba0"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/manifest.json":{"size":808,"mtime_ns":1780087368041217506,"hash":"697a3e850132f966b625640db07b9584a24f13aae53c38cb44787c3ba4090e33"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/App.tsx":{"size":6896,"mtime_ns":1780732893246252570,"hash":"3ae1924603babdc6b4435552b54be93b718760fcd72767454f5a883bf6a24228"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ErrorBoundary.tsx":{"size":1625,"mtime_ns":1779724348933032027,"hash":"fc9179e35315cdb1e1ca68776ef7ded8e8b05161d179cf1e0b2ea8fdcbbc4cc0"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/NavLink.tsx":{"size":753,"mtime_ns":1779724348933137527,"hash":"37a473a947945f32300a697c11f752527e264f3fba10f8286d5d72a3f31f66c7"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/OfficialEmail.tsx":{"size":2982,"mtime_ns":1780087368042189677,"hash":"f2269cc2f5e0ad6eecd589891fa0cedfed8573cb9c1a5cf6c95eb7ae8c396a21"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/RequireRole.tsx":{"size":651,"mtime_ns":1779724348933243319,"hash":"ac22340cf4ff5fe510fd595289fbabb569ebde45837a2e61d787a04276fe929b"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/SEO.tsx":{"size":1345,"mtime_ns":1780087368042315677,"hash":"fcefbab6c977805c2502228dfa60fc37271a898af352a8bf08b14b0593f02fe5"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/ChatPanel.tsx":{"size":15221,"mtime_ns":1780087368042555220,"hash":"390cbc93ebfbfabff7a60efb29cae25fe8032051999deae2f61b7c45a1fc4fb2"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/ModeSelector.tsx":{"size":2263,"mtime_ns":1780087368042734221,"hash":"59bc587720f890005d522d228c1831d16a940fec9e004da2ebdbd9b6b1ac0376"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/SourcesPanel.tsx":{"size":5950,"mtime_ns":1780087368042872263,"hash":"ac04dcc1dd395befcdff938bb975e98c71c3048a0a289627706ea2a5008bc48c"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/TranscriptPanel.tsx":{"size":5848,"mtime_ns":1780087368043019472,"hash":"8f292d406da9ca0bedbd0fa958d1fbd34b1428270e82a1676aeca890c91d15ba"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/UsageChip.tsx":{"size":1271,"mtime_ns":1780087368043148139,"hash":"7f79c1edb03e913ee73bd77c3095dde03761067d8dd7fc81e678c38175d23477"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/useAttachments.ts":{"size":2687,"mtime_ns":1780087368043282098,"hash":"2eb3960fe3edf44680245d24c6ed0028d0aad256320b662fe5465b4aac6ee3d6"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AITutorPanel.tsx":{"size":18476,"mtime_ns":1780087368043684058,"hash":"67b16bbeec1212dc26a9c9ae0e7e9ba10145edd9609f6215a1cb675ccc8605ed"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AnalyticsPanel.tsx":{"size":3700,"mtime_ns":1779724348933620779,"hash":"913f8cbdecbc651933779f5aa8543c9a5086f4de18149051479e0ff34b492b4d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AppShell.tsx":{"size":8173,"mtime_ns":1780733050405138720,"hash":"c7492fd8f08a68f0d1865d7756174ef12b2e1dc72d95c4e82c347b83b91c39d9"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/BadgesGrid.tsx":{"size":3106,"mtime_ns":1779724348933879030,"hash":"94ab8ab6a1ccb7df83475f53bda3c46cd9cef016a8737e81afb38e64c5306f95"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/CircularProgress.tsx":{"size":6232,"mtime_ns":1779724348934005406,"hash":"df3bc19da8f30b7150d350847a2a5d4c69f012ecf41a0cea2834285f2dfabade"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ContinueWatching.tsx":{"size":3348,"mtime_ns":1779724348934114490,"hash":"420db4072bf9be9f85cd655fb4b6482997c15d55dcb655a94b82dfce0dead0ce"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/DailyChallenge.tsx":{"size":5750,"mtime_ns":1779724348934253240,"hash":"7e1bff9d3acc3074080d059256c70f6c2aacf4718dfe5b6f6365db948766a73d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/InstallPrompt.tsx":{"size":2002,"mtime_ns":1780087368044037893,"hash":"aeda21e266c70906aec443e4526b48a223a94ee1774342bb700db4fca6ca4245"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ModuleCard.tsx":{"size":3105,"mtime_ns":1780582257720947932,"hash":"37f17685f824b2b1f0e8f0be21b20aa9dcea4501d3669273ab7f88888a48a25d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/NotesPanel.tsx":{"size":4470,"mtime_ns":1779724348934504616,"hash":"49012c0242f8d9ae7f49aaa5116d2e2b7e329afcd82bd2ed9375c57c7b502b0d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/NotificationCenter.tsx":{"size":5421,"mtime_ns":1779724348934628575,"hash":"6019df7db0bc9b3099ef6d203922ecc800731a47828cdd5d81c46402edc145e8"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/PlaylistPreview.tsx":{"size":3255,"mtime_ns":1779724348934741992,"hash":"d6adb1f590d041c1524710fc20002380130137e80f3606ab16077fd211a3f4c8"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SiteFooter.tsx":{"size":8113,"mtime_ns":1780087368044278686,"hash":"0e036b28bda26d3807710fd2ca66145e557ede198c7d5d03f203b21e980f550d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SmartNotificationSettings.tsx":{"size":4321,"mtime_ns":1779724348935001743,"hash":"900ee631af1e5f864850176b7deb87b6d79c0f77b5c59c12e178111bed000653"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/StatCard.tsx":{"size":684,"mtime_ns":1779724348935101202,"hash":"8e0f6b0a508c1f15dd5969ad72712d6430f91e68c7758c3b6738d9820022853e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SupportContactPopup.tsx":{"size":6936,"mtime_ns":1780087368044416895,"hash":"1287d75aff2704bd16f0cdb2c6e9f17a8ed224d3f41e95e2c71cedf2ee274759"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ThemeProvider.tsx":{"size":299,"mtime_ns":1779724348935207744,"hash":"ec727f9cd9e1616c3bcbf04630b81f1fdc31a82ade4f1a828bb43166a1863842"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ThemeToggle.tsx":{"size":1260,"mtime_ns":1779724348935301995,"hash":"19a6e5baf1943786526468f9fcb9e4df25f69b705b5d6edba77fbd6277e97ec4"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/TodayMissionCard.tsx":{"size":2740,"mtime_ns":1780732893246911656,"hash":"0bf476b746996702ac54b199a947bdea67d1562cbe6e09c6a91702d437a09818"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/WeeklyActivityChart.tsx":{"size":1268,"mtime_ns":1779724348935410662,"hash":"86e81e2bcbe0bea8f66b65e08ab51a06ab0ddb104b18e1c8f01b43d404987db9"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/YouTubePlayer.tsx":{"size":3535,"mtime_ns":1780311755597699464,"hash":"79236946ddb83cd3153853c1c18bc2f707735bad215b23e77b21f37e559e5851"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/ChatHistorySidebar.tsx":{"size":4867,"mtime_ns":1779724348935711580,"hash":"1e895f680f0f82fd9d7ba9a20a47511a8a86bfd5097f7a5b006c6a4cf9857a12"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/MessageContent.tsx":{"size":7994,"mtime_ns":1779724348935853997,"hash":"db56424cfdc4cc5b6daf23c22e8eeaae3146d87ea5558206ca4195180b4dadf3"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/ModelSelector.tsx":{"size":1845,"mtime_ns":1779724348935959914,"hash":"648ad90d39b5a7389634f05f19f0eead53f741071233f7b3f6d236ce066aae35"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/exportChat.ts":{"size":2312,"mtime_ns":1779724348936064415,"hash":"8580bd62f4411242f21717f19cd343b0638b9e68993d3e1122096a71579508e1"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/types.ts":{"size":713,"mtime_ns":1780087368044632312,"hash":"859c15a705e258aa6737e999501a38b7e2ae1733781267c410b92101ded03fb7"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/useChatStore.ts":{"size":2808,"mtime_ns":1780087368044821646,"hash":"b3009d69bb1693c7be2135e60cf1b155c84cc6afd0b99f88ab6ea221534171fe"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/accordion.tsx":{"size":1976,"mtime_ns":1779724348936435458,"hash":"79d0a2313b64ee363de5d9190061d751a1339dd6f2308ff8b041d66e57bc9709"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/alert-dialog.tsx":{"size":4313,"mtime_ns":1779724348936564958,"hash":"422a9b8f50046a889c0854a8491766fecadfbfbb289c7cec8c8ff5f6a4a0ed77"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/alert.tsx":{"size":1546,"mtime_ns":1779724348936666917,"hash":"af1367ba37ba9f9dbcf0103b869c3f89a819555f581319f9d0402f50e39a7216"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/aspect-ratio.tsx":{"size":143,"mtime_ns":1779724348936762959,"hash":"f38c30ec67fd74615a8069d0f944449b99a044e504b2b5835b7ecc57aaa26c38"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/avatar.tsx":{"size":1365,"mtime_ns":1779724348936863418,"hash":"8caea0856e4098cbb62b820d46ec957237467e10ca3b0f5f4e285757aa9f6e5d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/badge.tsx":{"size":1089,"mtime_ns":1779724348936972419,"hash":"379f0852ba5597765e8f67cb48ad9f22ddc0998ecc4e7b84d4bb4d0d66ebd47d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/breadcrumb.tsx":{"size":2687,"mtime_ns":1779724348937083002,"hash":"1edf05f20507d8b9624552cf7d228c1604962528629757cd13d674211610274e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/button.tsx":{"size":1840,"mtime_ns":1779724348937194420,"hash":"6eb9c8b91c26b022304f570c8cdef5378ff61e4b5372e26ba95373ce71006175"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/calendar.tsx":{"size":2563,"mtime_ns":1779724348937299545,"hash":"57265cc1045faddfb9275f65ebfa9796f35897d1e1dfbf267a1516024277395d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/card.tsx":{"size":1785,"mtime_ns":1779724348937396129,"hash":"bf5d111efb597e4204bf2107eeff2fd46bee911ecc5f752c1084a448eb5900b3"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/carousel.tsx":{"size":6249,"mtime_ns":1779724348937513046,"hash":"b0f9086291cd1c8086f1fd11ac61c8bd02ae8d5e40479c26fcac08bc0637c58f"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/chart.tsx":{"size":9987,"mtime_ns":1779724348937637463,"hash":"1545e9d4cfcbf916e4ae3291087938b5d653d56588535986eb9e1427703e4bdc"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/checkbox.tsx":{"size":1053,"mtime_ns":1779724348937748422,"hash":"cd3b82794bb7177df97559b7455b471c4a052bcad54309dcb9ae492a6afc2fa9"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/collapsible.tsx":{"size":320,"mtime_ns":1779724348937842381,"hash":"80425fa5c0bbef1104c32321dd31b24254e4e54e84529179458465a8e133830e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/command.tsx":{"size":4821,"mtime_ns":1779724348937958964,"hash":"ebfebc442d1d26845d15e9fd33397e8d799ac2f7d7344a9d401fbed9bd8a3317"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/context-menu.tsx":{"size":7191,"mtime_ns":1779724348938079423,"hash":"91f8b0740377585d6606166c581b051bdf69d3571ab8bb7e9cb228450138e0f5"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/dialog.tsx":{"size":3761,"mtime_ns":1779724348938206882,"hash":"82b51d7e2510b77e50d11286bfb6c661f8c7a83bb57b4684aeefb66529bcc6ec"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/drawer.tsx":{"size":2941,"mtime_ns":1779724348938320883,"hash":"adc6d1c0f93de23ef709046eb894991b7cbf94e87e7934c996a366dd042ef851"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/dropdown-menu.tsx":{"size":7260,"mtime_ns":1779724348938463633,"hash":"d50cc92bc2fd7557249e9de0c93748e5cc33a4a726ccaae8f2d0867faf885b72"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/form.tsx":{"size":4014,"mtime_ns":1779724348938562384,"hash":"42c7c661febe7d2b647f117c7a2dcf81b0790bbfc02d73a9f5f3840348426f49"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/hover-card.tsx":{"size":1193,"mtime_ns":1779724348938659342,"hash":"cde8c82be81c73710fbc62000118d62b9a4e1872590629528f6705a228b5db21"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/input-otp.tsx":{"size":2166,"mtime_ns":1779724348938771718,"hash":"1363a62057ef2d6ef1eb5306cf3b52ad064a9e2a576ae0d001be393c54495595"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/input.tsx":{"size":799,"mtime_ns":1779724348938870927,"hash":"6f315c4e1af4eb298ced1e902833e2ca23f2d5edc49219974160657a0dc85652"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/label.tsx":{"size":696,"mtime_ns":1779724348938972219,"hash":"089abb36d577113e99c0f089f698783a50871e5d03bc757a14cce7fc21c29fa9"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/menubar.tsx":{"size":7863,"mtime_ns":1779724348939122969,"hash":"be340bfff0413f7297c6411f72b081a50bb198bce41044279ac8f6e3ce2a9825"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/navigation-menu.tsx":{"size":5030,"mtime_ns":1779724348939246053,"hash":"96f89cf7f7e50795eb68cfdc8fda964a95f1eb7b0749c61506e5a698d42b39cb"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/pagination.tsx":{"size":2683,"mtime_ns":1779724348939348887,"hash":"ddd1e63560524fbc93a7f4af4e26f3decd1a7cc6b6d14ec01ef7240e9f9ac05a"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/popover.tsx":{"size":1239,"mtime_ns":1779724348939442596,"hash":"2968df9b6450780a73e63c2051ffb7c3fca14eecbec7311b1ac2815fb51a4260"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/progress.tsx":{"size":765,"mtime_ns":1779724348939539805,"hash":"796c8b265f177f94f84c70cb0a92f29c5f8af432e9a88aa67ca1ce062d6d0819"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/radio-group.tsx":{"size":1447,"mtime_ns":1779724348939639805,"hash":"e85db6dcda8f134aa507c18c32b6008ce53cfd75e00b960923a008bb3c76cff2"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/resizable.tsx":{"size":1696,"mtime_ns":1779724348939756056,"hash":"bf2adc70f64eb8fd745607d830edf80c0b0ceecc0229d6d02e220454aa08de5d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/scroll-area.tsx":{"size":1608,"mtime_ns":1779724348939849056,"hash":"7a594c2a8b439aebc69457171765e7b377d9bcf99219fc779a571143cb52cec4"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/select.tsx":{"size":5575,"mtime_ns":1779724348939970765,"hash":"e6824aff31cd57eb7dbfb9fd4ab858200472b03648ed4cdbc370f18f0b52e3e1"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/separator.tsx":{"size":698,"mtime_ns":1779724348940064765,"hash":"f0d2521472f7b029a15bf7d6b82169f46ece3830a783015f1e4ef8a3064b0e33"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sheet.tsx":{"size":4197,"mtime_ns":1779724348940178891,"hash":"aaec995efc7c5ce018c3228482a167716029f96ab2ff9b58d39f0dff5358dce3"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sidebar.tsx":{"size":22837,"mtime_ns":1779724348940354100,"hash":"12939142a8ac06f37d4ffb40efc41d0fd5f6988cbc04ac6b3e43caba9f555fad"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/skeleton.tsx":{"size":234,"mtime_ns":1779724348940453059,"hash":"6905130cd9dff43ae1ab94b73dd45d0df0fd3ec873184997d3679b60de911975"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/slider.tsx":{"size":1065,"mtime_ns":1779724348940554351,"hash":"106dfa7c90871fc2398fbc58ff505aea43c1265db7bf722059bdace49210c59e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sonner.tsx":{"size":877,"mtime_ns":1779724348940650351,"hash":"4924a9e9a3122d3bfaf1a40a70544a73ee513ae9e6af4009aa95cd76cee6043a"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/switch.tsx":{"size":1147,"mtime_ns":1779724348940748643,"hash":"9568c5d37f305600a2c66abc9a5a68c6ee0d075f90c804a2e01bbc0ed70f1031"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/table.tsx":{"size":2694,"mtime_ns":1779724348940850852,"hash":"a80769deac55870770ca62e391738aa3218831523c63c31b1d16a0b93b4009f7"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/tabs.tsx":{"size":1897,"mtime_ns":1779724348940947227,"hash":"78d492f1106f0327a783002584162b694292ed40d3b611cd8fb81277cf155c7c"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/textarea.tsx":{"size":751,"mtime_ns":1779724348941056728,"hash":"45515cd1a700d16545fa9fa0805049228449b27e4f0f674f92e22f449fa6ae00"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toast.tsx":{"size":4798,"mtime_ns":1779724348941173228,"hash":"a2a30e1332f9a78aa46053f2883b6c11f2d938509afacf576e40c75d5a3ffe10"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toaster.tsx":{"size":730,"mtime_ns":1779724348941267729,"hash":"1e441d885eb38df5ca4e8847601ff7505c1c12f817ebe536e7f7e75df400f2bb"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toggle-group.tsx":{"size":1714,"mtime_ns":1779724348941378271,"hash":"4e3d3cc3dea38351670664762a93956e909c240eba949a60214a7c24f5ea3e8d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toggle.tsx":{"size":1416,"mtime_ns":1779724348941470646,"hash":"15134af5dc92ae5ee78385bccc09ddef51b5467327566a7235c35fb22cc1b5b1"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/tooltip.tsx":{"size":1155,"mtime_ns":1779724348941563521,"hash":"2576a9bde009d8e6a2968035dd049d00f32723a1e2dc117946cc61653afe3673"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/use-toast.ts":{"size":82,"mtime_ns":1779724348941653730,"hash":"c0595e83d6430a93700cb04fa0a494ad78b05e90ea1246d0c47e416d25f2d87c"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/zerod/BadgesGrid.tsx":{"size":3273,"mtime_ns":1779724348941818648,"hash":"3b8425ec9bb885f5914f3d18405e2d47f17990ae8a46d58ca925c5575a8d2fcc"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/use-mobile.tsx":{"size":576,"mtime_ns":1779724348941980732,"hash":"dcc71156082bab5583dd562be4fec25a260e536a0dc262d120b79c53d93ca7c0"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/use-toast.ts":{"size":3935,"mtime_ns":1779724348942078357,"hash":"a56030de8ec418ccfa6bc7c27c0fcbb41ec19a8a3e6fa68e4d03b9aeb2e35df9"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAIUsage.tsx":{"size":1348,"mtime_ns":1780087368044959689,"hash":"b7286a176419e6539f4e4fa13bec438b0a52f07a7f3e4ccc371eefec31a3cc6d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAdminPaymentAlerts.tsx":{"size":2222,"mtime_ns":1780087368045287815,"hash":"1b4e3c2cfd6d577a191b28d9a92d63697213c8c202b106dd2d9f63c233021352"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAuth.tsx":{"size":1741,"mtime_ns":1780087368045510024,"hash":"6aee8c578384ea4e1c888cc126e46c0f4f04c9b11fdd016263133e75f53ee617"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useBrowserNotifications.tsx":{"size":3101,"mtime_ns":1780087368045710650,"hash":"697c3286e04782921c5d99b393fef68b970a7a3a47cefb9a7f9bcc557dbd6fcd"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useEntitlements.tsx":{"size":2316,"mtime_ns":1780087368045895818,"hash":"daeed60a54a82e63b4b859427680a4716b54d8fb4d258f20a38a05eab4f07434"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useNotifications.tsx":{"size":4192,"mtime_ns":1780087368046206236,"hash":"3fa7d78099ce30fee0b721f6b5ec3e21caf1cc6096a03290f70eb33c40791739"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useTranscript.tsx":{"size":2269,"mtime_ns":1780087368046328444,"hash":"dca8766cbc2c5765982ffa9c0e344b690bf93928280027787469f1e08471537e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/lovable/index.ts":{"size":964,"mtime_ns":1780087368046721738,"hash":"09e8a0cc818415bbbc7c5a7b78e1332b1d3c313668398c6d6db08c3a88bee9bb"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/supabase/client.ts":{"size":590,"mtime_ns":1779724348943122028,"hash":"2ea83ad319b7a83d5ad14e261da62d870ae41e6de47a451ff3ee82ae8726fa7f"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/supabase/types.ts":{"size":39829,"mtime_ns":1780732893247625659,"hash":"0ecf3845472c092746260cde590886ee89a17b9eca6c63ff97ec105653d7bc22"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/brand.ts":{"size":210,"mtime_ns":1780087368047188865,"hash":"f7045b4dc18c71eaa5a8b44e20c60c83770227b8a094be4660552010714b8e29"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/i18n.ts":{"size":7803,"mtime_ns":1779724348943530988,"hash":"bac6bdeb3829a5a6e6eb00b87df591b4265b7dd6eea434eaacc3d79ecbcb828e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/notifications/templates.ts":{"size":6454,"mtime_ns":1780087368047395491,"hash":"d52bb3d35bf2e47e0b9c609f9efb8296728f8a0e124b7d9f9ff3b5102596cf77"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/payment-config.ts":{"size":906,"mtime_ns":1779724348943821990,"hash":"a240be77a3f9add56aac3c42c0066d84818cdee10cf828fdf1c6963b8eb225a3"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/utils.ts":{"size":169,"mtime_ns":1779724348943922365,"hash":"033e482821b3ab5221c8be70659a12ea80775b80ad1ece86d2b3ca927e0a96b4"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/main.tsx":{"size":1162,"mtime_ns":1780087368047591075,"hash":"daf3bef3a281131c63944ba38d30263eff6289e00c760c51d8cc3fe0e97101e9"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/AIWorkspace.tsx":{"size":4966,"mtime_ns":1780087368047732909,"hash":"81a763bd0b22c6251cde4057d6f680eff5309c7ec9c5f00d15284656ae352ef7"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Admin.tsx":{"size":7919,"mtime_ns":1780087368047924034,"hash":"182aa37e834b7a615ad0b6db42e4877a2ad3d0c3d65e0fda8186162f37573461"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Auth.tsx":{"size":4983,"mtime_ns":1780087368048168036,"hash":"a9b5ab328f877290ac30f59ce7ab92df15a18e8907512ee6c69de90bca42978c"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/BuyPackage.tsx":{"size":3903,"mtime_ns":1780087368048362828,"hash":"ba25f185fec0c601becd8a0ae4377752ae96730cafb4eb606a93c599b9e446bb"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Certificate.tsx":{"size":3660,"mtime_ns":1779724348944556159,"hash":"58705b37214b7b13d2a48573eb69c3a5dda09746bd2f6d540280246029bcc242"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/CourseDetail.tsx":{"size":13020,"mtime_ns":1780582257721164475,"hash":"c9224543f6ea3b569b29d4d0efd341977f2eeee76d20f158dd5e6b89f9c934d6"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Courses.tsx":{"size":6842,"mtime_ns":1780087368048769163,"hash":"e3f8c03ff8a4ce90490ca319693759a6606ddfb97c384b8f7715d7b4cc422924"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Dashboard.tsx":{"size":12750,"mtime_ns":1780732893248116078,"hash":"7aac89174d9748c2dd58fee5ea2a99ed48aeb9fd0c09d95812993e19417a659f"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Explore.tsx":{"size":1514,"mtime_ns":1779724348945066370,"hash":"ffe586aeca4f2cb1c062b72808c3c2db3875f0ed3233413ac1f987d7bba62501"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Growth.tsx":{"size":11572,"mtime_ns":1780732893248324371,"hash":"5bf4a46907cc0348d69250af25fec3309fec27c03bddc73a34af326165857836"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Index.tsx":{"size":16113,"mtime_ns":1780087368049185290,"hash":"21871201e6316f62e696ae8cb5b1aea2d364f160c694caa9d0fb7ada99bbd711"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Info.tsx":{"size":12851,"mtime_ns":1780087368049406582,"hash":"5433006bc627606972ff66badffe78d396ca98e6af998e258c41770eb16fee54"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Leaderboard.tsx":{"size":10868,"mtime_ns":1780087368049627167,"hash":"d71bb9892f09fdebadf7ac9ea13dc0fb63970268bc0185bc00d7396711e24d53"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Learn.tsx":{"size":5611,"mtime_ns":1780582257721310351,"hash":"46a0c5b9febfed83dc161d49287508569b844cd6474d50e9b3e85b7017977050"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/ModulePlayer.tsx":{"size":11825,"mtime_ns":1780311755598321342,"hash":"44094e30f49264e5a00f1b14950988cfa5186caadca57296479f417704da06e7"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/NotFound.tsx":{"size":727,"mtime_ns":1779724348945804623,"hash":"ac18b0f17f3968f4f6dedafcb643340eb29e2ddedad9cf29dd2adb57642ddac9"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Payment.tsx":{"size":7328,"mtime_ns":1780087368050228003,"hash":"09c60c98fd2f6c0bf3cb0f5cc40e4145352a3ef976705cbb0a875da5a6021ca0"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/PaymentHistory.tsx":{"size":3688,"mtime_ns":1779724348946021874,"hash":"32f40e509e5eacb5054fb1c74b3d07a02871d9cc841248e853f5e00d83c3f1e1"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Profile.tsx":{"size":7952,"mtime_ns":1780087368050424753,"hash":"c01cfd5b90d0e204ebc21d73cbace3befc0e84a2d6339cd9680aac26c54b2c3e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Quiz.tsx":{"size":342,"mtime_ns":1779724348946264792,"hash":"304803feb0cbedfa122f6716e6066dd04808507b42b62c96f7e4208ff1978eda"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/RefundPolicy.tsx":{"size":5643,"mtime_ns":1780087368050576546,"hash":"a177424f217cc5cb3e52d82af061492a169f8e7496fc7388d4e55e5675436670"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Settings.tsx":{"size":20277,"mtime_ns":1780732893249011249,"hash":"0767029f6018a1179379957e77ad4abdb064f667a2755eb73930523324dbc364"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/AdminManagement.tsx":{"size":4279,"mtime_ns":1779724348946725585,"hash":"b0bf2608de6900aae310d1641dcb87c2d2cf49b41660b4601874d1256e34208d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Broadcast.tsx":{"size":4122,"mtime_ns":1779724348946853044,"hash":"5ab4e8e28873a23f1d335bf6ec711c1e52a09e7bd1e51c708eea08e130c0d672"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Payments.tsx":{"size":5792,"mtime_ns":1780087368051053756,"hash":"83bf62738b7a9466211163c8ed11329057489675707d910e96f6f2077512e983"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/SupportContacts.tsx":{"size":7662,"mtime_ns":1780087368051191215,"hash":"dcab94c2bae6ad18e05576374f92a5eba26391ad2a34e9bd4960fe63978b5de0"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Users.tsx":{"size":3663,"mtime_ns":1779724348947069087,"hash":"bc4edae6c9bf86bd21c7b9da413a9976f667f15ef61174844efbd54b3e93851e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/test/example.test.ts":{"size":143,"mtime_ns":1779724348947233504,"hash":"11b82fc46d8a4afa7a4efb845f8376607e70701f46e58d2f64160a5151709714"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/test/setup.ts":{"size":353,"mtime_ns":1779724348947336880,"hash":"02eefde71948889d46cd76531f4c1f70b91dc074d8e7700ede267064e7b47992"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/vite-env.d.ts":{"size":38,"mtime_ns":1779724348947436505,"hash":"8743f0af3312505f658460f718ec676d775bffcb0a7b77eeaef61098b7722d69"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/ai-tutor/index.ts":{"size":11151,"mtime_ns":1780087368051438675,"hash":"7cc04f4776f6cd4f7e0a0d4394ed994efc0b00f6656529bc31409082c45dbbfc"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/delete-account/index.ts":{"size":2075,"mtime_ns":1779724348948036508,"hash":"ee82a9564c0e72e265978d17e8a77b4e6c9084937303a4d3ab99e053f91311a3"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/fetch-playlist-author/index.ts":{"size":2696,"mtime_ns":1780087368051843635,"hash":"409c5709ad647425a9cc7979a1615040b0d7d45b06a5d5bdd64c4033029865f8"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/import-youtube-playlist/index.ts":{"size":6618,"mtime_ns":1779724348948374301,"hash":"dd391235edf07520fd42a02c1e4d47f967125554034442aecb2ef10706b9a314"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/notifications-scan/index.ts":{"size":6409,"mtime_ns":1780087368052054094,"hash":"80237a075319c73269d088cd57a5b318de609e444f35db5dbc887cf817c9f8de"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/notify-admin/index.ts":{"size":2014,"mtime_ns":1780633226614793554,"hash":"4abec4100b7cd36969203770849c2b34b3621839742d3c411433fc9c79c8a3c4"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/preview-youtube-playlist/index.ts":{"size":3923,"mtime_ns":1780087368052267220,"hash":"ca035b52ee39136a01ee04d2e69f4b7d6a167b69643dcdda2748783f88becaa2"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/telegram-webhook/index.ts":{"size":3249,"mtime_ns":1780645626784232268,"hash":"a0b4ca566f4b2f38f672b8ef727a697bcfb467f7d830518e375a7dc17209c073"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/transcribe-module/index.ts":{"size":2063,"mtime_ns":1780087368052461679,"hash":"907e68e827d5de98598c609990b3e53796a24f0d0be3e9f86969a86e71cdd835"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260421062521_1077a7e3-517f-4c58-ad7f-3af27e03c4b6.sql":{"size":6160,"mtime_ns":1779724348948980470,"hash":"e3ce9a37972e0790bf870b5abc2251d807b2883c370d000b407ee6ceb73870a8"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260505135836_0b7fd2e4-98ba-4afe-a7f1-daca1cdb500a.sql":{"size":15163,"mtime_ns":1779724348949104637,"hash":"d0c7fc6949654cd1f5b1e86c369d8db84ae65557d720bc4ed196d44e0613604c"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260506074203_61fbc948-52c1-4f52-9627-7b0eead083e2.sql":{"size":1507,"mtime_ns":1779724348949214054,"hash":"db57637fe7721546d06a68ea18fa19759c0df1a795975891c60045ba642b511e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260507082659_dba40870-ea2b-4be8-a91e-2aa4898fb389.sql":{"size":176,"mtime_ns":1779724348949318638,"hash":"34217169152a036fbec8de5740605ef7817602428f300af19a4bce46d37c3f34"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260508060104_51af9ed3-d2f9-4abb-9d64-685d6f15dd38.sql":{"size":5141,"mtime_ns":1779724348949448389,"hash":"e387eb02d0afc3deda7a15c2848c605daf9660796b833310b03e4147a89c6f54"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260509195608_a6931653-4920-4b6a-973f-d922646144ca.sql":{"size":393,"mtime_ns":1779724348949543556,"hash":"b7e2bae6672f8720a23521f992253f45c3b8ae1b966a28ab6f2df67e7fdabd7e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525070140_4b7fe372-64f2-49ad-a7b2-7c2ff3dc7f1d.sql":{"size":4389,"mtime_ns":1779724348949661348,"hash":"79c1986e77300ff10291c787bdb25aa8ec4a247b23f28da950d8d0726bd7c188"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525070229_87446b0f-ae81-425d-9427-a833b463dbd7.sql":{"size":1401,"mtime_ns":1779724348949771932,"hash":"a021b2abd5b9f3af5392253a703ab4569725bf060d1fc26a09e488ccd5ae9713"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525082558_ae51f83e-ae59-44cc-b690-55c1e14bfe97.sql":{"size":1006,"mtime_ns":1779724348949875057,"hash":"54a8545a4ca2f9933c897968be73c111ced4f3aea1cdd7c18c4d200bfdac12e5"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525093320_b78e093c-0348-4418-be88-96fe4a38cb76.sql":{"size":174,"mtime_ns":1779724348949971516,"hash":"638924eac626124724bd94b981feccbe8f551f81adc383a1fc12327f81a3fbb5"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125113_bccf8ff0-aea5-4ff7-a1e5-7cfa1d0b4a81.sql":{"size":16466,"mtime_ns":1779724348950125892,"hash":"a3cb6e95e8ddd0e081f489fabd5558e67174703395f6410c13395fc4d20c8922"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125140_aab17721-73f2-4170-9ad7-5c69c914ab5a.sql":{"size":193,"mtime_ns":1779724348950228184,"hash":"032a17fb560365812f9d1f6995665fac26627db6c0211171555b3a582691775e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125959_cf48dc1f-e311-4076-ac21-646aa0bbccc2.sql":{"size":1010,"mtime_ns":1779724348950336934,"hash":"ddbc535b84e1b5a1c4da00cee323a4e1c8ab6e6edf812635e4e84de0ddc8f29a"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525133351_b39a0b68-da37-4c0b-a48a-0725b192313a.sql":{"size":65,"mtime_ns":1779724348950429809,"hash":"9e3e2222803f2395005449812164f89e22a6bb14d17757f0cb5d68060bef6a23"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525133508_ebe958cb-39a1-45d6-810c-a4bdcbf3c12a.sql":{"size":14603,"mtime_ns":1779724348950558352,"hash":"607cdbd53a4d1e39b034956ec6a5c4fadbed43dc0893d34851c30ba1edd3aac6"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525135215_532ad34c-c4e0-441b-a076-9552efa6500a.sql":{"size":300,"mtime_ns":1779724348950665727,"hash":"bdaf576bef367ab2faf5ac5d89aed1930dc80f78e860ba89d89ab6992fe43b38"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525140341_f94f9067-ddcc-465e-bea7-4831defdc2bc.sql":{"size":1734,"mtime_ns":1779724348950757519,"hash":"364dc5ca75023c89e0d6f7680a5eda7685d18c8d5d6c4859fd7b25c599d5f67f"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526024150_8215825b-742a-437e-823a-fafb45b8ebaf.sql":{"size":649,"mtime_ns":1780087368052625971,"hash":"2eaedb2404a2c7874f08bd9b9e662c1910d345a9504f7d02617239cb81732635"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526024927_a1cd1f72-eac8-471f-ba97-bc91a51cf545.sql":{"size":613,"mtime_ns":1780087368052765763,"hash":"f147e35da8e026b9710702cee9293fbd5fbb2bcc57e7c3e25af114ee64c252a6"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526025000_636fc248-ce63-4fa7-b655-94afbe1482cf.sql":{"size":3388,"mtime_ns":1780087368052908097,"hash":"0deadf59982721cdd045149ddab951d136f774ef0042393144f625e0d443ac7f"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526034942_7f23faa6-1547-4dde-bb51-7a1321411560.sql":{"size":1837,"mtime_ns":1780087368053044806,"hash":"b0374e037a58807d0ad37f3c5db2dec5ecf59cd25e1e257c172fba63980fed1d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526035020_66675f13-5fe2-473c-b082-c4f196b8ef17.sql":{"size":628,"mtime_ns":1780087368053160098,"hash":"6482f820f1c11a8e47c9411f3432bb0f4144f096563714848dcd43c94153e668"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526035841_a418f089-eedd-4199-858d-56ad11aad446.sql":{"size":554,"mtime_ns":1780087368053380974,"hash":"8391edfbadeba05f6732d2812cd3c8af480c12c2d2086a96741017a2755b4dae"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526044907_810ac853-d9d7-4cbf-8aee-20d6f0391999.sql":{"size":4061,"mtime_ns":1780087368053518267,"hash":"396516a7147c98ffa73951d740e3a0cb6eac3f2d830c26a7ca16a42767e2438b"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526051135_89fc72c9-c4e5-49b0-8eba-85ad5c2c6f56.sql":{"size":61,"mtime_ns":1780087368053642767,"hash":"fa6b48567497b1e8082d7f232fe4e61b280386a835f6e0618fe44b5496c38814"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526105325_e270a2f0-be3b-44b4-b422-e39f11cc7bf2.sql":{"size":1534,"mtime_ns":1780087368053766684,"hash":"e0e02725d7fe3a650fd3972ad795a0fcd8eb9ebc8fa6844540d9f02dd6e652bd"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526111017_9da8f553-e852-474a-9ab8-2c69a00bfefe.sql":{"size":974,"mtime_ns":1780087368053892893,"hash":"cea13b0fa132bc6bc9629643da7c6e7556625376f2f32dfcf72335e2cdb0e8ad"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526114651_04525865-c53c-470e-92e3-007a8bc91e16.sql":{"size":727,"mtime_ns":1780087368054030227,"hash":"2663dda7d117ee90020acc280982f9fe574d8fcd5118195ce66b766257d6fb12"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526142638_6f867d24-be3d-4e8a-96cc-ef9d4002a758.sql":{"size":3461,"mtime_ns":1780087368054184519,"hash":"a8c1e9ad86b20b17fe3ee1d60ff9fdece7d64530162ced52e1f8d25c40a3ded7"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526143133_7dc8e47c-12bf-4c05-89d2-7278b068c08e.sql":{"size":431,"mtime_ns":1780087368054324520,"hash":"0dcde30dac27e0cf8870f648e4aa36207f6a8341574cfaf313137b260b816219"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526145218_879dea31-3eb4-45c3-8034-723b827794ed.sql":{"size":278,"mtime_ns":1780087368054455562,"hash":"8a9fae789edd3bad178b54fc4b1b81c13ac1777264999029aff4063504447fc1"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526145850_705f78ba-4193-4ae8-915c-20fb6a9735d5.sql":{"size":1133,"mtime_ns":1780087368054603396,"hash":"6c8ee289c66d90fff17109479941e16a04bf17ddbf6d29feebf11fe1b2ede9b7"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526155103_77a6dd88-8858-4b61-87b8-873a6168b4d3.sql":{"size":208,"mtime_ns":1780087368054736147,"hash":"85f7d47f9ec65253c7f367f50953a2e981a751847188b8ab399c640eb68a529f"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526155345_0403a2c2-14cf-4616-864e-10f80ad2e501.sql":{"size":831,"mtime_ns":1780087368054878772,"hash":"a7b32efc3f1820a853912bc44215fb4290689934cfd10332fa7a85cdbf80adfe"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260527050533_624973a6-071d-4abb-9ce0-96a771877fdc.sql":{"size":4082,"mtime_ns":1780087368055040148,"hash":"37e9bbedb7a75314235d2c99be39040405f7f172434c9e9872bbfb929ac9dad4"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260527051157_1e8182b8-7067-4719-b585-6042335cd2bd.sql":{"size":207,"mtime_ns":1780087368055168732,"hash":"95d53875042ca4277ad09e3731f4e9b202117bb09aca9f7e9c14c1ead311bb45"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260529170307_4f6738b6-4a09-4c65-b31c-030a70c472b3.sql":{"size":430,"mtime_ns":1780087368055296524,"hash":"7c5943fb670ec3f7e3b17b556a772814d7b7c85a30aec24297101c16f552e041"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260529171028_fdaebea2-b015-48c1-a25a-a138cfeeb528.sql":{"size":414,"mtime_ns":1780087368055431608,"hash":"579bd58a8ec10280fa560d1bbfa1ace0f6c9353c5a173d697f8b6c522bf209d1"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260602123358_beb814d9-a561-4a3e-9968-f73a11d6837a.sql":{"size":471,"mtime_ns":1780582257721419018,"hash":"73183e5e7ebf8a95a32cdc0ea88ce7f1d8afab19a40815aa70615a9760958e57"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605043639_ed544fc3-01d5-41e4-8136-1d5988f6740b.sql":{"size":1032,"mtime_ns":1780639579407694716,"hash":"3a7add129152feb58bb63076be1a41e942b808f053f8c204e4123ad1cc3d7c1c"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605043657_04bbcef2-dc0f-480b-85de-90bfc09642e8.sql":{"size":92,"mtime_ns":1780639579407884508,"hash":"4e9da235833f4fd6b6c11732996461b8e7c0a3e2589aafcb43937cf56189b4bf"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605053010_84c5eaf0-c92e-4a93-8123-0bdaa8adc56e.sql":{"size":855,"mtime_ns":1780639579408055842,"hash":"50d0f67a2e9c39b264a9fde873ed273d4cb2ef8b4321be687162f2848587d76e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605072336_6f7db1bd-163f-4ee7-808c-84916eac8ef9.sql":{"size":3017,"mtime_ns":1780644597580032903,"hash":"a075a05d1d488613d582fed16231e76836593575bc1718861751a159f3c5904d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260606045604_9e76fd74-33b7-4efe-9dd5-b6b95d238235.sql":{"size":9368,"mtime_ns":1780732893249274000,"hash":"ae2ebfffdb16333b57e22239fffae8c0c43a0db1e80c1030fc1e5e8320ed592e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tailwind.config.ts":{"size":3297,"mtime_ns":1779724348950873270,"hash":"0e4a1f57fecb64ed0a38caa4fb587fe4d986c471fba87426746293aeec6e927e"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.app.json":{"size":665,"mtime_ns":1779725488119674487,"hash":"9d05326563d67b6e2f409c5069086b5f6e74685e38dc22662f0d676975e995d0"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.json":{"size":349,"mtime_ns":1779725502130741886,"hash":"644675cbe394e61fdd16c3a23f265e699a3a01c3b065f9fe0333ca97ba9189fa"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.node.json":{"size":481,"mtime_ns":1779725477069206104,"hash":"983e57a3741987ce68c0ebb4047a86089344db6a343389b72aec49e895d93894"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/vite.config.ts":{"size":777,"mtime_ns":1780087368055656067,"hash":"b3fca3cca1949dceeb047177f5b7c759148825f02c5b7cc88ce0a1b2b28f619b"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/vitest.config.ts":{"size":395,"mtime_ns":1779724348951371730,"hash":"77bf89bf885c6909bd0a1e9de7a3016e6c0df2eecb331829f1b735fa52dbb231"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/.lovable/plan.md":{"size":553,"mtime_ns":1780087368035625066,"hash":"4a9a8d5ab2efeac6796faad25d9c2192e19a58d32ae682e198c79b701bce0c8b"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/BACKEND.md":{"size":46130,"mtime_ns":1780087368036087193,"hash":"44a68be9e997de153011544bd04b3e40fbea4d419343be76f929de33be16d691"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/FRONTEND.md":{"size":36308,"mtime_ns":1780087368036489111,"hash":"08b985035f7d0108dfe43a7e3287aff81898701628b02d9dc2c297ce213d94bf"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/PRODUCT.md":{"size":23841,"mtime_ns":1780087368036810279,"hash":"21eefc5f1d82129c34fd5acc171bb08635ee8dd82f3966a0dfe670a77c46938d"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/README.md":{"size":4263,"mtime_ns":1780087368037048364,"hash":"5d06b42e3e5bc5ec05b29db7ba7efa35e3a7fc85d35324e3988d68d7031271a0"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/index.html":{"size":4084,"mtime_ns":1780582257720784432,"hash":"0be42029641d3c992bf394447b129e0443572e3b8c848ca1062a7498ca533e95"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/llms.txt":{"size":921,"mtime_ns":1780087368041101256,"hash":"b1e439f31706c392c9c0158fb4006c7cd485b272584d4165caf67a0f86935997"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/robots.txt":{"size":287,"mtime_ns":1780087368041406132,"hash":"df9cdefd5a31370643eb2e0057ec6578fe71bf907f98b238492d3571e3bb5ffc"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/apple-touch-icon.png":{"size":4384,"mtime_ns":1780087368039951792,"hash":"0a5d62508e2c6f3853c1abdc2d04aa025d6112e6ae2d6ae7b6c066800a149e1b"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/favicon.png":{"size":10608,"mtime_ns":1780087368040348752,"hash":"39e0de29f2febfb0990503e12b1ce8330e0195f460045975adac6b2917769a7a"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-192.png":{"size":7147,"mtime_ns":1780087368040492878,"hash":"015abc3e719af4bcd2658bf03dae4e53bccfa15ed50ccb6dfed6bb005a36e613"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-512.png":{"size":26731,"mtime_ns":1780087368040840338,"hash":"57a05a1b6527ce1d1c5a0b4eab2a3fb01e264317b2015ffaf9d9df0f7d9f7838"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-maskable-512.png":{"size":14107,"mtime_ns":1780087368040984880,"hash":"7443bbd7faf4f4085ca77819cb9869a4ed40e2f8dddc162846e6fcd4bfe719a3"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/placeholder.svg":{"size":28625,"mtime_ns":1779724348931735854,"hash":"743ae40ed0d1a71e9513a9170d5002ad15e7b3ce2567a1c0d1460bc164a528ce"},"/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/assets/zverts-logo.png":{"size":23646,"mtime_ns":1780087368042054760,"hash":"e8599819ed85da08e19871c7fbe619f06209fb2b0f1109521ba854722f661388"}}
+{
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/components.json": {
+        "size": 414,
+        "mtime_ns": 1779724348929729887,
+        "hash": "33115dbd2e5d52136fe6e6d69d58556aade0f7fd5a6f330ba0dbeb929cf9adca"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/eslint.config.js": {
+        "size": 765,
+        "mtime_ns": 1779724348929832096,
+        "hash": "ca97ff8a04dc9afb318e28746cfe826182fae06e515a723848df4d85ac355c41"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/package.json": {
+        "size": 3519,
+        "mtime_ns": 1780087477672064830,
+        "hash": "28df68721d8d47cbfdc8d00966c0fc255500e84b559140a49830c87146f4a96a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/postcss.config.js": {
+        "size": 81,
+        "mtime_ns": 1779724348931227102,
+        "hash": "b69e4bf4b24cb6bac64261987a5b45a89b0076468a4a3ac55cb3676e659c5ba0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/manifest.json": {
+        "size": 808,
+        "mtime_ns": 1780087368041217506,
+        "hash": "697a3e850132f966b625640db07b9584a24f13aae53c38cb44787c3ba4090e33"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/App.tsx": {
+        "size": 6896,
+        "mtime_ns": 1780732893246252570,
+        "hash": "3ae1924603babdc6b4435552b54be93b718760fcd72767454f5a883bf6a24228"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ErrorBoundary.tsx": {
+        "size": 1625,
+        "mtime_ns": 1779724348933032027,
+        "hash": "fc9179e35315cdb1e1ca68776ef7ded8e8b05161d179cf1e0b2ea8fdcbbc4cc0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/NavLink.tsx": {
+        "size": 753,
+        "mtime_ns": 1779724348933137527,
+        "hash": "37a473a947945f32300a697c11f752527e264f3fba10f8286d5d72a3f31f66c7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/OfficialEmail.tsx": {
+        "size": 2982,
+        "mtime_ns": 1780087368042189677,
+        "hash": "f2269cc2f5e0ad6eecd589891fa0cedfed8573cb9c1a5cf6c95eb7ae8c396a21"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/RequireRole.tsx": {
+        "size": 651,
+        "mtime_ns": 1779724348933243319,
+        "hash": "ac22340cf4ff5fe510fd595289fbabb569ebde45837a2e61d787a04276fe929b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/SEO.tsx": {
+        "size": 1345,
+        "mtime_ns": 1780087368042315677,
+        "hash": "fcefbab6c977805c2502228dfa60fc37271a898af352a8bf08b14b0593f02fe5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/ChatPanel.tsx": {
+        "size": 15221,
+        "mtime_ns": 1780087368042555220,
+        "hash": "390cbc93ebfbfabff7a60efb29cae25fe8032051999deae2f61b7c45a1fc4fb2"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/ModeSelector.tsx": {
+        "size": 2263,
+        "mtime_ns": 1780087368042734221,
+        "hash": "59bc587720f890005d522d228c1831d16a940fec9e004da2ebdbd9b6b1ac0376"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/SourcesPanel.tsx": {
+        "size": 5950,
+        "mtime_ns": 1780087368042872263,
+        "hash": "ac04dcc1dd395befcdff938bb975e98c71c3048a0a289627706ea2a5008bc48c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/TranscriptPanel.tsx": {
+        "size": 5848,
+        "mtime_ns": 1780087368043019472,
+        "hash": "8f292d406da9ca0bedbd0fa958d1fbd34b1428270e82a1676aeca890c91d15ba"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/UsageChip.tsx": {
+        "size": 1271,
+        "mtime_ns": 1780087368043148139,
+        "hash": "7f79c1edb03e913ee73bd77c3095dde03761067d8dd7fc81e678c38175d23477"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/useAttachments.ts": {
+        "size": 2687,
+        "mtime_ns": 1780087368043282098,
+        "hash": "2eb3960fe3edf44680245d24c6ed0028d0aad256320b662fe5465b4aac6ee3d6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AITutorPanel.tsx": {
+        "size": 18476,
+        "mtime_ns": 1780087368043684058,
+        "hash": "67b16bbeec1212dc26a9c9ae0e7e9ba10145edd9609f6215a1cb675ccc8605ed"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AnalyticsPanel.tsx": {
+        "size": 3700,
+        "mtime_ns": 1779724348933620779,
+        "hash": "913f8cbdecbc651933779f5aa8543c9a5086f4de18149051479e0ff34b492b4d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AppShell.tsx": {
+        "size": 8173,
+        "mtime_ns": 1780733050405138720,
+        "hash": "c7492fd8f08a68f0d1865d7756174ef12b2e1dc72d95c4e82c347b83b91c39d9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/BadgesGrid.tsx": {
+        "size": 3106,
+        "mtime_ns": 1779724348933879030,
+        "hash": "94ab8ab6a1ccb7df83475f53bda3c46cd9cef016a8737e81afb38e64c5306f95"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/CircularProgress.tsx": {
+        "size": 6232,
+        "mtime_ns": 1779724348934005406,
+        "hash": "df3bc19da8f30b7150d350847a2a5d4c69f012ecf41a0cea2834285f2dfabade"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ContinueWatching.tsx": {
+        "size": 3348,
+        "mtime_ns": 1779724348934114490,
+        "hash": "420db4072bf9be9f85cd655fb4b6482997c15d55dcb655a94b82dfce0dead0ce"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/DailyChallenge.tsx": {
+        "size": 5750,
+        "mtime_ns": 1779724348934253240,
+        "hash": "7e1bff9d3acc3074080d059256c70f6c2aacf4718dfe5b6f6365db948766a73d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/InstallPrompt.tsx": {
+        "size": 2002,
+        "mtime_ns": 1780087368044037893,
+        "hash": "aeda21e266c70906aec443e4526b48a223a94ee1774342bb700db4fca6ca4245"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ModuleCard.tsx": {
+        "size": 3105,
+        "mtime_ns": 1780582257720947932,
+        "hash": "37f17685f824b2b1f0e8f0be21b20aa9dcea4501d3669273ab7f88888a48a25d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/NotesPanel.tsx": {
+        "size": 4470,
+        "mtime_ns": 1779724348934504616,
+        "hash": "49012c0242f8d9ae7f49aaa5116d2e2b7e329afcd82bd2ed9375c57c7b502b0d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/NotificationCenter.tsx": {
+        "size": 5421,
+        "mtime_ns": 1779724348934628575,
+        "hash": "6019df7db0bc9b3099ef6d203922ecc800731a47828cdd5d81c46402edc145e8"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/PlaylistPreview.tsx": {
+        "size": 3255,
+        "mtime_ns": 1779724348934741992,
+        "hash": "d6adb1f590d041c1524710fc20002380130137e80f3606ab16077fd211a3f4c8"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SiteFooter.tsx": {
+        "size": 8113,
+        "mtime_ns": 1780087368044278686,
+        "hash": "0e036b28bda26d3807710fd2ca66145e557ede198c7d5d03f203b21e980f550d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SmartNotificationSettings.tsx": {
+        "size": 4321,
+        "mtime_ns": 1779724348935001743,
+        "hash": "900ee631af1e5f864850176b7deb87b6d79c0f77b5c59c12e178111bed000653"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/StatCard.tsx": {
+        "size": 684,
+        "mtime_ns": 1779724348935101202,
+        "hash": "8e0f6b0a508c1f15dd5969ad72712d6430f91e68c7758c3b6738d9820022853e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SupportContactPopup.tsx": {
+        "size": 6936,
+        "mtime_ns": 1780087368044416895,
+        "hash": "1287d75aff2704bd16f0cdb2c6e9f17a8ed224d3f41e95e2c71cedf2ee274759"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ThemeProvider.tsx": {
+        "size": 299,
+        "mtime_ns": 1779724348935207744,
+        "hash": "ec727f9cd9e1616c3bcbf04630b81f1fdc31a82ade4f1a828bb43166a1863842"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ThemeToggle.tsx": {
+        "size": 1260,
+        "mtime_ns": 1779724348935301995,
+        "hash": "19a6e5baf1943786526468f9fcb9e4df25f69b705b5d6edba77fbd6277e97ec4"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/TodayMissionCard.tsx": {
+        "size": 2740,
+        "mtime_ns": 1780732893246911656,
+        "hash": "0bf476b746996702ac54b199a947bdea67d1562cbe6e09c6a91702d437a09818"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/WeeklyActivityChart.tsx": {
+        "size": 1268,
+        "mtime_ns": 1779724348935410662,
+        "hash": "86e81e2bcbe0bea8f66b65e08ab51a06ab0ddb104b18e1c8f01b43d404987db9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/YouTubePlayer.tsx": {
+        "size": 3535,
+        "mtime_ns": 1780311755597699464,
+        "hash": "79236946ddb83cd3153853c1c18bc2f707735bad215b23e77b21f37e559e5851"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/ChatHistorySidebar.tsx": {
+        "size": 4867,
+        "mtime_ns": 1779724348935711580,
+        "hash": "1e895f680f0f82fd9d7ba9a20a47511a8a86bfd5097f7a5b006c6a4cf9857a12"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/MessageContent.tsx": {
+        "size": 7994,
+        "mtime_ns": 1779724348935853997,
+        "hash": "db56424cfdc4cc5b6daf23c22e8eeaae3146d87ea5558206ca4195180b4dadf3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/ModelSelector.tsx": {
+        "size": 1845,
+        "mtime_ns": 1779724348935959914,
+        "hash": "648ad90d39b5a7389634f05f19f0eead53f741071233f7b3f6d236ce066aae35"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/exportChat.ts": {
+        "size": 2312,
+        "mtime_ns": 1779724348936064415,
+        "hash": "8580bd62f4411242f21717f19cd343b0638b9e68993d3e1122096a71579508e1"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/types.ts": {
+        "size": 713,
+        "mtime_ns": 1780087368044632312,
+        "hash": "859c15a705e258aa6737e999501a38b7e2ae1733781267c410b92101ded03fb7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/useChatStore.ts": {
+        "size": 2808,
+        "mtime_ns": 1780087368044821646,
+        "hash": "b3009d69bb1693c7be2135e60cf1b155c84cc6afd0b99f88ab6ea221534171fe"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/accordion.tsx": {
+        "size": 1976,
+        "mtime_ns": 1779724348936435458,
+        "hash": "79d0a2313b64ee363de5d9190061d751a1339dd6f2308ff8b041d66e57bc9709"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/alert-dialog.tsx": {
+        "size": 4313,
+        "mtime_ns": 1779724348936564958,
+        "hash": "422a9b8f50046a889c0854a8491766fecadfbfbb289c7cec8c8ff5f6a4a0ed77"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/alert.tsx": {
+        "size": 1546,
+        "mtime_ns": 1779724348936666917,
+        "hash": "af1367ba37ba9f9dbcf0103b869c3f89a819555f581319f9d0402f50e39a7216"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/aspect-ratio.tsx": {
+        "size": 143,
+        "mtime_ns": 1779724348936762959,
+        "hash": "f38c30ec67fd74615a8069d0f944449b99a044e504b2b5835b7ecc57aaa26c38"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/avatar.tsx": {
+        "size": 1365,
+        "mtime_ns": 1779724348936863418,
+        "hash": "8caea0856e4098cbb62b820d46ec957237467e10ca3b0f5f4e285757aa9f6e5d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/badge.tsx": {
+        "size": 1089,
+        "mtime_ns": 1779724348936972419,
+        "hash": "379f0852ba5597765e8f67cb48ad9f22ddc0998ecc4e7b84d4bb4d0d66ebd47d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/breadcrumb.tsx": {
+        "size": 2687,
+        "mtime_ns": 1779724348937083002,
+        "hash": "1edf05f20507d8b9624552cf7d228c1604962528629757cd13d674211610274e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/button.tsx": {
+        "size": 1840,
+        "mtime_ns": 1779724348937194420,
+        "hash": "6eb9c8b91c26b022304f570c8cdef5378ff61e4b5372e26ba95373ce71006175"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/calendar.tsx": {
+        "size": 2563,
+        "mtime_ns": 1779724348937299545,
+        "hash": "57265cc1045faddfb9275f65ebfa9796f35897d1e1dfbf267a1516024277395d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/card.tsx": {
+        "size": 1785,
+        "mtime_ns": 1779724348937396129,
+        "hash": "bf5d111efb597e4204bf2107eeff2fd46bee911ecc5f752c1084a448eb5900b3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/carousel.tsx": {
+        "size": 6249,
+        "mtime_ns": 1779724348937513046,
+        "hash": "b0f9086291cd1c8086f1fd11ac61c8bd02ae8d5e40479c26fcac08bc0637c58f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/chart.tsx": {
+        "size": 9987,
+        "mtime_ns": 1779724348937637463,
+        "hash": "1545e9d4cfcbf916e4ae3291087938b5d653d56588535986eb9e1427703e4bdc"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/checkbox.tsx": {
+        "size": 1053,
+        "mtime_ns": 1779724348937748422,
+        "hash": "cd3b82794bb7177df97559b7455b471c4a052bcad54309dcb9ae492a6afc2fa9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/collapsible.tsx": {
+        "size": 320,
+        "mtime_ns": 1779724348937842381,
+        "hash": "80425fa5c0bbef1104c32321dd31b24254e4e54e84529179458465a8e133830e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/command.tsx": {
+        "size": 4821,
+        "mtime_ns": 1779724348937958964,
+        "hash": "ebfebc442d1d26845d15e9fd33397e8d799ac2f7d7344a9d401fbed9bd8a3317"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/context-menu.tsx": {
+        "size": 7191,
+        "mtime_ns": 1779724348938079423,
+        "hash": "91f8b0740377585d6606166c581b051bdf69d3571ab8bb7e9cb228450138e0f5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/dialog.tsx": {
+        "size": 3761,
+        "mtime_ns": 1779724348938206882,
+        "hash": "82b51d7e2510b77e50d11286bfb6c661f8c7a83bb57b4684aeefb66529bcc6ec"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/drawer.tsx": {
+        "size": 2941,
+        "mtime_ns": 1779724348938320883,
+        "hash": "adc6d1c0f93de23ef709046eb894991b7cbf94e87e7934c996a366dd042ef851"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/dropdown-menu.tsx": {
+        "size": 7260,
+        "mtime_ns": 1779724348938463633,
+        "hash": "d50cc92bc2fd7557249e9de0c93748e5cc33a4a726ccaae8f2d0867faf885b72"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/form.tsx": {
+        "size": 4014,
+        "mtime_ns": 1779724348938562384,
+        "hash": "42c7c661febe7d2b647f117c7a2dcf81b0790bbfc02d73a9f5f3840348426f49"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/hover-card.tsx": {
+        "size": 1193,
+        "mtime_ns": 1779724348938659342,
+        "hash": "cde8c82be81c73710fbc62000118d62b9a4e1872590629528f6705a228b5db21"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/input-otp.tsx": {
+        "size": 2166,
+        "mtime_ns": 1779724348938771718,
+        "hash": "1363a62057ef2d6ef1eb5306cf3b52ad064a9e2a576ae0d001be393c54495595"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/input.tsx": {
+        "size": 799,
+        "mtime_ns": 1779724348938870927,
+        "hash": "6f315c4e1af4eb298ced1e902833e2ca23f2d5edc49219974160657a0dc85652"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/label.tsx": {
+        "size": 696,
+        "mtime_ns": 1779724348938972219,
+        "hash": "089abb36d577113e99c0f089f698783a50871e5d03bc757a14cce7fc21c29fa9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/menubar.tsx": {
+        "size": 7863,
+        "mtime_ns": 1779724348939122969,
+        "hash": "be340bfff0413f7297c6411f72b081a50bb198bce41044279ac8f6e3ce2a9825"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/navigation-menu.tsx": {
+        "size": 5030,
+        "mtime_ns": 1779724348939246053,
+        "hash": "96f89cf7f7e50795eb68cfdc8fda964a95f1eb7b0749c61506e5a698d42b39cb"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/pagination.tsx": {
+        "size": 2683,
+        "mtime_ns": 1779724348939348887,
+        "hash": "ddd1e63560524fbc93a7f4af4e26f3decd1a7cc6b6d14ec01ef7240e9f9ac05a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/popover.tsx": {
+        "size": 1239,
+        "mtime_ns": 1779724348939442596,
+        "hash": "2968df9b6450780a73e63c2051ffb7c3fca14eecbec7311b1ac2815fb51a4260"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/progress.tsx": {
+        "size": 765,
+        "mtime_ns": 1779724348939539805,
+        "hash": "796c8b265f177f94f84c70cb0a92f29c5f8af432e9a88aa67ca1ce062d6d0819"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/radio-group.tsx": {
+        "size": 1447,
+        "mtime_ns": 1779724348939639805,
+        "hash": "e85db6dcda8f134aa507c18c32b6008ce53cfd75e00b960923a008bb3c76cff2"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/resizable.tsx": {
+        "size": 1696,
+        "mtime_ns": 1779724348939756056,
+        "hash": "bf2adc70f64eb8fd745607d830edf80c0b0ceecc0229d6d02e220454aa08de5d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/scroll-area.tsx": {
+        "size": 1608,
+        "mtime_ns": 1779724348939849056,
+        "hash": "7a594c2a8b439aebc69457171765e7b377d9bcf99219fc779a571143cb52cec4"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/select.tsx": {
+        "size": 5575,
+        "mtime_ns": 1779724348939970765,
+        "hash": "e6824aff31cd57eb7dbfb9fd4ab858200472b03648ed4cdbc370f18f0b52e3e1"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/separator.tsx": {
+        "size": 698,
+        "mtime_ns": 1779724348940064765,
+        "hash": "f0d2521472f7b029a15bf7d6b82169f46ece3830a783015f1e4ef8a3064b0e33"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sheet.tsx": {
+        "size": 4197,
+        "mtime_ns": 1779724348940178891,
+        "hash": "aaec995efc7c5ce018c3228482a167716029f96ab2ff9b58d39f0dff5358dce3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sidebar.tsx": {
+        "size": 22837,
+        "mtime_ns": 1779724348940354100,
+        "hash": "12939142a8ac06f37d4ffb40efc41d0fd5f6988cbc04ac6b3e43caba9f555fad"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/skeleton.tsx": {
+        "size": 234,
+        "mtime_ns": 1779724348940453059,
+        "hash": "6905130cd9dff43ae1ab94b73dd45d0df0fd3ec873184997d3679b60de911975"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/slider.tsx": {
+        "size": 1065,
+        "mtime_ns": 1779724348940554351,
+        "hash": "106dfa7c90871fc2398fbc58ff505aea43c1265db7bf722059bdace49210c59e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sonner.tsx": {
+        "size": 877,
+        "mtime_ns": 1779724348940650351,
+        "hash": "4924a9e9a3122d3bfaf1a40a70544a73ee513ae9e6af4009aa95cd76cee6043a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/switch.tsx": {
+        "size": 1147,
+        "mtime_ns": 1779724348940748643,
+        "hash": "9568c5d37f305600a2c66abc9a5a68c6ee0d075f90c804a2e01bbc0ed70f1031"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/table.tsx": {
+        "size": 2694,
+        "mtime_ns": 1779724348940850852,
+        "hash": "a80769deac55870770ca62e391738aa3218831523c63c31b1d16a0b93b4009f7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/tabs.tsx": {
+        "size": 1897,
+        "mtime_ns": 1779724348940947227,
+        "hash": "78d492f1106f0327a783002584162b694292ed40d3b611cd8fb81277cf155c7c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/textarea.tsx": {
+        "size": 751,
+        "mtime_ns": 1779724348941056728,
+        "hash": "45515cd1a700d16545fa9fa0805049228449b27e4f0f674f92e22f449fa6ae00"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toast.tsx": {
+        "size": 4798,
+        "mtime_ns": 1779724348941173228,
+        "hash": "a2a30e1332f9a78aa46053f2883b6c11f2d938509afacf576e40c75d5a3ffe10"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toaster.tsx": {
+        "size": 730,
+        "mtime_ns": 1779724348941267729,
+        "hash": "1e441d885eb38df5ca4e8847601ff7505c1c12f817ebe536e7f7e75df400f2bb"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toggle-group.tsx": {
+        "size": 1714,
+        "mtime_ns": 1779724348941378271,
+        "hash": "4e3d3cc3dea38351670664762a93956e909c240eba949a60214a7c24f5ea3e8d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toggle.tsx": {
+        "size": 1416,
+        "mtime_ns": 1779724348941470646,
+        "hash": "15134af5dc92ae5ee78385bccc09ddef51b5467327566a7235c35fb22cc1b5b1"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/tooltip.tsx": {
+        "size": 1155,
+        "mtime_ns": 1779724348941563521,
+        "hash": "2576a9bde009d8e6a2968035dd049d00f32723a1e2dc117946cc61653afe3673"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/use-toast.ts": {
+        "size": 82,
+        "mtime_ns": 1779724348941653730,
+        "hash": "c0595e83d6430a93700cb04fa0a494ad78b05e90ea1246d0c47e416d25f2d87c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/zerod/BadgesGrid.tsx": {
+        "size": 3273,
+        "mtime_ns": 1779724348941818648,
+        "hash": "3b8425ec9bb885f5914f3d18405e2d47f17990ae8a46d58ca925c5575a8d2fcc"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/use-mobile.tsx": {
+        "size": 576,
+        "mtime_ns": 1779724348941980732,
+        "hash": "dcc71156082bab5583dd562be4fec25a260e536a0dc262d120b79c53d93ca7c0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/use-toast.ts": {
+        "size": 3935,
+        "mtime_ns": 1779724348942078357,
+        "hash": "a56030de8ec418ccfa6bc7c27c0fcbb41ec19a8a3e6fa68e4d03b9aeb2e35df9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAIUsage.tsx": {
+        "size": 1348,
+        "mtime_ns": 1780087368044959689,
+        "hash": "b7286a176419e6539f4e4fa13bec438b0a52f07a7f3e4ccc371eefec31a3cc6d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAdminPaymentAlerts.tsx": {
+        "size": 2222,
+        "mtime_ns": 1780087368045287815,
+        "hash": "1b4e3c2cfd6d577a191b28d9a92d63697213c8c202b106dd2d9f63c233021352"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAuth.tsx": {
+        "size": 1741,
+        "mtime_ns": 1780087368045510024,
+        "hash": "6aee8c578384ea4e1c888cc126e46c0f4f04c9b11fdd016263133e75f53ee617"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useBrowserNotifications.tsx": {
+        "size": 3101,
+        "mtime_ns": 1780087368045710650,
+        "hash": "697c3286e04782921c5d99b393fef68b970a7a3a47cefb9a7f9bcc557dbd6fcd"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useEntitlements.tsx": {
+        "size": 2316,
+        "mtime_ns": 1780087368045895818,
+        "hash": "daeed60a54a82e63b4b859427680a4716b54d8fb4d258f20a38a05eab4f07434"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useNotifications.tsx": {
+        "size": 4192,
+        "mtime_ns": 1780087368046206236,
+        "hash": "3fa7d78099ce30fee0b721f6b5ec3e21caf1cc6096a03290f70eb33c40791739"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useTranscript.tsx": {
+        "size": 2269,
+        "mtime_ns": 1780087368046328444,
+        "hash": "dca8766cbc2c5765982ffa9c0e344b690bf93928280027787469f1e08471537e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/lovable/index.ts": {
+        "size": 964,
+        "mtime_ns": 1780087368046721738,
+        "hash": "09e8a0cc818415bbbc7c5a7b78e1332b1d3c313668398c6d6db08c3a88bee9bb"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/supabase/client.ts": {
+        "size": 590,
+        "mtime_ns": 1779724348943122028,
+        "hash": "2ea83ad319b7a83d5ad14e261da62d870ae41e6de47a451ff3ee82ae8726fa7f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/supabase/types.ts": {
+        "size": 39829,
+        "mtime_ns": 1780732893247625659,
+        "hash": "0ecf3845472c092746260cde590886ee89a17b9eca6c63ff97ec105653d7bc22"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/brand.ts": {
+        "size": 210,
+        "mtime_ns": 1780087368047188865,
+        "hash": "f7045b4dc18c71eaa5a8b44e20c60c83770227b8a094be4660552010714b8e29"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/i18n.ts": {
+        "size": 7803,
+        "mtime_ns": 1779724348943530988,
+        "hash": "bac6bdeb3829a5a6e6eb00b87df591b4265b7dd6eea434eaacc3d79ecbcb828e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/notifications/templates.ts": {
+        "size": 6454,
+        "mtime_ns": 1780087368047395491,
+        "hash": "d52bb3d35bf2e47e0b9c609f9efb8296728f8a0e124b7d9f9ff3b5102596cf77"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/payment-config.ts": {
+        "size": 906,
+        "mtime_ns": 1779724348943821990,
+        "hash": "a240be77a3f9add56aac3c42c0066d84818cdee10cf828fdf1c6963b8eb225a3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/utils.ts": {
+        "size": 169,
+        "mtime_ns": 1779724348943922365,
+        "hash": "033e482821b3ab5221c8be70659a12ea80775b80ad1ece86d2b3ca927e0a96b4"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/main.tsx": {
+        "size": 1162,
+        "mtime_ns": 1780087368047591075,
+        "hash": "daf3bef3a281131c63944ba38d30263eff6289e00c760c51d8cc3fe0e97101e9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/AIWorkspace.tsx": {
+        "size": 4966,
+        "mtime_ns": 1780087368047732909,
+        "hash": "81a763bd0b22c6251cde4057d6f680eff5309c7ec9c5f00d15284656ae352ef7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Admin.tsx": {
+        "size": 7919,
+        "mtime_ns": 1780087368047924034,
+        "hash": "182aa37e834b7a615ad0b6db42e4877a2ad3d0c3d65e0fda8186162f37573461"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Auth.tsx": {
+        "size": 4983,
+        "mtime_ns": 1780087368048168036,
+        "hash": "a9b5ab328f877290ac30f59ce7ab92df15a18e8907512ee6c69de90bca42978c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/BuyPackage.tsx": {
+        "size": 3903,
+        "mtime_ns": 1780087368048362828,
+        "hash": "ba25f185fec0c601becd8a0ae4377752ae96730cafb4eb606a93c599b9e446bb"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Certificate.tsx": {
+        "size": 3660,
+        "mtime_ns": 1779724348944556159,
+        "hash": "58705b37214b7b13d2a48573eb69c3a5dda09746bd2f6d540280246029bcc242"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/CourseDetail.tsx": {
+        "size": 13020,
+        "mtime_ns": 1780582257721164475,
+        "hash": "c9224543f6ea3b569b29d4d0efd341977f2eeee76d20f158dd5e6b89f9c934d6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Courses.tsx": {
+        "size": 6842,
+        "mtime_ns": 1780087368048769163,
+        "hash": "e3f8c03ff8a4ce90490ca319693759a6606ddfb97c384b8f7715d7b4cc422924"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Dashboard.tsx": {
+        "size": 12750,
+        "mtime_ns": 1780732893248116078,
+        "hash": "7aac89174d9748c2dd58fee5ea2a99ed48aeb9fd0c09d95812993e19417a659f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Explore.tsx": {
+        "size": 1514,
+        "mtime_ns": 1779724348945066370,
+        "hash": "ffe586aeca4f2cb1c062b72808c3c2db3875f0ed3233413ac1f987d7bba62501"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Growth.tsx": {
+        "size": 11572,
+        "mtime_ns": 1780732893248324371,
+        "hash": "5bf4a46907cc0348d69250af25fec3309fec27c03bddc73a34af326165857836"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Index.tsx": {
+        "size": 16113,
+        "mtime_ns": 1780087368049185290,
+        "hash": "21871201e6316f62e696ae8cb5b1aea2d364f160c694caa9d0fb7ada99bbd711"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Info.tsx": {
+        "size": 12851,
+        "mtime_ns": 1780087368049406582,
+        "hash": "5433006bc627606972ff66badffe78d396ca98e6af998e258c41770eb16fee54"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Leaderboard.tsx": {
+        "size": 10868,
+        "mtime_ns": 1780087368049627167,
+        "hash": "d71bb9892f09fdebadf7ac9ea13dc0fb63970268bc0185bc00d7396711e24d53"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Learn.tsx": {
+        "size": 5611,
+        "mtime_ns": 1780582257721310351,
+        "hash": "46a0c5b9febfed83dc161d49287508569b844cd6474d50e9b3e85b7017977050"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/ModulePlayer.tsx": {
+        "size": 11825,
+        "mtime_ns": 1780311755598321342,
+        "hash": "44094e30f49264e5a00f1b14950988cfa5186caadca57296479f417704da06e7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/NotFound.tsx": {
+        "size": 727,
+        "mtime_ns": 1779724348945804623,
+        "hash": "ac18b0f17f3968f4f6dedafcb643340eb29e2ddedad9cf29dd2adb57642ddac9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Payment.tsx": {
+        "size": 7328,
+        "mtime_ns": 1780087368050228003,
+        "hash": "09c60c98fd2f6c0bf3cb0f5cc40e4145352a3ef976705cbb0a875da5a6021ca0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/PaymentHistory.tsx": {
+        "size": 3688,
+        "mtime_ns": 1779724348946021874,
+        "hash": "32f40e509e5eacb5054fb1c74b3d07a02871d9cc841248e853f5e00d83c3f1e1"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Profile.tsx": {
+        "size": 7952,
+        "mtime_ns": 1780087368050424753,
+        "hash": "c01cfd5b90d0e204ebc21d73cbace3befc0e84a2d6339cd9680aac26c54b2c3e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Quiz.tsx": {
+        "size": 342,
+        "mtime_ns": 1779724348946264792,
+        "hash": "304803feb0cbedfa122f6716e6066dd04808507b42b62c96f7e4208ff1978eda"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/RefundPolicy.tsx": {
+        "size": 5643,
+        "mtime_ns": 1780087368050576546,
+        "hash": "a177424f217cc5cb3e52d82af061492a169f8e7496fc7388d4e55e5675436670"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Settings.tsx": {
+        "size": 20277,
+        "mtime_ns": 1780732893249011249,
+        "hash": "0767029f6018a1179379957e77ad4abdb064f667a2755eb73930523324dbc364"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/AdminManagement.tsx": {
+        "size": 4279,
+        "mtime_ns": 1779724348946725585,
+        "hash": "b0bf2608de6900aae310d1641dcb87c2d2cf49b41660b4601874d1256e34208d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Broadcast.tsx": {
+        "size": 4122,
+        "mtime_ns": 1779724348946853044,
+        "hash": "5ab4e8e28873a23f1d335bf6ec711c1e52a09e7bd1e51c708eea08e130c0d672"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Payments.tsx": {
+        "size": 5792,
+        "mtime_ns": 1780087368051053756,
+        "hash": "83bf62738b7a9466211163c8ed11329057489675707d910e96f6f2077512e983"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/SupportContacts.tsx": {
+        "size": 7662,
+        "mtime_ns": 1780087368051191215,
+        "hash": "dcab94c2bae6ad18e05576374f92a5eba26391ad2a34e9bd4960fe63978b5de0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Users.tsx": {
+        "size": 3663,
+        "mtime_ns": 1779724348947069087,
+        "hash": "bc4edae6c9bf86bd21c7b9da413a9976f667f15ef61174844efbd54b3e93851e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/test/example.test.ts": {
+        "size": 143,
+        "mtime_ns": 1779724348947233504,
+        "hash": "11b82fc46d8a4afa7a4efb845f8376607e70701f46e58d2f64160a5151709714"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/test/setup.ts": {
+        "size": 353,
+        "mtime_ns": 1779724348947336880,
+        "hash": "02eefde71948889d46cd76531f4c1f70b91dc074d8e7700ede267064e7b47992"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/vite-env.d.ts": {
+        "size": 38,
+        "mtime_ns": 1779724348947436505,
+        "hash": "8743f0af3312505f658460f718ec676d775bffcb0a7b77eeaef61098b7722d69"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/ai-tutor/index.ts": {
+        "size": 11151,
+        "mtime_ns": 1780087368051438675,
+        "hash": "7cc04f4776f6cd4f7e0a0d4394ed994efc0b00f6656529bc31409082c45dbbfc"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/delete-account/index.ts": {
+        "size": 2075,
+        "mtime_ns": 1779724348948036508,
+        "hash": "ee82a9564c0e72e265978d17e8a77b4e6c9084937303a4d3ab99e053f91311a3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/fetch-playlist-author/index.ts": {
+        "size": 2696,
+        "mtime_ns": 1780087368051843635,
+        "hash": "409c5709ad647425a9cc7979a1615040b0d7d45b06a5d5bdd64c4033029865f8"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/import-youtube-playlist/index.ts": {
+        "size": 6618,
+        "mtime_ns": 1779724348948374301,
+        "hash": "dd391235edf07520fd42a02c1e4d47f967125554034442aecb2ef10706b9a314"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/notifications-scan/index.ts": {
+        "size": 6409,
+        "mtime_ns": 1780087368052054094,
+        "hash": "80237a075319c73269d088cd57a5b318de609e444f35db5dbc887cf817c9f8de"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/notify-admin/index.ts": {
+        "size": 2014,
+        "mtime_ns": 1780633226614793554,
+        "hash": "4abec4100b7cd36969203770849c2b34b3621839742d3c411433fc9c79c8a3c4"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/preview-youtube-playlist/index.ts": {
+        "size": 3923,
+        "mtime_ns": 1780087368052267220,
+        "hash": "ca035b52ee39136a01ee04d2e69f4b7d6a167b69643dcdda2748783f88becaa2"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/telegram-webhook/index.ts": {
+        "size": 3249,
+        "mtime_ns": 1780645626784232268,
+        "hash": "a0b4ca566f4b2f38f672b8ef727a697bcfb467f7d830518e375a7dc17209c073"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/transcribe-module/index.ts": {
+        "size": 2063,
+        "mtime_ns": 1780087368052461679,
+        "hash": "907e68e827d5de98598c609990b3e53796a24f0d0be3e9f86969a86e71cdd835"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260421062521_1077a7e3-517f-4c58-ad7f-3af27e03c4b6.sql": {
+        "size": 6160,
+        "mtime_ns": 1779724348948980470,
+        "hash": "e3ce9a37972e0790bf870b5abc2251d807b2883c370d000b407ee6ceb73870a8"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260505135836_0b7fd2e4-98ba-4afe-a7f1-daca1cdb500a.sql": {
+        "size": 15163,
+        "mtime_ns": 1779724348949104637,
+        "hash": "d0c7fc6949654cd1f5b1e86c369d8db84ae65557d720bc4ed196d44e0613604c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260506074203_61fbc948-52c1-4f52-9627-7b0eead083e2.sql": {
+        "size": 1507,
+        "mtime_ns": 1779724348949214054,
+        "hash": "db57637fe7721546d06a68ea18fa19759c0df1a795975891c60045ba642b511e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260507082659_dba40870-ea2b-4be8-a91e-2aa4898fb389.sql": {
+        "size": 176,
+        "mtime_ns": 1779724348949318638,
+        "hash": "34217169152a036fbec8de5740605ef7817602428f300af19a4bce46d37c3f34"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260508060104_51af9ed3-d2f9-4abb-9d64-685d6f15dd38.sql": {
+        "size": 5141,
+        "mtime_ns": 1779724348949448389,
+        "hash": "e387eb02d0afc3deda7a15c2848c605daf9660796b833310b03e4147a89c6f54"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260509195608_a6931653-4920-4b6a-973f-d922646144ca.sql": {
+        "size": 393,
+        "mtime_ns": 1779724348949543556,
+        "hash": "b7e2bae6672f8720a23521f992253f45c3b8ae1b966a28ab6f2df67e7fdabd7e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525070140_4b7fe372-64f2-49ad-a7b2-7c2ff3dc7f1d.sql": {
+        "size": 4389,
+        "mtime_ns": 1779724348949661348,
+        "hash": "79c1986e77300ff10291c787bdb25aa8ec4a247b23f28da950d8d0726bd7c188"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525070229_87446b0f-ae81-425d-9427-a833b463dbd7.sql": {
+        "size": 1401,
+        "mtime_ns": 1779724348949771932,
+        "hash": "a021b2abd5b9f3af5392253a703ab4569725bf060d1fc26a09e488ccd5ae9713"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525082558_ae51f83e-ae59-44cc-b690-55c1e14bfe97.sql": {
+        "size": 1006,
+        "mtime_ns": 1779724348949875057,
+        "hash": "54a8545a4ca2f9933c897968be73c111ced4f3aea1cdd7c18c4d200bfdac12e5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525093320_b78e093c-0348-4418-be88-96fe4a38cb76.sql": {
+        "size": 174,
+        "mtime_ns": 1779724348949971516,
+        "hash": "638924eac626124724bd94b981feccbe8f551f81adc383a1fc12327f81a3fbb5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125113_bccf8ff0-aea5-4ff7-a1e5-7cfa1d0b4a81.sql": {
+        "size": 16466,
+        "mtime_ns": 1779724348950125892,
+        "hash": "a3cb6e95e8ddd0e081f489fabd5558e67174703395f6410c13395fc4d20c8922"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125140_aab17721-73f2-4170-9ad7-5c69c914ab5a.sql": {
+        "size": 193,
+        "mtime_ns": 1779724348950228184,
+        "hash": "032a17fb560365812f9d1f6995665fac26627db6c0211171555b3a582691775e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125959_cf48dc1f-e311-4076-ac21-646aa0bbccc2.sql": {
+        "size": 1010,
+        "mtime_ns": 1779724348950336934,
+        "hash": "ddbc535b84e1b5a1c4da00cee323a4e1c8ab6e6edf812635e4e84de0ddc8f29a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525133351_b39a0b68-da37-4c0b-a48a-0725b192313a.sql": {
+        "size": 65,
+        "mtime_ns": 1779724348950429809,
+        "hash": "9e3e2222803f2395005449812164f89e22a6bb14d17757f0cb5d68060bef6a23"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525133508_ebe958cb-39a1-45d6-810c-a4bdcbf3c12a.sql": {
+        "size": 14603,
+        "mtime_ns": 1779724348950558352,
+        "hash": "607cdbd53a4d1e39b034956ec6a5c4fadbed43dc0893d34851c30ba1edd3aac6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525135215_532ad34c-c4e0-441b-a076-9552efa6500a.sql": {
+        "size": 300,
+        "mtime_ns": 1779724348950665727,
+        "hash": "bdaf576bef367ab2faf5ac5d89aed1930dc80f78e860ba89d89ab6992fe43b38"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525140341_f94f9067-ddcc-465e-bea7-4831defdc2bc.sql": {
+        "size": 1734,
+        "mtime_ns": 1779724348950757519,
+        "hash": "364dc5ca75023c89e0d6f7680a5eda7685d18c8d5d6c4859fd7b25c599d5f67f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526024150_8215825b-742a-437e-823a-fafb45b8ebaf.sql": {
+        "size": 649,
+        "mtime_ns": 1780087368052625971,
+        "hash": "2eaedb2404a2c7874f08bd9b9e662c1910d345a9504f7d02617239cb81732635"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526024927_a1cd1f72-eac8-471f-ba97-bc91a51cf545.sql": {
+        "size": 613,
+        "mtime_ns": 1780087368052765763,
+        "hash": "f147e35da8e026b9710702cee9293fbd5fbb2bcc57e7c3e25af114ee64c252a6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526025000_636fc248-ce63-4fa7-b655-94afbe1482cf.sql": {
+        "size": 3388,
+        "mtime_ns": 1780087368052908097,
+        "hash": "0deadf59982721cdd045149ddab951d136f774ef0042393144f625e0d443ac7f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526034942_7f23faa6-1547-4dde-bb51-7a1321411560.sql": {
+        "size": 1837,
+        "mtime_ns": 1780087368053044806,
+        "hash": "b0374e037a58807d0ad37f3c5db2dec5ecf59cd25e1e257c172fba63980fed1d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526035020_66675f13-5fe2-473c-b082-c4f196b8ef17.sql": {
+        "size": 628,
+        "mtime_ns": 1780087368053160098,
+        "hash": "6482f820f1c11a8e47c9411f3432bb0f4144f096563714848dcd43c94153e668"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526035841_a418f089-eedd-4199-858d-56ad11aad446.sql": {
+        "size": 554,
+        "mtime_ns": 1780087368053380974,
+        "hash": "8391edfbadeba05f6732d2812cd3c8af480c12c2d2086a96741017a2755b4dae"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526044907_810ac853-d9d7-4cbf-8aee-20d6f0391999.sql": {
+        "size": 4061,
+        "mtime_ns": 1780087368053518267,
+        "hash": "396516a7147c98ffa73951d740e3a0cb6eac3f2d830c26a7ca16a42767e2438b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526051135_89fc72c9-c4e5-49b0-8eba-85ad5c2c6f56.sql": {
+        "size": 61,
+        "mtime_ns": 1780087368053642767,
+        "hash": "fa6b48567497b1e8082d7f232fe4e61b280386a835f6e0618fe44b5496c38814"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526105325_e270a2f0-be3b-44b4-b422-e39f11cc7bf2.sql": {
+        "size": 1534,
+        "mtime_ns": 1780087368053766684,
+        "hash": "e0e02725d7fe3a650fd3972ad795a0fcd8eb9ebc8fa6844540d9f02dd6e652bd"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526111017_9da8f553-e852-474a-9ab8-2c69a00bfefe.sql": {
+        "size": 974,
+        "mtime_ns": 1780087368053892893,
+        "hash": "cea13b0fa132bc6bc9629643da7c6e7556625376f2f32dfcf72335e2cdb0e8ad"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526114651_04525865-c53c-470e-92e3-007a8bc91e16.sql": {
+        "size": 727,
+        "mtime_ns": 1780087368054030227,
+        "hash": "2663dda7d117ee90020acc280982f9fe574d8fcd5118195ce66b766257d6fb12"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526142638_6f867d24-be3d-4e8a-96cc-ef9d4002a758.sql": {
+        "size": 3461,
+        "mtime_ns": 1780087368054184519,
+        "hash": "a8c1e9ad86b20b17fe3ee1d60ff9fdece7d64530162ced52e1f8d25c40a3ded7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526143133_7dc8e47c-12bf-4c05-89d2-7278b068c08e.sql": {
+        "size": 431,
+        "mtime_ns": 1780087368054324520,
+        "hash": "0dcde30dac27e0cf8870f648e4aa36207f6a8341574cfaf313137b260b816219"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526145218_879dea31-3eb4-45c3-8034-723b827794ed.sql": {
+        "size": 278,
+        "mtime_ns": 1780087368054455562,
+        "hash": "8a9fae789edd3bad178b54fc4b1b81c13ac1777264999029aff4063504447fc1"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526145850_705f78ba-4193-4ae8-915c-20fb6a9735d5.sql": {
+        "size": 1133,
+        "mtime_ns": 1780087368054603396,
+        "hash": "6c8ee289c66d90fff17109479941e16a04bf17ddbf6d29feebf11fe1b2ede9b7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526155103_77a6dd88-8858-4b61-87b8-873a6168b4d3.sql": {
+        "size": 208,
+        "mtime_ns": 1780087368054736147,
+        "hash": "85f7d47f9ec65253c7f367f50953a2e981a751847188b8ab399c640eb68a529f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526155345_0403a2c2-14cf-4616-864e-10f80ad2e501.sql": {
+        "size": 831,
+        "mtime_ns": 1780087368054878772,
+        "hash": "a7b32efc3f1820a853912bc44215fb4290689934cfd10332fa7a85cdbf80adfe"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260527050533_624973a6-071d-4abb-9ce0-96a771877fdc.sql": {
+        "size": 4082,
+        "mtime_ns": 1780087368055040148,
+        "hash": "37e9bbedb7a75314235d2c99be39040405f7f172434c9e9872bbfb929ac9dad4"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260527051157_1e8182b8-7067-4719-b585-6042335cd2bd.sql": {
+        "size": 207,
+        "mtime_ns": 1780087368055168732,
+        "hash": "95d53875042ca4277ad09e3731f4e9b202117bb09aca9f7e9c14c1ead311bb45"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260529170307_4f6738b6-4a09-4c65-b31c-030a70c472b3.sql": {
+        "size": 430,
+        "mtime_ns": 1780087368055296524,
+        "hash": "7c5943fb670ec3f7e3b17b556a772814d7b7c85a30aec24297101c16f552e041"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260529171028_fdaebea2-b015-48c1-a25a-a138cfeeb528.sql": {
+        "size": 414,
+        "mtime_ns": 1780087368055431608,
+        "hash": "579bd58a8ec10280fa560d1bbfa1ace0f6c9353c5a173d697f8b6c522bf209d1"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260602123358_beb814d9-a561-4a3e-9968-f73a11d6837a.sql": {
+        "size": 471,
+        "mtime_ns": 1780582257721419018,
+        "hash": "73183e5e7ebf8a95a32cdc0ea88ce7f1d8afab19a40815aa70615a9760958e57"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605043639_ed544fc3-01d5-41e4-8136-1d5988f6740b.sql": {
+        "size": 1032,
+        "mtime_ns": 1780639579407694716,
+        "hash": "3a7add129152feb58bb63076be1a41e942b808f053f8c204e4123ad1cc3d7c1c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605043657_04bbcef2-dc0f-480b-85de-90bfc09642e8.sql": {
+        "size": 92,
+        "mtime_ns": 1780639579407884508,
+        "hash": "4e9da235833f4fd6b6c11732996461b8e7c0a3e2589aafcb43937cf56189b4bf"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605053010_84c5eaf0-c92e-4a93-8123-0bdaa8adc56e.sql": {
+        "size": 855,
+        "mtime_ns": 1780639579408055842,
+        "hash": "50d0f67a2e9c39b264a9fde873ed273d4cb2ef8b4321be687162f2848587d76e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605072336_6f7db1bd-163f-4ee7-808c-84916eac8ef9.sql": {
+        "size": 3017,
+        "mtime_ns": 1780644597580032903,
+        "hash": "a075a05d1d488613d582fed16231e76836593575bc1718861751a159f3c5904d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260606045604_9e76fd74-33b7-4efe-9dd5-b6b95d238235.sql": {
+        "size": 9368,
+        "mtime_ns": 1780732893249274000,
+        "hash": "ae2ebfffdb16333b57e22239fffae8c0c43a0db1e80c1030fc1e5e8320ed592e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tailwind.config.ts": {
+        "size": 3297,
+        "mtime_ns": 1779724348950873270,
+        "hash": "0e4a1f57fecb64ed0a38caa4fb587fe4d986c471fba87426746293aeec6e927e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.app.json": {
+        "size": 665,
+        "mtime_ns": 1779725488119674487,
+        "hash": "9d05326563d67b6e2f409c5069086b5f6e74685e38dc22662f0d676975e995d0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.json": {
+        "size": 349,
+        "mtime_ns": 1779725502130741886,
+        "hash": "644675cbe394e61fdd16c3a23f265e699a3a01c3b065f9fe0333ca97ba9189fa"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.node.json": {
+        "size": 481,
+        "mtime_ns": 1779725477069206104,
+        "hash": "983e57a3741987ce68c0ebb4047a86089344db6a343389b72aec49e895d93894"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/vite.config.ts": {
+        "size": 777,
+        "mtime_ns": 1780087368055656067,
+        "hash": "b3fca3cca1949dceeb047177f5b7c759148825f02c5b7cc88ce0a1b2b28f619b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/vitest.config.ts": {
+        "size": 395,
+        "mtime_ns": 1779724348951371730,
+        "hash": "77bf89bf885c6909bd0a1e9de7a3016e6c0df2eecb331829f1b735fa52dbb231"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/.lovable/plan.md": {
+        "size": 553,
+        "mtime_ns": 1780087368035625066,
+        "hash": "4a9a8d5ab2efeac6796faad25d9c2192e19a58d32ae682e198c79b701bce0c8b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/BACKEND.md": {
+        "size": 46130,
+        "mtime_ns": 1780087368036087193,
+        "hash": "44a68be9e997de153011544bd04b3e40fbea4d419343be76f929de33be16d691"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/FRONTEND.md": {
+        "size": 36308,
+        "mtime_ns": 1780087368036489111,
+        "hash": "08b985035f7d0108dfe43a7e3287aff81898701628b02d9dc2c297ce213d94bf"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/PRODUCT.md": {
+        "size": 23841,
+        "mtime_ns": 1780087368036810279,
+        "hash": "21eefc5f1d82129c34fd5acc171bb08635ee8dd82f3966a0dfe670a77c46938d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/README.md": {
+        "size": 4263,
+        "mtime_ns": 1780087368037048364,
+        "hash": "5d06b42e3e5bc5ec05b29db7ba7efa35e3a7fc85d35324e3988d68d7031271a0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/index.html": {
+        "size": 4084,
+        "mtime_ns": 1780582257720784432,
+        "hash": "0be42029641d3c992bf394447b129e0443572e3b8c848ca1062a7498ca533e95"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/llms.txt": {
+        "size": 921,
+        "mtime_ns": 1780087368041101256,
+        "hash": "b1e439f31706c392c9c0158fb4006c7cd485b272584d4165caf67a0f86935997"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/robots.txt": {
+        "size": 287,
+        "mtime_ns": 1780087368041406132,
+        "hash": "df9cdefd5a31370643eb2e0057ec6578fe71bf907f98b238492d3571e3bb5ffc"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/apple-touch-icon.png": {
+        "size": 4384,
+        "mtime_ns": 1780087368039951792,
+        "hash": "0a5d62508e2c6f3853c1abdc2d04aa025d6112e6ae2d6ae7b6c066800a149e1b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/favicon.png": {
+        "size": 10608,
+        "mtime_ns": 1780087368040348752,
+        "hash": "39e0de29f2febfb0990503e12b1ce8330e0195f460045975adac6b2917769a7a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-192.png": {
+        "size": 7147,
+        "mtime_ns": 1780087368040492878,
+        "hash": "015abc3e719af4bcd2658bf03dae4e53bccfa15ed50ccb6dfed6bb005a36e613"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-512.png": {
+        "size": 26731,
+        "mtime_ns": 1780087368040840338,
+        "hash": "57a05a1b6527ce1d1c5a0b4eab2a3fb01e264317b2015ffaf9d9df0f7d9f7838"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-maskable-512.png": {
+        "size": 14107,
+        "mtime_ns": 1780087368040984880,
+        "hash": "7443bbd7faf4f4085ca77819cb9869a4ed40e2f8dddc162846e6fcd4bfe719a3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/placeholder.svg": {
+        "size": 28625,
+        "mtime_ns": 1779724348931735854,
+        "hash": "743ae40ed0d1a71e9513a9170d5002ad15e7b3ce2567a1c0d1460bc164a528ce"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/assets/zverts-logo.png": {
+        "size": 23646,
+        "mtime_ns": 1780087368042054760,
+        "hash": "e8599819ed85da08e19871c7fbe619f06209fb2b0f1109521ba854722f661388"
+    }
+}

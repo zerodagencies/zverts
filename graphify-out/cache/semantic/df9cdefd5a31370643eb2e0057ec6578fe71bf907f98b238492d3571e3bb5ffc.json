@@ -1,1 +1,17 @@
-{"nodes": [{"id": "robots_txt_crawl", "label": "robots.txt Crawl Rules", "file_type": "document", "source_file": "public/robots.txt", "source_location": "1-16", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}
+{
+    "nodes": [
+        {
+            "id": "robots_txt_crawl",
+            "label": "robots.txt Crawl Rules",
+            "file_type": "document",
+            "source_file": "public/robots.txt",
+            "source_location": "1-16",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        }
+    ],
+    "edges": [],
+    "hyperedges": []
+}

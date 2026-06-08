@@ -1,1 +1,17 @@
-{"nodes": [{"id": "llms_txt_sitemap", "label": "LLMs.txt AI Sitemap", "file_type": "document", "source_file": "public/llms.txt", "source_location": "1-19", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}
+{
+    "nodes": [
+        {
+            "id": "llms_txt_sitemap",
+            "label": "LLMs.txt AI Sitemap",
+            "file_type": "document",
+            "source_file": "public/llms.txt",
+            "source_location": "1-19",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        }
+    ],
+    "edges": [],
+    "hyperedges": []
+}

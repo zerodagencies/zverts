@@ -1,1 +1,269 @@
-{"nodes": [{"id": "frontend_zverts_frontend", "label": "ZverTs Frontend Specification", "file_type": "document", "source_file": "FRONTEND.md", "source_location": "1-641", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_nextjs_app_router", "label": "Next.js App Router Architecture", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "13-19", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_tanstack_query", "label": "TanStack Query v5 State Management", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "321-324", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_query_keys", "label": "Centralized Query Keys (lib/query-keys.ts)", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "326-354", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_zustand_stores", "label": "Zustand Feature Stores", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "313-318", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_aitutorpanel", "label": "AITutorPanel Component", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "285", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_youtubeplayer", "label": "YouTubePlayer Component", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "285", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_shadcn_ui", "label": "shadcn/ui Primitive Components", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "273", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_supabase_ssr", "label": "Supabase SSR Client Integration", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "5", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_design_system", "label": "ZverTs Design System (Tokens, Typography, Color)", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "455-485", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_rsc_first", "label": "RSC-first Rendering Strategy", "file_type": "rationale", "source_file": "FRONTEND.md", "source_location": "33-35", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "frontend_cache_invalidation", "label": "Cache Invalidation Matrix (Mutation-based)", "file_type": "concept", "source_file": "FRONTEND.md", "source_location": "357-371", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [{"source": "frontend_zverts_frontend", "target": "product_zverts", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "3", "weight": 1.0}, {"source": "frontend_nextjs_app_router", "target": "frontend_tanstack_query", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "39", "weight": 1.0}, {"source": "frontend_tanstack_query", "target": "frontend_query_keys", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "326", "weight": 1.0}, {"source": "frontend_tanstack_query", "target": "frontend_cache_invalidation", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "357", "weight": 1.0}, {"source": "frontend_nextjs_app_router", "target": "frontend_zustand_stores", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "313", "weight": 1.0}, {"source": "frontend_nextjs_app_router", "target": "frontend_supabase_ssr", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "5", "weight": 1.0}, {"source": "frontend_nextjs_app_router", "target": "frontend_shadcn_ui", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "273", "weight": 1.0}, {"source": "frontend_nextjs_app_router", "target": "frontend_rsc_first", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "33", "weight": 1.0}, {"source": "frontend_nextjs_app_router", "target": "frontend_design_system", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "455", "weight": 1.0}, {"source": "frontend_aitutorpanel", "target": "frontend_zustand_stores", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "315", "weight": 1.0}, {"source": "frontend_youtubeplayer", "target": "frontend_zustand_stores", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "FRONTEND.md", "source_location": "314", "weight": 1.0}, {"source": "frontend_design_system", "target": "assets_zverts_logo", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.75, "source_file": "FRONTEND.md", "source_location": "481", "weight": 1.0}, {"source": "frontend_cache_invalidation", "target": "backend_redis_strategy", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.75, "source_file": "FRONTEND.md", "source_location": "357", "weight": 1.0}], "hyperedges": []}
+{
+    "nodes": [
+        {
+            "id": "frontend_zverts_frontend",
+            "label": "ZverTs Frontend Specification",
+            "file_type": "document",
+            "source_file": "FRONTEND.md",
+            "source_location": "1-641",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_nextjs_app_router",
+            "label": "Next.js App Router Architecture",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "13-19",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_tanstack_query",
+            "label": "TanStack Query v5 State Management",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "321-324",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_query_keys",
+            "label": "Centralized Query Keys (lib/query-keys.ts)",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "326-354",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_zustand_stores",
+            "label": "Zustand Feature Stores",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "313-318",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_aitutorpanel",
+            "label": "AITutorPanel Component",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "285",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_youtubeplayer",
+            "label": "YouTubePlayer Component",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "285",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_shadcn_ui",
+            "label": "shadcn/ui Primitive Components",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "273",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_supabase_ssr",
+            "label": "Supabase SSR Client Integration",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "5",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_design_system",
+            "label": "ZverTs Design System (Tokens, Typography, Color)",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "455-485",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_rsc_first",
+            "label": "RSC-first Rendering Strategy",
+            "file_type": "rationale",
+            "source_file": "FRONTEND.md",
+            "source_location": "33-35",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "frontend_cache_invalidation",
+            "label": "Cache Invalidation Matrix (Mutation-based)",
+            "file_type": "concept",
+            "source_file": "FRONTEND.md",
+            "source_location": "357-371",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        }
+    ],
+    "edges": [
+        {
+            "source": "frontend_zverts_frontend",
+            "target": "product_zverts",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "3",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_nextjs_app_router",
+            "target": "frontend_tanstack_query",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "39",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_tanstack_query",
+            "target": "frontend_query_keys",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "326",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_tanstack_query",
+            "target": "frontend_cache_invalidation",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "357",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_nextjs_app_router",
+            "target": "frontend_zustand_stores",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "313",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_nextjs_app_router",
+            "target": "frontend_supabase_ssr",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "5",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_nextjs_app_router",
+            "target": "frontend_shadcn_ui",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "273",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_nextjs_app_router",
+            "target": "frontend_rsc_first",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "33",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_nextjs_app_router",
+            "target": "frontend_design_system",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "455",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_aitutorpanel",
+            "target": "frontend_zustand_stores",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "315",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_youtubeplayer",
+            "target": "frontend_zustand_stores",
+            "relation": "conceptually_related_to",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "FRONTEND.md",
+            "source_location": "314",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_design_system",
+            "target": "assets_zverts_logo",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.75,
+            "source_file": "FRONTEND.md",
+            "source_location": "481",
+            "weight": 1.0
+        },
+        {
+            "source": "frontend_cache_invalidation",
+            "target": "backend_redis_strategy",
+            "relation": "semantically_similar_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.75,
+            "source_file": "FRONTEND.md",
+            "source_location": "357",
+            "weight": 1.0
+        }
+    ],
+    "hyperedges": []
+}

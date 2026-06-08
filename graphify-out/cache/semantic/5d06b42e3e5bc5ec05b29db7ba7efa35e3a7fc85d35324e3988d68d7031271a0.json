@@ -1,1 +1,100 @@
-{"nodes": [{"id": "readme_zverts", "label": "ZverTs README", "file_type": "document", "source_file": "README.md", "source_location": "1-119", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_tech_stack", "label": "Tech Stack (React 18 + Vite + Supabase)", "file_type": "concept", "source_file": "README.md", "source_location": "18-24", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_edge_functions", "label": "Supabase Edge Functions", "file_type": "concept", "source_file": "README.md", "source_location": "108-114", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [{"source": "readme_zverts", "target": "product_zverts", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": "1", "weight": 1.0}, {"source": "readme_zverts", "target": "readme_tech_stack", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": "18", "weight": 1.0}, {"source": "readme_zverts", "target": "readme_edge_functions", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": "108", "weight": 1.0}, {"source": "readme_tech_stack", "target": "frontend_supabase_ssr", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "README.md", "source_location": "22", "weight": 1.0}, {"source": "readme_edge_functions", "target": "backend_import_module", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "README.md", "source_location": "109", "weight": 1.0}, {"source": "readme_edge_functions", "target": "backend_tutor_module", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "README.md", "source_location": "113", "weight": 1.0}], "hyperedges": []}
+{
+    "nodes": [
+        {
+            "id": "readme_zverts",
+            "label": "ZverTs README",
+            "file_type": "document",
+            "source_file": "README.md",
+            "source_location": "1-119",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "readme_tech_stack",
+            "label": "Tech Stack (React 18 + Vite + Supabase)",
+            "file_type": "concept",
+            "source_file": "README.md",
+            "source_location": "18-24",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "readme_edge_functions",
+            "label": "Supabase Edge Functions",
+            "file_type": "concept",
+            "source_file": "README.md",
+            "source_location": "108-114",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        }
+    ],
+    "edges": [
+        {
+            "source": "readme_zverts",
+            "target": "product_zverts",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "README.md",
+            "source_location": "1",
+            "weight": 1.0
+        },
+        {
+            "source": "readme_zverts",
+            "target": "readme_tech_stack",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "README.md",
+            "source_location": "18",
+            "weight": 1.0
+        },
+        {
+            "source": "readme_zverts",
+            "target": "readme_edge_functions",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "README.md",
+            "source_location": "108",
+            "weight": 1.0
+        },
+        {
+            "source": "readme_tech_stack",
+            "target": "frontend_supabase_ssr",
+            "relation": "semantically_similar_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.85,
+            "source_file": "README.md",
+            "source_location": "22",
+            "weight": 1.0
+        },
+        {
+            "source": "readme_edge_functions",
+            "target": "backend_import_module",
+            "relation": "semantically_similar_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.85,
+            "source_file": "README.md",
+            "source_location": "109",
+            "weight": 1.0
+        },
+        {
+            "source": "readme_edge_functions",
+            "target": "backend_tutor_module",
+            "relation": "semantically_similar_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.85,
+            "source_file": "README.md",
+            "source_location": "113",
+            "weight": 1.0
+        }
+    ],
+    "hyperedges": []
+}

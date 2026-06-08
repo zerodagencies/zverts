@@ -1,1 +1,121 @@
-{"nodes": [{"id": "index_html_entry", "label": "index.html App Entry Point", "file_type": "document", "source_file": "index.html", "source_location": "1-94", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "index_html_seo", "label": "ZverTs SEO and OG Metadata", "file_type": "concept", "source_file": "index.html", "source_location": "7-64", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "index_html_analytics", "label": "Google Analytics (G-SC178QVMZZ)", "file_type": "concept", "source_file": "index.html", "source_location": "81-88", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "index_html_pwa", "label": "PWA Manifest and Icons Configuration", "file_type": "concept", "source_file": "index.html", "source_location": "17-20", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [{"source": "index_html_entry", "target": "index_html_seo", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "index.html", "source_location": "7", "weight": 1.0}, {"source": "index_html_entry", "target": "index_html_analytics", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "index.html", "source_location": "81", "weight": 1.0}, {"source": "index_html_entry", "target": "index_html_pwa", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "index.html", "source_location": "17", "weight": 1.0}, {"source": "index_html_pwa", "target": "public_apple_touch_icon", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "index.html", "source_location": "19", "weight": 1.0}, {"source": "index_html_pwa", "target": "public_icon_192", "relation": "references", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "index.html", "source_location": "18", "weight": 1.0}, {"source": "index_html_seo", "target": "llms_txt_sitemap", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.75, "source_file": "index.html", "source_location": "7", "weight": 1.0}, {"source": "index_html_seo", "target": "robots_txt_crawl", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.75, "source_file": "index.html", "source_location": "7", "weight": 1.0}], "hyperedges": []}
+{
+    "nodes": [
+        {
+            "id": "index_html_entry",
+            "label": "index.html App Entry Point",
+            "file_type": "document",
+            "source_file": "index.html",
+            "source_location": "1-94",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "index_html_seo",
+            "label": "ZverTs SEO and OG Metadata",
+            "file_type": "concept",
+            "source_file": "index.html",
+            "source_location": "7-64",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "index_html_analytics",
+            "label": "Google Analytics (G-SC178QVMZZ)",
+            "file_type": "concept",
+            "source_file": "index.html",
+            "source_location": "81-88",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "index_html_pwa",
+            "label": "PWA Manifest and Icons Configuration",
+            "file_type": "concept",
+            "source_file": "index.html",
+            "source_location": "17-20",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        }
+    ],
+    "edges": [
+        {
+            "source": "index_html_entry",
+            "target": "index_html_seo",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "index.html",
+            "source_location": "7",
+            "weight": 1.0
+        },
+        {
+            "source": "index_html_entry",
+            "target": "index_html_analytics",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "index.html",
+            "source_location": "81",
+            "weight": 1.0
+        },
+        {
+            "source": "index_html_entry",
+            "target": "index_html_pwa",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "index.html",
+            "source_location": "17",
+            "weight": 1.0
+        },
+        {
+            "source": "index_html_pwa",
+            "target": "public_apple_touch_icon",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "index.html",
+            "source_location": "19",
+            "weight": 1.0
+        },
+        {
+            "source": "index_html_pwa",
+            "target": "public_icon_192",
+            "relation": "references",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "index.html",
+            "source_location": "18",
+            "weight": 1.0
+        },
+        {
+            "source": "index_html_seo",
+            "target": "llms_txt_sitemap",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.75,
+            "source_file": "index.html",
+            "source_location": "7",
+            "weight": 1.0
+        },
+        {
+            "source": "index_html_seo",
+            "target": "robots_txt_crawl",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.75,
+            "source_file": "index.html",
+            "source_location": "7",
+            "weight": 1.0
+        }
+    ],
+    "hyperedges": []
+}

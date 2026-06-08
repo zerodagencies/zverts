@@ -1,1 +1,633 @@
-{"nodes": [{"id": "product_zverts", "label": "ZverTs Product Specification", "file_type": "document", "source_file": "PRODUCT.md", "source_location": "1-424", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_mission", "label": "ZverTs Mission: Turn playlists into finishable courses", "file_type": "rationale", "source_file": "PRODUCT.md", "source_location": "8-16", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_playlist_import", "label": "F-1 Playlist Import Feature", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "83-95", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_sequential_unlock", "label": "F-2 Sequential Module Unlocking", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "96-100", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_progress_sync", "label": "F-3 Embedded YouTube Player with Progress Sync", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "101-110", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_authentication", "label": "F-4 Authentication (Magic Link + Google OAuth)", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "111-118", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_dashboard", "label": "F-5 Personal Dashboard", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "119-123", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_smart_notes", "label": "F-6 Smart Notes with Timestamp", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "124-129", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_gamification", "label": "F-7 Gamification (XP, Gems, Streak, Daily Challenge, Badges)", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "130-136", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_mcq_quizzes", "label": "F-9 MCQ Quizzes", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "144-146", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_certificates", "label": "F-10 Certificates with PDF Download", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "147-151", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_explore", "label": "F-11 Explore Public Courses", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "152-155", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_leaderboard", "label": "F-13 Leaderboard (Global XP Rankings)", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "158-160", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_ai_tutor", "label": "F-14 AI Tutor Vert (Streaming Chat)", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "161-165", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_i18n", "label": "F-16 i18n English and Bangla", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "167-169", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_persona_rifat", "label": "Persona A: Rifat the CS Undergrad", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "53-58", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_persona_maya", "label": "Persona B: Maya the Career Switcher", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "59-64", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_persona_daniyal", "label": "Persona C: Daniyal the Creator-Curator", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "65-70", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_persona_sara", "label": "Persona D: Sara the Admin/Operator", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "71-75", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "product_learn_loop", "label": "Main Product Learn Loop Flow", "file_type": "concept", "source_file": "PRODUCT.md", "source_location": "215-228", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [{"source": "product_zverts", "target": "product_mission", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "8", "weight": 1.0}, {"source": "product_zverts", "target": "product_playlist_import", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "83", "weight": 1.0}, {"source": "product_zverts", "target": "product_sequential_unlock", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "96", "weight": 1.0}, {"source": "product_zverts", "target": "product_progress_sync", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "101", "weight": 1.0}, {"source": "product_zverts", "target": "product_authentication", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "111", "weight": 1.0}, {"source": "product_zverts", "target": "product_dashboard", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "119", "weight": 1.0}, {"source": "product_zverts", "target": "product_smart_notes", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "124", "weight": 1.0}, {"source": "product_zverts", "target": "product_gamification", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "130", "weight": 1.0}, {"source": "product_zverts", "target": "product_mcq_quizzes", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "144", "weight": 1.0}, {"source": "product_zverts", "target": "product_certificates", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "147", "weight": 1.0}, {"source": "product_zverts", "target": "product_explore", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "152", "weight": 1.0}, {"source": "product_zverts", "target": "product_leaderboard", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "158", "weight": 1.0}, {"source": "product_zverts", "target": "product_ai_tutor", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "161", "weight": 1.0}, {"source": "product_zverts", "target": "product_i18n", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "167", "weight": 1.0}, {"source": "product_zverts", "target": "product_persona_rifat", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "53", "weight": 1.0}, {"source": "product_zverts", "target": "product_persona_maya", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "59", "weight": 1.0}, {"source": "product_zverts", "target": "product_persona_daniyal", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "65", "weight": 1.0}, {"source": "product_zverts", "target": "product_persona_sara", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "71", "weight": 1.0}, {"source": "product_zverts", "target": "product_learn_loop", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "PRODUCT.md", "source_location": "215", "weight": 1.0}, {"source": "product_playlist_import", "target": "backend_import_module", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "83", "weight": 1.0}, {"source": "product_playlist_import", "target": "readme_edge_functions", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "83", "weight": 1.0}, {"source": "product_sequential_unlock", "target": "backend_module_progress_table", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "96", "weight": 1.0}, {"source": "product_progress_sync", "target": "backend_module_progress_table", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "101", "weight": 1.0}, {"source": "product_progress_sync", "target": "frontend_youtubeplayer", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "101", "weight": 1.0}, {"source": "product_gamification", "target": "backend_gamification_module", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "130", "weight": 1.0}, {"source": "product_ai_tutor", "target": "backend_tutor_module", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "161", "weight": 1.0}, {"source": "product_ai_tutor", "target": "frontend_aitutorpanel", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "161", "weight": 1.0}, {"source": "product_certificates", "target": "backend_certificates_module", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "147", "weight": 1.0}, {"source": "product_mcq_quizzes", "target": "backend_quiz_module", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "144", "weight": 1.0}, {"source": "product_smart_notes", "target": "backend_notes_table", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "124", "weight": 1.0}, {"source": "product_authentication", "target": "backend_authservice", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "111", "weight": 1.0}, {"source": "product_leaderboard", "target": "backend_profiles_table", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "PRODUCT.md", "source_location": "158", "weight": 1.0}, {"source": "product_persona_rifat", "target": "product_i18n", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "PRODUCT.md", "source_location": "55", "weight": 1.0}, {"source": "product_persona_daniyal", "target": "product_explore", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "PRODUCT.md", "source_location": "67", "weight": 1.0}, {"source": "product_persona_maya", "target": "product_certificates", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "PRODUCT.md", "source_location": "62", "weight": 1.0}, {"source": "product_learn_loop", "target": "product_progress_sync", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "218", "weight": 1.0}, {"source": "product_learn_loop", "target": "product_mcq_quizzes", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "221", "weight": 1.0}, {"source": "product_learn_loop", "target": "product_gamification", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "PRODUCT.md", "source_location": "220", "weight": 1.0}, {"source": "product_learn_loop", "target": "product_certificates", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "PRODUCT.md", "source_location": "223", "weight": 1.0}], "hyperedges": [{"id": "learn_loop_core_flow", "label": "Core Learn Loop: Progress Sync \u2192 Gamification \u2192 MCQ \u2192 Certificate", "nodes": ["product_progress_sync", "product_gamification", "product_mcq_quizzes", "product_certificates", "product_sequential_unlock"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 0.95, "source_file": "PRODUCT.md"}]}
+{
+    "nodes": [
+        {
+            "id": "product_zverts",
+            "label": "ZverTs Product Specification",
+            "file_type": "document",
+            "source_file": "PRODUCT.md",
+            "source_location": "1-424",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_mission",
+            "label": "ZverTs Mission: Turn playlists into finishable courses",
+            "file_type": "rationale",
+            "source_file": "PRODUCT.md",
+            "source_location": "8-16",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_playlist_import",
+            "label": "F-1 Playlist Import Feature",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "83-95",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_sequential_unlock",
+            "label": "F-2 Sequential Module Unlocking",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "96-100",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_progress_sync",
+            "label": "F-3 Embedded YouTube Player with Progress Sync",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "101-110",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_authentication",
+            "label": "F-4 Authentication (Magic Link + Google OAuth)",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "111-118",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_dashboard",
+            "label": "F-5 Personal Dashboard",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "119-123",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_smart_notes",
+            "label": "F-6 Smart Notes with Timestamp",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "124-129",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_gamification",
+            "label": "F-7 Gamification (XP, Gems, Streak, Daily Challenge, Badges)",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "130-136",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_mcq_quizzes",
+            "label": "F-9 MCQ Quizzes",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "144-146",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_certificates",
+            "label": "F-10 Certificates with PDF Download",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "147-151",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_explore",
+            "label": "F-11 Explore Public Courses",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "152-155",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_leaderboard",
+            "label": "F-13 Leaderboard (Global XP Rankings)",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "158-160",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_ai_tutor",
+            "label": "F-14 AI Tutor Vert (Streaming Chat)",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "161-165",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_i18n",
+            "label": "F-16 i18n English and Bangla",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "167-169",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_persona_rifat",
+            "label": "Persona A: Rifat the CS Undergrad",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "53-58",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_persona_maya",
+            "label": "Persona B: Maya the Career Switcher",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "59-64",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_persona_daniyal",
+            "label": "Persona C: Daniyal the Creator-Curator",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "65-70",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_persona_sara",
+            "label": "Persona D: Sara the Admin/Operator",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "71-75",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        },
+        {
+            "id": "product_learn_loop",
+            "label": "Main Product Learn Loop Flow",
+            "file_type": "concept",
+            "source_file": "PRODUCT.md",
+            "source_location": "215-228",
+            "source_url": null,
+            "captured_at": null,
+            "author": null,
+            "contributor": null
+        }
+    ],
+    "edges": [
+        {
+            "source": "product_zverts",
+            "target": "product_mission",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "8",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_playlist_import",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "83",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_sequential_unlock",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "96",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_progress_sync",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "101",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_authentication",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "111",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_dashboard",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "119",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_smart_notes",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "124",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_gamification",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "130",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_mcq_quizzes",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "144",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_certificates",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "147",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_explore",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "152",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_leaderboard",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "158",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_ai_tutor",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "161",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_i18n",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "167",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_persona_rifat",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "53",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_persona_maya",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "59",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_persona_daniyal",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "65",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_persona_sara",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "71",
+            "weight": 1.0
+        },
+        {
+            "source": "product_zverts",
+            "target": "product_learn_loop",
+            "relation": "references",
+            "confidence": "EXTRACTED",
+            "confidence_score": 1.0,
+            "source_file": "PRODUCT.md",
+            "source_location": "215",
+            "weight": 1.0
+        },
+        {
+            "source": "product_playlist_import",
+            "target": "backend_import_module",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "83",
+            "weight": 1.0
+        },
+        {
+            "source": "product_playlist_import",
+            "target": "readme_edge_functions",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "83",
+            "weight": 1.0
+        },
+        {
+            "source": "product_sequential_unlock",
+            "target": "backend_module_progress_table",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "96",
+            "weight": 1.0
+        },
+        {
+            "source": "product_progress_sync",
+            "target": "backend_module_progress_table",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "101",
+            "weight": 1.0
+        },
+        {
+            "source": "product_progress_sync",
+            "target": "frontend_youtubeplayer",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "101",
+            "weight": 1.0
+        },
+        {
+            "source": "product_gamification",
+            "target": "backend_gamification_module",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "130",
+            "weight": 1.0
+        },
+        {
+            "source": "product_ai_tutor",
+            "target": "backend_tutor_module",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "161",
+            "weight": 1.0
+        },
+        {
+            "source": "product_ai_tutor",
+            "target": "frontend_aitutorpanel",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "161",
+            "weight": 1.0
+        },
+        {
+            "source": "product_certificates",
+            "target": "backend_certificates_module",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "147",
+            "weight": 1.0
+        },
+        {
+            "source": "product_mcq_quizzes",
+            "target": "backend_quiz_module",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "144",
+            "weight": 1.0
+        },
+        {
+            "source": "product_smart_notes",
+            "target": "backend_notes_table",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "124",
+            "weight": 1.0
+        },
+        {
+            "source": "product_authentication",
+            "target": "backend_authservice",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "111",
+            "weight": 1.0
+        },
+        {
+            "source": "product_leaderboard",
+            "target": "backend_profiles_table",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.85,
+            "source_file": "PRODUCT.md",
+            "source_location": "158",
+            "weight": 1.0
+        },
+        {
+            "source": "product_persona_rifat",
+            "target": "product_i18n",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.85,
+            "source_file": "PRODUCT.md",
+            "source_location": "55",
+            "weight": 1.0
+        },
+        {
+            "source": "product_persona_daniyal",
+            "target": "product_explore",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.85,
+            "source_file": "PRODUCT.md",
+            "source_location": "67",
+            "weight": 1.0
+        },
+        {
+            "source": "product_persona_maya",
+            "target": "product_certificates",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.85,
+            "source_file": "PRODUCT.md",
+            "source_location": "62",
+            "weight": 1.0
+        },
+        {
+            "source": "product_learn_loop",
+            "target": "product_progress_sync",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "218",
+            "weight": 1.0
+        },
+        {
+            "source": "product_learn_loop",
+            "target": "product_mcq_quizzes",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "221",
+            "weight": 1.0
+        },
+        {
+            "source": "product_learn_loop",
+            "target": "product_gamification",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md",
+            "source_location": "220",
+            "weight": 1.0
+        },
+        {
+            "source": "product_learn_loop",
+            "target": "product_certificates",
+            "relation": "conceptually_related_to",
+            "confidence": "INFERRED",
+            "confidence_score": 0.85,
+            "source_file": "PRODUCT.md",
+            "source_location": "223",
+            "weight": 1.0
+        }
+    ],
+    "hyperedges": [
+        {
+            "id": "learn_loop_core_flow",
+            "label": "Core Learn Loop: Progress Sync \u2192 Gamification \u2192 MCQ \u2192 Certificate",
+            "nodes": [
+                "product_progress_sync",
+                "product_gamification",
+                "product_mcq_quizzes",
+                "product_certificates",
+                "product_sequential_unlock"
+            ],
+            "relation": "form",
+            "confidence": "EXTRACTED",
+            "confidence_score": 0.95,
+            "source_file": "PRODUCT.md"
+        }
+    ]
+}

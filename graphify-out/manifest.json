@@ -1,1082 +1,1082 @@
 {
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/components.json": {
-    "mtime": 1779724348.92973,
-    "ast_hash": "a547944ace00dc5d5373aaca70a40bc4",
-    "semantic_hash": "a547944ace00dc5d5373aaca70a40bc4"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/eslint.config.js": {
-    "mtime": 1779724348.929832,
-    "ast_hash": "31c0881fdd8500aa4d0aa963079713ae",
-    "semantic_hash": "31c0881fdd8500aa4d0aa963079713ae"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/package.json": {
-    "mtime": 1780087477.6720648,
-    "ast_hash": "0f5db6eb893fd203e5ee5db05d31fc47",
-    "semantic_hash": "0f5db6eb893fd203e5ee5db05d31fc47"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/postcss.config.js": {
-    "mtime": 1779724348.9312272,
-    "ast_hash": "c735540bb63936a123bc867d950c9f69",
-    "semantic_hash": "c735540bb63936a123bc867d950c9f69"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/manifest.json": {
-    "mtime": 1780087368.0412176,
-    "ast_hash": "8895090890cf2597bcd43898dce1c7e6",
-    "semantic_hash": "8895090890cf2597bcd43898dce1c7e6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/App.tsx": {
-    "mtime": 1780732893.2462525,
-    "ast_hash": "2112fb82a23fbad1d3fd74c614d3c9b5",
-    "semantic_hash": "2112fb82a23fbad1d3fd74c614d3c9b5"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ErrorBoundary.tsx": {
-    "mtime": 1779724348.933032,
-    "ast_hash": "d32f13c9ca9ed39a3d16b50961cf7918",
-    "semantic_hash": "d32f13c9ca9ed39a3d16b50961cf7918"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/NavLink.tsx": {
-    "mtime": 1779724348.9331374,
-    "ast_hash": "d562b16ef93b1b80b981faffde0862f0",
-    "semantic_hash": "d562b16ef93b1b80b981faffde0862f0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/OfficialEmail.tsx": {
-    "mtime": 1780087368.0421896,
-    "ast_hash": "be0a1744bbadd0e3cf8ee1e6a88155f5",
-    "semantic_hash": "be0a1744bbadd0e3cf8ee1e6a88155f5"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/RequireRole.tsx": {
-    "mtime": 1779724348.9332433,
-    "ast_hash": "b8a7c9238ced1d3c64f32a3e2570db20",
-    "semantic_hash": "b8a7c9238ced1d3c64f32a3e2570db20"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/SEO.tsx": {
-    "mtime": 1780087368.0423157,
-    "ast_hash": "6264f5d519b23bfd35ce267a526e04da",
-    "semantic_hash": "6264f5d519b23bfd35ce267a526e04da"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/ChatPanel.tsx": {
-    "mtime": 1780087368.0425553,
-    "ast_hash": "c7ab0b9530678841fb64f1984d35932d",
-    "semantic_hash": "c7ab0b9530678841fb64f1984d35932d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/ModeSelector.tsx": {
-    "mtime": 1780087368.0427341,
-    "ast_hash": "197937d7af6e0c50673ab902e7c437d6",
-    "semantic_hash": "197937d7af6e0c50673ab902e7c437d6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/SourcesPanel.tsx": {
-    "mtime": 1780087368.0428722,
-    "ast_hash": "26499ffc772a32f84906532cef3b6b9b",
-    "semantic_hash": "26499ffc772a32f84906532cef3b6b9b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/TranscriptPanel.tsx": {
-    "mtime": 1780087368.0430195,
-    "ast_hash": "1632a4cb66f84442e5154087499b332c",
-    "semantic_hash": "1632a4cb66f84442e5154087499b332c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/UsageChip.tsx": {
-    "mtime": 1780087368.043148,
-    "ast_hash": "9e164d8aaf71ce65c867c214290e360e",
-    "semantic_hash": "9e164d8aaf71ce65c867c214290e360e"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/useAttachments.ts": {
-    "mtime": 1780087368.043282,
-    "ast_hash": "e67dff282b2455cc1d8d2ef6ddfe6b60",
-    "semantic_hash": "e67dff282b2455cc1d8d2ef6ddfe6b60"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AITutorPanel.tsx": {
-    "mtime": 1780087368.043684,
-    "ast_hash": "0646db4f5d52337e3c00d2844ea59e2c",
-    "semantic_hash": "0646db4f5d52337e3c00d2844ea59e2c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AnalyticsPanel.tsx": {
-    "mtime": 1779724348.9336207,
-    "ast_hash": "80e474d548c2bf7890de5f5c5e036276",
-    "semantic_hash": "80e474d548c2bf7890de5f5c5e036276"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AppShell.tsx": {
-    "mtime": 1780733050.4051387,
-    "ast_hash": "56f4720a73a81dbe77543daeed8f40e9",
-    "semantic_hash": "56f4720a73a81dbe77543daeed8f40e9"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/BadgesGrid.tsx": {
-    "mtime": 1779724348.9338791,
-    "ast_hash": "b7cff4f2605c46bf57f917ff1a1fc55d",
-    "semantic_hash": "b7cff4f2605c46bf57f917ff1a1fc55d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/CircularProgress.tsx": {
-    "mtime": 1779724348.9340055,
-    "ast_hash": "e119f43742b52f5b6b3e95f45c4ecd34",
-    "semantic_hash": "e119f43742b52f5b6b3e95f45c4ecd34"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ContinueWatching.tsx": {
-    "mtime": 1779724348.9341145,
-    "ast_hash": "9a80cdc1389237b5e49d94667ba93583",
-    "semantic_hash": "9a80cdc1389237b5e49d94667ba93583"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/DailyChallenge.tsx": {
-    "mtime": 1779724348.9342532,
-    "ast_hash": "17b3b5e688376dff114eb13e06bc921f",
-    "semantic_hash": "17b3b5e688376dff114eb13e06bc921f"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/InstallPrompt.tsx": {
-    "mtime": 1780087368.0440378,
-    "ast_hash": "a4a7e9c1102c84264b69874163a7859b",
-    "semantic_hash": "a4a7e9c1102c84264b69874163a7859b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ModuleCard.tsx": {
-    "mtime": 1780582257.720948,
-    "ast_hash": "fc4d115a4bedb7d1a743f97c8b361004",
-    "semantic_hash": "fc4d115a4bedb7d1a743f97c8b361004"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/NotesPanel.tsx": {
-    "mtime": 1779724348.9345045,
-    "ast_hash": "6fc4b355f63361c1ed75960bd4e081ac",
-    "semantic_hash": "6fc4b355f63361c1ed75960bd4e081ac"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/NotificationCenter.tsx": {
-    "mtime": 1779724348.9346285,
-    "ast_hash": "6717ba34e3ba5eca896f02054ece6511",
-    "semantic_hash": "6717ba34e3ba5eca896f02054ece6511"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/PlaylistPreview.tsx": {
-    "mtime": 1779724348.934742,
-    "ast_hash": "9b99b1f97720361c78ac4caedf6a42e7",
-    "semantic_hash": "9b99b1f97720361c78ac4caedf6a42e7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SiteFooter.tsx": {
-    "mtime": 1780087368.0442786,
-    "ast_hash": "be0def92662824af2032acd93cd9f0e9",
-    "semantic_hash": "be0def92662824af2032acd93cd9f0e9"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SmartNotificationSettings.tsx": {
-    "mtime": 1779724348.9350019,
-    "ast_hash": "24090aad8806aebd2b1e640c039ba09b",
-    "semantic_hash": "24090aad8806aebd2b1e640c039ba09b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/StatCard.tsx": {
-    "mtime": 1779724348.9351013,
-    "ast_hash": "1bc6218b3e0148506bb79f4e86b1529a",
-    "semantic_hash": "1bc6218b3e0148506bb79f4e86b1529a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SupportContactPopup.tsx": {
-    "mtime": 1780087368.044417,
-    "ast_hash": "775161044a7511a1e4889d58e9be1f7c",
-    "semantic_hash": "775161044a7511a1e4889d58e9be1f7c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ThemeProvider.tsx": {
-    "mtime": 1779724348.9352078,
-    "ast_hash": "e4390442e55e958b2dfc09dab369766b",
-    "semantic_hash": "e4390442e55e958b2dfc09dab369766b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ThemeToggle.tsx": {
-    "mtime": 1779724348.935302,
-    "ast_hash": "6bbda0da698c78f76933a7b92fae794e",
-    "semantic_hash": "6bbda0da698c78f76933a7b92fae794e"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/TodayMissionCard.tsx": {
-    "mtime": 1780732893.2469118,
-    "ast_hash": "824f1a0a6b45b4ff128dd4a62c7cad81",
-    "semantic_hash": "824f1a0a6b45b4ff128dd4a62c7cad81"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/WeeklyActivityChart.tsx": {
-    "mtime": 1779724348.9354107,
-    "ast_hash": "37bbfd3bbbe8ee083169f06021693a94",
-    "semantic_hash": "37bbfd3bbbe8ee083169f06021693a94"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/YouTubePlayer.tsx": {
-    "mtime": 1780311755.5976994,
-    "ast_hash": "eb10ba390b754ab5f7975cde5ce56c36",
-    "semantic_hash": "eb10ba390b754ab5f7975cde5ce56c36"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/ChatHistorySidebar.tsx": {
-    "mtime": 1779724348.9357116,
-    "ast_hash": "399574ed9292264075560c088cb51f97",
-    "semantic_hash": "399574ed9292264075560c088cb51f97"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/MessageContent.tsx": {
-    "mtime": 1779724348.935854,
-    "ast_hash": "0ccc658f4735be8c69fe12fb561e8bda",
-    "semantic_hash": "0ccc658f4735be8c69fe12fb561e8bda"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/ModelSelector.tsx": {
-    "mtime": 1779724348.9359598,
-    "ast_hash": "bb855504dd6a7fbd173ec44f2a2e7736",
-    "semantic_hash": "bb855504dd6a7fbd173ec44f2a2e7736"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/exportChat.ts": {
-    "mtime": 1779724348.9360645,
-    "ast_hash": "a6ea7fceff9564e616625af7271a14c6",
-    "semantic_hash": "a6ea7fceff9564e616625af7271a14c6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/types.ts": {
-    "mtime": 1780087368.0446322,
-    "ast_hash": "17356ae016b4a7ec6073a3f519ec1bc0",
-    "semantic_hash": "17356ae016b4a7ec6073a3f519ec1bc0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/useChatStore.ts": {
-    "mtime": 1780087368.0448217,
-    "ast_hash": "bcfa8f42e1009d4ca235a0561a47d510",
-    "semantic_hash": "bcfa8f42e1009d4ca235a0561a47d510"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/accordion.tsx": {
-    "mtime": 1779724348.9364355,
-    "ast_hash": "f9ebb6ee913b44e5f3e06fe1d9679784",
-    "semantic_hash": "f9ebb6ee913b44e5f3e06fe1d9679784"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/alert-dialog.tsx": {
-    "mtime": 1779724348.936565,
-    "ast_hash": "2ee6c5e5e070315114319bc060d17a52",
-    "semantic_hash": "2ee6c5e5e070315114319bc060d17a52"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/alert.tsx": {
-    "mtime": 1779724348.936667,
-    "ast_hash": "354d0206f924d48bcebbb023c3940a6b",
-    "semantic_hash": "354d0206f924d48bcebbb023c3940a6b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/aspect-ratio.tsx": {
-    "mtime": 1779724348.936763,
-    "ast_hash": "c5c364545e1b25a94e9e752cd67ad048",
-    "semantic_hash": "c5c364545e1b25a94e9e752cd67ad048"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/avatar.tsx": {
-    "mtime": 1779724348.9368634,
-    "ast_hash": "53921dca0903c74cd72fada89388d9f8",
-    "semantic_hash": "53921dca0903c74cd72fada89388d9f8"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/badge.tsx": {
-    "mtime": 1779724348.9369724,
-    "ast_hash": "8db4e6d330f88f4041f81e7cde43782b",
-    "semantic_hash": "8db4e6d330f88f4041f81e7cde43782b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/breadcrumb.tsx": {
-    "mtime": 1779724348.937083,
-    "ast_hash": "c200fc41e9b214ebb6ccd19a300c42c5",
-    "semantic_hash": "c200fc41e9b214ebb6ccd19a300c42c5"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/button.tsx": {
-    "mtime": 1779724348.9371943,
-    "ast_hash": "b59f5a3c54b63cf3ea4eb2523151f617",
-    "semantic_hash": "b59f5a3c54b63cf3ea4eb2523151f617"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/calendar.tsx": {
-    "mtime": 1779724348.9372995,
-    "ast_hash": "1da7a387f28cdb11722da319c0295a6c",
-    "semantic_hash": "1da7a387f28cdb11722da319c0295a6c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/card.tsx": {
-    "mtime": 1779724348.937396,
-    "ast_hash": "202402023747c80d975f48b906e6eb1b",
-    "semantic_hash": "202402023747c80d975f48b906e6eb1b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/carousel.tsx": {
-    "mtime": 1779724348.937513,
-    "ast_hash": "63a7442a3088b58113c8a8cfc1defe26",
-    "semantic_hash": "63a7442a3088b58113c8a8cfc1defe26"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/chart.tsx": {
-    "mtime": 1779724348.9376376,
-    "ast_hash": "29cfd7470f3197deccd58b2b4f00fbae",
-    "semantic_hash": "29cfd7470f3197deccd58b2b4f00fbae"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/checkbox.tsx": {
-    "mtime": 1779724348.9377484,
-    "ast_hash": "cb12d2f3410761f7a678add95c90ac5d",
-    "semantic_hash": "cb12d2f3410761f7a678add95c90ac5d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/collapsible.tsx": {
-    "mtime": 1779724348.9378424,
-    "ast_hash": "934b00582dae08af749fb55469081de6",
-    "semantic_hash": "934b00582dae08af749fb55469081de6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/command.tsx": {
-    "mtime": 1779724348.937959,
-    "ast_hash": "e911f182b4136a63c601c3fc48b2e9c7",
-    "semantic_hash": "e911f182b4136a63c601c3fc48b2e9c7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/context-menu.tsx": {
-    "mtime": 1779724348.9380794,
-    "ast_hash": "9b8e8efdf0456cd542e32d341b071cac",
-    "semantic_hash": "9b8e8efdf0456cd542e32d341b071cac"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/dialog.tsx": {
-    "mtime": 1779724348.938207,
-    "ast_hash": "fc3a9626ba52435552c93ac3a74374ec",
-    "semantic_hash": "fc3a9626ba52435552c93ac3a74374ec"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/drawer.tsx": {
-    "mtime": 1779724348.9383209,
-    "ast_hash": "05e2b536fe11649e9b4c6e73678e32a6",
-    "semantic_hash": "05e2b536fe11649e9b4c6e73678e32a6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/dropdown-menu.tsx": {
-    "mtime": 1779724348.9384637,
-    "ast_hash": "f308eb98a2e21bf8bd1e30dbcb741dc0",
-    "semantic_hash": "f308eb98a2e21bf8bd1e30dbcb741dc0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/form.tsx": {
-    "mtime": 1779724348.9385624,
-    "ast_hash": "4bb820d59aad3ee5bc78097596298ace",
-    "semantic_hash": "4bb820d59aad3ee5bc78097596298ace"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/hover-card.tsx": {
-    "mtime": 1779724348.9386594,
-    "ast_hash": "f77f80ed64ff8f3549e5d7e9d837e08e",
-    "semantic_hash": "f77f80ed64ff8f3549e5d7e9d837e08e"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/input-otp.tsx": {
-    "mtime": 1779724348.9387717,
-    "ast_hash": "3fb5994635434d5168bee869689fc2aa",
-    "semantic_hash": "3fb5994635434d5168bee869689fc2aa"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/input.tsx": {
-    "mtime": 1779724348.938871,
-    "ast_hash": "b8279d768c2a1ce78a05a369a0502877",
-    "semantic_hash": "b8279d768c2a1ce78a05a369a0502877"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/label.tsx": {
-    "mtime": 1779724348.9389722,
-    "ast_hash": "cd2b2255bbe519cb0865dfeaa6615797",
-    "semantic_hash": "cd2b2255bbe519cb0865dfeaa6615797"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/menubar.tsx": {
-    "mtime": 1779724348.939123,
-    "ast_hash": "163c3fa58a2b4ea2caa00166f4d862c7",
-    "semantic_hash": "163c3fa58a2b4ea2caa00166f4d862c7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/navigation-menu.tsx": {
-    "mtime": 1779724348.939246,
-    "ast_hash": "77e94b0c299d10c3763d2755bf556916",
-    "semantic_hash": "77e94b0c299d10c3763d2755bf556916"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/pagination.tsx": {
-    "mtime": 1779724348.939349,
-    "ast_hash": "a3ced9f9b19826b467d788b1bf01746f",
-    "semantic_hash": "a3ced9f9b19826b467d788b1bf01746f"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/popover.tsx": {
-    "mtime": 1779724348.9394426,
-    "ast_hash": "c056d22288a642b756b77c7691ad4532",
-    "semantic_hash": "c056d22288a642b756b77c7691ad4532"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/progress.tsx": {
-    "mtime": 1779724348.93954,
-    "ast_hash": "9a8b05beca19e008a562a10e489f5968",
-    "semantic_hash": "9a8b05beca19e008a562a10e489f5968"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/radio-group.tsx": {
-    "mtime": 1779724348.9396398,
-    "ast_hash": "3773798b5b2f334a5db0dc9c8d06f1b8",
-    "semantic_hash": "3773798b5b2f334a5db0dc9c8d06f1b8"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/resizable.tsx": {
-    "mtime": 1779724348.9397562,
-    "ast_hash": "ec681e92cbe705b5571ded11b5227a2a",
-    "semantic_hash": "ec681e92cbe705b5571ded11b5227a2a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/scroll-area.tsx": {
-    "mtime": 1779724348.9398491,
-    "ast_hash": "cfbc224001af0e6daba676de225a2a47",
-    "semantic_hash": "cfbc224001af0e6daba676de225a2a47"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/select.tsx": {
-    "mtime": 1779724348.9399707,
-    "ast_hash": "25de64d0126624cbd8efa50cfb64bd21",
-    "semantic_hash": "25de64d0126624cbd8efa50cfb64bd21"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/separator.tsx": {
-    "mtime": 1779724348.9400647,
-    "ast_hash": "ed1101f185e9dc801712593e3330a75d",
-    "semantic_hash": "ed1101f185e9dc801712593e3330a75d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sheet.tsx": {
-    "mtime": 1779724348.9401789,
-    "ast_hash": "3660be09e2e40467a22fd46b354c1b50",
-    "semantic_hash": "3660be09e2e40467a22fd46b354c1b50"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sidebar.tsx": {
-    "mtime": 1779724348.940354,
-    "ast_hash": "9eab1256b1ffe3f1336eebfd07b319c9",
-    "semantic_hash": "9eab1256b1ffe3f1336eebfd07b319c9"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/skeleton.tsx": {
-    "mtime": 1779724348.940453,
-    "ast_hash": "c55f76f4faa1d6e888dbc51d41eaa586",
-    "semantic_hash": "c55f76f4faa1d6e888dbc51d41eaa586"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/slider.tsx": {
-    "mtime": 1779724348.9405544,
-    "ast_hash": "e3bf7b6116ddbdbe8c7b3597d07daee0",
-    "semantic_hash": "e3bf7b6116ddbdbe8c7b3597d07daee0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sonner.tsx": {
-    "mtime": 1779724348.9406505,
-    "ast_hash": "88644703cc00886c56e0e3b7df0e21d8",
-    "semantic_hash": "88644703cc00886c56e0e3b7df0e21d8"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/switch.tsx": {
-    "mtime": 1779724348.9407487,
-    "ast_hash": "eccd8c41c46e782eaaa1f8be0111e089",
-    "semantic_hash": "eccd8c41c46e782eaaa1f8be0111e089"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/table.tsx": {
-    "mtime": 1779724348.9408507,
-    "ast_hash": "d0ff87c4734c23839337811378ad07df",
-    "semantic_hash": "d0ff87c4734c23839337811378ad07df"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/tabs.tsx": {
-    "mtime": 1779724348.9409473,
-    "ast_hash": "26b15e1ffce0f831be4da95b8f8a43df",
-    "semantic_hash": "26b15e1ffce0f831be4da95b8f8a43df"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/textarea.tsx": {
-    "mtime": 1779724348.9410567,
-    "ast_hash": "29ab470ee59e9da5070d4fba251bce81",
-    "semantic_hash": "29ab470ee59e9da5070d4fba251bce81"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toast.tsx": {
-    "mtime": 1779724348.9411733,
-    "ast_hash": "7c08b5cb6026058514672a4ebc53847e",
-    "semantic_hash": "7c08b5cb6026058514672a4ebc53847e"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toaster.tsx": {
-    "mtime": 1779724348.9412677,
-    "ast_hash": "1903846ab268620de6356ef667e3fa21",
-    "semantic_hash": "1903846ab268620de6356ef667e3fa21"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toggle-group.tsx": {
-    "mtime": 1779724348.9413784,
-    "ast_hash": "e82bf234e3877ad708ea3d1dba614def",
-    "semantic_hash": "e82bf234e3877ad708ea3d1dba614def"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toggle.tsx": {
-    "mtime": 1779724348.9414706,
-    "ast_hash": "ff7a7deebff23c3488e79ad72ee47e4b",
-    "semantic_hash": "ff7a7deebff23c3488e79ad72ee47e4b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/tooltip.tsx": {
-    "mtime": 1779724348.9415636,
-    "ast_hash": "d7e923341b9e91d77db45ba5f2fa0cf9",
-    "semantic_hash": "d7e923341b9e91d77db45ba5f2fa0cf9"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/use-toast.ts": {
-    "mtime": 1779724348.9416537,
-    "ast_hash": "4f094014a1315ca1081cbdc7f78d55cc",
-    "semantic_hash": "4f094014a1315ca1081cbdc7f78d55cc"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/zerod/BadgesGrid.tsx": {
-    "mtime": 1779724348.9418187,
-    "ast_hash": "7f02f2c2af4eb1501413ec79b613fc43",
-    "semantic_hash": "7f02f2c2af4eb1501413ec79b613fc43"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/use-mobile.tsx": {
-    "mtime": 1779724348.9419808,
-    "ast_hash": "c0a0bdd4638c391a1dd06ac82074e60b",
-    "semantic_hash": "c0a0bdd4638c391a1dd06ac82074e60b"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/use-toast.ts": {
-    "mtime": 1779724348.9420784,
-    "ast_hash": "e706bc004c87e17db559a113637eddea",
-    "semantic_hash": "e706bc004c87e17db559a113637eddea"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAIUsage.tsx": {
-    "mtime": 1780087368.0449598,
-    "ast_hash": "cba1986dd1c8d070a6e39fa74800abf5",
-    "semantic_hash": "cba1986dd1c8d070a6e39fa74800abf5"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAdminPaymentAlerts.tsx": {
-    "mtime": 1780087368.0452878,
-    "ast_hash": "fd8572b978695af25316156e3e9d5612",
-    "semantic_hash": "fd8572b978695af25316156e3e9d5612"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAuth.tsx": {
-    "mtime": 1780087368.04551,
-    "ast_hash": "002ff77d95bdb19a38caf7b85442d5ba",
-    "semantic_hash": "002ff77d95bdb19a38caf7b85442d5ba"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useBrowserNotifications.tsx": {
-    "mtime": 1780087368.0457106,
-    "ast_hash": "45954cb18cb66681fbf471cdfbc022a0",
-    "semantic_hash": "45954cb18cb66681fbf471cdfbc022a0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useEntitlements.tsx": {
-    "mtime": 1780087368.0458958,
-    "ast_hash": "e1011da369757443733c14ddea321356",
-    "semantic_hash": "e1011da369757443733c14ddea321356"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useNotifications.tsx": {
-    "mtime": 1780087368.0462062,
-    "ast_hash": "e8f292ed9fb0268a128e3eec49c85a0d",
-    "semantic_hash": "e8f292ed9fb0268a128e3eec49c85a0d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useTranscript.tsx": {
-    "mtime": 1780087368.0463285,
-    "ast_hash": "27064d9ed471442db8995a13ea545d4a",
-    "semantic_hash": "27064d9ed471442db8995a13ea545d4a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/lovable/index.ts": {
-    "mtime": 1780087368.0467217,
-    "ast_hash": "2b281422ef62231e654f8668addb90a5",
-    "semantic_hash": "2b281422ef62231e654f8668addb90a5"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/supabase/client.ts": {
-    "mtime": 1779724348.943122,
-    "ast_hash": "f699d6047d16b2838b95d1a496861f53",
-    "semantic_hash": "f699d6047d16b2838b95d1a496861f53"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/supabase/types.ts": {
-    "mtime": 1780732893.2476256,
-    "ast_hash": "3a92bfe73bebdf51d15882637b92261f",
-    "semantic_hash": "3a92bfe73bebdf51d15882637b92261f"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/brand.ts": {
-    "mtime": 1780087368.0471888,
-    "ast_hash": "6711b733bb7b029a5f7ce17e4975b4f3",
-    "semantic_hash": "6711b733bb7b029a5f7ce17e4975b4f3"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/i18n.ts": {
-    "mtime": 1779724348.943531,
-    "ast_hash": "a4c40cf8abc11e801f94b003d3b869b5",
-    "semantic_hash": "a4c40cf8abc11e801f94b003d3b869b5"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/notifications/templates.ts": {
-    "mtime": 1780087368.0473955,
-    "ast_hash": "f9bd41b8df5b58b1c32776ac920cfe02",
-    "semantic_hash": "f9bd41b8df5b58b1c32776ac920cfe02"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/payment-config.ts": {
-    "mtime": 1779724348.943822,
-    "ast_hash": "85cc5bd9145667e246d4741e286da651",
-    "semantic_hash": "85cc5bd9145667e246d4741e286da651"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/utils.ts": {
-    "mtime": 1779724348.9439223,
-    "ast_hash": "d9837f38cc05303254571985e3164050",
-    "semantic_hash": "d9837f38cc05303254571985e3164050"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/main.tsx": {
-    "mtime": 1780087368.047591,
-    "ast_hash": "55f32fbf232316c9ee63e9f128032273",
-    "semantic_hash": "55f32fbf232316c9ee63e9f128032273"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/AIWorkspace.tsx": {
-    "mtime": 1780087368.0477328,
-    "ast_hash": "55e314c0368e5b58af7128d03f4803c0",
-    "semantic_hash": "55e314c0368e5b58af7128d03f4803c0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Admin.tsx": {
-    "mtime": 1780087368.047924,
-    "ast_hash": "406cd00539a48b426d739c10740d37fb",
-    "semantic_hash": "406cd00539a48b426d739c10740d37fb"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Auth.tsx": {
-    "mtime": 1780087368.048168,
-    "ast_hash": "eae12cd381d880b3081f7127aa42fed1",
-    "semantic_hash": "eae12cd381d880b3081f7127aa42fed1"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/BuyPackage.tsx": {
-    "mtime": 1780087368.0483627,
-    "ast_hash": "6bf877cf2973ffcc4d8af9bfcc3273fc",
-    "semantic_hash": "6bf877cf2973ffcc4d8af9bfcc3273fc"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Certificate.tsx": {
-    "mtime": 1779724348.9445562,
-    "ast_hash": "e8a8020e5e88858ea18e7d9cee87ca25",
-    "semantic_hash": "e8a8020e5e88858ea18e7d9cee87ca25"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/CourseDetail.tsx": {
-    "mtime": 1780582257.7211645,
-    "ast_hash": "e205e7a42aa7515858c07091045db915",
-    "semantic_hash": "e205e7a42aa7515858c07091045db915"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Courses.tsx": {
-    "mtime": 1780087368.0487692,
-    "ast_hash": "21160e669252f0e0a60173350d4cd783",
-    "semantic_hash": "21160e669252f0e0a60173350d4cd783"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Dashboard.tsx": {
-    "mtime": 1780732893.248116,
-    "ast_hash": "9bcb86cf877b96a1b797497e5b678587",
-    "semantic_hash": "9bcb86cf877b96a1b797497e5b678587"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Explore.tsx": {
-    "mtime": 1779724348.9450665,
-    "ast_hash": "fab3c6bb12d617717406264d80a1e493",
-    "semantic_hash": "fab3c6bb12d617717406264d80a1e493"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Growth.tsx": {
-    "mtime": 1780732893.2483244,
-    "ast_hash": "13204d0dfd4d424cca9d0395bf9c3618",
-    "semantic_hash": "13204d0dfd4d424cca9d0395bf9c3618"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Index.tsx": {
-    "mtime": 1780087368.0491853,
-    "ast_hash": "fb42f0cb19965f7a8d0aa9ddb36a7f91",
-    "semantic_hash": "fb42f0cb19965f7a8d0aa9ddb36a7f91"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Info.tsx": {
-    "mtime": 1780087368.0494065,
-    "ast_hash": "0df14d0042f9f48c52be6fc680899d3c",
-    "semantic_hash": "0df14d0042f9f48c52be6fc680899d3c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Leaderboard.tsx": {
-    "mtime": 1780087368.049627,
-    "ast_hash": "bed65d31211659aafdfd627309b8c38d",
-    "semantic_hash": "bed65d31211659aafdfd627309b8c38d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Learn.tsx": {
-    "mtime": 1780582257.7213104,
-    "ast_hash": "f8845fb20191bad00bae54234de9660c",
-    "semantic_hash": "f8845fb20191bad00bae54234de9660c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/ModulePlayer.tsx": {
-    "mtime": 1780311755.5983214,
-    "ast_hash": "bb569b270627f78b3e737050533ed118",
-    "semantic_hash": "bb569b270627f78b3e737050533ed118"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/NotFound.tsx": {
-    "mtime": 1779724348.9458046,
-    "ast_hash": "233617e24ded7876ea905f003f0f2889",
-    "semantic_hash": "233617e24ded7876ea905f003f0f2889"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Payment.tsx": {
-    "mtime": 1780087368.050228,
-    "ast_hash": "5a2ef3e58662ae695ef99cdc1619cdd6",
-    "semantic_hash": "5a2ef3e58662ae695ef99cdc1619cdd6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/PaymentHistory.tsx": {
-    "mtime": 1779724348.9460218,
-    "ast_hash": "68a49fa03408d0e208dcfd06508e02b2",
-    "semantic_hash": "68a49fa03408d0e208dcfd06508e02b2"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Profile.tsx": {
-    "mtime": 1780087368.0504248,
-    "ast_hash": "da14f7fd6d109fbfadd72e301357db68",
-    "semantic_hash": "da14f7fd6d109fbfadd72e301357db68"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Quiz.tsx": {
-    "mtime": 1779724348.9462647,
-    "ast_hash": "e458c16f222966696f49290f78d64660",
-    "semantic_hash": "e458c16f222966696f49290f78d64660"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/RefundPolicy.tsx": {
-    "mtime": 1780087368.0505764,
-    "ast_hash": "b1fb97e0d34a2808aee9f7ec7ae45a44",
-    "semantic_hash": "b1fb97e0d34a2808aee9f7ec7ae45a44"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Settings.tsx": {
-    "mtime": 1780732893.2490113,
-    "ast_hash": "98c66680a0139190cbaa225ad3722eb9",
-    "semantic_hash": "98c66680a0139190cbaa225ad3722eb9"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/AdminManagement.tsx": {
-    "mtime": 1779724348.9467256,
-    "ast_hash": "b9408975d7e5f0b321ae4a4171b1318c",
-    "semantic_hash": "b9408975d7e5f0b321ae4a4171b1318c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Broadcast.tsx": {
-    "mtime": 1779724348.9468532,
-    "ast_hash": "450c579a432de9ae32bfd54125cbe7a4",
-    "semantic_hash": "450c579a432de9ae32bfd54125cbe7a4"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Payments.tsx": {
-    "mtime": 1780087368.0510538,
-    "ast_hash": "0a0ed072e5d400fed6e53b407ea828f2",
-    "semantic_hash": "0a0ed072e5d400fed6e53b407ea828f2"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/SupportContacts.tsx": {
-    "mtime": 1780087368.0511913,
-    "ast_hash": "a50a5a7464ede395393c74cfae7d5431",
-    "semantic_hash": "a50a5a7464ede395393c74cfae7d5431"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Users.tsx": {
-    "mtime": 1779724348.9470692,
-    "ast_hash": "a6da856a9b1310c39e21cbaf899e04bf",
-    "semantic_hash": "a6da856a9b1310c39e21cbaf899e04bf"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/test/example.test.ts": {
-    "mtime": 1779724348.9472334,
-    "ast_hash": "f7aec10728902324d57cf05ee8a8e57e",
-    "semantic_hash": "f7aec10728902324d57cf05ee8a8e57e"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/test/setup.ts": {
-    "mtime": 1779724348.947337,
-    "ast_hash": "3ed816a7adf0e76610ce76bd32744ea0",
-    "semantic_hash": "3ed816a7adf0e76610ce76bd32744ea0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/vite-env.d.ts": {
-    "mtime": 1779724348.9474366,
-    "ast_hash": "0352474ba2918efe13895edbc3780d94",
-    "semantic_hash": "0352474ba2918efe13895edbc3780d94"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/ai-tutor/index.ts": {
-    "mtime": 1780087368.0514386,
-    "ast_hash": "dc8d036dcc465c24376c1b0083d4053f",
-    "semantic_hash": "dc8d036dcc465c24376c1b0083d4053f"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/delete-account/index.ts": {
-    "mtime": 1779724348.9480364,
-    "ast_hash": "c0a1fdffab7cbb4ea3a6490c73c0e3e7",
-    "semantic_hash": "c0a1fdffab7cbb4ea3a6490c73c0e3e7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/fetch-playlist-author/index.ts": {
-    "mtime": 1780087368.0518436,
-    "ast_hash": "35e639e36e17a5f34d2bb736dbabcfd6",
-    "semantic_hash": "35e639e36e17a5f34d2bb736dbabcfd6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/import-youtube-playlist/index.ts": {
-    "mtime": 1779724348.9483743,
-    "ast_hash": "8c8ce7b185cc6df2b1517a0a06e466f0",
-    "semantic_hash": "8c8ce7b185cc6df2b1517a0a06e466f0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/notifications-scan/index.ts": {
-    "mtime": 1780087368.0520542,
-    "ast_hash": "54fd781ba96d1643613f12b8d9d8a064",
-    "semantic_hash": "54fd781ba96d1643613f12b8d9d8a064"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/notify-admin/index.ts": {
-    "mtime": 1780633226.6147935,
-    "ast_hash": "c69aac1f51adadb23dd4e072f0617aba",
-    "semantic_hash": "c69aac1f51adadb23dd4e072f0617aba"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/preview-youtube-playlist/index.ts": {
-    "mtime": 1780087368.0522673,
-    "ast_hash": "7a0a9691e82d5229c8875a6ca184dac7",
-    "semantic_hash": "7a0a9691e82d5229c8875a6ca184dac7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/telegram-webhook/index.ts": {
-    "mtime": 1780645626.7842324,
-    "ast_hash": "bd5258e12ab7c48b7ff6a26623f68cb8",
-    "semantic_hash": "bd5258e12ab7c48b7ff6a26623f68cb8"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/transcribe-module/index.ts": {
-    "mtime": 1780087368.0524616,
-    "ast_hash": "d0164503e7ff2edb8c4d9a6e1a8f91e0",
-    "semantic_hash": "d0164503e7ff2edb8c4d9a6e1a8f91e0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260421062521_1077a7e3-517f-4c58-ad7f-3af27e03c4b6.sql": {
-    "mtime": 1779724348.9489806,
-    "ast_hash": "8683215af9bfc20d1f77f23930b705cd",
-    "semantic_hash": "8683215af9bfc20d1f77f23930b705cd"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260505135836_0b7fd2e4-98ba-4afe-a7f1-daca1cdb500a.sql": {
-    "mtime": 1779724348.9491045,
-    "ast_hash": "6c92de387cabc65b9e20dda4cd1b70e7",
-    "semantic_hash": "6c92de387cabc65b9e20dda4cd1b70e7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260506074203_61fbc948-52c1-4f52-9627-7b0eead083e2.sql": {
-    "mtime": 1779724348.949214,
-    "ast_hash": "6ad2ab1a952cbaca32b993af996a9b1f",
-    "semantic_hash": "6ad2ab1a952cbaca32b993af996a9b1f"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260507082659_dba40870-ea2b-4be8-a91e-2aa4898fb389.sql": {
-    "mtime": 1779724348.9493186,
-    "ast_hash": "a05fcf40914917803ae4e6c536f74095",
-    "semantic_hash": "a05fcf40914917803ae4e6c536f74095"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260508060104_51af9ed3-d2f9-4abb-9d64-685d6f15dd38.sql": {
-    "mtime": 1779724348.9494483,
-    "ast_hash": "eb320e1fd95eeb2cb9c2d32fd53c187c",
-    "semantic_hash": "eb320e1fd95eeb2cb9c2d32fd53c187c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260509195608_a6931653-4920-4b6a-973f-d922646144ca.sql": {
-    "mtime": 1779724348.9495435,
-    "ast_hash": "bc5a27dcd51bfb16275d527374dcf44a",
-    "semantic_hash": "bc5a27dcd51bfb16275d527374dcf44a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525070140_4b7fe372-64f2-49ad-a7b2-7c2ff3dc7f1d.sql": {
-    "mtime": 1779724348.9496613,
-    "ast_hash": "f8762139a79025aa14a55c73f5f27c7c",
-    "semantic_hash": "f8762139a79025aa14a55c73f5f27c7c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525070229_87446b0f-ae81-425d-9427-a833b463dbd7.sql": {
-    "mtime": 1779724348.949772,
-    "ast_hash": "2420d153e68e5cf7b0cd9540e8a1caf3",
-    "semantic_hash": "2420d153e68e5cf7b0cd9540e8a1caf3"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525082558_ae51f83e-ae59-44cc-b690-55c1e14bfe97.sql": {
-    "mtime": 1779724348.949875,
-    "ast_hash": "2224c7c89f0e998a5f72c3977874dc61",
-    "semantic_hash": "2224c7c89f0e998a5f72c3977874dc61"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525093320_b78e093c-0348-4418-be88-96fe4a38cb76.sql": {
-    "mtime": 1779724348.9499714,
-    "ast_hash": "69cec56ce7c80164a3f4087003f8d851",
-    "semantic_hash": "69cec56ce7c80164a3f4087003f8d851"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125113_bccf8ff0-aea5-4ff7-a1e5-7cfa1d0b4a81.sql": {
-    "mtime": 1779724348.950126,
-    "ast_hash": "99fca1c9fbdea12b4e81feac137db491",
-    "semantic_hash": "99fca1c9fbdea12b4e81feac137db491"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125140_aab17721-73f2-4170-9ad7-5c69c914ab5a.sql": {
-    "mtime": 1779724348.9502282,
-    "ast_hash": "d6d6211bd16ae4450ea0559693cc74f7",
-    "semantic_hash": "d6d6211bd16ae4450ea0559693cc74f7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125959_cf48dc1f-e311-4076-ac21-646aa0bbccc2.sql": {
-    "mtime": 1779724348.950337,
-    "ast_hash": "cba23dcadc0d57458e0909298b2601d7",
-    "semantic_hash": "cba23dcadc0d57458e0909298b2601d7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525133351_b39a0b68-da37-4c0b-a48a-0725b192313a.sql": {
-    "mtime": 1779724348.95043,
-    "ast_hash": "bf21e8813ed292764f385eeec2cc46bf",
-    "semantic_hash": "bf21e8813ed292764f385eeec2cc46bf"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525133508_ebe958cb-39a1-45d6-810c-a4bdcbf3c12a.sql": {
-    "mtime": 1779724348.9505584,
-    "ast_hash": "0cc2713266aff0628cadfdadeafae5eb",
-    "semantic_hash": "0cc2713266aff0628cadfdadeafae5eb"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525135215_532ad34c-c4e0-441b-a076-9552efa6500a.sql": {
-    "mtime": 1779724348.9506657,
-    "ast_hash": "d3c037c5334b41780749a540010b0eb9",
-    "semantic_hash": "d3c037c5334b41780749a540010b0eb9"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525140341_f94f9067-ddcc-465e-bea7-4831defdc2bc.sql": {
-    "mtime": 1779724348.9507575,
-    "ast_hash": "2a1cad638141ac09b8871b72b185f20e",
-    "semantic_hash": "2a1cad638141ac09b8871b72b185f20e"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526024150_8215825b-742a-437e-823a-fafb45b8ebaf.sql": {
-    "mtime": 1780087368.052626,
-    "ast_hash": "5065a4c4a05f5d24b2763bac59d46c55",
-    "semantic_hash": "5065a4c4a05f5d24b2763bac59d46c55"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526024927_a1cd1f72-eac8-471f-ba97-bc91a51cf545.sql": {
-    "mtime": 1780087368.0527658,
-    "ast_hash": "5630bf8cba54dcee0ced1284fba6bb3a",
-    "semantic_hash": "5630bf8cba54dcee0ced1284fba6bb3a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526025000_636fc248-ce63-4fa7-b655-94afbe1482cf.sql": {
-    "mtime": 1780087368.0529082,
-    "ast_hash": "95bdded3cb0eda6b4f18c661e7680e2d",
-    "semantic_hash": "95bdded3cb0eda6b4f18c661e7680e2d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526034942_7f23faa6-1547-4dde-bb51-7a1321411560.sql": {
-    "mtime": 1780087368.0530448,
-    "ast_hash": "9d68d09de1d9a3c26cfdfbfcbd5e0419",
-    "semantic_hash": "9d68d09de1d9a3c26cfdfbfcbd5e0419"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526035020_66675f13-5fe2-473c-b082-c4f196b8ef17.sql": {
-    "mtime": 1780087368.0531602,
-    "ast_hash": "c43728f0f7e6aa96859d790e626331b9",
-    "semantic_hash": "c43728f0f7e6aa96859d790e626331b9"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526035841_a418f089-eedd-4199-858d-56ad11aad446.sql": {
-    "mtime": 1780087368.053381,
-    "ast_hash": "b79d2ba843a146468e1908f6a9371492",
-    "semantic_hash": "b79d2ba843a146468e1908f6a9371492"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526044907_810ac853-d9d7-4cbf-8aee-20d6f0391999.sql": {
-    "mtime": 1780087368.0535183,
-    "ast_hash": "630dc5cdc96e85d297bbe256621ed798",
-    "semantic_hash": "630dc5cdc96e85d297bbe256621ed798"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526051135_89fc72c9-c4e5-49b0-8eba-85ad5c2c6f56.sql": {
-    "mtime": 1780087368.0536427,
-    "ast_hash": "bebeb68a1af057a67fa10344d510df2d",
-    "semantic_hash": "bebeb68a1af057a67fa10344d510df2d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526105325_e270a2f0-be3b-44b4-b422-e39f11cc7bf2.sql": {
-    "mtime": 1780087368.0537667,
-    "ast_hash": "5bbcf38667ee17ec5cde98d6430ac16d",
-    "semantic_hash": "5bbcf38667ee17ec5cde98d6430ac16d"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526111017_9da8f553-e852-474a-9ab8-2c69a00bfefe.sql": {
-    "mtime": 1780087368.0538929,
-    "ast_hash": "53c50846f68ebb5535fe5897a089db87",
-    "semantic_hash": "53c50846f68ebb5535fe5897a089db87"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526114651_04525865-c53c-470e-92e3-007a8bc91e16.sql": {
-    "mtime": 1780087368.0540302,
-    "ast_hash": "724a19ab55bad70213ca053ea26af6bb",
-    "semantic_hash": "724a19ab55bad70213ca053ea26af6bb"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526142638_6f867d24-be3d-4e8a-96cc-ef9d4002a758.sql": {
-    "mtime": 1780087368.0541844,
-    "ast_hash": "812bdfcb35b60a9c4be8cc7651322115",
-    "semantic_hash": "812bdfcb35b60a9c4be8cc7651322115"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526143133_7dc8e47c-12bf-4c05-89d2-7278b068c08e.sql": {
-    "mtime": 1780087368.0543246,
-    "ast_hash": "15c9876318e208f7d884084d5cd19fdf",
-    "semantic_hash": "15c9876318e208f7d884084d5cd19fdf"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526145218_879dea31-3eb4-45c3-8034-723b827794ed.sql": {
-    "mtime": 1780087368.0544555,
-    "ast_hash": "a3db67c176cae1fd06738c0385e0ea7a",
-    "semantic_hash": "a3db67c176cae1fd06738c0385e0ea7a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526145850_705f78ba-4193-4ae8-915c-20fb6a9735d5.sql": {
-    "mtime": 1780087368.0546033,
-    "ast_hash": "e9a710c6773bcd63b58717742f624857",
-    "semantic_hash": "e9a710c6773bcd63b58717742f624857"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526155103_77a6dd88-8858-4b61-87b8-873a6168b4d3.sql": {
-    "mtime": 1780087368.0547361,
-    "ast_hash": "bbb0a37e5e07c2faa53a7a42851214b0",
-    "semantic_hash": "bbb0a37e5e07c2faa53a7a42851214b0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526155345_0403a2c2-14cf-4616-864e-10f80ad2e501.sql": {
-    "mtime": 1780087368.0548787,
-    "ast_hash": "1bf444be11be412bf7dafb26337737db",
-    "semantic_hash": "1bf444be11be412bf7dafb26337737db"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260527050533_624973a6-071d-4abb-9ce0-96a771877fdc.sql": {
-    "mtime": 1780087368.0550401,
-    "ast_hash": "f3d48ec4479fe5fa3fba3e74f32466a6",
-    "semantic_hash": "f3d48ec4479fe5fa3fba3e74f32466a6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260527051157_1e8182b8-7067-4719-b585-6042335cd2bd.sql": {
-    "mtime": 1780087368.0551686,
-    "ast_hash": "32ce1abf73a5281f7c5ca95c8149adbe",
-    "semantic_hash": "32ce1abf73a5281f7c5ca95c8149adbe"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260529170307_4f6738b6-4a09-4c65-b31c-030a70c472b3.sql": {
-    "mtime": 1780087368.0552964,
-    "ast_hash": "b8772e740e099fd61edce76dc8b6e5f7",
-    "semantic_hash": "b8772e740e099fd61edce76dc8b6e5f7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260529171028_fdaebea2-b015-48c1-a25a-a138cfeeb528.sql": {
-    "mtime": 1780087368.0554316,
-    "ast_hash": "61c23b8c165389e90dce757561af6fe5",
-    "semantic_hash": "61c23b8c165389e90dce757561af6fe5"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260602123358_beb814d9-a561-4a3e-9968-f73a11d6837a.sql": {
-    "mtime": 1780582257.721419,
-    "ast_hash": "8f8c6cb817a57ec365ecc7b9c74d29d3",
-    "semantic_hash": "8f8c6cb817a57ec365ecc7b9c74d29d3"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605043639_ed544fc3-01d5-41e4-8136-1d5988f6740b.sql": {
-    "mtime": 1780639579.4076948,
-    "ast_hash": "67ff319643e75e12baa1e3ac06d8d7bb",
-    "semantic_hash": "67ff319643e75e12baa1e3ac06d8d7bb"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605043657_04bbcef2-dc0f-480b-85de-90bfc09642e8.sql": {
-    "mtime": 1780639579.4078846,
-    "ast_hash": "3521c57c6a92972dff59840d1f73a998",
-    "semantic_hash": "3521c57c6a92972dff59840d1f73a998"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605053010_84c5eaf0-c92e-4a93-8123-0bdaa8adc56e.sql": {
-    "mtime": 1780639579.4080558,
-    "ast_hash": "b631452652b4d530be77bac4b16ad7f6",
-    "semantic_hash": "b631452652b4d530be77bac4b16ad7f6"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605072336_6f7db1bd-163f-4ee7-808c-84916eac8ef9.sql": {
-    "mtime": 1780644597.5800328,
-    "ast_hash": "e7f0db88402c70f6d524d6a187b6a26c",
-    "semantic_hash": "e7f0db88402c70f6d524d6a187b6a26c"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260606045604_9e76fd74-33b7-4efe-9dd5-b6b95d238235.sql": {
-    "mtime": 1780732893.249274,
-    "ast_hash": "e53885f0c028698895a694b8441691f7",
-    "semantic_hash": "e53885f0c028698895a694b8441691f7"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tailwind.config.ts": {
-    "mtime": 1779724348.9508734,
-    "ast_hash": "4457687036386aa40c0a72e17fd36d40",
-    "semantic_hash": "4457687036386aa40c0a72e17fd36d40"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.app.json": {
-    "mtime": 1779725488.1196744,
-    "ast_hash": "ba5729c7405efe54f489c8134bb19b9e",
-    "semantic_hash": "ba5729c7405efe54f489c8134bb19b9e"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.json": {
-    "mtime": 1779725502.1307418,
-    "ast_hash": "7a1fa761227cbe0de8fe3ca14cc936ee",
-    "semantic_hash": "7a1fa761227cbe0de8fe3ca14cc936ee"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.node.json": {
-    "mtime": 1779725477.069206,
-    "ast_hash": "1417fb05378a1d1102f085e60b20db0e",
-    "semantic_hash": "1417fb05378a1d1102f085e60b20db0e"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/vite.config.ts": {
-    "mtime": 1780087368.055656,
-    "ast_hash": "1ed6bf1029b031b5a8f89ac7b3004093",
-    "semantic_hash": "1ed6bf1029b031b5a8f89ac7b3004093"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/vitest.config.ts": {
-    "mtime": 1779724348.9513717,
-    "ast_hash": "9285ab80c07d5cd1a71aa20c1687352a",
-    "semantic_hash": "9285ab80c07d5cd1a71aa20c1687352a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/.lovable/plan.md": {
-    "mtime": 1780087368.035625,
-    "ast_hash": "6fa1b62fb6614eff8e57c0938e5db702",
-    "semantic_hash": "6fa1b62fb6614eff8e57c0938e5db702"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/BACKEND.md": {
-    "mtime": 1780087368.0360873,
-    "ast_hash": "bfcef78c3e6a3124cd4bd5add06f60b1",
-    "semantic_hash": "bfcef78c3e6a3124cd4bd5add06f60b1"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/FRONTEND.md": {
-    "mtime": 1780087368.036489,
-    "ast_hash": "53b43cc5d21bb3d21187a7b7279bff40",
-    "semantic_hash": "53b43cc5d21bb3d21187a7b7279bff40"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/PRODUCT.md": {
-    "mtime": 1780087368.0368104,
-    "ast_hash": "f2a12bf3b8576575a6ec4e4394ef03a0",
-    "semantic_hash": "f2a12bf3b8576575a6ec4e4394ef03a0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/README.md": {
-    "mtime": 1780087368.0370483,
-    "ast_hash": "ac2ab0d72eaf3eb3d137441b3bf00e15",
-    "semantic_hash": "ac2ab0d72eaf3eb3d137441b3bf00e15"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/index.html": {
-    "mtime": 1780582257.7207844,
-    "ast_hash": "2430734182ec0ff8bc5776ed0668c3ad",
-    "semantic_hash": "2430734182ec0ff8bc5776ed0668c3ad"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/llms.txt": {
-    "mtime": 1780087368.0411012,
-    "ast_hash": "630c5bb31c352f7307739a61d7f3675f",
-    "semantic_hash": "630c5bb31c352f7307739a61d7f3675f"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/robots.txt": {
-    "mtime": 1780087368.0414062,
-    "ast_hash": "257e1b1eb8e7c6018ca5d1040511231a",
-    "semantic_hash": "257e1b1eb8e7c6018ca5d1040511231a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/apple-touch-icon.png": {
-    "mtime": 1780087368.0399518,
-    "ast_hash": "fc5f7b32c8e5f6c41dee54e1c0935c5a",
-    "semantic_hash": "fc5f7b32c8e5f6c41dee54e1c0935c5a"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/favicon.png": {
-    "mtime": 1780087368.0403488,
-    "ast_hash": "f68ac6a8c3019e507832c910a9ca44ea",
-    "semantic_hash": "f68ac6a8c3019e507832c910a9ca44ea"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-192.png": {
-    "mtime": 1780087368.0404928,
-    "ast_hash": "94a2f9ad92f8e6494b7d19c027ff2e17",
-    "semantic_hash": "94a2f9ad92f8e6494b7d19c027ff2e17"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-512.png": {
-    "mtime": 1780087368.0408404,
-    "ast_hash": "e8743ad264aa7ed5e6a3cab520e6d79f",
-    "semantic_hash": "e8743ad264aa7ed5e6a3cab520e6d79f"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-maskable-512.png": {
-    "mtime": 1780087368.0409849,
-    "ast_hash": "c158cb009614d0775e111055be0ad5d0",
-    "semantic_hash": "c158cb009614d0775e111055be0ad5d0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/placeholder.svg": {
-    "mtime": 1779724348.9317358,
-    "ast_hash": "b501d7dff3280ac829c321fe854d99d0",
-    "semantic_hash": "b501d7dff3280ac829c321fe854d99d0"
-  },
-  "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/assets/zverts-logo.png": {
-    "mtime": 1780087368.0420547,
-    "ast_hash": "ecb1c2fe79b090789dbcdb31e57c567e",
-    "semantic_hash": "ecb1c2fe79b090789dbcdb31e57c567e"
-  }
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/components.json": {
+        "mtime": 1779724348.92973,
+        "ast_hash": "a547944ace00dc5d5373aaca70a40bc4",
+        "semantic_hash": "a547944ace00dc5d5373aaca70a40bc4"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/eslint.config.js": {
+        "mtime": 1779724348.929832,
+        "ast_hash": "31c0881fdd8500aa4d0aa963079713ae",
+        "semantic_hash": "31c0881fdd8500aa4d0aa963079713ae"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/package.json": {
+        "mtime": 1780087477.6720648,
+        "ast_hash": "0f5db6eb893fd203e5ee5db05d31fc47",
+        "semantic_hash": "0f5db6eb893fd203e5ee5db05d31fc47"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/postcss.config.js": {
+        "mtime": 1779724348.9312272,
+        "ast_hash": "c735540bb63936a123bc867d950c9f69",
+        "semantic_hash": "c735540bb63936a123bc867d950c9f69"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/manifest.json": {
+        "mtime": 1780087368.0412176,
+        "ast_hash": "8895090890cf2597bcd43898dce1c7e6",
+        "semantic_hash": "8895090890cf2597bcd43898dce1c7e6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/App.tsx": {
+        "mtime": 1780732893.2462525,
+        "ast_hash": "2112fb82a23fbad1d3fd74c614d3c9b5",
+        "semantic_hash": "2112fb82a23fbad1d3fd74c614d3c9b5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ErrorBoundary.tsx": {
+        "mtime": 1779724348.933032,
+        "ast_hash": "d32f13c9ca9ed39a3d16b50961cf7918",
+        "semantic_hash": "d32f13c9ca9ed39a3d16b50961cf7918"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/NavLink.tsx": {
+        "mtime": 1779724348.9331374,
+        "ast_hash": "d562b16ef93b1b80b981faffde0862f0",
+        "semantic_hash": "d562b16ef93b1b80b981faffde0862f0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/OfficialEmail.tsx": {
+        "mtime": 1780087368.0421896,
+        "ast_hash": "be0a1744bbadd0e3cf8ee1e6a88155f5",
+        "semantic_hash": "be0a1744bbadd0e3cf8ee1e6a88155f5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/RequireRole.tsx": {
+        "mtime": 1779724348.9332433,
+        "ast_hash": "b8a7c9238ced1d3c64f32a3e2570db20",
+        "semantic_hash": "b8a7c9238ced1d3c64f32a3e2570db20"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/SEO.tsx": {
+        "mtime": 1780087368.0423157,
+        "ast_hash": "6264f5d519b23bfd35ce267a526e04da",
+        "semantic_hash": "6264f5d519b23bfd35ce267a526e04da"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/ChatPanel.tsx": {
+        "mtime": 1780087368.0425553,
+        "ast_hash": "c7ab0b9530678841fb64f1984d35932d",
+        "semantic_hash": "c7ab0b9530678841fb64f1984d35932d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/ModeSelector.tsx": {
+        "mtime": 1780087368.0427341,
+        "ast_hash": "197937d7af6e0c50673ab902e7c437d6",
+        "semantic_hash": "197937d7af6e0c50673ab902e7c437d6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/SourcesPanel.tsx": {
+        "mtime": 1780087368.0428722,
+        "ast_hash": "26499ffc772a32f84906532cef3b6b9b",
+        "semantic_hash": "26499ffc772a32f84906532cef3b6b9b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/TranscriptPanel.tsx": {
+        "mtime": 1780087368.0430195,
+        "ast_hash": "1632a4cb66f84442e5154087499b332c",
+        "semantic_hash": "1632a4cb66f84442e5154087499b332c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/UsageChip.tsx": {
+        "mtime": 1780087368.043148,
+        "ast_hash": "9e164d8aaf71ce65c867c214290e360e",
+        "semantic_hash": "9e164d8aaf71ce65c867c214290e360e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ai/useAttachments.ts": {
+        "mtime": 1780087368.043282,
+        "ast_hash": "e67dff282b2455cc1d8d2ef6ddfe6b60",
+        "semantic_hash": "e67dff282b2455cc1d8d2ef6ddfe6b60"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AITutorPanel.tsx": {
+        "mtime": 1780087368.043684,
+        "ast_hash": "0646db4f5d52337e3c00d2844ea59e2c",
+        "semantic_hash": "0646db4f5d52337e3c00d2844ea59e2c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AnalyticsPanel.tsx": {
+        "mtime": 1779724348.9336207,
+        "ast_hash": "80e474d548c2bf7890de5f5c5e036276",
+        "semantic_hash": "80e474d548c2bf7890de5f5c5e036276"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/AppShell.tsx": {
+        "mtime": 1780733050.4051387,
+        "ast_hash": "56f4720a73a81dbe77543daeed8f40e9",
+        "semantic_hash": "56f4720a73a81dbe77543daeed8f40e9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/BadgesGrid.tsx": {
+        "mtime": 1779724348.9338791,
+        "ast_hash": "b7cff4f2605c46bf57f917ff1a1fc55d",
+        "semantic_hash": "b7cff4f2605c46bf57f917ff1a1fc55d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/CircularProgress.tsx": {
+        "mtime": 1779724348.9340055,
+        "ast_hash": "e119f43742b52f5b6b3e95f45c4ecd34",
+        "semantic_hash": "e119f43742b52f5b6b3e95f45c4ecd34"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ContinueWatching.tsx": {
+        "mtime": 1779724348.9341145,
+        "ast_hash": "9a80cdc1389237b5e49d94667ba93583",
+        "semantic_hash": "9a80cdc1389237b5e49d94667ba93583"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/DailyChallenge.tsx": {
+        "mtime": 1779724348.9342532,
+        "ast_hash": "17b3b5e688376dff114eb13e06bc921f",
+        "semantic_hash": "17b3b5e688376dff114eb13e06bc921f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/InstallPrompt.tsx": {
+        "mtime": 1780087368.0440378,
+        "ast_hash": "a4a7e9c1102c84264b69874163a7859b",
+        "semantic_hash": "a4a7e9c1102c84264b69874163a7859b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ModuleCard.tsx": {
+        "mtime": 1780582257.720948,
+        "ast_hash": "fc4d115a4bedb7d1a743f97c8b361004",
+        "semantic_hash": "fc4d115a4bedb7d1a743f97c8b361004"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/NotesPanel.tsx": {
+        "mtime": 1779724348.9345045,
+        "ast_hash": "6fc4b355f63361c1ed75960bd4e081ac",
+        "semantic_hash": "6fc4b355f63361c1ed75960bd4e081ac"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/NotificationCenter.tsx": {
+        "mtime": 1779724348.9346285,
+        "ast_hash": "6717ba34e3ba5eca896f02054ece6511",
+        "semantic_hash": "6717ba34e3ba5eca896f02054ece6511"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/PlaylistPreview.tsx": {
+        "mtime": 1779724348.934742,
+        "ast_hash": "9b99b1f97720361c78ac4caedf6a42e7",
+        "semantic_hash": "9b99b1f97720361c78ac4caedf6a42e7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SiteFooter.tsx": {
+        "mtime": 1780087368.0442786,
+        "ast_hash": "be0def92662824af2032acd93cd9f0e9",
+        "semantic_hash": "be0def92662824af2032acd93cd9f0e9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SmartNotificationSettings.tsx": {
+        "mtime": 1779724348.9350019,
+        "ast_hash": "24090aad8806aebd2b1e640c039ba09b",
+        "semantic_hash": "24090aad8806aebd2b1e640c039ba09b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/StatCard.tsx": {
+        "mtime": 1779724348.9351013,
+        "ast_hash": "1bc6218b3e0148506bb79f4e86b1529a",
+        "semantic_hash": "1bc6218b3e0148506bb79f4e86b1529a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/SupportContactPopup.tsx": {
+        "mtime": 1780087368.044417,
+        "ast_hash": "775161044a7511a1e4889d58e9be1f7c",
+        "semantic_hash": "775161044a7511a1e4889d58e9be1f7c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ThemeProvider.tsx": {
+        "mtime": 1779724348.9352078,
+        "ast_hash": "e4390442e55e958b2dfc09dab369766b",
+        "semantic_hash": "e4390442e55e958b2dfc09dab369766b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ThemeToggle.tsx": {
+        "mtime": 1779724348.935302,
+        "ast_hash": "6bbda0da698c78f76933a7b92fae794e",
+        "semantic_hash": "6bbda0da698c78f76933a7b92fae794e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/TodayMissionCard.tsx": {
+        "mtime": 1780732893.2469118,
+        "ast_hash": "824f1a0a6b45b4ff128dd4a62c7cad81",
+        "semantic_hash": "824f1a0a6b45b4ff128dd4a62c7cad81"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/WeeklyActivityChart.tsx": {
+        "mtime": 1779724348.9354107,
+        "ast_hash": "37bbfd3bbbe8ee083169f06021693a94",
+        "semantic_hash": "37bbfd3bbbe8ee083169f06021693a94"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/YouTubePlayer.tsx": {
+        "mtime": 1780311755.5976994,
+        "ast_hash": "eb10ba390b754ab5f7975cde5ce56c36",
+        "semantic_hash": "eb10ba390b754ab5f7975cde5ce56c36"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/ChatHistorySidebar.tsx": {
+        "mtime": 1779724348.9357116,
+        "ast_hash": "399574ed9292264075560c088cb51f97",
+        "semantic_hash": "399574ed9292264075560c088cb51f97"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/MessageContent.tsx": {
+        "mtime": 1779724348.935854,
+        "ast_hash": "0ccc658f4735be8c69fe12fb561e8bda",
+        "semantic_hash": "0ccc658f4735be8c69fe12fb561e8bda"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/ModelSelector.tsx": {
+        "mtime": 1779724348.9359598,
+        "ast_hash": "bb855504dd6a7fbd173ec44f2a2e7736",
+        "semantic_hash": "bb855504dd6a7fbd173ec44f2a2e7736"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/exportChat.ts": {
+        "mtime": 1779724348.9360645,
+        "ast_hash": "a6ea7fceff9564e616625af7271a14c6",
+        "semantic_hash": "a6ea7fceff9564e616625af7271a14c6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/types.ts": {
+        "mtime": 1780087368.0446322,
+        "ast_hash": "17356ae016b4a7ec6073a3f519ec1bc0",
+        "semantic_hash": "17356ae016b4a7ec6073a3f519ec1bc0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/app/ai/useChatStore.ts": {
+        "mtime": 1780087368.0448217,
+        "ast_hash": "bcfa8f42e1009d4ca235a0561a47d510",
+        "semantic_hash": "bcfa8f42e1009d4ca235a0561a47d510"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/accordion.tsx": {
+        "mtime": 1779724348.9364355,
+        "ast_hash": "f9ebb6ee913b44e5f3e06fe1d9679784",
+        "semantic_hash": "f9ebb6ee913b44e5f3e06fe1d9679784"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/alert-dialog.tsx": {
+        "mtime": 1779724348.936565,
+        "ast_hash": "2ee6c5e5e070315114319bc060d17a52",
+        "semantic_hash": "2ee6c5e5e070315114319bc060d17a52"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/alert.tsx": {
+        "mtime": 1779724348.936667,
+        "ast_hash": "354d0206f924d48bcebbb023c3940a6b",
+        "semantic_hash": "354d0206f924d48bcebbb023c3940a6b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/aspect-ratio.tsx": {
+        "mtime": 1779724348.936763,
+        "ast_hash": "c5c364545e1b25a94e9e752cd67ad048",
+        "semantic_hash": "c5c364545e1b25a94e9e752cd67ad048"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/avatar.tsx": {
+        "mtime": 1779724348.9368634,
+        "ast_hash": "53921dca0903c74cd72fada89388d9f8",
+        "semantic_hash": "53921dca0903c74cd72fada89388d9f8"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/badge.tsx": {
+        "mtime": 1779724348.9369724,
+        "ast_hash": "8db4e6d330f88f4041f81e7cde43782b",
+        "semantic_hash": "8db4e6d330f88f4041f81e7cde43782b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/breadcrumb.tsx": {
+        "mtime": 1779724348.937083,
+        "ast_hash": "c200fc41e9b214ebb6ccd19a300c42c5",
+        "semantic_hash": "c200fc41e9b214ebb6ccd19a300c42c5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/button.tsx": {
+        "mtime": 1779724348.9371943,
+        "ast_hash": "b59f5a3c54b63cf3ea4eb2523151f617",
+        "semantic_hash": "b59f5a3c54b63cf3ea4eb2523151f617"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/calendar.tsx": {
+        "mtime": 1779724348.9372995,
+        "ast_hash": "1da7a387f28cdb11722da319c0295a6c",
+        "semantic_hash": "1da7a387f28cdb11722da319c0295a6c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/card.tsx": {
+        "mtime": 1779724348.937396,
+        "ast_hash": "202402023747c80d975f48b906e6eb1b",
+        "semantic_hash": "202402023747c80d975f48b906e6eb1b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/carousel.tsx": {
+        "mtime": 1779724348.937513,
+        "ast_hash": "63a7442a3088b58113c8a8cfc1defe26",
+        "semantic_hash": "63a7442a3088b58113c8a8cfc1defe26"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/chart.tsx": {
+        "mtime": 1779724348.9376376,
+        "ast_hash": "29cfd7470f3197deccd58b2b4f00fbae",
+        "semantic_hash": "29cfd7470f3197deccd58b2b4f00fbae"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/checkbox.tsx": {
+        "mtime": 1779724348.9377484,
+        "ast_hash": "cb12d2f3410761f7a678add95c90ac5d",
+        "semantic_hash": "cb12d2f3410761f7a678add95c90ac5d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/collapsible.tsx": {
+        "mtime": 1779724348.9378424,
+        "ast_hash": "934b00582dae08af749fb55469081de6",
+        "semantic_hash": "934b00582dae08af749fb55469081de6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/command.tsx": {
+        "mtime": 1779724348.937959,
+        "ast_hash": "e911f182b4136a63c601c3fc48b2e9c7",
+        "semantic_hash": "e911f182b4136a63c601c3fc48b2e9c7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/context-menu.tsx": {
+        "mtime": 1779724348.9380794,
+        "ast_hash": "9b8e8efdf0456cd542e32d341b071cac",
+        "semantic_hash": "9b8e8efdf0456cd542e32d341b071cac"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/dialog.tsx": {
+        "mtime": 1779724348.938207,
+        "ast_hash": "fc3a9626ba52435552c93ac3a74374ec",
+        "semantic_hash": "fc3a9626ba52435552c93ac3a74374ec"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/drawer.tsx": {
+        "mtime": 1779724348.9383209,
+        "ast_hash": "05e2b536fe11649e9b4c6e73678e32a6",
+        "semantic_hash": "05e2b536fe11649e9b4c6e73678e32a6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/dropdown-menu.tsx": {
+        "mtime": 1779724348.9384637,
+        "ast_hash": "f308eb98a2e21bf8bd1e30dbcb741dc0",
+        "semantic_hash": "f308eb98a2e21bf8bd1e30dbcb741dc0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/form.tsx": {
+        "mtime": 1779724348.9385624,
+        "ast_hash": "4bb820d59aad3ee5bc78097596298ace",
+        "semantic_hash": "4bb820d59aad3ee5bc78097596298ace"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/hover-card.tsx": {
+        "mtime": 1779724348.9386594,
+        "ast_hash": "f77f80ed64ff8f3549e5d7e9d837e08e",
+        "semantic_hash": "f77f80ed64ff8f3549e5d7e9d837e08e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/input-otp.tsx": {
+        "mtime": 1779724348.9387717,
+        "ast_hash": "3fb5994635434d5168bee869689fc2aa",
+        "semantic_hash": "3fb5994635434d5168bee869689fc2aa"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/input.tsx": {
+        "mtime": 1779724348.938871,
+        "ast_hash": "b8279d768c2a1ce78a05a369a0502877",
+        "semantic_hash": "b8279d768c2a1ce78a05a369a0502877"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/label.tsx": {
+        "mtime": 1779724348.9389722,
+        "ast_hash": "cd2b2255bbe519cb0865dfeaa6615797",
+        "semantic_hash": "cd2b2255bbe519cb0865dfeaa6615797"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/menubar.tsx": {
+        "mtime": 1779724348.939123,
+        "ast_hash": "163c3fa58a2b4ea2caa00166f4d862c7",
+        "semantic_hash": "163c3fa58a2b4ea2caa00166f4d862c7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/navigation-menu.tsx": {
+        "mtime": 1779724348.939246,
+        "ast_hash": "77e94b0c299d10c3763d2755bf556916",
+        "semantic_hash": "77e94b0c299d10c3763d2755bf556916"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/pagination.tsx": {
+        "mtime": 1779724348.939349,
+        "ast_hash": "a3ced9f9b19826b467d788b1bf01746f",
+        "semantic_hash": "a3ced9f9b19826b467d788b1bf01746f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/popover.tsx": {
+        "mtime": 1779724348.9394426,
+        "ast_hash": "c056d22288a642b756b77c7691ad4532",
+        "semantic_hash": "c056d22288a642b756b77c7691ad4532"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/progress.tsx": {
+        "mtime": 1779724348.93954,
+        "ast_hash": "9a8b05beca19e008a562a10e489f5968",
+        "semantic_hash": "9a8b05beca19e008a562a10e489f5968"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/radio-group.tsx": {
+        "mtime": 1779724348.9396398,
+        "ast_hash": "3773798b5b2f334a5db0dc9c8d06f1b8",
+        "semantic_hash": "3773798b5b2f334a5db0dc9c8d06f1b8"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/resizable.tsx": {
+        "mtime": 1779724348.9397562,
+        "ast_hash": "ec681e92cbe705b5571ded11b5227a2a",
+        "semantic_hash": "ec681e92cbe705b5571ded11b5227a2a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/scroll-area.tsx": {
+        "mtime": 1779724348.9398491,
+        "ast_hash": "cfbc224001af0e6daba676de225a2a47",
+        "semantic_hash": "cfbc224001af0e6daba676de225a2a47"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/select.tsx": {
+        "mtime": 1779724348.9399707,
+        "ast_hash": "25de64d0126624cbd8efa50cfb64bd21",
+        "semantic_hash": "25de64d0126624cbd8efa50cfb64bd21"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/separator.tsx": {
+        "mtime": 1779724348.9400647,
+        "ast_hash": "ed1101f185e9dc801712593e3330a75d",
+        "semantic_hash": "ed1101f185e9dc801712593e3330a75d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sheet.tsx": {
+        "mtime": 1779724348.9401789,
+        "ast_hash": "3660be09e2e40467a22fd46b354c1b50",
+        "semantic_hash": "3660be09e2e40467a22fd46b354c1b50"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sidebar.tsx": {
+        "mtime": 1779724348.940354,
+        "ast_hash": "9eab1256b1ffe3f1336eebfd07b319c9",
+        "semantic_hash": "9eab1256b1ffe3f1336eebfd07b319c9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/skeleton.tsx": {
+        "mtime": 1779724348.940453,
+        "ast_hash": "c55f76f4faa1d6e888dbc51d41eaa586",
+        "semantic_hash": "c55f76f4faa1d6e888dbc51d41eaa586"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/slider.tsx": {
+        "mtime": 1779724348.9405544,
+        "ast_hash": "e3bf7b6116ddbdbe8c7b3597d07daee0",
+        "semantic_hash": "e3bf7b6116ddbdbe8c7b3597d07daee0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/sonner.tsx": {
+        "mtime": 1779724348.9406505,
+        "ast_hash": "88644703cc00886c56e0e3b7df0e21d8",
+        "semantic_hash": "88644703cc00886c56e0e3b7df0e21d8"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/switch.tsx": {
+        "mtime": 1779724348.9407487,
+        "ast_hash": "eccd8c41c46e782eaaa1f8be0111e089",
+        "semantic_hash": "eccd8c41c46e782eaaa1f8be0111e089"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/table.tsx": {
+        "mtime": 1779724348.9408507,
+        "ast_hash": "d0ff87c4734c23839337811378ad07df",
+        "semantic_hash": "d0ff87c4734c23839337811378ad07df"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/tabs.tsx": {
+        "mtime": 1779724348.9409473,
+        "ast_hash": "26b15e1ffce0f831be4da95b8f8a43df",
+        "semantic_hash": "26b15e1ffce0f831be4da95b8f8a43df"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/textarea.tsx": {
+        "mtime": 1779724348.9410567,
+        "ast_hash": "29ab470ee59e9da5070d4fba251bce81",
+        "semantic_hash": "29ab470ee59e9da5070d4fba251bce81"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toast.tsx": {
+        "mtime": 1779724348.9411733,
+        "ast_hash": "7c08b5cb6026058514672a4ebc53847e",
+        "semantic_hash": "7c08b5cb6026058514672a4ebc53847e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toaster.tsx": {
+        "mtime": 1779724348.9412677,
+        "ast_hash": "1903846ab268620de6356ef667e3fa21",
+        "semantic_hash": "1903846ab268620de6356ef667e3fa21"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toggle-group.tsx": {
+        "mtime": 1779724348.9413784,
+        "ast_hash": "e82bf234e3877ad708ea3d1dba614def",
+        "semantic_hash": "e82bf234e3877ad708ea3d1dba614def"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/toggle.tsx": {
+        "mtime": 1779724348.9414706,
+        "ast_hash": "ff7a7deebff23c3488e79ad72ee47e4b",
+        "semantic_hash": "ff7a7deebff23c3488e79ad72ee47e4b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/tooltip.tsx": {
+        "mtime": 1779724348.9415636,
+        "ast_hash": "d7e923341b9e91d77db45ba5f2fa0cf9",
+        "semantic_hash": "d7e923341b9e91d77db45ba5f2fa0cf9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/ui/use-toast.ts": {
+        "mtime": 1779724348.9416537,
+        "ast_hash": "4f094014a1315ca1081cbdc7f78d55cc",
+        "semantic_hash": "4f094014a1315ca1081cbdc7f78d55cc"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/components/zerod/BadgesGrid.tsx": {
+        "mtime": 1779724348.9418187,
+        "ast_hash": "7f02f2c2af4eb1501413ec79b613fc43",
+        "semantic_hash": "7f02f2c2af4eb1501413ec79b613fc43"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/use-mobile.tsx": {
+        "mtime": 1779724348.9419808,
+        "ast_hash": "c0a0bdd4638c391a1dd06ac82074e60b",
+        "semantic_hash": "c0a0bdd4638c391a1dd06ac82074e60b"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/use-toast.ts": {
+        "mtime": 1779724348.9420784,
+        "ast_hash": "e706bc004c87e17db559a113637eddea",
+        "semantic_hash": "e706bc004c87e17db559a113637eddea"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAIUsage.tsx": {
+        "mtime": 1780087368.0449598,
+        "ast_hash": "cba1986dd1c8d070a6e39fa74800abf5",
+        "semantic_hash": "cba1986dd1c8d070a6e39fa74800abf5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAdminPaymentAlerts.tsx": {
+        "mtime": 1780087368.0452878,
+        "ast_hash": "fd8572b978695af25316156e3e9d5612",
+        "semantic_hash": "fd8572b978695af25316156e3e9d5612"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useAuth.tsx": {
+        "mtime": 1780087368.04551,
+        "ast_hash": "002ff77d95bdb19a38caf7b85442d5ba",
+        "semantic_hash": "002ff77d95bdb19a38caf7b85442d5ba"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useBrowserNotifications.tsx": {
+        "mtime": 1780087368.0457106,
+        "ast_hash": "45954cb18cb66681fbf471cdfbc022a0",
+        "semantic_hash": "45954cb18cb66681fbf471cdfbc022a0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useEntitlements.tsx": {
+        "mtime": 1780087368.0458958,
+        "ast_hash": "e1011da369757443733c14ddea321356",
+        "semantic_hash": "e1011da369757443733c14ddea321356"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useNotifications.tsx": {
+        "mtime": 1780087368.0462062,
+        "ast_hash": "e8f292ed9fb0268a128e3eec49c85a0d",
+        "semantic_hash": "e8f292ed9fb0268a128e3eec49c85a0d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/hooks/useTranscript.tsx": {
+        "mtime": 1780087368.0463285,
+        "ast_hash": "27064d9ed471442db8995a13ea545d4a",
+        "semantic_hash": "27064d9ed471442db8995a13ea545d4a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/lovable/index.ts": {
+        "mtime": 1780087368.0467217,
+        "ast_hash": "2b281422ef62231e654f8668addb90a5",
+        "semantic_hash": "2b281422ef62231e654f8668addb90a5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/supabase/client.ts": {
+        "mtime": 1779724348.943122,
+        "ast_hash": "f699d6047d16b2838b95d1a496861f53",
+        "semantic_hash": "f699d6047d16b2838b95d1a496861f53"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/integrations/supabase/types.ts": {
+        "mtime": 1780732893.2476256,
+        "ast_hash": "3a92bfe73bebdf51d15882637b92261f",
+        "semantic_hash": "3a92bfe73bebdf51d15882637b92261f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/brand.ts": {
+        "mtime": 1780087368.0471888,
+        "ast_hash": "6711b733bb7b029a5f7ce17e4975b4f3",
+        "semantic_hash": "6711b733bb7b029a5f7ce17e4975b4f3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/i18n.ts": {
+        "mtime": 1779724348.943531,
+        "ast_hash": "a4c40cf8abc11e801f94b003d3b869b5",
+        "semantic_hash": "a4c40cf8abc11e801f94b003d3b869b5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/notifications/templates.ts": {
+        "mtime": 1780087368.0473955,
+        "ast_hash": "f9bd41b8df5b58b1c32776ac920cfe02",
+        "semantic_hash": "f9bd41b8df5b58b1c32776ac920cfe02"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/payment-config.ts": {
+        "mtime": 1779724348.943822,
+        "ast_hash": "85cc5bd9145667e246d4741e286da651",
+        "semantic_hash": "85cc5bd9145667e246d4741e286da651"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/lib/utils.ts": {
+        "mtime": 1779724348.9439223,
+        "ast_hash": "d9837f38cc05303254571985e3164050",
+        "semantic_hash": "d9837f38cc05303254571985e3164050"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/main.tsx": {
+        "mtime": 1780087368.047591,
+        "ast_hash": "55f32fbf232316c9ee63e9f128032273",
+        "semantic_hash": "55f32fbf232316c9ee63e9f128032273"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/AIWorkspace.tsx": {
+        "mtime": 1780087368.0477328,
+        "ast_hash": "55e314c0368e5b58af7128d03f4803c0",
+        "semantic_hash": "55e314c0368e5b58af7128d03f4803c0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Admin.tsx": {
+        "mtime": 1780087368.047924,
+        "ast_hash": "406cd00539a48b426d739c10740d37fb",
+        "semantic_hash": "406cd00539a48b426d739c10740d37fb"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Auth.tsx": {
+        "mtime": 1780087368.048168,
+        "ast_hash": "eae12cd381d880b3081f7127aa42fed1",
+        "semantic_hash": "eae12cd381d880b3081f7127aa42fed1"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/BuyPackage.tsx": {
+        "mtime": 1780087368.0483627,
+        "ast_hash": "6bf877cf2973ffcc4d8af9bfcc3273fc",
+        "semantic_hash": "6bf877cf2973ffcc4d8af9bfcc3273fc"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Certificate.tsx": {
+        "mtime": 1779724348.9445562,
+        "ast_hash": "e8a8020e5e88858ea18e7d9cee87ca25",
+        "semantic_hash": "e8a8020e5e88858ea18e7d9cee87ca25"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/CourseDetail.tsx": {
+        "mtime": 1780582257.7211645,
+        "ast_hash": "e205e7a42aa7515858c07091045db915",
+        "semantic_hash": "e205e7a42aa7515858c07091045db915"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Courses.tsx": {
+        "mtime": 1780087368.0487692,
+        "ast_hash": "21160e669252f0e0a60173350d4cd783",
+        "semantic_hash": "21160e669252f0e0a60173350d4cd783"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Dashboard.tsx": {
+        "mtime": 1780732893.248116,
+        "ast_hash": "9bcb86cf877b96a1b797497e5b678587",
+        "semantic_hash": "9bcb86cf877b96a1b797497e5b678587"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Explore.tsx": {
+        "mtime": 1779724348.9450665,
+        "ast_hash": "fab3c6bb12d617717406264d80a1e493",
+        "semantic_hash": "fab3c6bb12d617717406264d80a1e493"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Growth.tsx": {
+        "mtime": 1780732893.2483244,
+        "ast_hash": "13204d0dfd4d424cca9d0395bf9c3618",
+        "semantic_hash": "13204d0dfd4d424cca9d0395bf9c3618"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Index.tsx": {
+        "mtime": 1780087368.0491853,
+        "ast_hash": "fb42f0cb19965f7a8d0aa9ddb36a7f91",
+        "semantic_hash": "fb42f0cb19965f7a8d0aa9ddb36a7f91"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Info.tsx": {
+        "mtime": 1780087368.0494065,
+        "ast_hash": "0df14d0042f9f48c52be6fc680899d3c",
+        "semantic_hash": "0df14d0042f9f48c52be6fc680899d3c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Leaderboard.tsx": {
+        "mtime": 1780087368.049627,
+        "ast_hash": "bed65d31211659aafdfd627309b8c38d",
+        "semantic_hash": "bed65d31211659aafdfd627309b8c38d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Learn.tsx": {
+        "mtime": 1780582257.7213104,
+        "ast_hash": "f8845fb20191bad00bae54234de9660c",
+        "semantic_hash": "f8845fb20191bad00bae54234de9660c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/ModulePlayer.tsx": {
+        "mtime": 1780311755.5983214,
+        "ast_hash": "bb569b270627f78b3e737050533ed118",
+        "semantic_hash": "bb569b270627f78b3e737050533ed118"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/NotFound.tsx": {
+        "mtime": 1779724348.9458046,
+        "ast_hash": "233617e24ded7876ea905f003f0f2889",
+        "semantic_hash": "233617e24ded7876ea905f003f0f2889"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Payment.tsx": {
+        "mtime": 1780087368.050228,
+        "ast_hash": "5a2ef3e58662ae695ef99cdc1619cdd6",
+        "semantic_hash": "5a2ef3e58662ae695ef99cdc1619cdd6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/PaymentHistory.tsx": {
+        "mtime": 1779724348.9460218,
+        "ast_hash": "68a49fa03408d0e208dcfd06508e02b2",
+        "semantic_hash": "68a49fa03408d0e208dcfd06508e02b2"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Profile.tsx": {
+        "mtime": 1780087368.0504248,
+        "ast_hash": "da14f7fd6d109fbfadd72e301357db68",
+        "semantic_hash": "da14f7fd6d109fbfadd72e301357db68"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Quiz.tsx": {
+        "mtime": 1779724348.9462647,
+        "ast_hash": "e458c16f222966696f49290f78d64660",
+        "semantic_hash": "e458c16f222966696f49290f78d64660"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/RefundPolicy.tsx": {
+        "mtime": 1780087368.0505764,
+        "ast_hash": "b1fb97e0d34a2808aee9f7ec7ae45a44",
+        "semantic_hash": "b1fb97e0d34a2808aee9f7ec7ae45a44"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/Settings.tsx": {
+        "mtime": 1780732893.2490113,
+        "ast_hash": "98c66680a0139190cbaa225ad3722eb9",
+        "semantic_hash": "98c66680a0139190cbaa225ad3722eb9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/AdminManagement.tsx": {
+        "mtime": 1779724348.9467256,
+        "ast_hash": "b9408975d7e5f0b321ae4a4171b1318c",
+        "semantic_hash": "b9408975d7e5f0b321ae4a4171b1318c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Broadcast.tsx": {
+        "mtime": 1779724348.9468532,
+        "ast_hash": "450c579a432de9ae32bfd54125cbe7a4",
+        "semantic_hash": "450c579a432de9ae32bfd54125cbe7a4"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Payments.tsx": {
+        "mtime": 1780087368.0510538,
+        "ast_hash": "0a0ed072e5d400fed6e53b407ea828f2",
+        "semantic_hash": "0a0ed072e5d400fed6e53b407ea828f2"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/SupportContacts.tsx": {
+        "mtime": 1780087368.0511913,
+        "ast_hash": "a50a5a7464ede395393c74cfae7d5431",
+        "semantic_hash": "a50a5a7464ede395393c74cfae7d5431"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/pages/admin/Users.tsx": {
+        "mtime": 1779724348.9470692,
+        "ast_hash": "a6da856a9b1310c39e21cbaf899e04bf",
+        "semantic_hash": "a6da856a9b1310c39e21cbaf899e04bf"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/test/example.test.ts": {
+        "mtime": 1779724348.9472334,
+        "ast_hash": "f7aec10728902324d57cf05ee8a8e57e",
+        "semantic_hash": "f7aec10728902324d57cf05ee8a8e57e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/test/setup.ts": {
+        "mtime": 1779724348.947337,
+        "ast_hash": "3ed816a7adf0e76610ce76bd32744ea0",
+        "semantic_hash": "3ed816a7adf0e76610ce76bd32744ea0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/vite-env.d.ts": {
+        "mtime": 1779724348.9474366,
+        "ast_hash": "0352474ba2918efe13895edbc3780d94",
+        "semantic_hash": "0352474ba2918efe13895edbc3780d94"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/ai-tutor/index.ts": {
+        "mtime": 1780087368.0514386,
+        "ast_hash": "dc8d036dcc465c24376c1b0083d4053f",
+        "semantic_hash": "dc8d036dcc465c24376c1b0083d4053f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/delete-account/index.ts": {
+        "mtime": 1779724348.9480364,
+        "ast_hash": "c0a1fdffab7cbb4ea3a6490c73c0e3e7",
+        "semantic_hash": "c0a1fdffab7cbb4ea3a6490c73c0e3e7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/fetch-playlist-author/index.ts": {
+        "mtime": 1780087368.0518436,
+        "ast_hash": "35e639e36e17a5f34d2bb736dbabcfd6",
+        "semantic_hash": "35e639e36e17a5f34d2bb736dbabcfd6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/import-youtube-playlist/index.ts": {
+        "mtime": 1779724348.9483743,
+        "ast_hash": "8c8ce7b185cc6df2b1517a0a06e466f0",
+        "semantic_hash": "8c8ce7b185cc6df2b1517a0a06e466f0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/notifications-scan/index.ts": {
+        "mtime": 1780087368.0520542,
+        "ast_hash": "54fd781ba96d1643613f12b8d9d8a064",
+        "semantic_hash": "54fd781ba96d1643613f12b8d9d8a064"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/notify-admin/index.ts": {
+        "mtime": 1780633226.6147935,
+        "ast_hash": "c69aac1f51adadb23dd4e072f0617aba",
+        "semantic_hash": "c69aac1f51adadb23dd4e072f0617aba"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/preview-youtube-playlist/index.ts": {
+        "mtime": 1780087368.0522673,
+        "ast_hash": "7a0a9691e82d5229c8875a6ca184dac7",
+        "semantic_hash": "7a0a9691e82d5229c8875a6ca184dac7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/telegram-webhook/index.ts": {
+        "mtime": 1780645626.7842324,
+        "ast_hash": "bd5258e12ab7c48b7ff6a26623f68cb8",
+        "semantic_hash": "bd5258e12ab7c48b7ff6a26623f68cb8"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/functions/transcribe-module/index.ts": {
+        "mtime": 1780087368.0524616,
+        "ast_hash": "d0164503e7ff2edb8c4d9a6e1a8f91e0",
+        "semantic_hash": "d0164503e7ff2edb8c4d9a6e1a8f91e0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260421062521_1077a7e3-517f-4c58-ad7f-3af27e03c4b6.sql": {
+        "mtime": 1779724348.9489806,
+        "ast_hash": "8683215af9bfc20d1f77f23930b705cd",
+        "semantic_hash": "8683215af9bfc20d1f77f23930b705cd"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260505135836_0b7fd2e4-98ba-4afe-a7f1-daca1cdb500a.sql": {
+        "mtime": 1779724348.9491045,
+        "ast_hash": "6c92de387cabc65b9e20dda4cd1b70e7",
+        "semantic_hash": "6c92de387cabc65b9e20dda4cd1b70e7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260506074203_61fbc948-52c1-4f52-9627-7b0eead083e2.sql": {
+        "mtime": 1779724348.949214,
+        "ast_hash": "6ad2ab1a952cbaca32b993af996a9b1f",
+        "semantic_hash": "6ad2ab1a952cbaca32b993af996a9b1f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260507082659_dba40870-ea2b-4be8-a91e-2aa4898fb389.sql": {
+        "mtime": 1779724348.9493186,
+        "ast_hash": "a05fcf40914917803ae4e6c536f74095",
+        "semantic_hash": "a05fcf40914917803ae4e6c536f74095"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260508060104_51af9ed3-d2f9-4abb-9d64-685d6f15dd38.sql": {
+        "mtime": 1779724348.9494483,
+        "ast_hash": "eb320e1fd95eeb2cb9c2d32fd53c187c",
+        "semantic_hash": "eb320e1fd95eeb2cb9c2d32fd53c187c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260509195608_a6931653-4920-4b6a-973f-d922646144ca.sql": {
+        "mtime": 1779724348.9495435,
+        "ast_hash": "bc5a27dcd51bfb16275d527374dcf44a",
+        "semantic_hash": "bc5a27dcd51bfb16275d527374dcf44a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525070140_4b7fe372-64f2-49ad-a7b2-7c2ff3dc7f1d.sql": {
+        "mtime": 1779724348.9496613,
+        "ast_hash": "f8762139a79025aa14a55c73f5f27c7c",
+        "semantic_hash": "f8762139a79025aa14a55c73f5f27c7c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525070229_87446b0f-ae81-425d-9427-a833b463dbd7.sql": {
+        "mtime": 1779724348.949772,
+        "ast_hash": "2420d153e68e5cf7b0cd9540e8a1caf3",
+        "semantic_hash": "2420d153e68e5cf7b0cd9540e8a1caf3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525082558_ae51f83e-ae59-44cc-b690-55c1e14bfe97.sql": {
+        "mtime": 1779724348.949875,
+        "ast_hash": "2224c7c89f0e998a5f72c3977874dc61",
+        "semantic_hash": "2224c7c89f0e998a5f72c3977874dc61"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525093320_b78e093c-0348-4418-be88-96fe4a38cb76.sql": {
+        "mtime": 1779724348.9499714,
+        "ast_hash": "69cec56ce7c80164a3f4087003f8d851",
+        "semantic_hash": "69cec56ce7c80164a3f4087003f8d851"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125113_bccf8ff0-aea5-4ff7-a1e5-7cfa1d0b4a81.sql": {
+        "mtime": 1779724348.950126,
+        "ast_hash": "99fca1c9fbdea12b4e81feac137db491",
+        "semantic_hash": "99fca1c9fbdea12b4e81feac137db491"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125140_aab17721-73f2-4170-9ad7-5c69c914ab5a.sql": {
+        "mtime": 1779724348.9502282,
+        "ast_hash": "d6d6211bd16ae4450ea0559693cc74f7",
+        "semantic_hash": "d6d6211bd16ae4450ea0559693cc74f7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525125959_cf48dc1f-e311-4076-ac21-646aa0bbccc2.sql": {
+        "mtime": 1779724348.950337,
+        "ast_hash": "cba23dcadc0d57458e0909298b2601d7",
+        "semantic_hash": "cba23dcadc0d57458e0909298b2601d7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525133351_b39a0b68-da37-4c0b-a48a-0725b192313a.sql": {
+        "mtime": 1779724348.95043,
+        "ast_hash": "bf21e8813ed292764f385eeec2cc46bf",
+        "semantic_hash": "bf21e8813ed292764f385eeec2cc46bf"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525133508_ebe958cb-39a1-45d6-810c-a4bdcbf3c12a.sql": {
+        "mtime": 1779724348.9505584,
+        "ast_hash": "0cc2713266aff0628cadfdadeafae5eb",
+        "semantic_hash": "0cc2713266aff0628cadfdadeafae5eb"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525135215_532ad34c-c4e0-441b-a076-9552efa6500a.sql": {
+        "mtime": 1779724348.9506657,
+        "ast_hash": "d3c037c5334b41780749a540010b0eb9",
+        "semantic_hash": "d3c037c5334b41780749a540010b0eb9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260525140341_f94f9067-ddcc-465e-bea7-4831defdc2bc.sql": {
+        "mtime": 1779724348.9507575,
+        "ast_hash": "2a1cad638141ac09b8871b72b185f20e",
+        "semantic_hash": "2a1cad638141ac09b8871b72b185f20e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526024150_8215825b-742a-437e-823a-fafb45b8ebaf.sql": {
+        "mtime": 1780087368.052626,
+        "ast_hash": "5065a4c4a05f5d24b2763bac59d46c55",
+        "semantic_hash": "5065a4c4a05f5d24b2763bac59d46c55"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526024927_a1cd1f72-eac8-471f-ba97-bc91a51cf545.sql": {
+        "mtime": 1780087368.0527658,
+        "ast_hash": "5630bf8cba54dcee0ced1284fba6bb3a",
+        "semantic_hash": "5630bf8cba54dcee0ced1284fba6bb3a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526025000_636fc248-ce63-4fa7-b655-94afbe1482cf.sql": {
+        "mtime": 1780087368.0529082,
+        "ast_hash": "95bdded3cb0eda6b4f18c661e7680e2d",
+        "semantic_hash": "95bdded3cb0eda6b4f18c661e7680e2d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526034942_7f23faa6-1547-4dde-bb51-7a1321411560.sql": {
+        "mtime": 1780087368.0530448,
+        "ast_hash": "9d68d09de1d9a3c26cfdfbfcbd5e0419",
+        "semantic_hash": "9d68d09de1d9a3c26cfdfbfcbd5e0419"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526035020_66675f13-5fe2-473c-b082-c4f196b8ef17.sql": {
+        "mtime": 1780087368.0531602,
+        "ast_hash": "c43728f0f7e6aa96859d790e626331b9",
+        "semantic_hash": "c43728f0f7e6aa96859d790e626331b9"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526035841_a418f089-eedd-4199-858d-56ad11aad446.sql": {
+        "mtime": 1780087368.053381,
+        "ast_hash": "b79d2ba843a146468e1908f6a9371492",
+        "semantic_hash": "b79d2ba843a146468e1908f6a9371492"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526044907_810ac853-d9d7-4cbf-8aee-20d6f0391999.sql": {
+        "mtime": 1780087368.0535183,
+        "ast_hash": "630dc5cdc96e85d297bbe256621ed798",
+        "semantic_hash": "630dc5cdc96e85d297bbe256621ed798"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526051135_89fc72c9-c4e5-49b0-8eba-85ad5c2c6f56.sql": {
+        "mtime": 1780087368.0536427,
+        "ast_hash": "bebeb68a1af057a67fa10344d510df2d",
+        "semantic_hash": "bebeb68a1af057a67fa10344d510df2d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526105325_e270a2f0-be3b-44b4-b422-e39f11cc7bf2.sql": {
+        "mtime": 1780087368.0537667,
+        "ast_hash": "5bbcf38667ee17ec5cde98d6430ac16d",
+        "semantic_hash": "5bbcf38667ee17ec5cde98d6430ac16d"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526111017_9da8f553-e852-474a-9ab8-2c69a00bfefe.sql": {
+        "mtime": 1780087368.0538929,
+        "ast_hash": "53c50846f68ebb5535fe5897a089db87",
+        "semantic_hash": "53c50846f68ebb5535fe5897a089db87"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526114651_04525865-c53c-470e-92e3-007a8bc91e16.sql": {
+        "mtime": 1780087368.0540302,
+        "ast_hash": "724a19ab55bad70213ca053ea26af6bb",
+        "semantic_hash": "724a19ab55bad70213ca053ea26af6bb"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526142638_6f867d24-be3d-4e8a-96cc-ef9d4002a758.sql": {
+        "mtime": 1780087368.0541844,
+        "ast_hash": "812bdfcb35b60a9c4be8cc7651322115",
+        "semantic_hash": "812bdfcb35b60a9c4be8cc7651322115"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526143133_7dc8e47c-12bf-4c05-89d2-7278b068c08e.sql": {
+        "mtime": 1780087368.0543246,
+        "ast_hash": "15c9876318e208f7d884084d5cd19fdf",
+        "semantic_hash": "15c9876318e208f7d884084d5cd19fdf"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526145218_879dea31-3eb4-45c3-8034-723b827794ed.sql": {
+        "mtime": 1780087368.0544555,
+        "ast_hash": "a3db67c176cae1fd06738c0385e0ea7a",
+        "semantic_hash": "a3db67c176cae1fd06738c0385e0ea7a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526145850_705f78ba-4193-4ae8-915c-20fb6a9735d5.sql": {
+        "mtime": 1780087368.0546033,
+        "ast_hash": "e9a710c6773bcd63b58717742f624857",
+        "semantic_hash": "e9a710c6773bcd63b58717742f624857"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526155103_77a6dd88-8858-4b61-87b8-873a6168b4d3.sql": {
+        "mtime": 1780087368.0547361,
+        "ast_hash": "bbb0a37e5e07c2faa53a7a42851214b0",
+        "semantic_hash": "bbb0a37e5e07c2faa53a7a42851214b0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260526155345_0403a2c2-14cf-4616-864e-10f80ad2e501.sql": {
+        "mtime": 1780087368.0548787,
+        "ast_hash": "1bf444be11be412bf7dafb26337737db",
+        "semantic_hash": "1bf444be11be412bf7dafb26337737db"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260527050533_624973a6-071d-4abb-9ce0-96a771877fdc.sql": {
+        "mtime": 1780087368.0550401,
+        "ast_hash": "f3d48ec4479fe5fa3fba3e74f32466a6",
+        "semantic_hash": "f3d48ec4479fe5fa3fba3e74f32466a6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260527051157_1e8182b8-7067-4719-b585-6042335cd2bd.sql": {
+        "mtime": 1780087368.0551686,
+        "ast_hash": "32ce1abf73a5281f7c5ca95c8149adbe",
+        "semantic_hash": "32ce1abf73a5281f7c5ca95c8149adbe"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260529170307_4f6738b6-4a09-4c65-b31c-030a70c472b3.sql": {
+        "mtime": 1780087368.0552964,
+        "ast_hash": "b8772e740e099fd61edce76dc8b6e5f7",
+        "semantic_hash": "b8772e740e099fd61edce76dc8b6e5f7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260529171028_fdaebea2-b015-48c1-a25a-a138cfeeb528.sql": {
+        "mtime": 1780087368.0554316,
+        "ast_hash": "61c23b8c165389e90dce757561af6fe5",
+        "semantic_hash": "61c23b8c165389e90dce757561af6fe5"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260602123358_beb814d9-a561-4a3e-9968-f73a11d6837a.sql": {
+        "mtime": 1780582257.721419,
+        "ast_hash": "8f8c6cb817a57ec365ecc7b9c74d29d3",
+        "semantic_hash": "8f8c6cb817a57ec365ecc7b9c74d29d3"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605043639_ed544fc3-01d5-41e4-8136-1d5988f6740b.sql": {
+        "mtime": 1780639579.4076948,
+        "ast_hash": "67ff319643e75e12baa1e3ac06d8d7bb",
+        "semantic_hash": "67ff319643e75e12baa1e3ac06d8d7bb"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605043657_04bbcef2-dc0f-480b-85de-90bfc09642e8.sql": {
+        "mtime": 1780639579.4078846,
+        "ast_hash": "3521c57c6a92972dff59840d1f73a998",
+        "semantic_hash": "3521c57c6a92972dff59840d1f73a998"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605053010_84c5eaf0-c92e-4a93-8123-0bdaa8adc56e.sql": {
+        "mtime": 1780639579.4080558,
+        "ast_hash": "b631452652b4d530be77bac4b16ad7f6",
+        "semantic_hash": "b631452652b4d530be77bac4b16ad7f6"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260605072336_6f7db1bd-163f-4ee7-808c-84916eac8ef9.sql": {
+        "mtime": 1780644597.5800328,
+        "ast_hash": "e7f0db88402c70f6d524d6a187b6a26c",
+        "semantic_hash": "e7f0db88402c70f6d524d6a187b6a26c"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/supabase/migrations/20260606045604_9e76fd74-33b7-4efe-9dd5-b6b95d238235.sql": {
+        "mtime": 1780732893.249274,
+        "ast_hash": "e53885f0c028698895a694b8441691f7",
+        "semantic_hash": "e53885f0c028698895a694b8441691f7"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tailwind.config.ts": {
+        "mtime": 1779724348.9508734,
+        "ast_hash": "4457687036386aa40c0a72e17fd36d40",
+        "semantic_hash": "4457687036386aa40c0a72e17fd36d40"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.app.json": {
+        "mtime": 1779725488.1196744,
+        "ast_hash": "ba5729c7405efe54f489c8134bb19b9e",
+        "semantic_hash": "ba5729c7405efe54f489c8134bb19b9e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.json": {
+        "mtime": 1779725502.1307418,
+        "ast_hash": "7a1fa761227cbe0de8fe3ca14cc936ee",
+        "semantic_hash": "7a1fa761227cbe0de8fe3ca14cc936ee"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/tsconfig.node.json": {
+        "mtime": 1779725477.069206,
+        "ast_hash": "1417fb05378a1d1102f085e60b20db0e",
+        "semantic_hash": "1417fb05378a1d1102f085e60b20db0e"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/vite.config.ts": {
+        "mtime": 1780087368.055656,
+        "ast_hash": "1ed6bf1029b031b5a8f89ac7b3004093",
+        "semantic_hash": "1ed6bf1029b031b5a8f89ac7b3004093"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/vitest.config.ts": {
+        "mtime": 1779724348.9513717,
+        "ast_hash": "9285ab80c07d5cd1a71aa20c1687352a",
+        "semantic_hash": "9285ab80c07d5cd1a71aa20c1687352a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/.lovable/plan.md": {
+        "mtime": 1780087368.035625,
+        "ast_hash": "6fa1b62fb6614eff8e57c0938e5db702",
+        "semantic_hash": "6fa1b62fb6614eff8e57c0938e5db702"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/BACKEND.md": {
+        "mtime": 1780087368.0360873,
+        "ast_hash": "bfcef78c3e6a3124cd4bd5add06f60b1",
+        "semantic_hash": "bfcef78c3e6a3124cd4bd5add06f60b1"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/FRONTEND.md": {
+        "mtime": 1780087368.036489,
+        "ast_hash": "53b43cc5d21bb3d21187a7b7279bff40",
+        "semantic_hash": "53b43cc5d21bb3d21187a7b7279bff40"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/PRODUCT.md": {
+        "mtime": 1780087368.0368104,
+        "ast_hash": "f2a12bf3b8576575a6ec4e4394ef03a0",
+        "semantic_hash": "f2a12bf3b8576575a6ec4e4394ef03a0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/README.md": {
+        "mtime": 1780087368.0370483,
+        "ast_hash": "ac2ab0d72eaf3eb3d137441b3bf00e15",
+        "semantic_hash": "ac2ab0d72eaf3eb3d137441b3bf00e15"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/index.html": {
+        "mtime": 1780582257.7207844,
+        "ast_hash": "2430734182ec0ff8bc5776ed0668c3ad",
+        "semantic_hash": "2430734182ec0ff8bc5776ed0668c3ad"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/llms.txt": {
+        "mtime": 1780087368.0411012,
+        "ast_hash": "630c5bb31c352f7307739a61d7f3675f",
+        "semantic_hash": "630c5bb31c352f7307739a61d7f3675f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/robots.txt": {
+        "mtime": 1780087368.0414062,
+        "ast_hash": "257e1b1eb8e7c6018ca5d1040511231a",
+        "semantic_hash": "257e1b1eb8e7c6018ca5d1040511231a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/apple-touch-icon.png": {
+        "mtime": 1780087368.0399518,
+        "ast_hash": "fc5f7b32c8e5f6c41dee54e1c0935c5a",
+        "semantic_hash": "fc5f7b32c8e5f6c41dee54e1c0935c5a"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/favicon.png": {
+        "mtime": 1780087368.0403488,
+        "ast_hash": "f68ac6a8c3019e507832c910a9ca44ea",
+        "semantic_hash": "f68ac6a8c3019e507832c910a9ca44ea"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-192.png": {
+        "mtime": 1780087368.0404928,
+        "ast_hash": "94a2f9ad92f8e6494b7d19c027ff2e17",
+        "semantic_hash": "94a2f9ad92f8e6494b7d19c027ff2e17"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-512.png": {
+        "mtime": 1780087368.0408404,
+        "ast_hash": "e8743ad264aa7ed5e6a3cab520e6d79f",
+        "semantic_hash": "e8743ad264aa7ed5e6a3cab520e6d79f"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/icon-maskable-512.png": {
+        "mtime": 1780087368.0409849,
+        "ast_hash": "c158cb009614d0775e111055be0ad5d0",
+        "semantic_hash": "c158cb009614d0775e111055be0ad5d0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/public/placeholder.svg": {
+        "mtime": 1779724348.9317358,
+        "ast_hash": "b501d7dff3280ac829c321fe854d99d0",
+        "semantic_hash": "b501d7dff3280ac829c321fe854d99d0"
+    },
+    "/Users/afifzilani/code/zerod-agency/projects/zverts-lov/src/assets/zverts-logo.png": {
+        "mtime": 1780087368.0420547,
+        "ast_hash": "ecb1c2fe79b090789dbcdb31e57c567e",
+        "semantic_hash": "ecb1c2fe79b090789dbcdb31e57c567e"
+    }
 }

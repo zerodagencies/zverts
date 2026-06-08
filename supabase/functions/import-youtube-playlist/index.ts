@@ -16,10 +16,8 @@ function extractPlaylistId(url: string): string | null {
     const u = new URL(url);
     const list = u.searchParams.get("list");
     if (list) return list;
-    // youtu.be/VIDEO?list=... already handled above
     return null;
   } catch {
-    // Maybe bare ID
     if (/^[A-Za-z0-9_-]{10,}$/.test(url.trim())) return url.trim();
     return null;
   }
@@ -27,113 +25,234 @@ function extractPlaylistId(url: string): string | null {
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+
   const json = (body: unknown, status = 200) =>
-    new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    new Response(JSON.stringify(body), {
+      status,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+
   try {
+    // ── Auth ────────────────────────────────────────────────────────────────
     const authHeader = req.headers.get("Authorization");
     if (!authHeader) return json({ error: "Unauthorized" }, 401);
-    const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
-    const { data: { user } } = await supabase.auth.getUser(authHeader.replace("Bearer ", ""));
+
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+    );
+
+    const { data: { user } } = await supabase.auth.getUser(
+      authHeader.replace("Bearer ", "")
+    );
     if (!user) return json({ error: "Unauthorized" }, 401);
 
+    // ── Entitlement check (BEFORE doing any work) ───────────────────────────
+    const { data: entitlement, error: entErr } = await supabase
+      .from("user_entitlements")
+      .select("playlist_conversions_left, is_paid_user")
+      .eq("user_id", user.id)
+      .single();
+
+    if (entErr || !entitlement) {
+      console.error("Entitlement fetch error:", entErr);
+      return json({ error: "Could not verify account status" }, 403);
+    }
+
+    if (!entitlement.is_paid_user && entitlement.playlist_conversions_left <= 0) {
+      return json(
+        { error: "You have no conversions left. Please purchase more to continue." },
+        403
+      );
+    }
+
+    // ── Parse request ───────────────────────────────────────────────────────
     const { url } = await req.json();
     const playlistId = extractPlaylistId(url);
-    if (!playlistId) return json({ error: "Invalid playlist URL — must contain ?list=..." }, 400);
+    if (!playlistId) {
+      return json({ error: "Invalid playlist URL — must contain ?list=..." }, 400);
+    }
     console.log("Importing playlist:", playlistId, "for user:", user.id);
 
     const apiKey = Deno.env.get("YOUTUBE_API_KEY")!;
     if (!apiKey) return json({ error: "YouTube API key not configured" }, 500);
 
-    // playlist info
-    const plRes = await fetch(`https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${apiKey}`);
+    // ── Playlist metadata ───────────────────────────────────────────────────
+    const plRes = await fetch(
+      `https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${apiKey}`
+    );
     const plJson = await plRes.json();
+
     if (plJson.error) {
       console.error("Playlist info error:", plJson.error);
       return json({ error: `YouTube API: ${plJson.error.message}` }, 400);
     }
-    if (!plJson.items?.length) return json({ error: "Playlist not found or is private" }, 404);
-    const snippet = plJson.items?.[0]?.snippet ?? {};
+    if (!plJson.items?.length) {
+      return json({ error: "Playlist not found or is private" }, 404);
+    }
+
+    const snippet = plJson.items[0].snippet ?? {};
     const playlistTitle = snippet.title ?? "Imported playlist";
     const playlistDesc = snippet.description ?? null;
-    const playlistThumb = snippet.thumbnails?.high?.url ?? snippet.thumbnails?.medium?.url ?? null;
+    const playlistThumb =
+      snippet.thumbnails?.high?.url ?? snippet.thumbnails?.medium?.url ?? null;
     const authorName = snippet.channelTitle ?? null;
     const authorChannelId = snippet.channelId ?? null;
-    const authorChannelUrl = authorChannelId ? `https://www.youtube.com/channel/${authorChannelId}` : null;
+    const authorChannelUrl = authorChannelId
+      ? `https://www.youtube.com/channel/${authorChannelId}`
+      : null;
 
-    // playlist items (paginate up to 200)
+    // ── Playlist items (paginate up to 200) ─────────────────────────────────
     const items: any[] = [];
     let pageToken: string | undefined;
+
     for (let i = 0; i < 4; i++) {
-      const res = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=${playlistId}${pageToken ? `&pageToken=${pageToken}` : ""}&key=${apiKey}`);
+      const res = await fetch(
+        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=${playlistId}${
+          pageToken ? `&pageToken=${pageToken}` : ""
+        }&key=${apiKey}`
+      );
       const j = await res.json();
+
       if (j.error) {
         console.error("playlistItems error:", j.error);
         return json({ error: `YouTube API: ${j.error.message}` }, 400);
       }
+
       items.push(...(j.items ?? []));
       if (!j.nextPageToken) break;
       pageToken = j.nextPageToken;
     }
-    console.log("Fetched playlist items:", items.length);
-    if (items.length === 0) return json({ error: "No videos found in playlist" }, 400);
 
-    // Extract video IDs from snippet.resourceId.videoId (per YouTube API spec)
-    const validItems = items.filter(it => {
-      const vid = it?.snippet?.resourceId?.videoId ?? it?.contentDetails?.videoId;
+    console.log("Fetched playlist items:", items.length);
+    if (items.length === 0) {
+      return json({ error: "No videos found in playlist" }, 400);
+    }
+
+    // ── Filter out private/deleted videos ───────────────────────────────────
+    const validItems = items.filter((it) => {
+      const vid =
+        it?.snippet?.resourceId?.videoId ?? it?.contentDetails?.videoId;
       const title = it?.snippet?.title ?? "";
-      if (!vid) { console.log("Skipping item, missing videoId:", title); return false; }
+      if (!vid) {
+        console.log("Skipping item, missing videoId:", title);
+        return false;
+      }
       if (/^(Private|Deleted) video$/i.test(title)) return false;
       return true;
     });
-    console.log("Valid items:", validItems.length);
-    if (validItems.length === 0) return json({ error: "No playable videos in playlist" }, 400);
 
-    const ids = validItems.map(i => i.snippet?.resourceId?.videoId ?? i.contentDetails?.videoId);
-    const durations = new Map<string, number>();
-    for (let i = 0; i < ids.length; i += 50) {
-      const batch = ids.slice(i, i + 50).join(",");
-      const r = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${batch}&key=${apiKey}`);
-      const j = await r.json();
-      (j.items ?? []).forEach((v: any) => durations.set(v.id, parseDuration(v.contentDetails.duration)));
+    console.log("Valid items:", validItems.length);
+    if (validItems.length === 0) {
+      return json({ error: "No playable videos in playlist" }, 400);
     }
 
-    // create course
-    const { data: course, error: cErr } = await supabase.from("courses").insert({
-      user_id: user.id, title: playlistTitle, description: playlistDesc, thumbnail_url: playlistThumb,
-      source_playlist_id: playlistId, source_playlist_url: url, is_public: false, is_system: false,
-      author_name: authorName, author_channel_id: authorChannelId, author_channel_url: authorChannelUrl,
-    }).select().single();
+    // ── Fetch video durations in batches of 50 ──────────────────────────────
+    const ids = validItems.map(
+      (i) => i.snippet?.resourceId?.videoId ?? i.contentDetails?.videoId
+    );
+    const durations = new Map<string, number>();
+
+    for (let i = 0; i < ids.length; i += 50) {
+      const batch = ids.slice(i, i + 50).join(",");
+      const r = await fetch(
+        `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${batch}&key=${apiKey}`
+      );
+      const j = await r.json();
+      (j.items ?? []).forEach((v: any) =>
+        durations.set(v.id, parseDuration(v.contentDetails.duration))
+      );
+    }
+
+    // ── Create course ───────────────────────────────────────────────────────
+    const { data: course, error: cErr } = await supabase
+      .from("courses")
+      .insert({
+        user_id: user.id,
+        title: playlistTitle,
+        description: playlistDesc,
+        thumbnail_url: playlistThumb,
+        source_playlist_id: playlistId,
+        source_playlist_url: url,
+        is_public: false,
+        is_system: false,
+        author_name: authorName,
+        author_channel_id: authorChannelId,
+        author_channel_url: authorChannelUrl,
+      })
+      .select()
+      .single();
+
     if (cErr) {
       console.error("Course insert error:", cErr);
       return json({ error: `Course create failed: ${cErr.message}` }, 400);
     }
     console.log("Course created:", course.id);
 
+    // ── Insert modules ──────────────────────────────────────────────────────
     const rows = validItems.map((it, idx) => {
-      const videoId = it.snippet?.resourceId?.videoId ?? it.contentDetails?.videoId;
+      const videoId =
+        it.snippet?.resourceId?.videoId ?? it.contentDetails?.videoId;
       return {
         course_id: course.id,
         position: idx + 1,
         title: it.snippet.title,
         youtube_video_id: videoId,
         duration_seconds: durations.get(videoId) ?? 0,
-        thumbnail_url: it.snippet.thumbnails?.medium?.url
-          ?? it.snippet.thumbnails?.high?.url
-          ?? it.snippet.thumbnails?.default?.url
-          ?? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+        thumbnail_url:
+          it.snippet.thumbnails?.medium?.url ??
+          it.snippet.thumbnails?.high?.url ??
+          it.snippet.thumbnails?.default?.url ??
+          `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
       };
     });
-    console.log("Inserting modules:", rows.length, "first:", rows[0]);
-    const { data: inserted, error: mErr } = await supabase.from("modules").insert(rows).select("id");
+
+    console.log("Inserting modules:", rows.length);
+
+    const { data: inserted, error: mErr } = await supabase
+      .from("modules")
+      .insert(rows)
+      .select("id");
+
     if (mErr) {
       console.error("Modules insert error:", mErr);
-      // rollback the course so user can retry cleanly
+      // Roll back course so user can retry cleanly
       await supabase.from("courses").delete().eq("id", course.id);
       return json({ error: `Failed to import playlist videos: ${mErr.message}` }, 400);
     }
+
     console.log("Modules inserted:", inserted?.length);
 
-    return json({ course_id: course.id, modules: inserted?.length ?? rows.length });
+    // ── Decrement conversions AFTER everything succeeded ────────────────────
+    // Paid users are unlimited — only decrement free users
+    if (!entitlement.is_paid_user) {
+      const { error: decrErr } = await supabase
+        .from("user_entitlements")
+        .update({
+          playlist_conversions_left: entitlement.playlist_conversions_left - 1,
+        })
+        .eq("user_id", user.id);
+
+      if (decrErr) {
+        // Non-fatal: course is already created, just log it
+        console.error("Failed to decrement conversions:", decrErr);
+      } else {
+        console.log(
+          "Conversions left for user:",
+          user.id,
+          "→",
+          entitlement.playlist_conversions_left - 1
+        );
+      }
+    }
+
+    return json({
+      course_id: course.id,
+      modules: inserted?.length ?? rows.length,
+      conversions_left: entitlement.is_paid_user
+        ? null // unlimited
+        : entitlement.playlist_conversions_left - 1,
+    });
   } catch (e) {
     console.error("Unexpected error:", e);
     return json({ error: (e as Error).message }, 500);

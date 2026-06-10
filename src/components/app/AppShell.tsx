@@ -21,7 +21,7 @@ import { useTranslation } from "react-i18next";
 import { supabase } from "@/integrations/supabase/client";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
-import zvertsLogo from "@/assets/zverts-logo.png";
+// import zvertsLogo from "@/assets/zverts-logo.png";
 import { useAdminPaymentAlerts } from "@/hooks/useAdminPaymentAlerts";
 import { useBrowserNotifications } from "@/hooks/useBrowserNotifications";
 
@@ -123,9 +123,9 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
                         className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
                     >
                         <img
-                            src={zvertsLogo}
+                            src={"/hero.webp"}
                             alt="ZverTs"
-                            className="h-9 w-auto object-contain"
+                            className="h-6 w-auto object-contain"
                             loading="eager"
                             decoding="async"
                         />

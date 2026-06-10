@@ -1,12 +1,5 @@
 import { Link } from "react-router-dom";
 import {
-    Sparkles,
-    Trophy,
-    LayoutDashboard,
-    BookOpen,
-    TrendingUp,
-    Bot,
-    CreditCard,
     MapPin,
     Facebook,
     Twitter,
@@ -14,10 +7,8 @@ import {
     Youtube,
     Apple,
     Play,
-    ExternalLink,
     ArrowUpRight,
 } from "lucide-react";
-import zvertsLogo from "@/assets/zverts-logo.png";
 import { OfficialEmail } from "@/components/OfficialEmail";
 
 type NavLink = { label: string; to: string; external?: boolean };
@@ -92,7 +83,7 @@ export const SiteFooter = () => {
                     <div className="lg:col-span-4 space-y-5">
                         <Link to="/" className="inline-flex items-center gap-2.5 group">
                             <img
-                                src={zvertsLogo}
+                                src={"/hero.webp"}
                                 alt="ZverTs"
                                 className="h-9 w-auto drop-shadow-[0_0_8px_hsl(var(--primary)/0.4)] group-hover:drop-shadow-[0_0_12px_hsl(var(--primary)/0.6)] transition-all"
                                 loading="lazy"

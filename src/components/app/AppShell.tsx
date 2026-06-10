@@ -167,7 +167,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
                     <div className="flex-1" />
 
                     {/* Desktop right actions */}
-                    <div className="hidden md:flex items-center gap-1">
+                    <div className="hidden md:flex items-center gap-4">
                         {/* <LanguageToggle /> */}
                         <ThemeToggle />
                         {user ? (

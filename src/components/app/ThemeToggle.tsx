@@ -1,28 +1,52 @@
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun } from "lucide-react";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Moon, Sun, Monitor } from "lucide-react";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+
+const themes = [
+    { value: "light", label: "Light", icon: Sun },
+    { value: "dark", label: "Dark", icon: Moon },
+    { value: "system", label: "System", icon: Monitor },
+] as const;
 
 export const ThemeToggle = () => {
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     useEffect(() => setMounted(true), []);
-    if (!mounted)
-        return (
-            <Button variant="ghost" size="icon" aria-label="Toggle theme">
-                <Sun className="h-4 w-4" />
-            </Button>
-        );
-    const isDark = theme === "dark";
+
+    const current = themes.find((t) => t.value === theme) ?? themes[2];
+    const Icon = mounted ? current.icon : Monitor;
+
     return (
-        <Button
-            variant="ghost"
-            size="icon"
-            aria-label="Toggle theme"
-            onClick={() => setTheme(isDark ? "light" : "dark")}
-        >
-            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-        </Button>
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Theme">
+                    <Icon className="h-4 w-4" />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-36">
+                {themes.map(({ value, label, icon: ItemIcon }) => (
+                    <DropdownMenuItem
+                        key={value}
+                        onClick={() => setTheme(value)}
+                        className={cn(
+                            "gap-2",
+                            mounted && theme === value && "text-primary font-medium",
+                        )}
+                    >
+                        <ItemIcon className="h-4 w-4 shrink-0" />
+                        {label}
+                    </DropdownMenuItem>
+                ))}
+            </DropdownMenuContent>
+        </DropdownMenu>
     );
 };
 

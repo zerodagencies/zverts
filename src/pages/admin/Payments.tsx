@@ -18,7 +18,7 @@ const AdminPaymentsInner = () => {
 
     const load = useCallback(async () => {
         setLoading(true);
-        let q = supabase
+        const q = supabase
             .from("payments")
             .select("*")
             .eq("status", status)

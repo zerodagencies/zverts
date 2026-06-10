@@ -10,6 +10,7 @@ import {
     ArrowUpRight,
 } from "lucide-react";
 import { OfficialEmail } from "@/components/OfficialEmail";
+import { useTheme } from "next-themes";
 
 type NavLink = { label: string; to: string; external?: boolean };
 
@@ -18,7 +19,7 @@ const platform: NavLink[] = [
     { label: "Courses", to: "/courses" },
     { label: "Growth", to: "/growth" },
     { label: "Leaderboard", to: "/leaderboard" },
-    { label: "Vert AI", to: "/ai" },
+    // { label: "Vert AI", to: "/ai" },
     { label: "Buy Credits", to: "/buy" },
 ];
 
@@ -69,6 +70,7 @@ const LinkColumn = ({ title, items }: { title: string; items: NavLink[] }) => (
 
 export const SiteFooter = () => {
     const year = new Date().getFullYear();
+    const {theme} = useTheme();
 
     return (
         <footer className="relative mt-16 border-t border-border/60 overflow-hidden">
@@ -83,7 +85,7 @@ export const SiteFooter = () => {
                     <div className="lg:col-span-4 space-y-5">
                         <Link to="/" className="inline-flex items-center gap-2.5 group">
                             <img
-                                src={"/hero.webp"}
+                                src={theme === "dark" ? "/hero-light.svg" : "/hero-dark.svg"}
                                 alt="ZverTs"
                                 className="h-9 w-auto drop-shadow-[0_0_8px_hsl(var(--primary)/0.4)] group-hover:drop-shadow-[0_0_12px_hsl(var(--primary)/0.6)] transition-all"
                                 loading="lazy"

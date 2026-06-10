@@ -6,11 +6,13 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowLeft, Loader2, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useTheme } from "next-themes";
 
 const Auth = () => {
     const { user, loading } = useAuth();
     const navigate = useNavigate();
     const [busy, setBusy] = useState(false);
+    const { theme } = useTheme();
 
     if (loading) return null;
     if (user) return <Navigate to="/dashboard" replace />;
@@ -49,11 +51,11 @@ const Auth = () => {
                         {/* Logo */}
                         <div className="relative flex flex-col items-center text-center">
                             <img
-                                src="/hero.webp"
+                                src={theme === "dark" ? "/hero-light.svg" : "/hero-dark.svg"}
                                 alt="ZverTs"
                                 width={64}
                                 height={64}
-                                className="h-16 w-auto drop-shadow-[0_0_16px_hsl(var(--primary)/0.55)]"
+                                className="h-28 w-auto drop-shadow-[0_0_16px_hsl(var(--primary)/0.55)]"
                             />
                             <div className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-secondary/60 px-3 py-1 text-[10px] font-mono uppercase tracking-[0.25em] text-muted-foreground">
                                 <Sparkles className="h-3 w-3 text-primary" /> One-tap sign in

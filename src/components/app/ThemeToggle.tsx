@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 const themes = [
     { value: "light", label: "Light", icon: Sun },
     { value: "dark", label: "Dark", icon: Moon },
-    { value: "system", label: "System", icon: Monitor },
+    // { value: "system", label: "System", icon: Monitor },
 ] as const;
 
 export const ThemeToggle = () => {
@@ -21,14 +21,13 @@ export const ThemeToggle = () => {
     const [mounted, setMounted] = useState(false);
     useEffect(() => setMounted(true), []);
 
-    const current = themes.find((t) => t.value === theme) ?? themes[2];
-    const Icon = mounted ? current.icon : Monitor;
+    const current = themes.find((t) => t.value === theme) ?? themes[1];
 
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Theme">
-                    <Icon className="h-4 w-4" />
+                    <current.icon className="h-4 w-4" />
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-36">

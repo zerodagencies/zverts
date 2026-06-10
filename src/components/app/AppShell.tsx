@@ -122,9 +122,9 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
                         className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
                     >
                         <img
-                            src={"/hero.webp"}
+                            src={theme === "dark" ? "/hero-light.svg" : "/hero-dark.svg"}
                             alt="ZverTs"
-                            className="h-6 w-auto object-contain"
+                            className="h-8 w-auto object-contain"
                             loading="eager"
                             decoding="async"
                         />

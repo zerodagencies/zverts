@@ -33,14 +33,14 @@ const Index = () => {
                         "@context": "https://schema.org",
                         "@type": "Organization",
                         name: "ZverTs",
-                        url: "https://zverts.app",
-                        logo: "https://zverts.app/favicon.png",
+                        url: "https://zverts.com",
+                        logo: "https://zverts.com/favicon.png",
                     },
                     {
                         "@context": "https://schema.org",
                         "@type": "WebSite",
                         name: "ZverTs",
-                        url: "https://zverts.app",
+                        url: "https://zverts.com",
                     },
                 ]}
             />

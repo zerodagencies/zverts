@@ -49,21 +49,21 @@ const Courses = () => {
             return;
         }
 
-        // fetch module counts + user progress in parallel
+        // fetch module counts first, then progress filtered to those module IDs
         const ids = courses.map((c) => c.id);
-        const [{ data: mods }, { data: prog }] = await Promise.all([
-            supabase.from("modules").select("id,course_id").in("course_id", ids),
-            supabase
-                .from("module_progress")
-                .select("module_id,completed")
-                .eq("user_id", user.id)
-                .in(
-                    "module_id",
-                    (await supabase.from("modules").select("id").in("course_id", ids)).data?.map(
-                        (m) => m.id,
-                    ) ?? [],
-                ),
-        ]);
+        const { data: modsData } = await supabase
+            .from("modules")
+            .select("id,course_id")
+            .in("course_id", ids);
+        const mods = modsData ?? [];
+        const modIds = mods.map((m) => m.id);
+        const { data: prog } = modIds.length
+            ? await supabase
+                  .from("module_progress")
+                  .select("module_id,completed")
+                  .eq("user_id", user.id)
+                  .in("module_id", modIds)
+            : { data: [] as { module_id: string; completed: boolean }[] };
 
         const modsByCourse = new Map<string, string[]>();
         (mods ?? []).forEach((m) => {

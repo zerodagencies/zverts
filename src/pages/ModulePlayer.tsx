@@ -17,6 +17,7 @@ import {
     PlayCircle,
     ListVideo,
     Clock,
+    BrainCircuit,
 } from "lucide-react";
 import { MdOutlinePlaylistPlay } from "react-icons/md";
 
@@ -149,7 +150,6 @@ const ModulePlayer = () => {
 
     const [siblings, setSiblings] = useState<SiblingMod[]>([]);
     const [siblingProg, setSiblingProg] = useState<Map<string, SiblingProgress>>(new Map());
-    const [sidebarOpen, setSidebarOpen] = useState(true);
 
     const lastSentRef = useRef(0);
     const playerRef = useRef<YouTubePlayerHandle>(null);
@@ -243,12 +243,12 @@ const ModulePlayer = () => {
         })();
     }, [user, id]);
 
-    // ── Scroll current item into view when sidebar opens ───────────────────
+    // ── Scroll current item into view when siblings load ──────────────────
     useEffect(() => {
-        if (!sidebarOpen || !sidebarRef.current) return;
+        if (!sidebarRef.current) return;
         const active = sidebarRef.current.querySelector("[data-current='true']");
         active?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-    }, [sidebarOpen, siblings.length]);
+    }, [siblings.length]);
 
     // ── Progress ─────────────────────────────────────────────────────────────
     const sendProgress = async (watch: number, force = false) => {
@@ -381,23 +381,33 @@ const ModulePlayer = () => {
                                                 Stay focused — keep going on ZverTs
                                             </p>
                                         </div>
-                                        {nextId ? (
-                                            <Button
-                                                onClick={() => navigate(`/learn/${nextId}`)}
-                                                className="bg-gradient-lime text-primary-foreground shadow-glow"
-                                            >
-                                                Next <ArrowRight className="ml-1.5 h-4 w-4" />
-                                            </Button>
-                                        ) : (
+                                        <div className="flex gap-2">
                                             <Button
                                                 variant="outline"
-                                                onClick={() =>
-                                                    navigate(`/courses/${mod.course_id}`)
-                                                }
+                                                size="sm"
+                                                onClick={() => navigate(`/quiz/${mod.id}`)}
+                                                className="gap-1.5"
                                             >
-                                                Done
+                                                <BrainCircuit className="h-3.5 w-3.5" /> Quiz
                                             </Button>
-                                        )}
+                                            {nextId ? (
+                                                <Button
+                                                    onClick={() => navigate(`/learn/${nextId}`)}
+                                                    className="bg-gradient-lime text-primary-foreground shadow-glow"
+                                                >
+                                                    Next <ArrowRight className="ml-1.5 h-4 w-4" />
+                                                </Button>
+                                            ) : (
+                                                <Button
+                                                    variant="outline"
+                                                    onClick={() =>
+                                                        navigate(`/courses/${mod.course_id}`)
+                                                    }
+                                                >
+                                                    Done
+                                                </Button>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             )}
@@ -459,7 +469,7 @@ const ModulePlayer = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="flex items-center justify-between gap-3">
+                                <div className="flex items-center justify-between gap-3 flex-wrap">
                                     {completed ? (
                                         <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
                                             <CheckCircle2 className="h-5 w-5" /> Lesson complete
@@ -473,15 +483,28 @@ const ModulePlayer = () => {
                                             Mark complete
                                         </Button>
                                     )}
-                                    {nextId && completed && (
-                                        <Button
-                                            size="sm"
-                                            onClick={() => navigate(`/learn/${nextId}`)}
-                                            className="bg-gradient-lime text-primary-foreground shadow-glow"
-                                        >
-                                            Next lesson <ArrowRight className="ml-1.5 h-4 w-4" />
-                                        </Button>
-                                    )}
+                                    <div className="flex items-center gap-2">
+                                        {completed && (
+                                            <Button
+                                                size="sm"
+                                                variant="outline"
+                                                onClick={() => navigate(`/quiz/${mod?.id}`)}
+                                                className="gap-1.5"
+                                            >
+                                                <BrainCircuit className="h-3.5 w-3.5" /> Take Quiz
+                                            </Button>
+                                        )}
+                                        {nextId && completed && (
+                                            <Button
+                                                size="sm"
+                                                onClick={() => navigate(`/learn/${nextId}`)}
+                                                className="bg-gradient-lime text-primary-foreground shadow-glow"
+                                            >
+                                                Next lesson{" "}
+                                                <ArrowRight className="ml-1.5 h-4 w-4" />
+                                            </Button>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
 

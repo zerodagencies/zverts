@@ -10,13 +10,13 @@ import {
     Menu,
     X,
     Sparkles,
-    Bot,
     TrendingUp,
     CreditCard,
     Settings,
 } from "lucide-react";
 import { ReactNode, Suspense, lazy, useEffect, useRef, useState } from "react";
-import { ThemeToggle} from "./ThemeToggle";
+import { ThemeToggle, LanguageToggle } from "./ThemeToggle";
+import { useEntitlements } from "@/hooks/useEntitlements";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/integrations/supabase/client";
 import { useTheme } from "next-themes";
@@ -37,19 +37,13 @@ const SupportContactPopup = lazy(() =>
 
 export const AppShell = ({ children }: { children: ReactNode }) => {
     const { user, signOut } = useAuth();
+    const { isAdmin } = useEntitlements();
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
     const { theme } = useTheme();
-    const [isAdmin, setIsAdmin] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const attendanceMarkedFor = useRef<string | null>(null);
-
-    useEffect(() => {
-        if (!user) { setIsAdmin(false); return; }
-        supabase.rpc("has_role", { _user_id: user.id, _role: "admin" })
-            .then(({ data }) => setIsAdmin(!!data));
-    }, [user]);
 
     // Mark today's attendance once per user per browser session.
     // The RPC is idempotent (ON CONFLICT DO NOTHING) so calling it every
@@ -168,7 +162,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
 
                     {/* Desktop right actions */}
                     <div className="hidden md:flex items-center gap-4">
-                        {/* <LanguageToggle /> */}
+                        <LanguageToggle />
                         <ThemeToggle />
                         {user ? (
                             <>

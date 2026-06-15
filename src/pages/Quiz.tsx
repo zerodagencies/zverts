@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { RichText } from "@/components/app/RichText";
 import {
     CheckCircle2,
     XCircle,
@@ -362,7 +363,9 @@ const Quiz = () => {
                                     <span className="font-mono text-xs text-muted-foreground shrink-0 mt-0.5">
                                         Q{i + 1}.
                                     </span>
-                                    <p className="text-sm font-medium leading-snug">{q.question}</p>
+                                    <div className="text-sm font-medium leading-snug prose prose-sm dark:prose-invert max-w-none prose-p:my-0 prose-pre:my-1 prose-pre:p-0 prose-pre:bg-transparent prose-code:before:content-none prose-code:after:content-none">
+                                        <RichText>{q.question}</RichText>
+                                    </div>
                                 </div>
                                 <div className="grid gap-2 pl-6">
                                     {q.options.map((opt, idx) => {
@@ -383,7 +386,7 @@ const Quiz = () => {
                                                 <span className="font-mono text-xs mr-2 opacity-60">
                                                     {String.fromCharCode(65 + idx)}.
                                                 </span>
-                                                {opt}
+                                                <RichText inline>{opt}</RichText>
                                             </button>
                                         );
                                     })}

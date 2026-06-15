@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from "react";
 
 declare global {
     interface Window {
@@ -51,6 +51,43 @@ export const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(
             [],
         );
 
+        const handleKeyDown = useCallback((e: KeyboardEvent) => {
+            if (!playerRef.current) return;
+            const tag = (e.target as HTMLElement).tagName.toLowerCase();
+            if (tag === "input" || tag === "textarea" || (e.target as HTMLElement).isContentEditable) return;
+
+            switch (e.key) {
+                case " ":
+                case "k":
+                case "K": {
+                    e.preventDefault();
+                    const state = playerRef.current.getPlayerState?.();
+                    if (state === 1) playerRef.current.pauseVideo?.();
+                    else playerRef.current.playVideo?.();
+                    break;
+                }
+                case "ArrowLeft":
+                    e.preventDefault();
+                    playerRef.current.seekTo?.(Math.max(0, (playerRef.current.getCurrentTime?.() ?? 0) - 5), true);
+                    break;
+                case "ArrowRight":
+                    e.preventDefault();
+                    playerRef.current.seekTo?.((playerRef.current.getCurrentTime?.() ?? 0) + 5, true);
+                    break;
+                case "m":
+                case "M":
+                    e.preventDefault();
+                    if (playerRef.current.isMuted?.()) playerRef.current.unMute?.();
+                    else playerRef.current.mute?.();
+                    break;
+            }
+        }, []);
+
+        useEffect(() => {
+            document.addEventListener("keydown", handleKeyDown);
+            return () => document.removeEventListener("keydown", handleKeyDown);
+        }, [handleKeyDown]);
+
         useEffect(() => {
             let cancelled = false;
             loadYT().then(() => {
@@ -64,7 +101,6 @@ export const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(
                         iv_load_policy: 3, // hide video annotations
                         cc_load_policy: 0,
                         fs: 1,
-                        disablekb: 1, // disable YouTube keyboard shortcuts
                         origin: window.location.origin,
                         enablejsapi: 1,
                     },

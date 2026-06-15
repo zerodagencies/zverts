@@ -78,13 +78,6 @@ const Quiz = () => {
                 setCourseId(mod.course_id);
             }
 
-            if (prog?.mcq_passed) {
-                setPrevPassed(true);
-                if (attempt) setPrevScore({ score: attempt.score, total: attempt.total });
-                setState("already_passed");
-                return;
-            }
-
             if (attempt) {
                 setPrevScore({ score: attempt.score, total: attempt.total });
             }
@@ -146,6 +139,13 @@ const Quiz = () => {
 
             setQuestions(parsed);
             setAnswers({});
+
+            if (prog?.mcq_passed) {
+                setPrevPassed(true);
+                setState("already_passed");
+                return;
+            }
+
             setState("quiz");
         })();
     }, [user, moduleId]);

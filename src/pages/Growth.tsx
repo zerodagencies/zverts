@@ -7,6 +7,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { rankRows, medalColor, type RankRow, type RankedRow } from "@/lib/ranking";
 import {
     TrendingUp,
     TrendingDown,
@@ -44,57 +45,6 @@ type Mission = {
 
 type DayStats = { lessons: number; quizzes: number; minutes: number };
 type GrowthData = { today: DayStats; yesterday: DayStats };
-
-type LbRow = {
-    id: string;
-    name: string | null;
-    avatar_url: string | null;
-    total_xp: number | null;
-    total_gems: number | null;
-    current_streak: number | null;
-    longest_streak: number | null;
-};
-type LbRanked = LbRow & { rank: number; xp: number; gems: number; streak: number; level: number };
-
-// ── Helpers ─────────────────────────────────────────────────────────────────
-
-const toNum = (v: unknown): number => {
-    const n = typeof v === "string" ? parseInt(v, 10) : (v as number);
-    return Number.isFinite(n) ? n : 0;
-};
-
-function rankRows(rows: LbRow[]): LbRanked[] {
-    const normalized = rows
-        .filter((r) => r && r.id)
-        .map<LbRanked>((r) => {
-            const xp = toNum(r.total_xp);
-            return {
-                ...r,
-                xp,
-                gems: toNum(r.total_gems),
-                streak: toNum(r.current_streak),
-                level: Math.floor(xp / 500) + 1,
-                rank: 0,
-            };
-        })
-        .sort((a, b) => {
-            if (b.streak !== a.streak) return b.streak - a.streak;
-            if (b.gems !== a.gems) return b.gems - a.gems;
-            if (b.xp !== a.xp) return b.xp - a.xp;
-            return (a.name ?? "").localeCompare(b.name ?? "");
-        });
-    for (let i = 0; i < normalized.length; i++) normalized[i].rank = i + 1;
-    return normalized;
-}
-
-const medalColor = (r: number) =>
-    r === 1
-        ? "text-yellow-400"
-        : r === 2
-          ? "text-slate-300"
-          : r === 3
-            ? "text-amber-600"
-            : "text-muted-foreground";
 
 const pct = (today: number, yest: number) => {
     if (yest === 0 && today === 0) return 0;
@@ -155,7 +105,7 @@ const GrowthCell = ({
     </div>
 );
 
-const LbMiniRow = ({ r, isMe }: { r: LbRanked; isMe: boolean }) => (
+const LbMiniRow = ({ r, isMe }: { r: RankedRow; isMe: boolean }) => (
     <div
         className={cn(
             "flex items-center gap-3 px-5 py-2.5 transition-colors",
@@ -222,7 +172,7 @@ const Growth = () => {
     const [growth, setGrowth] = useState<GrowthData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [lbRows, setLbRows] = useState<LbRow[]>([]);
+    const [lbRows, setLbRows] = useState<RankRow[]>([]);
     const [lbLoading, setLbLoading] = useState(true);
 
     const load = useCallback(async (silent = false) => {
@@ -230,8 +180,8 @@ const Growth = () => {
         setError(null);
         try {
             const [m, g] = await Promise.all([
-                (supabase as any).rpc("get_today_mission"),
-                (supabase as any).rpc("get_growth_stats"),
+                supabase.rpc("get_today_mission" as any),
+                supabase.rpc("get_growth_stats" as any),
             ]);
             if (m.error) throw m.error;
             if (g.error) throw g.error;
@@ -246,7 +196,7 @@ const Growth = () => {
 
     const loadLeaderboard = useCallback(async () => {
         const { data } = await supabase.rpc("list_public_profiles", { _limit: 100 });
-        setLbRows((data ?? []) as LbRow[]);
+        setLbRows((data ?? []) as RankRow[]);
         setLbLoading(false);
     }, []);
 

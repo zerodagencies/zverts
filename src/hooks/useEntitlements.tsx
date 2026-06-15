@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useAuth } from "./useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import type { Database } from "@/integrations/supabase/types";
@@ -22,6 +22,7 @@ export interface Entitlements {
 
 export const useEntitlements = (): Entitlements => {
     const { user } = useAuth();
+    const channelSuffix = useRef(Math.random().toString(36).slice(2));
     const [state, setState] = useState<{
         playlist_conversions_left: number;
         convert_credits: number;
@@ -76,7 +77,7 @@ export const useEntitlements = (): Entitlements => {
     useEffect(() => {
         if (!user) return;
         const ch = supabase
-            .channel(`user:${user.id}:ent`)
+            .channel(`user:${user.id}:ent:${channelSuffix.current}`)
             .on(
                 "postgres_changes",
                 {

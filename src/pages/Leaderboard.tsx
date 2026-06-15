@@ -2,69 +2,16 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { AppShell } from "@/components/app/AppShell";
 import { supabase } from "@/integrations/supabase/client";
 import { useTranslation } from "react-i18next";
-import { Trophy, Flame, Gem, Loader2, Medal } from "lucide-react";
+import { Trophy, Flame, Gem, Medal } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
-
-type Row = {
-    id: string;
-    name: string | null;
-    avatar_url: string | null;
-    total_xp: number | null;
-    total_gems: number | null;
-    current_streak: number | null;
-    longest_streak: number | null;
-};
-
-type Ranked = Row & { rank: number; xp: number; gems: number; streak: number; level: number };
-
-const toNumber = (v: unknown): number => {
-    const n = typeof v === "string" ? parseInt(v, 10) : (v as number);
-    return Number.isFinite(n) ? n : 0;
-};
-
-// Ordinal ranking. Priority: streak DESC → gems DESC → xp DESC → name ASC.
-function rank(rows: Row[]): Ranked[] {
-    const normalized = rows
-        .filter((r) => r && r.id)
-        .map<Ranked>((r) => {
-            const xp = toNumber(r.total_xp);
-            return {
-                ...r,
-                xp,
-                gems: toNumber(r.total_gems),
-                streak: toNumber(r.current_streak),
-                level: Math.floor(xp / 500) + 1,
-                rank: 0,
-            };
-        })
-        .sort((a, b) => {
-            if (b.streak !== a.streak) return b.streak - a.streak;
-            if (b.gems !== a.gems) return b.gems - a.gems;
-            if (b.xp !== a.xp) return b.xp - a.xp;
-            return (a.name ?? "").localeCompare(b.name ?? "");
-        });
-
-    for (let i = 0; i < normalized.length; i++) {
-        normalized[i].rank = i + 1;
-    }
-    return normalized;
-}
-
-const medalColor = (r: number) =>
-    r === 1
-        ? "text-yellow-400"
-        : r === 2
-          ? "text-slate-300"
-          : r === 3
-            ? "text-amber-600"
-            : "text-muted-foreground";
+import { rankRows, medalColor, type RankRow, type RankedRow } from "@/lib/ranking";
 
 const Leaderboard = () => {
     const { t } = useTranslation();
     const { user } = useAuth();
-    const [rows, setRows] = useState<Row[]>([]);
+    const [rows, setRows] = useState<RankRow[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -72,7 +19,7 @@ const Leaderboard = () => {
         setError(null);
         const { data, error } = await supabase.rpc("list_public_profiles", { _limit: 100 });
         if (error) setError(error.message);
-        setRows((data ?? []) as Row[]);
+        setRows((data ?? []) as RankRow[]);
         setLoading(false);
     }, []);
 
@@ -101,7 +48,7 @@ const Leaderboard = () => {
         };
     }, [load]);
 
-    const ranked = useMemo(() => rank(rows), [rows]);
+    const ranked = useMemo(() => rankRows(rows), [rows]);
     const myRow = useMemo(() => ranked.find((r) => r.id === user?.id), [ranked, user]);
     const podium = ranked.slice(0, 3);
 

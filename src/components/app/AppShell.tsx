@@ -104,12 +104,12 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
             className={cn(
                 "min-h-screen flex flex-col",
                 theme !== "dark" &&
-                    "bg-[radial-gradient(ellipse_at_top,_hsl(245_78%_56%_/_0.06),_transparent_60%)]",
+                    "bg-[radial-gradient(ellipse_at_top,_hsl(142_71%_45%_/_0.06),_transparent_60%)]",
             )}
         >
             {/* ── Header ─────────────────────────────────────────────────────── */}
             <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-                <div className="container flex h-14 items-center gap-3">
+                <div className="container relative flex h-14 items-center gap-3">
                     {/* Logo */}
                     <Link
                         to={user ? "/dashboard" : "/"}
@@ -124,9 +124,9 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
                         />
                     </Link>
 
-                    {/* Desktop nav */}
+                    {/* Desktop nav — absolutely centered in the header */}
                     {user && (
-                        <nav className="hidden md:flex items-center gap-0.5 ml-2">
+                        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-0.5">
                             {navItems.map((n) => (
                                 <NavLink
                                     key={n.to}
@@ -137,7 +137,6 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
                                             isActive
                                                 ? "text-primary bg-primary/8"
                                                 : "text-muted-foreground hover:text-foreground hover:bg-muted/60",
-                                            // Admin gets a subtle shield tint
                                             n.to === "/admin" &&
                                                 "text-amber-500 hover:text-amber-400",
                                         )

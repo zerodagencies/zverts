@@ -302,11 +302,11 @@ const Dashboard = () => {
                         <ContinueWatching userId={user.id} />
 
                         {/* ── Mission + Daily Challenge ────────────────────────────── */}
-                        <div className="grid lg:grid-cols-2 gap-5">
+                        <div className="grid lg:grid-cols-1 gap-5">
                             <TodayMissionCard userId={user.id} />
-                            <Suspense fallback={<Skeleton className="h-64 rounded-2xl" />}>
+                            {/* <Suspense fallback={<Skeleton className="h-64 rounded-2xl" />}>
                                 <DailyChallenge userId={user.id} />
-                            </Suspense>
+                            </Suspense> */}
                         </div>
 
                         {/* ── Stats + Activity ─────────────────────────────────────── */}

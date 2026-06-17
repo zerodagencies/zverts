@@ -581,9 +581,9 @@ const ModulePlayer = () => {
                     </div>
                 )}
             </div>
-            <Suspense fallback={null}>
+            {/* <Suspense fallback={null}>
                 <AITutorPanel moduleId={mod?.id ?? ""} />
-            </Suspense>
+            </Suspense> */}
         </AppShell>
     );
 };

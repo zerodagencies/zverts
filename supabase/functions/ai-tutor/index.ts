@@ -6,12 +6,12 @@ const corsHeaders = {
 };
 
 const MODEL_MAP: Record<string, string> = {
-    fast: "meta-llama/llama-3.3-70b-instruct:free",
-    smart: "meta-llama/llama-3.3-70b-instruct:free",
-    pro: "nvidia/nemotron-3-ultra-550b-a55b:free",
-    reasoning: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-    deep: "nvidia/nemotron-3-ultra-550b-a55b:free",
-    coding: "qwen/qwen3-coder:free",
+    fast: "nvidia/nemotron-3-nano-30b-a3b:free",
+    smart: "openai/gpt-oss-120b:free",
+    pro: "nvidia/nemotron-3-super-120b-a12b:free",
+    reasoning: "openai/gpt-oss-120b:free",
+    deep: "nvidia/nemotron-3-super-120b-a12b:free",
+    coding: "openai/gpt-oss-120b:free",
 };
 
 const MODE_PROMPTS: Record<string, string> = {

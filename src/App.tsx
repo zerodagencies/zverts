@@ -53,7 +53,7 @@ const AdminUsers = lazyWithRetry(() => import("./pages/admin/Users.tsx"));
 const AdminManagement = lazyWithRetry(() => import("./pages/admin/AdminManagement.tsx"));
 const AdminBroadcast = lazyWithRetry(() => import("./pages/admin/Broadcast.tsx"));
 const AdminSupportContacts = lazyWithRetry(() => import("./pages/admin/SupportContacts.tsx"));
-// const AIWorkspace = lazyWithRetry(() => import("./pages/AIWorkspace.tsx"));
+const AIWorkspace = lazyWithRetry(() => import("./pages/AIWorkspace.tsx"));
 
 const NotFound = lazyWithRetry(() => import("./pages/NotFound.tsx"));
 const Info = lazyWithRetry(() => import("./pages/Info.tsx"));
@@ -124,7 +124,7 @@ const App = () => (
 
                                     <Route path="/growth" element={<Growth />} />
                                     <Route path="/leaderboard" element={<Leaderboard />} />
-                                    {/* <Route path="/ai" element={<AIWorkspace />} /> */}
+                                    <Route path="/ai" element={<AIWorkspace />} />
                                     <Route path="/admin" element={<Admin />} />
                                     <Route path="/admin/payments" element={<AdminPayments />} />
                                     <Route path="/admin/users" element={<AdminUsers />} />

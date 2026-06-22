@@ -206,7 +206,7 @@ export const SiteFooter = () => {
                         </div>
 
                         <span className="font-mono">
-                            A product of{" "}
+                            A Product of{" "}
                             <a
                                 href="https://zerod.vercel.app"
                                 target="_blank"

@@ -70,7 +70,7 @@ const LinkColumn = ({ title, items }: { title: string; items: NavLink[] }) => (
 
 export const SiteFooter = () => {
     const year = new Date().getFullYear();
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     return (
         <footer className="relative mt-16 border-t border-border/60 overflow-hidden">
@@ -206,7 +206,15 @@ export const SiteFooter = () => {
                         </div>
 
                         <span className="font-mono">
-                            ZeroD
+                            A product of{" "}
+                            <a
+                                href="https://zerod.vercel.app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:underline"
+                            >
+                                <span className="text-foreground/70">ZeroD</span>
+                            </a>
                         </span>
                     </div>
                 </div>

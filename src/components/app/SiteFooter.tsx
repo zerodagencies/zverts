@@ -206,7 +206,7 @@ export const SiteFooter = () => {
                         </div>
 
                         <span className="font-mono">
-                            Made in <span className="text-foreground/70">Bangladesh</span> 🇧🇩
+                            ZeroD
                         </span>
                     </div>
                 </div>

@@ -105,6 +105,7 @@ const Courses = () => {
             toast.error((data as any)?.error ?? error?.message ?? "Preview failed");
             return;
         }
+        console.log("PREVIEW DATA: ", JSON.stringify(data))
         setPreview(data);
         setPreviewOpen(true);
     };

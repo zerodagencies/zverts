@@ -3,7 +3,7 @@ import { useNavigate, useParams, Navigate, Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/app/AppShell";
 import { YouTubePlayer, type YouTubePlayerHandle } from "@/components/app/YouTubePlayer";
-import { NotesPanel } from "@/components/app/NotesPanel";
+import { NotesPanel } from "@/components/notes/NotesPanel";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { supabase } from "@/integrations/supabase/client";
@@ -510,11 +510,21 @@ const ModulePlayer = () => {
 
                             {/* Notes + AI hint */}
                             <div className="grid lg:grid-cols-2 gap-4">
-                                <NotesPanel
-                                    moduleId={mod.id}
-                                    getCurrentTime={() => playerRef.current?.getCurrentTime() ?? 0}
-                                    onSeek={(s) => playerRef.current?.seekTo(s)}
-                                />
+                                <div className="rounded-2xl border border-border bg-card p-4">
+                                    <div className="mb-3 flex items-center justify-between">
+                                        <div>
+                                            <p className="font-display text-base">Lesson notes</p>
+                                            <p className="text-sm text-muted-foreground">
+                                                Capture thoughts and jump back to key moments.
+                                            </p>
+                                        </div>
+                                        <NotesPanel
+                                            moduleId={mod.id}
+                                            currentTime={playerRef.current?.getCurrentTime() ?? 0}
+                                            onSeek={(s) => playerRef.current?.seekTo(s)}
+                                        />
+                                    </div>
+                                </div>
                                 <div className="rounded-2xl border border-border bg-card p-5 flex flex-col items-center justify-center text-center min-h-[140px]">
                                     <p className="font-display text-base mb-1">
                                         Need help understanding?

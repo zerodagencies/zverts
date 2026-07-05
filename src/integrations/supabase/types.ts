@@ -431,8 +431,10 @@ export type Database = {
                     mcq_passed: boolean;
                     module_id: string;
                     percent_watched: number;
+                    quiz_fail_streak: number;
                     updated_at: string;
                     user_id: string;
+                    video_finished: boolean;
                     watch_time_seconds: number;
                 };
                 Insert: {
@@ -443,8 +445,10 @@ export type Database = {
                     mcq_passed?: boolean;
                     module_id: string;
                     percent_watched?: number;
+                    quiz_fail_streak?: number;
                     updated_at?: string;
                     user_id: string;
+                    video_finished?: boolean;
                     watch_time_seconds?: number;
                 };
                 Update: {
@@ -455,8 +459,10 @@ export type Database = {
                     mcq_passed?: boolean;
                     module_id?: string;
                     percent_watched?: number;
+                    quiz_fail_streak?: number;
                     updated_at?: string;
                     user_id?: string;
+                    video_finished?: boolean;
                     watch_time_seconds?: number;
                 };
                 Relationships: [

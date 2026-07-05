@@ -56,15 +56,29 @@ const BADGES: Record<string, { name: string; desc: string; icon: any; color: str
 
 export const BadgesGrid = ({ userId }: { userId: string }) => {
     const [unlocked, setUnlocked] = useState<Set<string>>(new Set());
+    const [loading, setLoading] = useState(true);
+    const [rpcError, setRpcError] = useState<string | null>(null);
 
     useEffect(() => {
         (async () => {
-            await supabase.rpc("check_achievements");
-            const { data } = await supabase
+            setLoading(true);
+            setRpcError(null);
+
+            const { error: checkErr } = await supabase.rpc("check_achievements");
+            if (checkErr) {
+                console.error("[BadgesGrid] check_achievements failed:", checkErr);
+                setRpcError(checkErr.message);
+            }
+
+            const { data, error: fetchErr } = await supabase
                 .from("achievements")
                 .select("code")
                 .eq("user_id", userId);
+            if (fetchErr) {
+                console.error("[BadgesGrid] achievements fetch failed:", fetchErr);
+            }
             setUnlocked(new Set((data ?? []).map((r: any) => r.code)));
+            setLoading(false);
         })();
     }, [userId]);
 
@@ -80,9 +94,16 @@ export const BadgesGrid = ({ userId }: { userId: string }) => {
                     <h2 className="font-display text-2xl mt-1">Badges</h2>
                 </div>
                 <div className="text-sm font-mono text-muted-foreground">
-                    {unlocked.size} / {total}
+                    {loading ? "…" : `${unlocked.size} / ${total}`}
                 </div>
             </div>
+
+            {rpcError && (
+                <div className="mb-4 rounded-xl border border-destructive/40 bg-destructive/5 px-3 py-2 text-xs font-mono text-destructive">
+                    Achievement check failed: {rpcError}
+                </div>
+            )}
+
             <div className="grid grid-cols-4 sm:grid-cols-8 gap-3">
                 {Object.entries(BADGES).map(([code, b]) => {
                     const Got = unlocked.has(code);
@@ -93,6 +114,7 @@ export const BadgesGrid = ({ userId }: { userId: string }) => {
                             title={`${b.name} — ${b.desc}`}
                             className={cn(
                                 "aspect-square rounded-2xl flex flex-col items-center justify-center p-2 relative transition-all",
+                                loading && "opacity-40",
                                 Got
                                     ? `bg-gradient-to-br ${b.color} text-white shadow-elevated hover:scale-105`
                                     : "bg-muted/50 text-muted-foreground/40 border border-border",

@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
-import { Loader2, Plus, Eye, Trash2, BookOpen, Globe, Lock } from "lucide-react";
+import { Loader2, Eye, Trash2, BookOpen, Globe, Lock } from "lucide-react";
 import { PlaylistPreview } from "@/components/app/PlaylistPreview";
 
 interface Course {
@@ -105,7 +105,7 @@ const Courses = () => {
             toast.error((data as any)?.error ?? error?.message ?? "Preview failed");
             return;
         }
-        console.log("PREVIEW DATA: ", JSON.stringify(data))
+        console.log("PREVIEW DATA: ", JSON.stringify(data));
         setPreview(data);
         setPreviewOpen(true);
     };
@@ -114,7 +114,7 @@ const Courses = () => {
         if (!url.trim()) return;
         setImporting(true);
         const { data, error } = await supabase.functions.invoke("import-youtube-playlist", {
-            body: { url: url.trim() },
+            body: { url: url.trim(), guardApproved: preview.guard.approved },
         });
         setImporting(false);
         if (error) {

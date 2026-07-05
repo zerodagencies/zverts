@@ -33,7 +33,7 @@ Deno.serve(async (req) => {
         });
 
     try {
-        // ── Auth ────────────────────────────────────────────────────────────────
+        // ── Auth ─────────────────────────────────────────────────────────────────
         const authHeader = req.headers.get("Authorization");
         if (!authHeader) return json({ error: "Unauthorized" }, 401);
 
@@ -42,12 +42,12 @@ Deno.serve(async (req) => {
             Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
         );
 
-        const {
-            data: { user },
-        } = await supabase.auth.getUser(authHeader.replace("Bearer ", ""));
+        const { data: { user } } = await supabase.auth.getUser(
+            authHeader.replace("Bearer ", ""),
+        );
         if (!user) return json({ error: "Unauthorized" }, 401);
 
-        // ── Entitlement check (BEFORE doing any work) ───────────────────────────
+        // ── Entitlement check ────────────────────────────────────────────────────
         const { data: entitlement, error: entErr } = await supabase
             .from("user_entitlements")
             .select("playlist_conversions_left, is_paid_user")
@@ -66,8 +66,22 @@ Deno.serve(async (req) => {
             );
         }
 
-        // ── Parse request ───────────────────────────────────────────────────────
-        const { url } = await req.json();
+        // ── Parse request ────────────────────────────────────────────────────────
+        // ▼▼▼ CHANGED: destructure guardApproved alongside url ▼▼▼
+        const { url, guardApproved } = await req.json();
+
+        // ── Guard Rail check ─────────────────────────────────────────────────────
+        if (!guardApproved) {
+            console.warn("Import attempted without guard approval for user:", user.id);
+            return json(
+                {
+                    error: "CONTENT_NOT_APPROVED",
+                    message: "Playlist must pass content review before importing. Please use the preview step first.",
+                },
+                403,
+            );
+        }
+
         const playlistId = extractPlaylistId(url);
         if (!playlistId) {
             return json({ error: "Invalid playlist URL — must contain ?list=..." }, 400);
@@ -77,7 +91,7 @@ Deno.serve(async (req) => {
         const apiKey = Deno.env.get("YOUTUBE_API_KEY")!;
         if (!apiKey) return json({ error: "YouTube API key not configured" }, 500);
 
-        // ── Playlist metadata ───────────────────────────────────────────────────
+        // ── Playlist metadata ────────────────────────────────────────────────────
         const plRes = await fetch(
             `https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${apiKey}`,
         );
@@ -102,7 +116,7 @@ Deno.serve(async (req) => {
             ? `https://www.youtube.com/channel/${authorChannelId}`
             : null;
 
-        // ── Playlist items (paginate up to 200) ─────────────────────────────────
+        // ── Playlist items (paginate up to 200) ──────────────────────────────────
         const items: any[] = [];
         let pageToken: string | undefined;
 
@@ -129,7 +143,7 @@ Deno.serve(async (req) => {
             return json({ error: "No videos found in playlist" }, 400);
         }
 
-        // ── Filter out private/deleted videos ───────────────────────────────────
+        // ── Filter out private/deleted videos ────────────────────────────────────
         const validItems = items.filter((it) => {
             const vid = it?.snippet?.resourceId?.videoId ?? it?.contentDetails?.videoId;
             const title = it?.snippet?.title ?? "";
@@ -146,7 +160,7 @@ Deno.serve(async (req) => {
             return json({ error: "No playable videos in playlist" }, 400);
         }
 
-        // ── Fetch video durations in batches of 50 ──────────────────────────────
+        // ── Fetch video durations ────────────────────────────────────────────────
         const ids = validItems.map(
             (i) => i.snippet?.resourceId?.videoId ?? i.contentDetails?.videoId,
         );
@@ -163,7 +177,7 @@ Deno.serve(async (req) => {
             );
         }
 
-        // ── Create course ───────────────────────────────────────────────────────
+        // ── Create course ────────────────────────────────────────────────────────
         const { data: course, error: cErr } = await supabase
             .from("courses")
             .insert({
@@ -188,7 +202,7 @@ Deno.serve(async (req) => {
         }
         console.log("Course created:", course.id);
 
-        // ── Insert modules ──────────────────────────────────────────────────────
+        // ── Insert modules ───────────────────────────────────────────────────────
         const rows = validItems.map((it, idx) => {
             const videoId = it.snippet?.resourceId?.videoId ?? it.contentDetails?.videoId;
             return {
@@ -214,15 +228,13 @@ Deno.serve(async (req) => {
 
         if (mErr) {
             console.error("Modules insert error:", mErr);
-            // Roll back course so user can retry cleanly
             await supabase.from("courses").delete().eq("id", course.id);
             return json({ error: `Failed to import playlist videos: ${mErr.message}` }, 400);
         }
 
         console.log("Modules inserted:", inserted?.length);
 
-        // ── Decrement conversions AFTER everything succeeded ────────────────────
-        // Paid users are unlimited — only decrement free users
+        // ── Decrement conversions ────────────────────────────────────────────────
         if (!entitlement.is_paid_user) {
             const { error: decrErr } = await supabase
                 .from("user_entitlements")
@@ -232,7 +244,6 @@ Deno.serve(async (req) => {
                 .eq("user_id", user.id);
 
             if (decrErr) {
-                // Non-fatal: course is already created, just log it
                 console.error("Failed to decrement conversions:", decrErr);
             } else {
                 console.log(
@@ -248,9 +259,10 @@ Deno.serve(async (req) => {
             course_id: course.id,
             modules: inserted?.length ?? rows.length,
             conversions_left: entitlement.is_paid_user
-                ? null // unlimited
+                ? null
                 : entitlement.playlist_conversions_left - 1,
         });
+
     } catch (e) {
         console.error("Unexpected error:", e);
         return json({ error: (e as Error).message }, 500);

@@ -41,12 +41,13 @@ export const DailyChallenge = ({ userId }: { userId: string }) => {
                 .select("module_id")
                 .eq("user_id", userId)
                 .eq("completed", true);
-            const moduleIds = (completed ?? []).map((c: any) => c.module_id);
+            const moduleIds = (completed ?? []).map((c: { module_id: string }) => c.module_id);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const { data } = await (supabase.rpc as any)("get_mcq_questions", {
                 _module_ids: moduleIds.length ? moduleIds : null,
                 _limit: 20,
             });
-            const q = (data ?? []).map((m: any) => ({
+            const q = (data ?? []).map((m: { q_id: string; module_id: string; question: string; options: unknown }) => ({
                 id: m.q_id,
                 module_id: m.module_id,
                 question: m.question,
@@ -68,6 +69,7 @@ export const DailyChallenge = ({ userId }: { userId: string }) => {
         questions.forEach((q) => {
             payload[q.id] = answers[q.id];
         });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { data, error } = await (supabase.rpc as any)("grade_and_submit_daily_challenge", {
             _answers: payload,
         });
@@ -76,7 +78,7 @@ export const DailyChallenge = ({ userId }: { userId: string }) => {
             toast.error(error.message);
             return;
         }
-        const r = data as any;
+        const r = data as { correct: Record<string, boolean>; score: number; total: number; passed: boolean };
         setResults(r.correct ?? {});
         setDone({ score: r.score, total: r.total, passed: r.passed });
         if (r.passed) toast.success("Daily challenge passed! +75 XP, +2 gems 🎉");

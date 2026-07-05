@@ -1,4 +1,5 @@
 import { memo } from "react";
+import type React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -53,7 +54,7 @@ function RichTextInner({ children, inline = false }: Props) {
             rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: "ignore" }]]}
             components={{
                 ...(inline ? { p: ({ children: c }) => <span>{c}</span> } : {}),
-                code({ inline: isInline, className, children: c, ...props }: any) {
+                code({ inline: isInline, className, children: c, ...props }: React.ComponentPropsWithoutRef<"code"> & { inline?: boolean }) {
                     const match = /language-(\w+)/.exec(className || "");
                     const value = String(c).replace(/\n$/, "");
                     if (!isInline) {

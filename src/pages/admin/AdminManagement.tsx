@@ -8,14 +8,15 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
 const AdminManagementInner = () => {
-    const [admins, setAdmins] = useState<any[]>([]);
+    const [admins, setAdmins] = useState<Record<string, unknown>[]>([]);
     const [email, setEmail] = useState("");
     const [role, setRole] = useState<"admin" | "super_admin">("admin");
     const [busy, setBusy] = useState(false);
 
     const load = async () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { data } = await supabase.rpc("list_admin_users" as any);
-        setAdmins((data as any) ?? []);
+        setAdmins((data as Record<string, unknown>[]) ?? []);
     };
     useEffect(() => {
         load();
@@ -24,6 +25,7 @@ const AdminManagementInner = () => {
     const grant = async () => {
         if (!email.trim()) return;
         setBusy(true);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { error } = await supabase.rpc("admin_set_role" as any, {
             _email: email.trim(),
             _role: role,
@@ -39,6 +41,7 @@ const AdminManagementInner = () => {
     };
     const revoke = async (userEmail: string, r: string) => {
         if (!confirm(`Remove ${r} from ${userEmail}?`)) return;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { error } = await supabase.rpc("admin_set_role" as any, {
             _email: userEmail,
             _role: r,
@@ -81,7 +84,7 @@ const AdminManagementInner = () => {
                             <Label>Role</Label>
                             <select
                                 value={role}
-                                onChange={(e) => setRole(e.target.value as any)}
+                                onChange={(e) => setRole(e.target.value as "admin" | "super_admin")}
                                 className="mt-1.5 h-10 rounded-md border border-input bg-background px-3 text-sm"
                             >
                                 <option value="admin">admin</option>

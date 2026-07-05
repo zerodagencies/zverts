@@ -136,6 +136,7 @@ describe("rankRows", () => {
 
         it("handles string numbers returned by the DB", () => {
             const result = rankRows([
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 row({ total_xp: "1500" as any, total_gems: "3" as any, current_streak: "7" as any }),
             ]);
             expect(result[0].xp).toBe(1500);

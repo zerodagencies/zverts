@@ -9,12 +9,12 @@ import { ThemeProvider } from "./components/app/ThemeProvider";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 
 // Lazy import with auto-reload on stale chunk errors (after deploys / vite restarts)
-const lazyWithRetry = <T extends { default: ComponentType<any> }>(factory: () => Promise<T>) =>
+const lazyWithRetry = <T extends { default: ComponentType<object> }>(factory: () => Promise<T>) =>
     lazy(async () => {
         try {
             return await factory();
-        } catch (err: any) {
-            const msg = String(err?.message || "");
+        } catch (err: unknown) {
+            const msg = String((err as Error)?.message || "");
             if (
                 msg.includes("Failed to fetch dynamically imported module") ||
                 msg.includes("Importing a module script failed")

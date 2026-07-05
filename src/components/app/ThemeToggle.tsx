@@ -51,7 +51,7 @@ export const ThemeToggle = () => {
 
 export const LanguageToggle = () => {
     const [lang, setLang] = useState<"en" | "bn">(
-        (typeof window !== "undefined" && (localStorage.getItem("i18nextLng") as any)) || "en",
+        (typeof window !== "undefined" && (localStorage.getItem("i18nextLng") as "en" | "bn" | null)) || "en",
     );
     const toggle = async () => {
         const next = lang === "en" ? "bn" : "en";

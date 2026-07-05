@@ -280,12 +280,12 @@ const CourseDetail = () => {
                 .eq("user_id", user.id)
                 .in(
                     "module_id",
-                    m.map((x: any) => x.id),
+                    m.map((x) => x.id),
                 );
             setProgress(p ?? []);
         }
         setLoading(false);
-        if (c && !(c as any).author_name) {
+        if (c && !c.author_name) {
             supabase.functions
                 .invoke("fetch-playlist-author", { body: { course_id: c.id } })
                 .then(({ data }) => {

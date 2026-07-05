@@ -374,7 +374,7 @@ const ModulePlayer = () => {
         });
         if (error) { toast.error(error.message); return; }
         if (data) {
-            const row = data as any;
+            const row = data as { percent_watched: number; video_finished: boolean; completed: boolean; mcq_passed: boolean };
             setPercent(Number(row.percent_watched));
             if (row.video_finished) setVideoFinished(true);
             if (row.completed && !completed) {

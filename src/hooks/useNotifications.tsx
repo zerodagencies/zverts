@@ -75,7 +75,7 @@ export function useNotifications(limit = 30) {
                     ) {
                         try {
                             new Notification(n.title, { body: n.body, icon: "/favicon.ico" });
-                        } catch {}
+                        } catch { /* Notification constructor can throw in some environments */ }
                     }
                 },
             )

@@ -52,7 +52,7 @@ Deno.serve(async (req) => {
         if (!plJson.items?.length) return json({ error: "Playlist not found or private" }, 404);
         const sn = plJson.items[0].snippet;
 
-        const items: any[] = [];
+        const items: Record<string, unknown>[] = [];
         let token: string | undefined;
         for (let i = 0; i < 4; i++) {
             const r = await fetch(
@@ -77,8 +77,8 @@ Deno.serve(async (req) => {
                 `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${batch}&key=${apiKey}`,
             );
             const j = await r.json();
-            (j.items ?? []).forEach((v: any) =>
-                durations.set(v.id, parseDuration(v.contentDetails.duration)),
+            (j.items ?? []).forEach((v: Record<string, unknown>) =>
+                durations.set(v.id as string, parseDuration((v.contentDetails as Record<string, unknown>).duration as string)),
             );
         }
 
@@ -89,7 +89,7 @@ Deno.serve(async (req) => {
                 channel: sn.channelTitle,
                 thumbnail: sn.thumbnails?.high?.url ?? sn.thumbnails?.medium?.url ?? null,
             },
-            videos: valid.map((it: any) => ({
+            videos: valid.map((it: Record<string, unknown>) => ({
                 videoId: it.snippet.resourceId.videoId,
                 title: it.snippet.title,
                 thumbnail:

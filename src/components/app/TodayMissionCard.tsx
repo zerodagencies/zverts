@@ -12,7 +12,8 @@ export function TodayMissionCard({ userId }: { userId: string }) {
     useEffect(() => {
         let cancelled = false;
         const load = async () => {
-            const { data } = await (supabase as any).rpc("get_today_mission");
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const { data } = await (supabase.rpc as any)("get_today_mission");
             if (!cancelled && data) setM(data as Mission);
         };
         void load();

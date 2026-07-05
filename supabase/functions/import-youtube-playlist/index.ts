@@ -103,7 +103,7 @@ Deno.serve(async (req) => {
             : null;
 
         // ── Playlist items (paginate up to 200) ─────────────────────────────────
-        const items: any[] = [];
+        const items: Record<string, unknown>[] = [];
         let pageToken: string | undefined;
 
         for (let i = 0; i < 4; i++) {
@@ -158,8 +158,8 @@ Deno.serve(async (req) => {
                 `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${batch}&key=${apiKey}`,
             );
             const j = await r.json();
-            (j.items ?? []).forEach((v: any) =>
-                durations.set(v.id, parseDuration(v.contentDetails.duration)),
+            (j.items ?? []).forEach((v: Record<string, unknown>) =>
+                durations.set(v.id as string, parseDuration((v.contentDetails as Record<string, unknown>).duration as string)),
             );
         }
 

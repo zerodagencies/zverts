@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { type ElementType, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Award, Flame, Trophy, BookOpen, Target, Gem, Brain, Crown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const BADGES: Record<string, { name: string; desc: string; icon: any; color: string }> = {
+const BADGES: Record<string, { name: string; desc: string; icon: ElementType; color: string }> = {
     first_module: {
         name: "First Steps",
         desc: "Completed your first module",
@@ -68,7 +68,7 @@ export const BadgesGrid = ({ userId }: { userId: string }) => {
                 .from("achievements")
                 .select("code")
                 .eq("user_id", userId);
-            setUnlocked(new Set((data ?? []).map((r: any) => r.code)));
+            setUnlocked(new Set((data ?? []).map((r: { code: string }) => r.code)));
         })();
     }, [userId]);
 

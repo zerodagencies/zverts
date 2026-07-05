@@ -50,6 +50,7 @@ const Payment = () => {
             return;
         }
         setSubmitting(true);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { error } = await supabase.rpc("submit_payment" as any, {
             _package: pkgKey,
             _method: method,

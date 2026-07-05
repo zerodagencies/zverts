@@ -1,7 +1,10 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import type { RealtimePostgresInsertPayload } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "./useAuth";
+
+type NotifRecord = Record<string, unknown>;
 
 /**
  * For every newly delivered notification for the current user:
@@ -48,7 +51,7 @@ export function useBrowserNotifications() {
                     table: "notifications",
                     filter: `user_id=eq.${user.id}`,
                 },
-                (payload: any) => {
+                (payload: RealtimePostgresInsertPayload<NotifRecord>) => {
                     const n = payload.new;
                     if (!n) return;
                     playDing();
@@ -69,7 +72,7 @@ export function useBrowserNotifications() {
                                 if (n.deep_link) navigate(n.deep_link);
                                 note.close();
                             };
-                        } catch {}
+                        } catch { /* Notification constructor can throw in some envs */ }
                     }
                 },
             )
@@ -80,9 +83,12 @@ export function useBrowserNotifications() {
     }, [user, navigate]);
 }
 
+type WindowWithAudio = Window & { AudioContext?: typeof AudioContext; webkitAudioContext?: typeof AudioContext };
+
 function playDing() {
     try {
-        const Ctx = (window as any).AudioContext || (window as any).webkitAudioContext;
+        const win = window as WindowWithAudio;
+        const Ctx = win.AudioContext || win.webkitAudioContext;
         if (!Ctx) return;
         const ctx = new Ctx();
         const o = ctx.createOscillator();
@@ -99,7 +105,7 @@ function playDing() {
         setTimeout(() => {
             try {
                 ctx.close();
-            } catch {}
+            } catch { /* AudioContext.close() may fail in some environments */ }
         }, 600);
-    } catch {}
+    } catch { /* Web Audio API not available */ }
 }

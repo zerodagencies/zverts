@@ -101,6 +101,7 @@ const Quiz = () => {
                 setFailStreak(prog.quiz_fail_streak);
             }
 
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const { data: qs, error } = await (supabase.rpc as any)("get_mcq_questions", {
                 _module_ids: [moduleId],
                 _limit: 10,
@@ -112,7 +113,8 @@ const Quiz = () => {
                 return;
             }
 
-            const parsed: Question[] = (qs ?? []).map((q: any) => ({
+            type RawQ = { q_id: string; question: string; options: string | unknown[]; q_position: number };
+            const parsed: Question[] = (qs ?? []).map((q: RawQ) => ({
                 id: q.q_id,
                 question: q.question,
                 options: Array.isArray(q.options) ? q.options : JSON.parse(q.options),
@@ -138,6 +140,7 @@ const Quiz = () => {
                     setState("no_questions");
                     return;
                 }
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const { data: qs2, error: e2 } = await (supabase.rpc as any)("get_mcq_questions", {
                     _module_ids: [moduleId],
                     _limit: 10,
@@ -146,7 +149,7 @@ const Quiz = () => {
                     setState("no_questions");
                     return;
                 }
-                const parsed2: Question[] = qs2.map((q: any) => ({
+                const parsed2: Question[] = qs2.map((q: RawQ) => ({
                     id: q.q_id,
                     question: q.question,
                     options: Array.isArray(q.options) ? q.options : JSON.parse(q.options),
@@ -169,7 +172,7 @@ const Quiz = () => {
 
             setState("quiz");
         })();
-    }, [user, moduleId]);
+    }, [user, moduleId, stateCourseId]);
 
     const submit = async () => {
         if (!moduleId) return;
@@ -178,6 +181,7 @@ const Quiz = () => {
             return;
         }
         setSubmitting(true);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { data, error } = await (supabase.rpc as any)("submit_mcq", {
             _module_id: moduleId,
             _answers: answers,

@@ -26,7 +26,7 @@ import type { User } from "@supabase/supabase-js";
 const MOCK_USER = { id: "user-xyz" } as User;
 
 const makeChain = (data: unknown, error: unknown = null) => {
-    const chain: any = {
+    const chain = {
         select: vi.fn().mockReturnThis(),
         eq: vi.fn().mockReturnThis(),
         maybeSingle: vi.fn().mockResolvedValue({ data, error }),
@@ -146,6 +146,7 @@ describe("useEntitlements", () => {
 
     it("subscribes to two postgres_changes listeners", async () => {
         authWith(MOCK_USER);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         vi.mocked(supabase.from).mockReturnValue(makeChain(null) as any);
         renderHook(() => useEntitlements());
         await waitFor(() => expect(supabase.channel).toHaveBeenCalled());
@@ -155,6 +156,7 @@ describe("useEntitlements", () => {
 
     it("calls removeChannel on unmount", async () => {
         authWith(MOCK_USER);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         vi.mocked(supabase.from).mockReturnValue(makeChain(null) as any);
         const { unmount } = renderHook(() => useEntitlements());
         await waitFor(() => expect(supabase.channel).toHaveBeenCalled());
@@ -164,6 +166,7 @@ describe("useEntitlements", () => {
 
     it("channel name is unique per hook instance (contains user id)", async () => {
         authWith(MOCK_USER);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         vi.mocked(supabase.from).mockReturnValue(makeChain(null) as any);
         renderHook(() => useEntitlements());
         await waitFor(() => expect(supabase.channel).toHaveBeenCalled());
@@ -175,6 +178,7 @@ describe("useEntitlements", () => {
 
     it("refresh re-fetches from DB", async () => {
         authWith(MOCK_USER);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         vi.mocked(supabase.from).mockReturnValue(makeChain(null) as any);
         const { result } = renderHook(() => useEntitlements());
         await waitFor(() => expect(result.current.loading).toBe(false));

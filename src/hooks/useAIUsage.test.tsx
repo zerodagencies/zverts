@@ -25,6 +25,7 @@ const authWith = (user: User | null) =>
     });
 
 const rpcWith = (data: unknown, error: unknown = null) =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     vi.mocked(supabase.rpc).mockResolvedValue({ data, error } as any);
 
 describe("useAIUsage", () => {
@@ -113,6 +114,7 @@ describe("useAIUsage", () => {
         it("ignores calls when data has no count field", async () => {
             const { result } = await setup();
             const countBefore = result.current.usage?.count;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             act(() => result.current.applyServerUsage({ limit: 10 } as any));
             expect(result.current.usage?.count).toBe(countBefore);
         });

@@ -180,15 +180,17 @@ const Growth = () => {
         setError(null);
         try {
             const [m, g] = await Promise.all([
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 supabase.rpc("get_today_mission" as any),
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 supabase.rpc("get_growth_stats" as any),
             ]);
             if (m.error) throw m.error;
             if (g.error) throw g.error;
             setMission(m.data as Mission);
             setGrowth(g.data as GrowthData);
-        } catch (e: any) {
-            setError(e?.message ?? "Failed to load");
+        } catch (e: unknown) {
+            setError((e as Error)?.message ?? "Failed to load");
         } finally {
             setLoading(false);
         }
@@ -240,7 +242,7 @@ const Growth = () => {
         return () => {
             void supabase.removeChannel(ch);
         };
-    }, [user?.id, load, loadLeaderboard]);
+    }, [user, load, loadLeaderboard]);
 
     const progressPct = useMemo(() => {
         if (!mission || mission.total === 0) return 0;

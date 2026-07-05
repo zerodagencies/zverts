@@ -21,13 +21,13 @@ export const AnalyticsPanel = ({ userId }: { userId: string }) => {
             const p = prog ?? [];
             const avgWatch = p.length
                 ? Math.round(
-                      p.reduce((s: number, r: any) => s + r.watch_time_seconds, 0) / p.length / 60,
+                      p.reduce((s: number, r: { watch_time_seconds: number }) => s + r.watch_time_seconds, 0) / p.length / 60,
                   )
                 : 0;
-            const totalQ = (attempts ?? []).reduce((s: number, r: any) => s + r.total, 0);
-            const totalC = (attempts ?? []).reduce((s: number, r: any) => s + r.score, 0);
+            const totalQ = (attempts ?? []).reduce((s: number, r: { total: number }) => s + r.total, 0);
+            const totalC = (attempts ?? []).reduce((s: number, r: { score: number }) => s + r.score, 0);
             const acc = totalQ ? Math.round((totalC / totalQ) * 100) : 0;
-            const weakest = (p as any[])
+            const weakest = (p as { completed: boolean; percent_watched: number; modules?: { title: string } | null }[])
                 .filter((r) => !r.completed && r.percent_watched > 0 && r.percent_watched < 60)
                 .sort((a, b) => a.percent_watched - b.percent_watched)
                 .slice(0, 3)

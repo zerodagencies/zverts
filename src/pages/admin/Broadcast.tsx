@@ -23,6 +23,7 @@ const BroadcastInner = () => {
         }
         if (!confirm(`Send "${title}" to ALL users?`)) return;
         setSending(true);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { data, error } = await supabase.rpc("admin_broadcast_notification" as any, {
             _title: title,
             _body: body,
@@ -34,7 +35,7 @@ const BroadcastInner = () => {
             toast.error(error.message);
             return;
         }
-        toast.success(`Sent to ${(data as any)?.count ?? 0} users 📢`);
+        toast.success(`Sent to ${(data as Record<string, unknown>)?.count ?? 0} users 📢`);
         setTitle("");
         setBody("");
         setLink("");

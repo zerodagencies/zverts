@@ -39,12 +39,13 @@ const SupportContacts = () => {
     }, [user]);
 
     const load = async () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { data, error } = await supabase.rpc("admin_list_support_contacts" as any, {
             _search: search || null,
             _limit: 1000,
         });
         if (error) return toast.error(error.message);
-        setRows((data as any[]) ?? []);
+        setRows((data as Row[]) ?? []);
     };
 
     useEffect(() => {

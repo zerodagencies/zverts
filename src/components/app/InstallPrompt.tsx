@@ -13,7 +13,7 @@ export const InstallPrompt = () => {
         // Hide if already running standalone
         const standalone =
             window.matchMedia("(display-mode: standalone)").matches ||
-            (window.navigator as any).standalone === true;
+            (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
         if (standalone) return;
 
         const onBIP = (e: Event) => {

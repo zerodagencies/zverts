@@ -13,7 +13,7 @@ const Certificate = () => {
     const { courseId } = useParams();
     const { user, loading } = useAuth();
     const { t } = useTranslation();
-    const [cert, setCert] = useState<any>(null);
+    const [cert, setCert] = useState<Record<string, unknown> | null>(null);
 
     useEffect(() => {
         if (!user || !courseId) return;

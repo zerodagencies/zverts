@@ -453,7 +453,7 @@ const Settings = () => {
                                     </div>
                                     <Switch
                                         checked={p[item.k]}
-                                        onCheckedChange={(v) => update({ [item.k]: v } as any)}
+                                        onCheckedChange={(v) => update({ [item.k]: v } as Record<string, unknown>)}
                                     />
                                 </div>
                             ))}

@@ -95,7 +95,7 @@ Deno.serve(async (req) => {
             console.error("consume_ai_message failed:", uErr.message, uErr);
             return json({ error: uErr.message }, 400);
         }
-        if (usage && (usage as any).ok === false) {
+        if (usage && (usage as Record<string, unknown>).ok === false) {
             return json(
                 {
                     error: "limit_reached",
@@ -193,9 +193,9 @@ Deno.serve(async (req) => {
                 .eq("id", module_id)
                 .maybeSingle();
             if (mod) {
-                modTitle = (mod as any).title;
-                courseTitle = (mod as any).courses?.title ?? courseTitle;
-                moduleCtx = `\nACTIVE SOURCE: "${modTitle}" (module ${(mod as any).position} of "${courseTitle}").`;
+                modTitle = (mod as Record<string, unknown>).title as string;
+                courseTitle = ((mod as Record<string, unknown>).courses as Record<string, unknown> | null)?.title ?? courseTitle;
+                moduleCtx = `\nACTIVE SOURCE: "${modTitle}" (module ${(mod as Record<string, unknown>).position} of "${courseTitle}").`;
 
                 const { data: tr } = await userClient
                     .from("transcripts")
@@ -243,7 +243,7 @@ FORMATTING RULES (strict):
         const gatewayModel = MODEL_MAP[model] ?? MODEL_MAP.smart;
 
         // If images were attached, merge them into the LAST user message as multimodal parts.
-        const outMessages = messages.map((m: any) => ({ ...m }));
+        const outMessages = messages.map((m: Record<string, unknown>) => ({ ...m }));
         if (imageParts.length > 0) {
             for (let i = outMessages.length - 1; i >= 0; i--) {
                 if (outMessages[i].role === "user") {

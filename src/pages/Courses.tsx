@@ -30,7 +30,7 @@ const Courses = () => {
     const [url, setUrl] = useState("");
     const [importing, setImporting] = useState(false);
     const [previewing, setPreviewing] = useState(false);
-    const [preview, setPreview] = useState<any>(null);
+    const [preview, setPreview] = useState<Record<string, unknown> | null>(null);
     const [previewOpen, setPreviewOpen] = useState(false);
     const [mine, setMine] = useState<Course[]>([]);
     const [loading, setLoading] = useState(true);
@@ -101,8 +101,9 @@ const Courses = () => {
             body: { url: url.trim() },
         });
         setPreviewing(false);
-        if (error || (data as any)?.error) {
-            toast.error((data as any)?.error ?? error?.message ?? "Preview failed");
+        const dataErr = (data as Record<string, unknown>)?.error;
+        if (error || dataErr) {
+            toast.error((dataErr as string) ?? error?.message ?? "Preview failed");
             return;
         }
         setPreview(data);

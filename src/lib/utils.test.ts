@@ -17,10 +17,10 @@ describe("cn", () => {
     });
 
     describe("falsy filtering", () => {
-        it("ignores false", () => expect(cn("foo", false as any)).toBe("foo"));
-        it("ignores null", () => expect(cn("foo", null as any)).toBe("foo"));
+        it("ignores false", () => expect(cn("foo", false)).toBe("foo"));
+        it("ignores null", () => expect(cn("foo", null)).toBe("foo"));
         it("ignores undefined", () => expect(cn("foo", undefined)).toBe("foo"));
-        it("ignores 0", () => expect(cn("foo", 0 as any)).toBe("foo"));
+        it("ignores 0", () => expect(cn("foo", 0)).toBe("foo"));
         it("ignores empty string", () => expect(cn("foo", "")).toBe("foo"));
 
         it("keeps all truthy values when mixed with falsy", () => {

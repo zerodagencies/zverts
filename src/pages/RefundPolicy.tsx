@@ -17,7 +17,7 @@ const Section = ({
     title,
     children,
 }: {
-    icon: any;
+    icon: React.ComponentType<{ className?: string }>;
     title: string;
     children: React.ReactNode;
 }) => (

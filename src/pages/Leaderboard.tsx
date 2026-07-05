@@ -153,8 +153,9 @@ const Leaderboard = () => {
     useEffect(() => {
         if (tab !== "playlist" || playlists.length > 0) return;
         setPlaylistsLoading(true);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (supabase.rpc as any)("get_leaderboard_playlists").then(
-            ({ data, error: e }: { data: any; error: any }) => {
+            ({ data, error: e }: { data: PlaylistMeta[] | null; error: unknown }) => {
                 setPlaylistsLoading(false);
                 if (!e) setPlaylists((data ?? []) as PlaylistMeta[]);
             },
@@ -164,6 +165,7 @@ const Leaderboard = () => {
     // ── Playlist: load leaderboard when selection changes ────────────────────
     const loadPlaylist = useCallback(async (id: string) => {
         setPlaylistLoading(true);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { data, error: e } = await (supabase.rpc as any)(
             "get_playlist_leaderboard",
             { _source_playlist_id: id, _limit: 100 },

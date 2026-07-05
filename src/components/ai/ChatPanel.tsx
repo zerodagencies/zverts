@@ -215,11 +215,11 @@ export const ChatPanel = ({
                         }
                     }
                 }
-            } catch (e: any) {
-                if (e?.name === "AbortError") {
+            } catch (e: unknown) {
+                if ((e as Error)?.name === "AbortError") {
                     // user stopped
                 } else {
-                    toast.error(e?.message ?? "Something went wrong");
+                    toast.error((e as Error)?.message ?? "Something went wrong");
                     setMessages((m) => m.slice(0, -1));
                 }
             } finally {

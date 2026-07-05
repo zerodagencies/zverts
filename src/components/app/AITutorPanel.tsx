@@ -54,7 +54,7 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
     const [showSidebar, setShowSidebar] = useState(false);
     const [input, setInput] = useState("");
     const [busy, setBusy] = useState(false);
-    const [feedback, setFeedback] = useState<Record<number, "up" | "down">>({});
+    const [feedback, setFeedback] = useState<Record<number, "up" | "down" | undefined>>({});
     const scrollRef = useRef<HTMLDivElement>(null);
 
     const store = useChatStore(user?.id ?? null, moduleId);
@@ -566,7 +566,7 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
                                                                 ...f,
                                                                 [i]:
                                                                     f[i] === "up"
-                                                                        ? (undefined as any)
+                                                                        ? undefined
                                                                         : "up",
                                                             }))
                                                         }
@@ -585,7 +585,7 @@ export const AITutorPanel = ({ moduleId }: { moduleId: string }) => {
                                                                 ...f,
                                                                 [i]:
                                                                     f[i] === "down"
-                                                                        ? (undefined as any)
+                                                                        ? undefined
                                                                         : "down",
                                                             }))
                                                         }

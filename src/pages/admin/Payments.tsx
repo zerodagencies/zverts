@@ -12,7 +12,7 @@ type Status = "pending" | "approved" | "rejected";
 const AdminPaymentsInner = () => {
     const [status, setStatus] = useState<Status>("pending");
     const [search, setSearch] = useState("");
-    const [rows, setRows] = useState<any[]>([]);
+    const [rows, setRows] = useState<Record<string, unknown>[]>([]);
     const [loading, setLoading] = useState(true);
     const [acting, setActing] = useState<string | null>(null);
 
@@ -27,14 +27,14 @@ const AdminPaymentsInner = () => {
 
         const { data } = await q;
         console.log("DATA", data);
-        let list = (data as any[]) ?? [];
+        let list = (data as Record<string, unknown>[]) ?? [];
         if (list.length) {
             const ids = Array.from(new Set(list.map((r) => r.user_id)));
             const { data: profiles } = await supabase
                 .from("profiles")
                 .select("id,email,name")
                 .in("id", ids);
-            const map = new Map((profiles ?? []).map((p: any) => [p.id, p]));
+            const map = new Map((profiles ?? []).map((p) => [p.id, p]));
             list = list.map((r) => ({ ...r, profile: map.get(r.user_id) }));
         }
         if (search.trim()) {
@@ -70,6 +70,7 @@ const AdminPaymentsInner = () => {
 
     const approve = async (id: string) => {
         setActing(id);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { error } = await supabase.rpc("approve_payment" as any, { _payment_id: id });
         setActing(null);
         if (error) toast.error(error.message);
@@ -81,6 +82,7 @@ const AdminPaymentsInner = () => {
     const reject = async (id: string) => {
         const note = prompt("Reason (optional):") ?? null;
         setActing(id);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { error } = await supabase.rpc("reject_payment" as any, {
             _payment_id: id,
             _note: note,

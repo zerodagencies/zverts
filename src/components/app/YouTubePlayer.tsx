@@ -1,8 +1,20 @@
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from "react";
 
+interface YTPlayer {
+    getCurrentTime(): number;
+    getPlayerState(): number;
+    seekTo(seconds: number, allowSeekAhead: boolean): void;
+    playVideo(): void;
+    pauseVideo(): void;
+    destroy(): void;
+    isMuted(): boolean;
+    mute(): void;
+    unMute(): void;
+}
+
 declare global {
     interface Window {
-        YT: any;
+        YT: { Player: new (container: HTMLElement, options: Record<string, unknown>) => YTPlayer };
         onYouTubeIframeAPIReady?: () => void;
     }
 }
@@ -34,7 +46,7 @@ const loadYT = () => {
 export const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(
     ({ videoId, onProgress, onEnded }, ref) => {
         const containerRef = useRef<HTMLDivElement>(null);
-        const playerRef = useRef<any>(null);
+        const playerRef = useRef<YTPlayer | null>(null);
         const intervalRef = useRef<number | null>(null);
 
         useImperativeHandle(
@@ -45,7 +57,7 @@ export const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(
                     try {
                         playerRef.current?.seekTo?.(s, true);
                         playerRef.current?.playVideo?.();
-                    } catch {}
+                    } catch { /* seekTo errors are non-critical */ }
                 },
             }),
             [],
@@ -105,7 +117,7 @@ export const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(
                         enablejsapi: 1,
                     },
                     events: {
-                        onStateChange: (e: any) => {
+                        onStateChange: (e: { data: number }) => {
                             // 1 = playing, 2 = paused, 0 = ended
                             if (e.data === 1) {
                                 if (intervalRef.current) window.clearInterval(intervalRef.current);
@@ -137,7 +149,7 @@ export const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(
                 if (intervalRef.current) window.clearInterval(intervalRef.current);
                 try {
                     playerRef.current?.destroy?.();
-                } catch {}
+                } catch { /* player destroy errors are non-critical */ }
             };
             // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [videoId]);

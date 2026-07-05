@@ -18,23 +18,23 @@ export function useAdminPaymentAlerts(isAdmin: boolean) {
         // Seed the cursor so we don't toast pre-existing payments on mount
         (async () => {
             const { data } = await supabase
-                .from("payments" as any)
+                .from("payments")
                 .select("created_at")
                 .order("created_at", { ascending: false })
                 .limit(1);
-            lastSeenRef.current = (data?.[0] as any)?.created_at ?? new Date().toISOString();
+            lastSeenRef.current = (data?.[0] as { created_at?: string })?.created_at ?? new Date().toISOString();
         })();
 
         const tick = async () => {
             if (!lastSeenRef.current) return;
             const { data } = await supabase
-                .from("payments" as any)
+                .from("payments")
                 .select("id,user_id,amount,method,trx_id,package_type,status,created_at")
                 .eq("status", "pending")
                 .gt("created_at", lastSeenRef.current)
                 .order("created_at", { ascending: true })
                 .limit(10);
-            const rows = (data as any[]) ?? [];
+            const rows = data ?? [];
             if (rows.length === 0) return;
             lastSeenRef.current = rows[rows.length - 1].created_at;
             for (const row of rows) {
@@ -46,7 +46,7 @@ export function useAdminPaymentAlerts(isAdmin: boolean) {
                         .eq("id", row.user_id)
                         .maybeSingle();
                     if (p) label = `${p.name ?? p.email} · ${row.amount} Tk (${row.method})`;
-                } catch {}
+                } catch { /* profile fetch is best-effort */ }
                 if (cancelled) return;
                 toast(`💸 ${label}`, {
                     description: `trx: ${row.trx_id} · ${row.package_type}`,

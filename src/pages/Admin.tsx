@@ -38,8 +38,8 @@ const Admin = () => {
   const { t } = useTranslation();
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [isSuper, setIsSuper] = useState(false);
-  const [users, setUsers] = useState<any[]>([]);
-  const [logs, setLogs] = useState<any[]>([]);
+  const [users, setUsers] = useState<Record<string, unknown>[]>([]);
+  const [logs, setLogs] = useState<Record<string, unknown>[]>([]);
   const [pendingCount, setPendingCount] = useState(0);
   const [dataLoading, setDataLoading] = useState(true);
 
@@ -248,7 +248,7 @@ const Admin = () => {
                 </thead>
                 <tbody className="divide-y divide-border/40">
                   {users.map((u) => {
-                    const prog = u.user_progress as any;
+                    const prog = u.user_progress as Record<string, unknown> | null;
                     const streak = prog?.current_streak ?? 0;
                     const gems = prog?.total_gems ?? 0;
                     const xp = prog?.total_xp ?? 0;

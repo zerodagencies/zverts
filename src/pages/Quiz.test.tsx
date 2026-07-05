@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
@@ -40,7 +41,7 @@ const MOCK_USER = { id: "user-1" } as User;
 const MODULE_ID = "mod-abc";
 
 const makeChain = (data: unknown, error: unknown = null) => {
-    const c: any = {
+    const c = {
         select: vi.fn().mockReturnThis(),
         eq: vi.fn().mockReturnThis(),
         order: vi.fn().mockReturnThis(),
@@ -88,10 +89,7 @@ const setupFrom = (
         return makeChain(null);
     });
 
-    vi.mocked(supabase.rpc).mockResolvedValue({
-        data: opts.noQuestions ? [] : MOCK_QUESTIONS,
-        error: null,
-    } as any);
+    vi.mocked(supabase.rpc).mockResolvedValue({ data: opts.noQuestions ? [] : MOCK_QUESTIONS, error: null } as any);
 };
 
 // ── Tests ─────────────────────────────────────────────────────────────────────

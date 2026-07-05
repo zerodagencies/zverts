@@ -107,7 +107,7 @@ Deno.serve(async (req) => {
                           ? "comeback_14d"
                           : null;
             if (cat) {
-                const t = (T as any)[cat]();
+                const t = (T as Record<string, () => unknown>)[cat]();
                 const { data } = await supabase.rpc("dispatch_notification", {
                     _user_id: u.id,
                     _category: cat,
@@ -148,7 +148,7 @@ Deno.serve(async (req) => {
                         ? "night_push"
                         : null;
             if (!cat) continue;
-            const t = (T as any)[cat]();
+            const t = (T as Record<string, () => unknown>)[cat]();
             const { data } = await supabase.rpc("dispatch_notification", {
                 _user_id: b.user_id,
                 _category: cat,

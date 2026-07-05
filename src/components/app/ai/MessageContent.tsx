@@ -1,4 +1,5 @@
 import { useState, memo } from "react";
+import type React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -185,7 +186,7 @@ function MessageContentInner({ content }: { content: string }) {
                             [rehypeKatex, { throwOnError: false, strict: "ignore" }],
                         ]}
                         components={{
-                            code({ inline, className, children, ...props }: any) {
+                            code({ inline, className, children, ...props }: React.ComponentPropsWithoutRef<"code"> & { inline?: boolean }) {
                                 const match = /language-(\w+)/.exec(className || "");
                                 const value = String(children).replace(/\n$/, "");
                                 if (!inline && match) {

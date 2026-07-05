@@ -34,7 +34,7 @@ export const ContinueWatching = ({ userId }: { userId: string }) => {
                 .gt("percent_watched", 0)
                 .order("updated_at", { ascending: false })
                 .limit(4);
-            setItems((data ?? []) as any);
+            setItems((data ?? []) as Row[]);
             setLoading(false);
         })();
     }, [userId]);

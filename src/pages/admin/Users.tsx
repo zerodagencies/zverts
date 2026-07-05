@@ -8,14 +8,15 @@ import { toast } from "sonner";
 
 const AdminUsersInner = () => {
     const [search, setSearch] = useState("");
-    const [rows, setRows] = useState<any[]>([]);
+    const [rows, setRows] = useState<Record<string, unknown>[]>([]);
     const load = async () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { data, error } = await supabase.rpc("admin_list_users" as any, {
             _limit: 200,
             _search: search || null,
         });
         if (error) toast.error(error.message);
-        else setRows((data as any) ?? []);
+        else setRows((data as Record<string, unknown>[]) ?? []);
     };
     useEffect(() => {
         load(); /* eslint-disable-next-line */
@@ -30,6 +31,7 @@ const AdminUsersInner = () => {
             return;
         }
         const reason = prompt("Reason:") ?? "";
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { error } = await supabase.rpc("admin_adjust_credits" as any, {
             _target: id,
             _delta: delta,
@@ -45,6 +47,7 @@ const AdminUsersInner = () => {
         const reason = locked
             ? (prompt("Reason for unlock:") ?? "")
             : (prompt("Reason for lock:") ?? "");
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { error } = await supabase.rpc("admin_set_locked" as any, {
             _target: id,
             _locked: !locked,

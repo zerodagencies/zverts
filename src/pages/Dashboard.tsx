@@ -128,8 +128,8 @@ const Dashboard = () => {
             setCourses(ownCourses ?? []);
             setModules(mods ?? []);
             setProgress(prog ?? []);
-        } catch (e: any) {
-            setError(e?.message ?? "Failed to load dashboard");
+        } catch (e: unknown) {
+            setError((e as Error)?.message ?? "Failed to load dashboard");
         } finally {
             if (!opts.silent) setLoading(false);
         }
@@ -174,15 +174,16 @@ const Dashboard = () => {
     const totalWatch = visibleProgress.reduce((s, p) => s + p.watch_time_seconds, 0);
 
     const courseSections = useMemo(
-        () =>
-            courses.map((course) => {
+        () => {
+            const map = new Map(visibleProgress.map((p) => [p.module_id, p]));
+            return courses.map((course) => {
                 const courseModules = modules
                     .filter((m) => m.course_id === course.id)
                     .sort((a, b) => a.position - b.position);
                 const cards = courseModules.map((module, idx) => {
-                    const p = progByMod.get(module.id);
+                    const p = map.get(module.id);
                     const prev = idx === 0 ? null : courseModules[idx - 1];
-                    const prevDone = !prev || progByMod.get(prev.id)?.completed;
+                    const prevDone = !prev || map.get(prev.id)?.completed;
                     let state: "locked" | "available" | "in_progress" | "completed" = "locked";
                     if (p?.completed) state = "completed";
                     else if (prevDone && p && p.percent_watched > 0) state = "in_progress";
@@ -190,9 +191,9 @@ const Dashboard = () => {
                     return { ...module, state, percent: p?.percent_watched ?? 0 };
                 });
                 return { course, cards };
-                // eslint-disable-next-line react-hooks/exhaustive-deps
-            }),
-        [courses, modules, progress],
+            });
+        },
+        [courses, modules, visibleProgress],
     );
 
     if (authLoading) return null;

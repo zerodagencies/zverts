@@ -5,11 +5,20 @@ import { AppShell } from "@/components/app/AppShell";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
-import { Loader2, Plus, Eye, Trash2, BookOpen, Globe, Lock } from "lucide-react";
+import { Loader2, Plus, Eye, Trash2, BookOpen, Globe, Lock, Search, ListVideo } from "lucide-react";
 import { PlaylistPreview } from "@/components/app/PlaylistPreview";
+
+interface PlaylistSearchResult {
+    playlistId: string;
+    title: string;
+    channel: string;
+    itemCount: number;
+    thumbnail: string | null;
+}
 
 interface Course {
     id: string;
@@ -34,6 +43,10 @@ const Courses = () => {
     const [previewOpen, setPreviewOpen] = useState(false);
     const [mine, setMine] = useState<Course[]>([]);
     const [loading, setLoading] = useState(true);
+    const [query, setQuery] = useState("");
+    const [searching, setSearching] = useState(false);
+    const [searched, setSearched] = useState(false);
+    const [results, setResults] = useState<PlaylistSearchResult[]>([]);
 
     const load = async () => {
         if (!user) return;
@@ -94,11 +107,12 @@ const Courses = () => {
     if (authLoading) return null;
     if (!user) return <Navigate to="/auth" replace />;
 
-    const previewPlaylist = async () => {
-        if (!url.trim()) return;
+    const previewPlaylist = async (urlOverride?: string) => {
+        const target = (urlOverride ?? url).trim();
+        if (!target) return;
         setPreviewing(true);
         const { data, error } = await supabase.functions.invoke("preview-youtube-playlist", {
-            body: { url: url.trim() },
+            body: { url: target },
         });
         setPreviewing(false);
         const dataErr = (data as Record<string, unknown>)?.error;
@@ -108,6 +122,28 @@ const Courses = () => {
         }
         setPreview(data);
         setPreviewOpen(true);
+    };
+
+    const searchPlaylists = async () => {
+        if (!query.trim()) return;
+        setSearching(true);
+        const { data, error } = await supabase.functions.invoke("search-youtube-playlists", {
+            body: { query: query.trim() },
+        });
+        setSearching(false);
+        setSearched(true);
+        const dataErr = (data as Record<string, unknown>)?.error;
+        if (error || dataErr) {
+            toast.error((dataErr as string) ?? error?.message ?? "Search failed");
+            return;
+        }
+        setResults((data as { results: PlaylistSearchResult[] })?.results ?? []);
+    };
+
+    const selectResult = (r: PlaylistSearchResult) => {
+        const playlistUrl = `https://www.youtube.com/playlist?list=${r.playlistId}`;
+        setUrl(playlistUrl);
+        previewPlaylist(playlistUrl);
     };
 
     const importPlaylist = async () => {
@@ -155,31 +191,116 @@ const Courses = () => {
                 </div>
 
                 {/* Import bar */}
-                <div className="rounded-2xl border border-border bg-card p-4 mb-8 flex flex-col sm:flex-row gap-2">
-                    <Input
-                        placeholder="Paste a YouTube playlist URL…"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                        onKeyDown={(e) => e.key === "Enter" && previewPlaylist()}
-                        className="flex-1 bg-background"
-                    />
-                    <Button
-                        onClick={previewPlaylist}
-                        disabled={previewing || !url.trim()}
-                        className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow shrink-0 w-full sm:w-auto"
-                    >
-                        {previewing ? (
-                            <>
-                                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                                Loading…
-                            </>
-                        ) : (
-                            <>
-                                <Eye className="h-4 w-4 mr-2" />
-                                Preview
-                            </>
-                        )}
-                    </Button>
+                <div className="rounded-2xl border border-border bg-card p-4 mb-8">
+                    <Tabs defaultValue="paste">
+                        <TabsList className="mb-3">
+                            <TabsTrigger value="paste">Paste URL</TabsTrigger>
+                            <TabsTrigger value="search">Search</TabsTrigger>
+                        </TabsList>
+
+                        <TabsContent value="paste" className="mt-0">
+                            <div className="flex flex-col sm:flex-row gap-2">
+                                <Input
+                                    placeholder="Paste a YouTube playlist URL…"
+                                    value={url}
+                                    onChange={(e) => setUrl(e.target.value)}
+                                    onKeyDown={(e) => e.key === "Enter" && previewPlaylist()}
+                                    className="flex-1 bg-background"
+                                />
+                                <Button
+                                    onClick={() => previewPlaylist()}
+                                    disabled={previewing || !url.trim()}
+                                    className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow shrink-0 w-full sm:w-auto"
+                                >
+                                    {previewing ? (
+                                        <>
+                                            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                                            Loading…
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Eye className="h-4 w-4 mr-2" />
+                                            Preview
+                                        </>
+                                    )}
+                                </Button>
+                            </div>
+                        </TabsContent>
+
+                        <TabsContent value="search" className="mt-0 space-y-3">
+                            <div className="flex flex-col sm:flex-row gap-2">
+                                <Input
+                                    placeholder="Search YouTube playlists…"
+                                    value={query}
+                                    onChange={(e) => setQuery(e.target.value)}
+                                    onKeyDown={(e) => e.key === "Enter" && searchPlaylists()}
+                                    className="flex-1 bg-background"
+                                />
+                                <Button
+                                    onClick={searchPlaylists}
+                                    disabled={searching || !query.trim()}
+                                    className="bg-gradient-lime text-primary-foreground hover:opacity-90 shadow-glow shrink-0 w-full sm:w-auto"
+                                >
+                                    {searching ? (
+                                        <>
+                                            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                                            Searching…
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Search className="h-4 w-4 mr-2" />
+                                            Search
+                                        </>
+                                    )}
+                                </Button>
+                            </div>
+
+                            {results.length > 0 && (
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                    {results.map((r) => (
+                                        <button
+                                            key={r.playlistId}
+                                            onClick={() => selectResult(r)}
+                                            disabled={previewing}
+                                            className="text-left rounded-xl border border-border bg-background overflow-hidden hover:border-primary/40 hover:shadow-elevated transition-all duration-200 disabled:opacity-50"
+                                        >
+                                            <div className="relative aspect-video bg-muted overflow-hidden">
+                                                {r.thumbnail ? (
+                                                    <img
+                                                        src={r.thumbnail}
+                                                        alt=""
+                                                        className="w-full h-full object-cover"
+                                                        loading="lazy"
+                                                    />
+                                                ) : (
+                                                    <div className="w-full h-full flex items-center justify-center">
+                                                        <ListVideo className="h-8 w-8 text-muted-foreground/40" />
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="p-3 space-y-1">
+                                                <h4 className="font-medium text-sm leading-tight line-clamp-2">
+                                                    {r.title}
+                                                </h4>
+                                                <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
+                                                    <span className="truncate">{r.channel}</span>
+                                                    <span className="shrink-0 ml-2">
+                                                        {r.itemCount} video{r.itemCount !== 1 ? "s" : ""}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
+                            {searched && !searching && results.length === 0 && (
+                                <p className="text-sm text-muted-foreground text-center py-6">
+                                    No playlists found. Try a different search term.
+                                </p>
+                            )}
+                        </TabsContent>
+                    </Tabs>
                 </div>
 
                 {/* Grid */}

@@ -103,7 +103,7 @@ Set these in your Supabase project dashboard under **Project Settings → Edge F
 |---|---|
 | `SUPABASE_URL` | All functions |
 | `SUPABASE_SERVICE_ROLE_KEY` | All functions |
-| `YOUTUBE_API_KEY` | `preview-youtube-playlist`, `import-youtube-playlist` |
+| `YOUTUBE_API_KEY` | `preview-youtube-playlist`, `import-youtube-playlist`, `search-youtube-playlists` |
 | `LOVABLE_API_KEY` | `ai-tutor` |
 | `TELEGRAM_BOT_TOKEN` | `telegram-webhook`, `notify-admin` |
 | `TELEGRAM_ADMIN_CHAT_ID` | `notify-admin` |

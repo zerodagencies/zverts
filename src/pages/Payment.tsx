@@ -18,8 +18,8 @@ const Payment = () => {
     const { user, loading } = useAuth();
     const [params] = useSearchParams();
     const navigate = useNavigate();
-    const pkgKey = (params.get("pkg") as PackageKey) || "mini";
-    const pkg = PACKAGES[pkgKey] ?? PACKAGES.mini;
+    const pkgKey = (params.get("pkg") as PackageKey) || "premium";
+    const pkg = PACKAGES[pkgKey] ?? PACKAGES.premium;
     const [method, setMethod] = useState<Method>("bkash");
     const [sender, setSender] = useState("");
     const [trx, setTrx] = useState("");
@@ -89,11 +89,11 @@ const Payment = () => {
                 <div className="mt-6 rounded-2xl border border-primary/40 bg-gradient-card p-6 shadow-card flex items-center justify-between">
                     <div>
                         <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                            selected pack
+                            selected plan
                         </div>
                         <div className="font-display text-2xl mt-1">{pkg.name}</div>
                         <div className="text-sm text-muted-foreground">
-                            {pkg.credits} convert credits
+                            Monthly subscription
                         </div>
                     </div>
                     <div className="text-right">

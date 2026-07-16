@@ -79,18 +79,15 @@ const Courses = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
-    // Paste URL state
     const [url, setUrl] = useState("");
     const [importing, setImporting] = useState(false);
     const [previewing, setPreviewing] = useState(false);
     const [preview, setPreview] = useState<Record<string, unknown> | null>(null);
     const [previewOpen, setPreviewOpen] = useState(false);
 
-    // My courses
     const [mine, setMine] = useState<Course[]>([]);
     const [loading, setLoading] = useState(true);
 
-    // Search state
     const [query, setQuery] = useState("");
     const [searching, setSearching] = useState(false);
     const [searched, setSearched] = useState(false);
@@ -103,17 +100,14 @@ const Courses = () => {
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [activeSuggestion, setActiveSuggestion] = useState(-1);
 
-    // Debounce ref
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-    const lastSearchRef = useRef<{ query: string; contentType: ContentType; page: number } | null>(null);
+    const lastSearchRef = useRef<string | null>(null);
 
-    // ── Debounced search ─────────────────────────────────────────────────
     const doSearch = useCallback(
         async (q: string, ct: ContentType, pg: number) => {
             const trimmed = q.trim();
             if (!trimmed) return;
 
-            // Deduplicate
             const key = `${trimmed}|${ct}|${pg}`;
             if (lastSearchRef.current === key) return;
             lastSearchRef.current = key;
@@ -140,7 +134,6 @@ const Courses = () => {
         [],
     );
 
-    // Trigger search on query/contentType/page change
     useEffect(() => {
         if (!searched) return;
         if (debounceRef.current) clearTimeout(debounceRef.current);
@@ -153,7 +146,7 @@ const Courses = () => {
     }, [query, contentType]); // eslint-disable-line
 
     const searchManual = useCallback(() => {
-        lastSearchRef.current = null; // force re-fetch
+        lastSearchRef.current = null;
         doSearch(query, contentType, 1);
     }, [query, contentType, doSearch]);
 
@@ -162,13 +155,11 @@ const Courses = () => {
             if (pg < 1 || pg > totalPages || pg === searchPage) return;
             lastSearchRef.current = null;
             doSearch(query, contentType, pg);
-            // scroll results into view
             document.getElementById("search-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
         },
         [query, contentType, totalPages, searchPage, doSearch],
     );
 
-    // ── Autocomplete suggestions ─────────────────────────────────────────
     useEffect(() => {
         setActiveSuggestion(-1);
         if (query.trim().length < 2) {
@@ -184,7 +175,6 @@ const Courses = () => {
         return () => clearTimeout(timer);
     }, [query]);
 
-    // ── Load my courses ──────────────────────────────────────────────────
     const load = async () => {
         if (!user) return;
         const { data: courses } = await supabase
@@ -243,7 +233,6 @@ const Courses = () => {
     if (authLoading) return null;
     if (!user) return <Navigate to="/auth" replace />;
 
-    // ── Preview & Import ─────────────────────────────────────────────────
     const previewPlaylist = async (urlOverride?: string) => {
         const target = (urlOverride ?? url).trim();
         if (!target) return;
@@ -306,7 +295,6 @@ const Courses = () => {
         setMine((prev) => prev.filter((x) => x.id !== c.id));
     };
 
-    // ── Pagination helpers ───────────────────────────────────────────────
     const renderPageNumbers = () => {
         const pages: (number | "...")[] = [];
         if (totalPages <= 7) {
@@ -332,7 +320,6 @@ const Courses = () => {
     return (
         <AppShell>
             <section className="container py-8 md:py-12 max-w-6xl">
-                {/* Header */}
                 <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
                     <div>
                         <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -347,7 +334,6 @@ const Courses = () => {
                     </div>
                 </div>
 
-                {/* Import bar */}
                 <div className="rounded-2xl border border-border bg-card p-4 mb-8">
                     <Tabs defaultValue="paste">
                         <TabsList className="mb-3">
@@ -385,7 +371,6 @@ const Courses = () => {
                         </TabsContent>
 
                         <TabsContent value="search" className="mt-0 space-y-3">
-                            {/* Search row + content type filter */}
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col sm:flex-row gap-2">
                                     <div className="relative flex-1">
@@ -467,7 +452,6 @@ const Courses = () => {
                                     </Button>
                                 </div>
 
-                                {/* Content type filter */}
                                 <div className="flex items-center gap-2">
                                     <span className="text-xs text-muted-foreground font-mono">
                                         Content:
@@ -494,7 +478,6 @@ const Courses = () => {
                                 </div>
                             </div>
 
-                            {/* Result statistics */}
                             {searched && !searching && (
                                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono text-muted-foreground">
                                     <span>{totalCount} Result{totalCount !== 1 ? "s" : ""} Found</span>
@@ -507,7 +490,6 @@ const Courses = () => {
                                 </div>
                             )}
 
-                            {/* Results grid */}
                             {searching && results.length === 0 ? (
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                                     {Array.from({ length: 6 }).map((_, i) => (
@@ -595,7 +577,6 @@ const Courses = () => {
                                 </p>
                             )}
 
-                            {/* Pagination */}
                             {searched && totalPages > 1 && (
                                 <div className="flex items-center justify-between pt-4 border-t border-border">
                                     <span className="text-xs font-mono text-muted-foreground hidden sm:block">
@@ -653,7 +634,6 @@ const Courses = () => {
                     </Tabs>
                 </div>
 
-                {/* My Courses Grid */}
                 {loading ? (
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {Array.from({ length: 8 }).map((_, i) => (

@@ -17,6 +17,25 @@ function extractPlaylistId(url: string): string | null {
         return null;
     }
 }
+function extractVideoId(url: string): string | null {
+    try {
+        const u = new URL(url);
+        // youtube.com/watch?v=VIDEO_ID or youtu.be/VIDEO_ID
+        const v = u.searchParams.get("v");
+        if (v) return v;
+        if (u.hostname === "youtu.be") return u.pathname.slice(1);
+        // youtube.com/shorts/VIDEO_ID
+        const parts = u.pathname.split("/");
+        if (parts.length >= 3 && (parts[1] === "shorts" || parts[1] === "embed" || parts[1] === "v")) {
+            return parts[2];
+        }
+        return null;
+    } catch {
+        // Raw ID
+        if (/^[A-Za-z0-9_-]{11}$/.test(url.trim())) return url.trim();
+        return null;
+    }
+}
 
 Deno.serve(async (req) => {
     if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
@@ -39,13 +58,50 @@ Deno.serve(async (req) => {
         if (!user) return json({ error: "Unauthorized" }, 401);
 
         const { url } = await req.json();
-        const id = extractPlaylistId(url);
-        if (!id) return json({ error: "Invalid playlist URL" }, 400);
         const apiKey = Deno.env.get("YOUTUBE_API_KEY")!;
         if (!apiKey) return json({ error: "YouTube API key missing" }, 500);
 
+        // Try video first, then playlist
+        const videoId = extractVideoId(url);
+        const playlistId = !videoId ? extractPlaylistId(url) : null;
+
+        if (!videoId && !playlistId) {
+            return json({ error: "Invalid YouTube URL" }, 400);
+        }
+
+        // ── Single video preview ──────────────────────────────────────────
+        if (videoId) {
+            const res = await fetch(
+                `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${apiKey}`,
+            );
+            const j = await res.json();
+            if (j.error) return json({ error: j.error.message }, 400);
+            if (!j.items?.length) return json({ error: "Video not found or is private" }, 404);
+            const v = j.items[0];
+            const sn = v.snippet;
+            const duration = parseDuration(v.contentDetails?.duration ?? "PT0S");
+            return json({
+                playlist: {
+                    title: sn.title,
+                    description: sn.description,
+                    channel: sn.channelTitle,
+                    thumbnail: sn.thumbnails?.high?.url ?? sn.thumbnails?.medium?.url ?? null,
+                },
+                videos: [
+                    {
+                        videoId,
+                        title: sn.title,
+                        thumbnail: sn.thumbnails?.high?.url ?? sn.thumbnails?.medium?.url ?? null,
+                        duration,
+                    },
+                ],
+                total: 1,
+            });
+        }
+
+        // ── Playlist preview ──────────────────────────────────────────────
         const plRes = await fetch(
-            `https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${id}&key=${apiKey}`,
+            `https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${apiKey}`,
         );
         const plJson = await plRes.json();
         if (plJson.error) return json({ error: plJson.error.message }, 400);
@@ -56,7 +112,7 @@ Deno.serve(async (req) => {
         let token: string | undefined;
         for (let i = 0; i < 4; i++) {
             const r = await fetch(
-                `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=${id}${token ? `&pageToken=${token}` : ""}&key=${apiKey}`,
+                `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=${playlistId}${token ? `&pageToken=${token}` : ""}&key=${apiKey}`,
             );
             const j = await r.json();
             if (j.error) return json({ error: j.error.message }, 400);

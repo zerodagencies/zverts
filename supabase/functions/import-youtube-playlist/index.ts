@@ -23,6 +23,23 @@ function extractPlaylistId(url: string): string | null {
     }
 }
 
+function extractVideoId(url: string): string | null {
+    try {
+        const u = new URL(url);
+        const v = u.searchParams.get("v");
+        if (v) return v;
+        if (u.hostname === "youtu.be") return u.pathname.slice(1);
+        const parts = u.pathname.split("/");
+        if (parts.length >= 3 && (parts[1] === "shorts" || parts[1] === "embed" || parts[1] === "v")) {
+            return parts[2];
+        }
+        return null;
+    } catch {
+        if (/^[A-Za-z0-9_-]{11}$/.test(url.trim())) return url.trim();
+        return null;
+    }
+}
+
 Deno.serve(async (req) => {
     if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
@@ -68,16 +85,101 @@ Deno.serve(async (req) => {
 
         // ── Parse request ───────────────────────────────────────────────────────
         const { url } = await req.json();
-        const playlistId = extractPlaylistId(url);
-        if (!playlistId) {
-            return json({ error: "Invalid playlist URL — must contain ?list=..." }, 400);
+        const videoId = extractVideoId(url);
+        const playlistId = !videoId ? extractPlaylistId(url) : null;
+
+        if (!videoId && !playlistId) {
+            return json({ error: "Invalid YouTube URL — must be a video or playlist URL" }, 400);
         }
-        console.log("Importing playlist:", playlistId, "for user:", user.id);
 
         const apiKey = Deno.env.get("YOUTUBE_API_KEY")!;
         if (!apiKey) return json({ error: "YouTube API key not configured" }, 500);
 
-        // ── Playlist metadata ───────────────────────────────────────────────────
+        // ── Single video import ─────────────────────────────────────────────────
+        if (videoId) {
+            console.log("Importing single video:", videoId, "for user:", user.id);
+
+            const res = await fetch(
+                `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${apiKey}`,
+            );
+            const j = await res.json();
+            if (j.error) {
+                console.error("Video info error:", j.error);
+                return json({ error: `YouTube API: ${j.error.message}` }, 400);
+            }
+            if (!j.items?.length) {
+                return json({ error: "Video not found or is private" }, 404);
+            }
+            const v = j.items[0];
+            const sn = v.snippet;
+            const duration = parseDuration(v.contentDetails?.duration ?? "PT0S");
+            const thumb = sn.thumbnails?.high?.url ?? sn.thumbnails?.medium?.url ?? null;
+            const authorChannelId = sn.channelId ?? null;
+
+            const { data: course, error: cErr } = await supabase
+                .from("courses")
+                .insert({
+                    user_id: user.id,
+                    title: sn.title ?? "Imported video",
+                    description: sn.description ?? null,
+                    thumbnail_url: thumb,
+                    source_playlist_id: videoId,
+                    source_playlist_url: url,
+                    is_public: false,
+                    is_system: false,
+                    author_name: sn.channelTitle ?? null,
+                    author_channel_id: authorChannelId,
+                    author_channel_url: authorChannelId
+                        ? `https://www.youtube.com/channel/${authorChannelId}`
+                        : null,
+                })
+                .select()
+                .single();
+
+            if (cErr) {
+                console.error("Course insert error:", cErr);
+                return json({ error: `Course create failed: ${cErr.message}` }, 400);
+            }
+            console.log("Course created:", course.id);
+
+            const { data: inserted, error: mErr } = await supabase
+                .from("modules")
+                .insert({
+                    course_id: course.id,
+                    position: 1,
+                    title: sn.title ?? "Video",
+                    youtube_video_id: videoId,
+                    duration_seconds: duration,
+                    thumbnail_url: thumb,
+                })
+                .select("id");
+
+            if (mErr) {
+                console.error("Module insert error:", mErr);
+                await supabase.from("courses").delete().eq("id", course.id);
+                return json({ error: `Failed to import video: ${mErr.message}` }, 400);
+            }
+
+            if (!entitlement.is_paid_user) {
+                const { error: decrErr } = await supabase
+                    .from("user_entitlements")
+                    .update({ playlist_conversions_left: entitlement.playlist_conversions_left - 1 })
+                    .eq("user_id", user.id);
+                if (decrErr) console.error("Failed to decrement conversions:", decrErr);
+            }
+
+            return json({
+                course_id: course.id,
+                modules: inserted?.length ?? 1,
+                conversions_left: entitlement.is_paid_user
+                    ? null
+                    : entitlement.playlist_conversions_left - 1,
+            });
+        }
+
+        // ── Playlist import (original flow) ─────────────────────────────────────
+        console.log("Importing playlist:", playlistId, "for user:", user.id);
+
         const plRes = await fetch(
             `https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${apiKey}`,
         );

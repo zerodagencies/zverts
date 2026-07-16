@@ -29,35 +29,87 @@ Deno.serve(async (req) => {
         const apiKey = Deno.env.get("YOUTUBE_API_KEY")!;
         if (!apiKey) return json({ error: "YouTube API key missing" }, 500);
 
-        const searchRes = await fetch(
-            `https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist&maxResults=15&q=${encodeURIComponent(q)}&key=${apiKey}`,
-        );
-        const searchJson = await searchRes.json();
-        if (searchJson.error) return json({ error: searchJson.error.message }, 400);
+        // Search for both playlists and videos in parallel
+        const [playlistRes, videoRes] = await Promise.all([
+            fetch(
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist&maxResults=8&q=${encodeURIComponent(q)}&key=${apiKey}`,
+            ),
+            fetch(
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=8&q=${encodeURIComponent(q)}&key=${apiKey}`,
+            ),
+        ]);
 
-        const ids = (searchJson.items ?? [])
+        const playlistJson = await playlistRes.json();
+        const videoJson = await videoRes.json();
+
+        if (playlistJson.error) return json({ error: playlistJson.error.message }, 400);
+        if (videoJson.error) return json({ error: videoJson.error.message }, 400);
+
+        // Process playlists
+        const playlistIds = (playlistJson.items ?? [])
             .map((it: Record<string, unknown>) => (it.id as Record<string, unknown>)?.playlistId)
             .filter(Boolean);
-        if (!ids.length) return json({ results: [] });
 
-        // Batch fetch to get accurate item counts (search.list snippet doesn't include them)
-        const detailsRes = await fetch(
-            `https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&id=${ids.join(",")}&key=${apiKey}`,
-        );
-        const detailsJson = await detailsRes.json();
-        if (detailsJson.error) return json({ error: detailsJson.error.message }, 400);
+        let playlistResults: Record<string, unknown>[] = [];
+        if (playlistIds.length) {
+            const detailsRes = await fetch(
+                `https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&id=${playlistIds.join(",")}&key=${apiKey}`,
+            );
+            const detailsJson = await detailsRes.json();
+            if (detailsJson.error) return json({ error: detailsJson.error.message }, 400);
 
-        const results = (detailsJson.items ?? []).map((it: Record<string, unknown>) => {
-            const sn = it.snippet as Record<string, unknown>;
-            const thumbs = sn.thumbnails as Record<string, Record<string, string>>;
-            return {
-                playlistId: it.id,
-                title: sn.title,
-                channel: sn.channelTitle,
-                itemCount: (it.contentDetails as Record<string, unknown>)?.itemCount ?? 0,
-                thumbnail: thumbs?.high?.url ?? thumbs?.medium?.url ?? thumbs?.default?.url ?? null,
-            };
-        });
+            playlistResults = (detailsJson.items ?? []).map((it: Record<string, unknown>) => {
+                const sn = it.snippet as Record<string, unknown>;
+                const thumbs = sn.thumbnails as Record<string, Record<string, string>>;
+                return {
+                    type: "playlist",
+                    playlistId: it.id,
+                    title: sn.title,
+                    channel: sn.channelTitle,
+                    itemCount: (it.contentDetails as Record<string, unknown>)?.itemCount ?? 0,
+                    thumbnail: thumbs?.high?.url ?? thumbs?.medium?.url ?? thumbs?.default?.url ?? null,
+                };
+            });
+        }
+
+        // Process videos
+        const videoIds = (videoJson.items ?? [])
+            .map((it: Record<string, unknown>) => (it.id as Record<string, unknown>)?.videoId)
+            .filter(Boolean);
+
+        let videoResults: Record<string, unknown>[] = [];
+        if (videoIds.length) {
+            const detailsRes = await fetch(
+                `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoIds.join(",")}&key=${apiKey}`,
+            );
+            const detailsJson = await detailsRes.json();
+            if (detailsJson.error) return json({ error: detailsJson.error.message }, 400);
+
+            videoResults = (detailsJson.items ?? []).map((it: Record<string, unknown>) => {
+                const sn = it.snippet as Record<string, unknown>;
+                const thumbs = sn.thumbnails as Record<string, Record<string, string>>;
+                const dur = (it.contentDetails as Record<string, unknown>)?.duration as string;
+                const m = dur?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+                const durationSecs = m ? +(m[1] || 0) * 3600 + +(m[2] || 0) * 60 + +(m[3] || 0) : 0;
+                return {
+                    type: "video",
+                    videoId: it.id,
+                    title: sn.title,
+                    channel: sn.channelTitle,
+                    duration: durationSecs,
+                    thumbnail: thumbs?.high?.url ?? thumbs?.medium?.url ?? thumbs?.default?.url ?? null,
+                };
+            });
+        }
+
+        // Interleave: 1 playlist, 2 videos, 1 playlist, 2 videos, ...
+        const results: Record<string, unknown>[] = [];
+        let pi = 0, vi = 0;
+        while (pi < playlistResults.length || vi < videoResults.length) {
+            if (pi < playlistResults.length) results.push(playlistResults[pi++]);
+            if (vi < videoResults.length) results.push(videoResults[vi++]);
+            if (vi < videoResults.length) results.push(videoResults[vi++]);
+        }
 
         return json({ results });
     } catch (e) {

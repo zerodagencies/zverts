@@ -9,16 +9,28 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
-import { Loader2, Plus, Eye, Trash2, BookOpen, Globe, Lock, Search, ListVideo } from "lucide-react";
+import { Loader2, Plus, Eye, Trash2, BookOpen, Globe, Lock, Search, ListVideo, Play } from "lucide-react";
 import { PlaylistPreview } from "@/components/app/PlaylistPreview";
 
-interface PlaylistSearchResult {
+interface SearchPlaylistResult {
+    type: "playlist";
     playlistId: string;
     title: string;
     channel: string;
     itemCount: number;
     thumbnail: string | null;
 }
+
+interface SearchVideoResult {
+    type: "video";
+    videoId: string;
+    title: string;
+    channel: string;
+    duration: number;
+    thumbnail: string | null;
+}
+
+type SearchResult = SearchPlaylistResult | SearchVideoResult;
 
 interface Course {
     id: string;
@@ -31,6 +43,12 @@ interface Course {
     module_count?: number;
     completed_count?: number;
 }
+
+const fmt = (s: number) => {
+    const m = Math.floor(s / 60),
+        sec = s % 60;
+    return `${m}:${String(sec).padStart(2, "0")}`;
+};
 
 const Courses = () => {
     const { user, loading: authLoading } = useAuth();
@@ -46,7 +64,7 @@ const Courses = () => {
     const [query, setQuery] = useState("");
     const [searching, setSearching] = useState(false);
     const [searched, setSearched] = useState(false);
-    const [results, setResults] = useState<PlaylistSearchResult[]>([]);
+    const [results, setResults] = useState<SearchResult[]>([]);
     const [suggestions, setSuggestions] = useState<string[]>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [activeSuggestion, setActiveSuggestion] = useState(-1);
@@ -157,7 +175,7 @@ const Courses = () => {
             toast.error((dataErr as string) ?? error?.message ?? "Search failed");
             return;
         }
-        setResults((data as { results: PlaylistSearchResult[] })?.results ?? []);
+        setResults((data as { results: SearchResult[] })?.results ?? []);
     };
 
     const selectSuggestion = (s: string) => {
@@ -165,10 +183,16 @@ const Courses = () => {
         searchPlaylists(s);
     };
 
-    const selectResult = (r: PlaylistSearchResult) => {
-        const playlistUrl = `https://www.youtube.com/playlist?list=${r.playlistId}`;
-        setUrl(playlistUrl);
-        previewPlaylist(playlistUrl);
+    const selectResult = (r: SearchResult) => {
+        if (r.type === "playlist") {
+            const playlistUrl = `https://www.youtube.com/playlist?list=${r.playlistId}`;
+            setUrl(playlistUrl);
+            previewPlaylist(playlistUrl);
+        } else {
+            const videoUrl = `https://www.youtube.com/watch?v=${r.videoId}`;
+            setUrl(videoUrl);
+            previewPlaylist(videoUrl);
+        }
     };
 
     const importPlaylist = async () => {
@@ -226,7 +250,7 @@ const Courses = () => {
                         <TabsContent value="paste" className="mt-0">
                             <div className="flex flex-col sm:flex-row gap-2">
                                 <Input
-                                    placeholder="Paste a YouTube playlist URL…"
+                                    placeholder="Paste a YouTube video or playlist URL…"
                                     value={url}
                                     onChange={(e) => setUrl(e.target.value)}
                                     onKeyDown={(e) => e.key === "Enter" && previewPlaylist()}
@@ -256,7 +280,7 @@ const Courses = () => {
                             <div className="flex flex-col sm:flex-row gap-2">
                                 <div className="relative flex-1">
                                     <Input
-                                        placeholder="Search YouTube playlists…"
+                                        placeholder="Search YouTube videos & playlists…"
                                         value={query}
                                         onChange={(e) => {
                                             setQuery(e.target.value);
@@ -326,7 +350,7 @@ const Courses = () => {
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                                     {results.map((r) => (
                                         <button
-                                            key={r.playlistId}
+                                            key={r.type === "playlist" ? `pl-${r.playlistId}` : `vid-${r.videoId}`}
                                             onClick={() => selectResult(r)}
                                             disabled={previewing}
                                             className="text-left rounded-xl border border-border bg-background overflow-hidden hover:border-primary/40 hover:shadow-elevated transition-all duration-200 disabled:opacity-50"
@@ -341,7 +365,21 @@ const Courses = () => {
                                                     />
                                                 ) : (
                                                     <div className="w-full h-full flex items-center justify-center">
-                                                        <ListVideo className="h-8 w-8 text-muted-foreground/40" />
+                                                        {r.type === "playlist" ? (
+                                                            <ListVideo className="h-8 w-8 text-muted-foreground/40" />
+                                                        ) : (
+                                                            <Play className="h-8 w-8 text-muted-foreground/40" />
+                                                        )}
+                                                    </div>
+                                                )}
+                                                {r.type === "video" && (
+                                                    <div className="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-mono px-1.5 py-0.5 rounded">
+                                                        {fmt(r.duration)}
+                                                    </div>
+                                                )}
+                                                {r.type === "playlist" && (
+                                                    <div className="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-mono px-1.5 py-0.5 rounded">
+                                                        {r.itemCount} videos
                                                     </div>
                                                 )}
                                             </div>
@@ -349,10 +387,15 @@ const Courses = () => {
                                                 <h4 className="font-medium text-sm leading-tight line-clamp-2">
                                                     {r.title}
                                                 </h4>
-                                                <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
+                                                <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
+                                                    {r.type === "playlist" ? (
+                                                        <ListVideo className="h-3 w-3 shrink-0" />
+                                                    ) : (
+                                                        <Play className="h-3 w-3 shrink-0" />
+                                                    )}
                                                     <span className="truncate">{r.channel}</span>
-                                                    <span className="shrink-0 ml-2">
-                                                        {r.itemCount} video{r.itemCount !== 1 ? "s" : ""}
+                                                    <span className="shrink-0 ml-auto">
+                                                        {r.type === "playlist" ? "Playlist" : "Video"}
                                                     </span>
                                                 </div>
                                             </div>
@@ -363,7 +406,7 @@ const Courses = () => {
 
                             {searched && !searching && results.length === 0 && (
                                 <p className="text-sm text-muted-foreground text-center py-6">
-                                    No playlists found. Try a different search term.
+                                    No results found. Try a different search term.
                                 </p>
                             )}
                         </TabsContent>
@@ -391,7 +434,7 @@ const Courses = () => {
                         <BookOpen className="h-10 w-10 text-muted-foreground mx-auto" />
                         <p className="font-display text-xl">No courses yet</p>
                         <p className="text-sm text-muted-foreground">
-                            Paste a YouTube playlist URL above to import your first course.
+                            Paste a YouTube video or playlist URL above to import your first course.
                         </p>
                     </div>
                 ) : (

@@ -42,7 +42,9 @@ export const PlaylistPreview = ({
         <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
             <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col">
                 <DialogHeader>
-                    <DialogTitle className="font-display text-xl">Playlist preview</DialogTitle>
+                    <DialogTitle className="font-display text-xl">
+                        {preview.total === 1 ? "Video preview" : "Playlist preview"}
+                    </DialogTitle>
                 </DialogHeader>
                 <div className="flex gap-4 py-2 border-b border-border">
                     {preview.playlist.thumbnail && (

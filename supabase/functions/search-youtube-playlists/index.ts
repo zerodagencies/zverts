@@ -11,7 +11,6 @@ Deno.serve(async (req) => {
             headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
     try {
-        // Require authenticated user — prevents anonymous abuse of YouTube API quota
         const authHeader = req.headers.get("Authorization");
         if (!authHeader) return json({ error: "Unauthorized" }, 401);
         const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.45.0");
@@ -23,95 +22,136 @@ Deno.serve(async (req) => {
         } = await sb.auth.getUser();
         if (!user) return json({ error: "Unauthorized" }, 401);
 
-        const { query } = await req.json();
+        const { query, contentType = "both", page = 1, pageSize = 12 } = await req.json();
         const q = (query ?? "").trim();
         if (!q) return json({ error: "Search query required" }, 400);
         const apiKey = Deno.env.get("YOUTUBE_API_KEY")!;
         if (!apiKey) return json({ error: "YouTube API key missing" }, 500);
 
-        // Search for both playlists and videos in parallel
-        const [playlistRes, videoRes] = await Promise.all([
-            fetch(
-                `https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist&maxResults=8&q=${encodeURIComponent(q)}&key=${apiKey}`,
-            ),
-            fetch(
-                `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=8&q=${encodeURIComponent(q)}&key=${apiKey}`,
-            ),
-        ]);
+        const wantPlaylists = contentType === "both" || contentType === "playlists";
+        const wantVideos = contentType === "both" || contentType === "videos";
 
-        const playlistJson = await playlistRes.json();
-        const videoJson = await videoRes.json();
+        const PAGE_SIZE_YT = 50;
+        const MAX_PAGES = 20;
 
-        if (playlistJson.error) return json({ error: playlistJson.error.message }, 400);
-        if (videoJson.error) return json({ error: videoJson.error.message }, 400);
+        async function fetchYouTubeSearch(
+            type: "playlist" | "video",
+            maxResults: number,
+        ): Promise<Record<string, unknown>[]> {
+            const allItems: Record<string, unknown>[] = [];
+            let ytToken: string | undefined;
+            const pagesNeeded = Math.ceil(maxResults / PAGE_SIZE_YT);
 
-        // Process playlists
-        const playlistIds = (playlistJson.items ?? [])
-            .map((it: Record<string, unknown>) => (it.id as Record<string, unknown>)?.playlistId)
-            .filter(Boolean);
+            for (let i = 0; i < Math.min(pagesNeeded, MAX_PAGES); i++) {
+                const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=${type}&maxResults=${PAGE_SIZE_YT}&q=${encodeURIComponent(q)}${ytToken ? `&pageToken=${ytToken}` : ""}&key=${apiKey}`;
+                const res = await fetch(url);
+                const j = await res.json();
+                if (j.error) throw new Error(j.error.message);
+                allItems.push(...(j.items ?? []));
+                if (!j.nextPageToken || allItems.length >= maxResults) break;
+                ytToken = j.nextPageToken;
+            }
+            return allItems.slice(0, maxResults);
+        }
+
+        const searchMax = Math.max(page * pageSize, 60);
+        const searches: Promise<Record<string, unknown>[]>[] = [];
+        if (wantPlaylists) searches.push(fetchYouTubeSearch("playlist", searchMax));
+        if (wantVideos) searches.push(fetchYouTubeSearch("video", searchMax));
+
+        const searchResults = await Promise.all(searches);
+        const playlistSearchItems = wantPlaylists ? searchResults[0] : [];
+        const videoSearchItems = wantVideos
+            ? (wantPlaylists ? searchResults[1] : searchResults[0])
+            : [];
 
         let playlistResults: Record<string, unknown>[] = [];
-        if (playlistIds.length) {
-            const detailsRes = await fetch(
-                `https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&id=${playlistIds.join(",")}&key=${apiKey}`,
-            );
-            const detailsJson = await detailsRes.json();
-            if (detailsJson.error) return json({ error: detailsJson.error.message }, 400);
-
-            playlistResults = (detailsJson.items ?? []).map((it: Record<string, unknown>) => {
-                const sn = it.snippet as Record<string, unknown>;
-                const thumbs = sn.thumbnails as Record<string, Record<string, string>>;
-                return {
-                    type: "playlist",
-                    playlistId: it.id,
-                    title: sn.title,
-                    channel: sn.channelTitle,
-                    itemCount: (it.contentDetails as Record<string, unknown>)?.itemCount ?? 0,
-                    thumbnail: thumbs?.high?.url ?? thumbs?.medium?.url ?? thumbs?.default?.url ?? null,
-                };
-            });
-        }
-
-        // Process videos
-        const videoIds = (videoJson.items ?? [])
-            .map((it: Record<string, unknown>) => (it.id as Record<string, unknown>)?.videoId)
+        const playlistIds = playlistSearchItems
+            .map((it) => (it.id as Record<string, unknown>)?.playlistId)
             .filter(Boolean);
 
-        let videoResults: Record<string, unknown>[] = [];
-        if (videoIds.length) {
-            const detailsRes = await fetch(
-                `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoIds.join(",")}&key=${apiKey}`,
-            );
-            const detailsJson = await detailsRes.json();
-            if (detailsJson.error) return json({ error: detailsJson.error.message }, 400);
+        if (playlistIds.length) {
+            for (let i = 0; i < playlistIds.length; i += 50) {
+                const batch = playlistIds.slice(i, i + 50).join(",");
+                const detailsRes = await fetch(
+                    `https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&id=${batch}&key=${apiKey}`,
+                );
+                const detailsJson = await detailsRes.json();
+                if (detailsJson.error) return json({ error: detailsJson.error.message }, 400);
 
-            videoResults = (detailsJson.items ?? []).map((it: Record<string, unknown>) => {
-                const sn = it.snippet as Record<string, unknown>;
-                const thumbs = sn.thumbnails as Record<string, Record<string, string>>;
-                const dur = (it.contentDetails as Record<string, unknown>)?.duration as string;
-                const m = dur?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-                const durationSecs = m ? +(m[1] || 0) * 3600 + +(m[2] || 0) * 60 + +(m[3] || 0) : 0;
-                return {
-                    type: "video",
-                    videoId: it.id,
-                    title: sn.title,
-                    channel: sn.channelTitle,
-                    duration: durationSecs,
-                    thumbnail: thumbs?.high?.url ?? thumbs?.medium?.url ?? thumbs?.default?.url ?? null,
-                };
-            });
+                playlistResults.push(
+                    ...(detailsJson.items ?? []).map((it: Record<string, unknown>) => {
+                        const sn = it.snippet as Record<string, unknown>;
+                        const thumbs = sn.thumbnails as Record<string, Record<string, string>>;
+                        return {
+                            type: "playlist",
+                            playlistId: it.id,
+                            title: sn.title,
+                            channel: sn.channelTitle,
+                            itemCount: (it.contentDetails as Record<string, unknown>)?.itemCount ?? 0,
+                            thumbnail: thumbs?.high?.url ?? thumbs?.medium?.url ?? thumbs?.default?.url ?? null,
+                        };
+                    }),
+                );
+            }
         }
 
-        // Interleave: 1 playlist, 2 videos, 1 playlist, 2 videos, ...
-        const results: Record<string, unknown>[] = [];
+        let videoResults: Record<string, unknown>[] = [];
+        const videoIds = videoSearchItems
+            .map((it) => (it.id as Record<string, unknown>)?.videoId)
+            .filter(Boolean);
+
+        if (videoIds.length) {
+            for (let i = 0; i < videoIds.length; i += 50) {
+                const batch = videoIds.slice(i, i + 50).join(",");
+                const detailsRes = await fetch(
+                    `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${batch}&key=${apiKey}`,
+                );
+                const detailsJson = await detailsRes.json();
+                if (detailsJson.error) return json({ error: detailsJson.error.message }, 400);
+
+                videoResults.push(
+                    ...(detailsJson.items ?? []).map((it: Record<string, unknown>) => {
+                        const sn = it.snippet as Record<string, unknown>;
+                        const thumbs = sn.thumbnails as Record<string, Record<string, string>>;
+                        const dur = (it.contentDetails as Record<string, unknown>)?.duration as string;
+                        const m = dur?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+                        const durationSecs = m
+                            ? +(m[1] || 0) * 3600 + +(m[2] || 0) * 60 + +(m[3] || 0)
+                            : 0;
+                        return {
+                            type: "video",
+                            videoId: it.id,
+                            title: sn.title,
+                            channel: sn.channelTitle,
+                            duration: durationSecs,
+                            thumbnail:
+                                thumbs?.high?.url ?? thumbs?.medium?.url ?? thumbs?.default?.url ?? null,
+                        };
+                    }),
+                );
+            }
+        }
+
+        const allResults: Record<string, unknown>[] = [];
         let pi = 0, vi = 0;
         while (pi < playlistResults.length || vi < videoResults.length) {
-            if (pi < playlistResults.length) results.push(playlistResults[pi++]);
-            if (vi < videoResults.length) results.push(videoResults[vi++]);
-            if (vi < videoResults.length) results.push(videoResults[vi++]);
+            if (pi < playlistResults.length) allResults.push(playlistResults[pi++]);
+            if (vi < videoResults.length) allResults.push(videoResults[vi++]);
+            if (vi < videoResults.length) allResults.push(videoResults[vi++]);
         }
 
-        return json({ results });
+        const totalCount = allResults.length;
+        const start = (page - 1) * pageSize;
+        const paged = allResults.slice(start, start + pageSize);
+
+        return json({
+            results: paged,
+            totalCount,
+            page,
+            pageSize,
+            totalPages: Math.ceil(totalCount / pageSize),
+        });
     } catch (e) {
         return json({ error: (e as Error).message }, 500);
     }

@@ -50,7 +50,6 @@ Deno.serve(async (req) => {
         });
 
     try {
-        // ── Auth ────────────────────────────────────────────────────────────────
         const authHeader = req.headers.get("Authorization");
         if (!authHeader) return json({ error: "Unauthorized" }, 401);
 
@@ -64,7 +63,6 @@ Deno.serve(async (req) => {
         } = await supabase.auth.getUser(authHeader.replace("Bearer ", ""));
         if (!user) return json({ error: "Unauthorized" }, 401);
 
-        // ── Entitlement check (BEFORE doing any work) ───────────────────────────
         const { data: entitlement, error: entErr } = await supabase
             .from("user_entitlements")
             .select("playlist_conversions_left, is_paid_user")
@@ -83,7 +81,6 @@ Deno.serve(async (req) => {
             );
         }
 
-        // ── Parse request ───────────────────────────────────────────────────────
         const { url } = await req.json();
         const videoId = extractVideoId(url);
         const playlistId = !videoId ? extractPlaylistId(url) : null;
@@ -95,7 +92,6 @@ Deno.serve(async (req) => {
         const apiKey = Deno.env.get("YOUTUBE_API_KEY")!;
         if (!apiKey) return json({ error: "YouTube API key not configured" }, 500);
 
-        // ── Single video import ─────────────────────────────────────────────────
         if (videoId) {
             console.log("Importing single video:", videoId, "for user:", user.id);
 
@@ -177,7 +173,6 @@ Deno.serve(async (req) => {
             });
         }
 
-        // ── Playlist import (original flow) ─────────────────────────────────────
         console.log("Importing playlist:", playlistId, "for user:", user.id);
 
         const plRes = await fetch(
@@ -204,7 +199,6 @@ Deno.serve(async (req) => {
             ? `https://www.youtube.com/channel/${authorChannelId}`
             : null;
 
-        // ── Playlist items (paginate up to 200) ─────────────────────────────────
         const items: Record<string, unknown>[] = [];
         let pageToken: string | undefined;
 
@@ -231,7 +225,6 @@ Deno.serve(async (req) => {
             return json({ error: "No videos found in playlist" }, 400);
         }
 
-        // ── Filter out private/deleted videos ───────────────────────────────────
         const validItems = items.filter((it) => {
             const vid = it?.snippet?.resourceId?.videoId ?? it?.contentDetails?.videoId;
             const title = it?.snippet?.title ?? "";
@@ -248,7 +241,6 @@ Deno.serve(async (req) => {
             return json({ error: "No playable videos in playlist" }, 400);
         }
 
-        // ── Fetch video durations in batches of 50 ──────────────────────────────
         const ids = validItems.map(
             (i) => i.snippet?.resourceId?.videoId ?? i.contentDetails?.videoId,
         );
@@ -265,7 +257,6 @@ Deno.serve(async (req) => {
             );
         }
 
-        // ── Create course ───────────────────────────────────────────────────────
         const { data: course, error: cErr } = await supabase
             .from("courses")
             .insert({
@@ -290,7 +281,6 @@ Deno.serve(async (req) => {
         }
         console.log("Course created:", course.id);
 
-        // ── Insert modules ──────────────────────────────────────────────────────
         const rows = validItems.map((it, idx) => {
             const videoId = it.snippet?.resourceId?.videoId ?? it.contentDetails?.videoId;
             return {
@@ -316,15 +306,12 @@ Deno.serve(async (req) => {
 
         if (mErr) {
             console.error("Modules insert error:", mErr);
-            // Roll back course so user can retry cleanly
             await supabase.from("courses").delete().eq("id", course.id);
             return json({ error: `Failed to import playlist videos: ${mErr.message}` }, 400);
         }
 
         console.log("Modules inserted:", inserted?.length);
 
-        // ── Decrement conversions AFTER everything succeeded ────────────────────
-        // Paid users are unlimited — only decrement free users
         if (!entitlement.is_paid_user) {
             const { error: decrErr } = await supabase
                 .from("user_entitlements")
@@ -334,7 +321,6 @@ Deno.serve(async (req) => {
                 .eq("user_id", user.id);
 
             if (decrErr) {
-                // Non-fatal: course is already created, just log it
                 console.error("Failed to decrement conversions:", decrErr);
             } else {
                 console.log(
@@ -350,7 +336,7 @@ Deno.serve(async (req) => {
             course_id: course.id,
             modules: inserted?.length ?? rows.length,
             conversions_left: entitlement.is_paid_user
-                ? null // unlimited
+                ? null
                 : entitlement.playlist_conversions_left - 1,
         });
     } catch (e) {

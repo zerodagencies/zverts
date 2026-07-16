@@ -20,18 +20,15 @@ function extractPlaylistId(url: string): string | null {
 function extractVideoId(url: string): string | null {
     try {
         const u = new URL(url);
-        // youtube.com/watch?v=VIDEO_ID or youtu.be/VIDEO_ID
         const v = u.searchParams.get("v");
         if (v) return v;
         if (u.hostname === "youtu.be") return u.pathname.slice(1);
-        // youtube.com/shorts/VIDEO_ID
         const parts = u.pathname.split("/");
         if (parts.length >= 3 && (parts[1] === "shorts" || parts[1] === "embed" || parts[1] === "v")) {
             return parts[2];
         }
         return null;
     } catch {
-        // Raw ID
         if (/^[A-Za-z0-9_-]{11}$/.test(url.trim())) return url.trim();
         return null;
     }
@@ -45,7 +42,6 @@ Deno.serve(async (req) => {
             headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
     try {
-        // Require authenticated user — prevents anonymous abuse of YouTube API quota
         const authHeader = req.headers.get("Authorization");
         if (!authHeader) return json({ error: "Unauthorized" }, 401);
         const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.45.0");
@@ -61,7 +57,6 @@ Deno.serve(async (req) => {
         const apiKey = Deno.env.get("YOUTUBE_API_KEY")!;
         if (!apiKey) return json({ error: "YouTube API key missing" }, 500);
 
-        // Try video first, then playlist
         const videoId = extractVideoId(url);
         const playlistId = !videoId ? extractPlaylistId(url) : null;
 
@@ -69,7 +64,6 @@ Deno.serve(async (req) => {
             return json({ error: "Invalid YouTube URL" }, 400);
         }
 
-        // ── Single video preview ──────────────────────────────────────────
         if (videoId) {
             const res = await fetch(
                 `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${apiKey}`,
@@ -99,7 +93,6 @@ Deno.serve(async (req) => {
             });
         }
 
-        // ── Playlist preview ──────────────────────────────────────────────
         const plRes = await fetch(
             `https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${apiKey}`,
         );

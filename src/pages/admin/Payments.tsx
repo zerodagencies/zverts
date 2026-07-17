@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
 import { RequireRole } from "@/components/RequireRole";
 import { AppShell } from "@/components/app/AppShell";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageSection } from "@/components/app/PageSection";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -97,11 +99,8 @@ const AdminPaymentsInner = () => {
 
     return (
         <AppShell>
-            <section className="container py-10 max-w-6xl">
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                    / admin · payments
-                </div>
-                <h1 className="font-display text-4xl font-semibold mt-2">Payment approvals</h1>
+            <PageSection>
+                <PageHeader eyebrow="admin · payments" title="Payment approvals" />
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                     {(["pending", "approved", "rejected"] as Status[]).map((s) => (
@@ -117,7 +116,7 @@ const AdminPaymentsInner = () => {
                         placeholder="Search trx, email, sender…"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="max-w-xs ml-auto"
+                        className="max-w-xs w-full sm:w-auto sm:ml-auto"
                     />
                 </div>
 
@@ -187,7 +186,7 @@ const AdminPaymentsInner = () => {
                         </div>
                     )}
                 </div>
-            </section>
+            </PageSection>
         </AppShell>
     );
 };

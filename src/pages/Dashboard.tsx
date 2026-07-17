@@ -2,6 +2,8 @@ import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
 import { AppShell } from "@/components/app/AppShell";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageSection } from "@/components/app/PageSection";
 import { StatCard } from "@/components/app/StatCard";
 import { ContinueWatching } from "@/components/app/ContinueWatching";
 import { TodayMissionCard } from "@/components/app/TodayMissionCard";
@@ -227,69 +229,61 @@ const Dashboard = () => {
     const level = userStats ? Math.floor(userStats.xp / 500) + 1 : 1;
     const activeDays = weekly.filter((d) => d.minutes > 0).length;
 
+    const statsChips = userStats ? (
+        <div className="flex flex-wrap items-center gap-2">
+            <span
+                className={cn(
+                    "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono border",
+                    userStats.streak > 0
+                        ? "bg-accent/10 border-accent/25 text-accent"
+                        : "bg-muted border-border text-muted-foreground",
+                )}
+            >
+                <Flame className="h-3 w-3" />
+                {userStats.streak > 0 ? `${userStats.streak}-day streak` : "No streak yet"}
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono text-primary">
+                <Gem className="h-3 w-3" /> {userStats.gems.toLocaleString()} gems
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-xs font-mono text-yellow-500">
+                <Zap className="h-3 w-3" /> {userStats.xp.toLocaleString()} XP
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted border border-border text-xs font-mono text-muted-foreground">
+                Lv {level}
+            </span>
+        </div>
+    ) : (
+        <div className="flex flex-wrap gap-2">
+            {[72, 60, 56, 40].map((w, i) => (
+                <Skeleton key={i} className="h-7 rounded-full" style={{ width: w }} />
+            ))}
+        </div>
+    );
+
     return (
         <AppShell>
-            <section className="container py-8 md:py-12 max-w-6xl space-y-6">
-                {/* ── Hero ─────────────────────────────────────────────────────── */}
-                <div className="flex flex-wrap items-end justify-between gap-4">
-                    <div>
-                        <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                            / dashboard
-                        </div>
-                        <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mt-2">
+            <PageSection className="space-y-6">
+                <PageHeader
+                    eyebrow="dashboard"
+                    title={
+                        <>
                             Welcome back, <span className="italic text-primary">{displayName}</span>
-                        </h1>
-                        {/* Quick stats chips */}
-                        {userStats ? (
-                            <div className="flex flex-wrap items-center gap-2 mt-3">
-                                <span
-                                    className={cn(
-                                        "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono border",
-                                        userStats.streak > 0
-                                            ? "bg-accent/10 border-accent/25 text-accent"
-                                            : "bg-muted border-border text-muted-foreground",
-                                    )}
+                        </>
+                    }
+                    description={statsChips}
+                    action={
+                        nextModule && (
+                            <Link to={`/learn/${nextModule.id}`}>
+                                <Button
+                                    size="lg"
+                                    className="bg-gradient-lime text-primary-foreground shadow-glow gap-2 font-semibold w-full sm:w-auto"
                                 >
-                                    <Flame className="h-3 w-3" />
-                                    {userStats.streak > 0
-                                        ? `${userStats.streak}-day streak`
-                                        : "No streak yet"}
-                                </span>
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono text-primary">
-                                    <Gem className="h-3 w-3" /> {userStats.gems.toLocaleString()}{" "}
-                                    gems
-                                </span>
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-xs font-mono text-yellow-500">
-                                    <Zap className="h-3 w-3" /> {userStats.xp.toLocaleString()} XP
-                                </span>
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted border border-border text-xs font-mono text-muted-foreground">
-                                    Lv {level}
-                                </span>
-                            </div>
-                        ) : (
-                            <div className="flex gap-2 mt-3">
-                                {[72, 60, 56, 40].map((w, i) => (
-                                    <Skeleton
-                                        key={i}
-                                        className={`h-7 rounded-full`}
-                                        style={{ width: w }}
-                                    />
-                                ))}
-                            </div>
-                        )}
-                    </div>
-
-                    {nextModule && (
-                        <Link to={`/learn/${nextModule.id}`}>
-                            <Button
-                                size="lg"
-                                className="bg-gradient-lime text-primary-foreground shadow-glow gap-2 font-semibold"
-                            >
-                                Continue <ArrowRight className="h-4 w-4" />
-                            </Button>
-                        </Link>
-                    )}
-                </div>
+                                    Continue <ArrowRight className="h-4 w-4" />
+                                </Button>
+                            </Link>
+                        )
+                    }
+                />
 
                 {error ? (
                     <div className="rounded-2xl border border-destructive/40 bg-destructive/10 text-destructive p-5 text-sm font-mono">
@@ -396,7 +390,7 @@ const Dashboard = () => {
                         </div>
                     </>
                 )}
-            </section>
+            </PageSection>
         </AppShell>
     );
 };

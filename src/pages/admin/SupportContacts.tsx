@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/app/AppShell";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageSection } from "@/components/app/PageSection";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -109,7 +111,7 @@ const SupportContacts = () => {
 
     return (
         <AppShell>
-            <section className="container py-10">
+            <PageSection>
                 <Link
                     to="/admin"
                     className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1 mb-4 font-mono"
@@ -117,21 +119,22 @@ const SupportContacts = () => {
                     <ArrowLeft className="h-3 w-3" /> Back to Admin
                 </Link>
 
-                <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
-                    <div>
-                        <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-tight flex items-center gap-3">
+                <PageHeader
+                    eyebrow="admin · support"
+                    title={
+                        <span className="flex items-center gap-3">
                             <Phone className="h-7 w-7 text-primary" /> Support Contacts
-                        </h1>
-                        <p className="text-sm text-muted-foreground font-mono mt-1">
-                            {filtered.length} of {rows.length} submissions
-                        </p>
-                    </div>
-                    <Button onClick={exportCSV} variant="outline" className="gap-2">
-                        <Download className="h-4 w-4" /> Export CSV
-                    </Button>
-                </div>
+                        </span>
+                    }
+                    description={`${filtered.length} of ${rows.length} submissions`}
+                    action={
+                        <Button onClick={exportCSV} variant="outline" className="gap-2">
+                            <Download className="h-4 w-4" /> Export CSV
+                        </Button>
+                    }
+                />
 
-                <div className="rounded-2xl border border-border bg-gradient-card p-4 shadow-card mb-4 grid gap-3 sm:grid-cols-[1fr_auto_auto_auto]">
+                <div className="rounded-2xl border border-border bg-gradient-card p-4 shadow-card mb-4 mt-6 grid gap-3 sm:grid-cols-[1fr_auto_auto_auto]">
                     <div className="relative">
                         <Search className="h-4 w-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
                         <Input
@@ -244,7 +247,7 @@ const SupportContacts = () => {
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </PageSection>
         </AppShell>
     );
 };

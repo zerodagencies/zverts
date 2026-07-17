@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/app/AppShell";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageSection } from "@/components/app/PageSection";
 import { supabase } from "@/integrations/supabase/client";
 import { useTranslation } from "react-i18next";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -133,38 +135,36 @@ const Admin = () => {
 
   return (
     <AppShell>
-      <section className="container py-8 md:py-12 max-w-6xl space-y-8">
+      <PageSection className="space-y-8">
 
-        {/* ── Header ─────────────────────────────────────────────────── */}
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">/ admin</div>
-              <span className="rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5">
+        <PageHeader
+          eyebrow="admin"
+          title={
+            <span className="inline-flex items-center gap-2">
+              Admin Panel
+              <span className="rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 align-middle">
                 {isSuper ? "Super Admin" : "Admin"}
               </span>
-            </div>
-            <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mt-1.5">
-              Admin Panel
-            </h1>
-          </div>
-          {/* Summary stats */}
-          {!dataLoading && (
-            <div className="flex items-center gap-3">
-              <div className="text-right">
-                <div className="font-display text-2xl font-semibold">{users.length}</div>
-                <div className="text-xs font-mono text-muted-foreground">total users</div>
-              </div>
-              <div className="h-8 w-px bg-border" />
-              <div className="text-right">
-                <div className={cn("font-display text-2xl font-semibold", pendingCount > 0 ? "text-amber-500" : "text-muted-foreground")}>
-                  {pendingCount}
+            </span>
+          }
+          action={
+            !dataLoading && (
+              <div className="flex items-center gap-3">
+                <div className="text-right">
+                  <div className="font-display text-2xl font-semibold">{users.length}</div>
+                  <div className="text-xs font-mono text-muted-foreground">total users</div>
                 </div>
-                <div className="text-xs font-mono text-muted-foreground">pending payments</div>
+                <div className="h-8 w-px bg-border" />
+                <div className="text-right">
+                  <div className={cn("font-display text-2xl font-semibold", pendingCount > 0 ? "text-amber-500" : "text-muted-foreground")}>
+                    {pendingCount}
+                  </div>
+                  <div className="text-xs font-mono text-muted-foreground">pending payments</div>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )
+          }
+        />
 
         {/* ── Quick actions ───────────────────────────────────────────── */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -335,7 +335,7 @@ const Admin = () => {
           )}
         </div>
 
-      </section>
+      </PageSection>
     </AppShell>
   );
 };

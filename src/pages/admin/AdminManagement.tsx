@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { RequireRole } from "@/components/RequireRole";
 import { AppShell } from "@/components/app/AppShell";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageSection } from "@/components/app/PageSection";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";

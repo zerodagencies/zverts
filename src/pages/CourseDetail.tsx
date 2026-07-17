@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, useParams, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/app/AppShell";
+import { PageSection } from "@/components/app/PageSection";
 import { SEO } from "@/components/SEO";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -312,10 +313,10 @@ const CourseDetail = () => {
     if (loading)
         return (
             <AppShell>
-                <section className="container py-8 max-w-5xl space-y-6">
+                <PageSection maxW="lg" className="space-y-6">
                     <Skeleton className="h-4 w-24" />
-                    <div className="flex gap-6">
-                        <Skeleton className="w-56 aspect-video rounded-xl shrink-0" />
+                    <div className="flex flex-col sm:flex-row gap-6">
+                        <Skeleton className="w-full sm:w-56 aspect-video rounded-xl shrink-0" />
                         <div className="flex-1 space-y-3">
                             <Skeleton className="h-8 w-3/4" />
                             <Skeleton className="h-4 w-1/2" />
@@ -327,7 +328,7 @@ const CourseDetail = () => {
                             <Skeleton key={i} className="h-14 rounded-xl" />
                         ))}
                     </div>
-                </section>
+                </PageSection>
             </AppShell>
         );
     if (!course)
@@ -402,7 +403,7 @@ const CourseDetail = () => {
                 type="article"
                 jsonLd={{ "@context": "https://schema.org", "@type": "Course", name: course.title }}
             />
-            <section className="container py-6 md:py-10 max-w-5xl">
+            <PageSection maxW="lg">
                 {/* Back */}
                 <Link
                     to="/courses"
@@ -557,7 +558,7 @@ const CourseDetail = () => {
                         </SortableContext>
                     </DndContext>
                 )}
-            </section>
+            </PageSection>
         </AppShell>
     );
 };

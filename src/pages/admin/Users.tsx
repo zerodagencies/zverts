@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { RequireRole } from "@/components/RequireRole";
 import { AppShell } from "@/components/app/AppShell";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageSection } from "@/components/app/PageSection";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -62,11 +64,8 @@ const AdminUsersInner = () => {
 
     return (
         <AppShell>
-            <section className="container py-10 max-w-6xl">
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                    / admin · users
-                </div>
-                <h1 className="font-display text-4xl font-semibold mt-2">Users</h1>
+            <PageSection>
+                <PageHeader eyebrow="admin · users" title="Users" />
                 <Input
                     placeholder="Search by name or email…"
                     value={search}
@@ -128,7 +127,7 @@ const AdminUsersInner = () => {
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </PageSection>
         </AppShell>
     );
 };

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { RequireRole } from "@/components/RequireRole";
 import { AppShell } from "@/components/app/AppShell";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageSection } from "@/components/app/PageSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -43,18 +45,16 @@ const BroadcastInner = () => {
 
     return (
         <AppShell>
-            <section className="container py-10 max-w-2xl">
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                    / admin · broadcast
-                </div>
-                <h1 className="font-display text-4xl font-semibold mt-2 flex items-center gap-3">
-                    <Megaphone className="h-8 w-8 text-primary" /> Broadcast notification
-                </h1>
-                <p className="text-sm text-muted-foreground mt-2 max-w-xl">
-                    Sends an in-app notification to every user instantly. If they've allowed browser
-                    notifications, Chrome will pop it up with a sound — even when the tab is in the
-                    background.
-                </p>
+            <PageSection maxW="sm">
+                <PageHeader
+                    eyebrow="admin · broadcast"
+                    title={
+                        <span className="flex items-center gap-3">
+                            <Megaphone className="h-8 w-8 text-primary" /> Broadcast notification
+                        </span>
+                    }
+                    description="Sends an in-app notification to every user instantly. If they've allowed browser notifications, Chrome will pop it up with a sound — even when the tab is in the background."
+                />
 
                 <div className="mt-8 rounded-2xl border border-border bg-card p-6 space-y-5">
                     <div>
@@ -126,7 +126,7 @@ const BroadcastInner = () => {
                         )}
                     </Button>
                 </div>
-            </section>
+            </PageSection>
         </AppShell>
     );
 };

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Navigate, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/app/AppShell";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageSection } from "@/components/app/PageSection";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
@@ -199,24 +201,19 @@ const Courses = () => {
 
     return (
         <AppShell>
-            <section className="container py-8 md:py-12 max-w-6xl">
-                {/* Header */}
-                <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
-                    <div>
-                        <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                            / {t("nav.courses")}
+            <PageSection>
+                <PageHeader
+                    eyebrow={t("nav.courses")}
+                    title={t("courses.mine")}
+                    action={
+                        <div className="text-sm text-muted-foreground font-mono">
+                            {loading ? "…" : `${mine.length} course${mine.length !== 1 ? "s" : ""}`}
                         </div>
-                        <h1 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mt-1">
-                            {t("courses.mine")}
-                        </h1>
-                    </div>
-                    <div className="text-sm text-muted-foreground font-mono">
-                        {loading ? "…" : `${mine.length} course${mine.length !== 1 ? "s" : ""}`}
-                    </div>
-                </div>
+                    }
+                />
 
                 {/* Import bar */}
-                <div className="rounded-2xl border border-border bg-card p-4 mb-8">
+                <div className="rounded-2xl border border-border bg-card p-4 mt-8 mb-8">
                     <Tabs defaultValue="paste">
                         <TabsList className="mb-3">
                             <TabsTrigger value="paste">Paste URL</TabsTrigger>
@@ -401,7 +398,7 @@ const Courses = () => {
                         ))}
                     </div>
                 )}
-            </section>
+            </PageSection>
 
             <PlaylistPreview
                 open={previewOpen}

@@ -9,7 +9,6 @@ import { Coins, Sparkles, ShoppingCart, Clock, CheckCircle2, XCircle, Loader2 } 
 
 type Payment = {
     id: string;
-    package_type: string;
     credits: number;
     amount: number;
     method: string;
@@ -47,7 +46,7 @@ const PaymentHistory = () => {
         if (!user) return;
         supabase
             .from("payments")
-            .select("id,package_type,credits,amount,method,trx_id,status,admin_note,created_at")
+            .select("id,credits,amount,method,trx_id,status,admin_note,created_at")
             .eq("user_id", user.id)
             .order("created_at", { ascending: false })
             .then(({ data }) => {
@@ -175,7 +174,7 @@ const PaymentHistory = () => {
                                         >
                                             <div className="flex-1 min-w-[180px] space-y-1">
                                                 <div className="font-medium">
-                                                    {r.package_type} · {r.credits} credit
+                                                    Premium · {r.credits} credit
                                                     {r.credits !== 1 ? "s" : ""}
                                                 </div>
                                                 <div className="text-xs font-mono text-muted-foreground">

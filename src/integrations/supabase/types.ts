@@ -1185,6 +1185,7 @@ export type Database = {
                 Returns: undefined;
             };
             admin_impact_stats: { Args: never; Returns: Json };
+            public_impact_stats: { Args: never; Returns: Json };
             send_test_notification: { Args: never; Returns: string };
             admin_learners_by_course: {
                 Args: never;

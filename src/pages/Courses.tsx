@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useRef } from "react";
-import { Navigate, Link, useNavigate } from "react-router-dom";
+import { Navigate, Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AppShell } from "@/components/app/AppShell";
 import { Button } from "@/components/ui/button";
@@ -107,8 +107,10 @@ const Courses = () => {
     const { user, loading: authLoading } = useAuth();
     const { t } = useTranslation();
     const navigate = useNavigate();
+    // ?url= : a playlist pasted on the landing page before signing in.
+    const [searchParams] = useSearchParams();
 
-    const [url, setUrl] = useState("");
+    const [url, setUrl] = useState(() => searchParams.get("url") ?? "");
     const [importing, setImporting] = useState(false);
     const [previewing, setPreviewing] = useState(false);
     const [preview, setPreview] = useState<Preview | null>(null);

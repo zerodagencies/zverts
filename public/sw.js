@@ -35,6 +35,7 @@ const OFFLINE_RPCS = [
     "get_today_mission",
     "is_module_unlocked",
     "list_public_profiles",
+    "public_impact_stats",
     "unread_notification_count",
     // Admin reads.
     "admin_impact_stats",

@@ -411,6 +411,15 @@ const ModulePlayer = () => {
                                     positionKey={positionKey(mod.id)}
                                 />
                             )}
+                            {completed && nextId && (
+                                <Button
+                                    size="sm"
+                                    onClick={() => navigate(`/learn/${nextId}`)}
+                                    className="absolute right-3 bottom-14 z-10 bg-gradient-lime text-primary-foreground shadow-glow animate-in fade-in"
+                                >
+                                    Next lesson <ArrowRight className="ml-1.5 h-4 w-4" />
+                                </Button>
+                            )}
                         </div>
 
                         {/* ── Sidebar / playlist (col 2, row 2) ── */}
@@ -488,10 +497,9 @@ const ModulePlayer = () => {
                                             </span>
                                         )}
                                     </div>
-                                    {nextId && (
+                                    {completed && nextId && (
                                         <Button
                                             size="sm"
-                                            disabled={!completed}
                                             onClick={() => navigate(`/learn/${nextId}`)}
                                             className="bg-gradient-lime text-primary-foreground shadow-glow"
                                         >

@@ -208,14 +208,8 @@ const ModulePlayer = () => {
 
             setMod(m);
 
-            const [{ data: nextMod }, { data: unlock }, { data: p }, { data: sibs }] =
+            const [{ data: unlock }, { data: p }, { data: sibs }] =
                 await Promise.all([
-                    supabase
-                        .from("modules")
-                        .select("id")
-                        .eq("course_id", m.course_id)
-                        .eq("position", m.position + 1)
-                        .maybeSingle(),
                     supabase.rpc("is_module_unlocked", { _user_id: user.id, _module_id: m.id }),
                     supabase
                         .from("module_progress")
@@ -227,10 +221,13 @@ const ModulePlayer = () => {
                         .from("modules")
                         .select("id,position,title,duration_seconds,thumbnail_url")
                         .eq("course_id", m.course_id)
-                        .order("position"),
+                        .order("position")
+                        .order("id"),
                 ]);
 
-            setNextId(nextMod?.id ?? null);
+            // Next by list order, matching is_module_unlocked (positions can have gaps).
+            const idx = (sibs ?? []).findIndex((s) => s.id === m.id);
+            setNextId(sibs?.[idx + 1]?.id ?? null);
             setUnlocked(!!unlock);
             if (p) {
                 setPercent(Number(p.percent_watched));
